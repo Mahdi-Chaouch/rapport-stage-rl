@@ -15,9 +15,9 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
   const [isPlaying, setIsPlaying] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
 
-  // High quality Ralph Lauren luxury aesthetic fashion video source
-  const videoSource = "https://assets.mixkit.co/videos/preview/mixkit-fashion-model-in-a-black-suit-41566-large.mp4";
-  const fallbackPoster = "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop";
+  // Custom Ralph Lauren luxury video & background image from user
+  const videoSource = "/intro-video.mp4";
+  const fallbackPoster = "/hero-bg.jpg";
 
   useEffect(() => {
     const video = videoRef.current;
@@ -92,9 +92,22 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
         }`}
       />
 
+      {/* Static Background Image Layer (fades in smoothly when video finishes) */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-1000 ${
+          videoEnded ? "opacity-70" : "opacity-0"
+        }`}
+      >
+        <img
+          src={fallbackPoster}
+          alt="Ralph Lauren Hero Background"
+          className="w-full h-full object-cover filter brightness-50 contrast-125 blur-[1px]"
+        />
+      </div>
+
       {/* Freeze overlay when video ended */}
       {videoEnded && (
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-black/40 pointer-events-none transition-opacity duration-1000" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-black/50 pointer-events-none transition-opacity duration-1000" />
       )}
 
       {/* Vignette effect */}
