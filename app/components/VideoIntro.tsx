@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX, Play, SkipForward } from "lucide-react";
+import content from "@/data/content";
 
 interface VideoIntroProps {
   onVideoEnd: () => void;
@@ -14,6 +15,8 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
+
+  const { videoIntro } = content;
 
   // Custom Ralph Lauren luxury video & background image from user
   const videoSource = "/intro-video.mp4";
@@ -128,7 +131,7 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
               <div className="flex items-center space-x-3">
                 <span className="w-2 h-2 rounded-full bg-white animate-ping" />
                 <span className="text-[10px] tracking-[0.3em] uppercase font-mono text-neutral-300">
-                  RALPH LAUREN CINEMATIQUE · INTRO
+                  {videoIntro.topBadge}
                 </span>
               </div>
 
@@ -151,7 +154,7 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
                   className="group relative inline-flex items-center space-x-4 px-8 py-4 rounded-full bg-white text-black font-serif tracking-widest text-sm uppercase transition-all duration-500 hover:scale-105 hover:bg-neutral-200"
                 >
                   <Play className="w-4 h-4 fill-black" />
-                  <span>LANCER LE FILM ÉDITORIAL</span>
+                  <span>{videoIntro.playButton}</span>
                 </button>
               </div>
             )}
@@ -160,10 +163,10 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
             <div className="flex justify-between items-end w-full pointer-events-auto">
               <div>
                 <p className="font-serif italic text-white/70 text-sm md:text-base max-w-sm">
-                  “ Style is very personal. It has nothing to do with fashion. Fashion is over quickly. Style is forever. ”
+                  {videoIntro.quote}
                 </p>
                 <p className="text-[10px] tracking-widest text-neutral-400 mt-1 uppercase font-sans">
-                  — Ralph Lauren
+                  {videoIntro.author}
                 </p>
               </div>
 
@@ -171,7 +174,7 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
                 onClick={handleSkip}
                 className="group flex items-center space-x-2 text-xs tracking-[0.25em] text-neutral-400 hover:text-white transition-colors duration-300 uppercase py-2 px-4 rounded-full border border-white/10 hover:border-white/30 backdrop-blur-md"
               >
-                <span>ACCÉDER AU RAPPORT</span>
+                <span>{videoIntro.skipButton}</span>
                 <SkipForward className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>

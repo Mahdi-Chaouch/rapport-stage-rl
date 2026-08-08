@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowUpRight, Award, Compass, BookOpen, BarChart3, MessageSquare, MapPin } from "lucide-react";
+import content from "@/data/content";
 
 interface NavigationProps {
   isOpen: boolean;
@@ -10,60 +11,18 @@ interface NavigationProps {
   onSelectSection: (id: string) => void;
 }
 
-const menuItems = [
-  {
-    id: "maison",
-    num: "I",
-    title: "LA MAISON RALPH LAUREN",
-    subtitle: "Histoire, univers de marque & organigramme des services",
-    icon: Compass,
-    image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    id: "poste",
-    num: "II",
-    title: "MON POSTE & RESPONSABILITÉS",
-    subtitle: "Mission clef, positionnement & objectifs chiffrés (KPIs)",
-    icon: Award,
-    highlight: true,
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    id: "carnet",
-    num: "III",
-    title: "CARNET DE BORD",
-    subtitle: "Journal semaine par semaine, coulisses & résolution de défis",
-    icon: BookOpen,
-    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    id: "strategie",
-    num: "IV",
-    title: "ANALYSE STRATÉGIQUE",
-    subtitle: "Concurrents, tendances luxe & problématique personnelle",
-    icon: BarChart3,
-    image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    id: "rencontres",
-    num: "V",
-    title: "RENCONTRES & REGARDS CROISÉS",
-    subtitle: "Interviews, portraits & grands formats de citations",
-    icon: MessageSquare,
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    id: "voyage",
-    num: "VI",
-    title: "RETOUR DE VOYAGE",
-    subtitle: "Bilan personnel, matrice de compétences & projection",
-    icon: MapPin,
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
-  },
-];
+const iconMap: Record<string, any> = {
+  maison: Compass,
+  poste: Award,
+  carnet: BookOpen,
+  strategie: BarChart3,
+  rencontres: MessageSquare,
+  voyage: MapPin,
+};
 
 export default function Navigation({ isOpen, onClose, onSelectSection }: NavigationProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const { global, navigation } = content;
 
   const handleNavClick = (id: string) => {
     onSelectSection(id);
@@ -88,7 +47,7 @@ export default function Navigation({ isOpen, onClose, onSelectSection }: Navigat
                 initial={{ scale: 1.1, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                src={menuItems[hoveredIndex].image}
+                src={navigation.items[hoveredIndex].image}
                 alt="Section Preview"
                 className="w-full h-full object-cover filter grayscale contrast-125"
               />
@@ -99,10 +58,10 @@ export default function Navigation({ isOpen, onClose, onSelectSection }: Navigat
           <div className="relative z-10 flex justify-between items-center w-full border-b border-white/10 pb-6">
             <div className="flex items-center space-x-4">
               <span className="font-serif text-2xl tracking-[0.2em] font-semibold text-white">
-                RALPH LAUREN
+                {global.siteTitle}
               </span>
               <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-neutral-400 border-l border-white/20 pl-4">
-                SOMMAIRE ÉDITORIAL
+                {navigation.title}
               </span>
             </div>
 
@@ -117,8 +76,8 @@ export default function Navigation({ isOpen, onClose, onSelectSection }: Navigat
 
           {/* Main Navigation List */}
           <div className="relative z-10 my-8 max-w-5xl mx-auto w-full grid grid-cols-1 gap-4 md:gap-6">
-            {menuItems.map((item, index) => {
-              const Icon = item.icon;
+            {navigation.items.map((item, index) => {
+              const Icon = iconMap[item.id] || Compass;
               return (
                 <motion.div
                   key={item.id}
@@ -169,14 +128,14 @@ export default function Navigation({ isOpen, onClose, onSelectSection }: Navigat
           {/* Footer Metadata inside Overlay */}
           <div className="relative z-10 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-start md:items-center text-xs text-neutral-400 font-sans gap-4">
             <div>
-              <p className="text-white font-medium">Éléonore de Saint-Germain</p>
+              <p className="text-white font-medium">{global.studentName}</p>
               <p className="text-[11px] text-neutral-400">
-                Assistant Visual Merchandiser & Client Experience Coordinator · Flagship Saint-Germain Paris
+                {global.studentRole} · {global.company}
               </p>
             </div>
             <div className="text-left md:text-right text-[11px]">
-              <p>Tutrice de stage : <span className="text-neutral-300">Camille Mercier (Directrice Flagship)</span></p>
-              <p>Promotrice académique : <span className="text-neutral-300">Prof. Hélène Vance</span></p>
+              <p>Tutrice de stage : <span className="text-neutral-300">{global.companyTutor}</span></p>
+              <p>Promotrice académique : <span className="text-neutral-300">{global.academicTutor}</span></p>
             </div>
           </div>
         </motion.div>

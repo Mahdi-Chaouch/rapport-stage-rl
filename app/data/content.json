@@ -1,0 +1,466 @@
+{
+  "global": {
+    "studentName": "Éléonore de Saint-Germain",
+    "studentRole": "Assistant Visual Merchandiser & Client Experience Coordinator",
+    "academicProgram": "Master Management du Luxe & de la Mode",
+    "academicTutor": "Prof. Hélène Vance",
+    "company": "Ralph Lauren Flagship Saint-Germain",
+    "location": "173 Boulevard Saint-Germain, Paris",
+    "companyTutor": "Camille Mercier (Directrice Flagship)",
+    "siteTitle": "RALPH LAUREN",
+    "siteSubTitle": "RAPPORT DE STAGE INTERACTIF · DIRECTION RETAIL",
+    "heroQuote": "Visual Merchandising & Client Experience Coordinator",
+    "heroLocation": "FLAGSHIP SAINT-GERMAIN · 173 BOULEVARD SAINT-GERMAIN, PARIS",
+    "discoverRoleButton": "DÉCOUVRIR LE POSTE (CHAPITRE II)",
+    "exploreSummaryButton": "EXPLORER LE SOMMAIRE",
+    "scrollPrompt": "DÉFILER L'ÉDITORIAL"
+  },
+  "maison": {
+    "chapter": "CHAPITRE I · FONDATIONS & ÉCOSYSTÈME",
+    "title": "La Maison Ralph Lauren",
+    "quote": "“ What I do is about living the best life you can and enjoying the fullness of the life around you. ”",
+    "presentation": {
+      "title": "Présentation & Adresses d'Exception",
+      "text": "Fondée en 1967 à New York par le styliste et entrepreneur visionnaire Ralph Lauren, la Maison incarna d'emblée une redéfinition du luxe mondial à travers le concept du Lifestyle Global. Plus qu'une marque de prêt-à-porter, Ralph Lauren conçoit un univers cinématographique où chaque collection raconte une histoire.",
+      "flagship": {
+        "label": "FLAGSHIP PARIS (Lieu du Stage)",
+        "address": "173 Boulevard Saint-Germain",
+        "details": "75006 Paris · Hôtel Particulier XVIIe siècle (Inc. Restaurant Ralph's & Collection)"
+      },
+      "headquarters": {
+        "label": "SIÈGE MONDIAL",
+        "address": "650 Madison Avenue",
+        "details": "New York, NY 10022 · États-Unis"
+      }
+    },
+    "history": {
+      "title": "Héritage Chronologique (1967 - 2026)",
+      "timeline": [
+        {
+          "year": "1967",
+          "title": "Lancement de la Cravate Preppy",
+          "description": "Ralph Lauren vend ses premières cravates larges sous le nom \"Polo\" depuis un tiroir de l'Empire State Building."
+        },
+        {
+          "year": "1971",
+          "title": "Première Boutique à Beverly Hills & Logo Joueur de Polo",
+          "description": "Inauguration de la première boutique indépendante et introduction du Cavalier Polo iconique sur le poignet de la chemise pour femme."
+        },
+        {
+          "year": "2010",
+          "title": "Inauguration du Flagship 173 Saint-Germain",
+          "description": "Ouverture du majestueux Hôtel particulier parisien abritant les lignes de haute couture et le restaurant privé Ralph's."
+        }
+      ]
+    },
+    "universe": {
+      "title": "L'Univers de Marque",
+      "items": [
+        {
+          "name": "Ralph Lauren Purple Label",
+          "desc": "L'apogée du luxe masculin et du savoir-faire tailleur italien d'exception.",
+          "tag": "Haute Tailleur"
+        },
+        {
+          "name": "Ralph Lauren Collection",
+          "desc": "L'expression ultime de l'élégance féminine couture et du raffinement intemporel.",
+          "tag": "Haute Couture"
+        },
+        {
+          "name": "Double RL (RRL)",
+          "desc": "L'héritage brut du vintage américain, du denim artisanal et de l'esprit ranch.",
+          "tag": "Craft & Vintage"
+        },
+        {
+          "name": "Polo Ralph Lauren",
+          "desc": "L'icône mondiale du style preppy américain, mariant tradition sportive et chic urbain.",
+          "tag": "Heritage Sportswear"
+        },
+        {
+          "name": "Ralph Lauren Home & Hospitality",
+          "desc": "L'art de vivre global : mobilier d'art, Le Restaurant Ralph's (Saint-Germain) et Ralph's Coffee.",
+          "tag": "Art de Vivre"
+        }
+      ]
+    },
+    "organigramBanner": {
+      "badge": "ORGANISATION DE LA MAISON",
+      "title": "Organigramme des Services EMEA & Flagship",
+      "description": "Découvrez la structure hiérarchique globale, du siège régional jusqu'à la Direction Merchandising & Clienteling du Flagship Saint-Germain.",
+      "buttonText": "EXPLORER L'ORGANIGRAMME"
+    }
+  },
+  "poste": {
+    "badge": "COEUR DU RAPPORT · SECTION MAJEURE",
+    "chapter": "CHAPITRE II · RESPONSABILITÉS & PERFORMANCE",
+    "title": "Assistant Visual Merchandiser",
+    "subtitle": "& Client Experience Coordinator",
+    "description": "Un rôle charnière à la croisée de la scénographie artistique, de la théâtralisation de l'offre haut de gamme et du pilotage de la performance commerciale au sein du flagship amiral parisien.",
+    "positioning": {
+      "badge": "POSITIONNEMENT DANS L'ORGANIGRAMME",
+      "title": "Rattachement Direct & Synergies Internes",
+      "description": "Rattaché(e) directement à la Directrice Merchandising Retail France et travaillant au quotidien aux côtés de la Directrice du Flagship Saint-Germain, mon rôle assure le lien stratégique entre la vision artistique édictée à New York et son exécution opérationnelle en boutique.",
+      "hierarchy": [
+        {
+          "label": "N+1 Hiérarchique",
+          "val": "Directrice Merchandising Retail France"
+        },
+        {
+          "label": "N+1 Opérationnel",
+          "val": "Directrice du Flagship Saint-Germain"
+        },
+        {
+          "label": "Partenaires Clés",
+          "val": "Équipes Clienteling VIP & Sales Stylists"
+        }
+      ]
+    },
+    "kpiTitle": "Objectifs Chiffrés & Résultats Atteints (KPIs)",
+    "kpis": [
+      {
+        "value": "+14.8%",
+        "label": "Taux de Conversion VIP",
+        "detail": "Sur les lignes Collection & Purple Label lors des Ventes Privées et Private Clienteling Evenings."
+      },
+      {
+        "value": "08",
+        "label": "Vitrines Scénographiées",
+        "detail": "Concept, théâtralisation nocturne et habillage des vitrines du Boulevard Saint-Germain."
+      },
+      {
+        "value": "100%",
+        "label": "Conformité Directives NYC",
+        "detail": "Respect absolu des standards de Visual Merchandising édictés par le siège mondial à Madison Avenue."
+      },
+      {
+        "value": "350+",
+        "label": "Styling Sessions VIP",
+        "detail": "Accompagnement personnalisé et conciergerie style pour la clientèle haut de gamme internationale."
+      }
+    ],
+    "expectationsTitle": "Niveau d'Exigence & Standards de Luxe Attendus",
+    "expectations": [
+      {
+        "title": "Exigence Absolute du Tailoring & Merchandising",
+        "desc": "Chaque silhouette exposée en vitrine ou en salon privé répond à un protocole d'épinglage et d'éclairage au millimètre près. L'erreur de pliage ou de nuance chromatique est proscrite."
+      },
+      {
+        "title": "Intelligence Émotionnelle & Codes du Luxe International",
+        "desc": "Savoir converser et conseiller une clientèle fortunée (Ultra High Net Worth Individuals) nécessite une posture irréprochable, une discrétion totale et une connaissance aiguë de l'histoire du costume."
+      },
+      {
+        "title": "Agilité Nocturne & Gestion du Chiffre d'Affaires",
+        "desc": "Capacité à orchestrer le réaménagement global du flagship en dehors des heures d'ouverture (00h-06h) lors des basculements de collections sans perturber le chiffre d'affaires quotidien."
+      }
+    ]
+  },
+  "carnet": {
+    "chapter": "CHAPITRE III · CHRONIQUE DE TERRAIN",
+    "title": "Carnet de Bord & Journal de Mission",
+    "filters": [
+      {
+        "key": "all",
+        "label": "TOUTES (24 SEMAINES)"
+      },
+      {
+        "key": "merch",
+        "label": "VISUAL MERCHANDISING"
+      },
+      {
+        "key": "clienteling",
+        "label": "CLIENTELING VIP"
+      },
+      {
+        "key": "crise",
+        "label": "GESTION DE CRISE"
+      }
+    ],
+    "entries": [
+      {
+        "week": "Semaines 01 - 04",
+        "category": "merch",
+        "title": "Immersion & Appropriation des Directives HQ New York",
+        "concreteTasks": [
+          "Étude approfondie du Book Merchandising Saison automne-hiver transmis par Madison Avenue.",
+          "Inventaire visuel et audit de conformité des 3 étages du Flagship Saint-Germain.",
+          "Formation aux techniques d'épinglage couture et d'éclairage ciblé des mannequins Purple Label."
+        ],
+        "behindTheScenes": "Montage nocturne de 22h à 05h du matin pour la réorganisation complète du rez-de-chaussée avant l'ouverture VIP.",
+        "challenge": "Incompatibilité entre l'architecture de l'Hôtel particulier (moulures d'époque) et les structures modulaires recommandées par le siège US.",
+        "solution": "Conception de fixations invisibles sur mesure validées par l'architecte du patrimoine et la Direction Merchandising EMEA."
+      },
+      {
+        "week": "Semaines 05 - 10",
+        "category": "clienteling",
+        "title": "Orchestration des Ventes Privées VIP & Private Salon Styling",
+        "concreteTasks": [
+          "Aménagement du Salon Privé Haute Couture au 2ème étage pour l'accueil des clients UHNWI.",
+          "Scénographie thématique autour de la ligne Ralph Lauren Collection avec pièces uniques de défilé.",
+          "Coordination directe avec les Personal Shoppers pour l'essayage sur mannequin personnalisé."
+        ],
+        "behindTheScenes": "Mise à disposition en moins de 2 heures d'un ensemble défilé rare directement rapatrié depuis les réserves de Milan.",
+        "challenge": "Affluence record lors de la soirée VIP créant des ruptures visuelles rapides sur les portants phares.",
+        "solution": "Instauration d'un protocole de réassort miroir en temps réel avec un runner dédié en réserve."
+      },
+      {
+        "week": "Semaines 11 - 16",
+        "category": "crise",
+        "title": "Gestion de Crise : Paris Fashion Week & Rush Logistique",
+        "concreteTasks": [
+          "Transformation de la façade du Flagship pour le lancement mondial de la campagne thématique.",
+          "Installation des vitrines interactives et vitrages miroir haute réflexion.",
+          "Gestion des flux de célébrités et presse internationale en collaboration avec le service RP."
+        ],
+        "behindTheScenes": "Livraison bloquée en douane à Roissy de 4 silhouettes de vitrine la veille de la présentation presse.",
+        "challenge": "Risque de vitrine vide pour le passage des journalistes de Vogue et Harper's Bazaar.",
+        "solution": "Recomposition d'urgence avec les pièces du showroom parisien et stylisme alternatif approuvé en direct par FaceTime avec le VP Merchandising NYC."
+      },
+      {
+        "week": "Semaines 17 - 24",
+        "category": "management",
+        "title": "Bascule Saisonnière Printemps & Bilan des Directives Visuelles",
+        "concreteTasks": [
+          "Supervision du démontage des vitrines d'hiver et installation des décors de Printemps.",
+          "Rédaction du rapport de synthèse visuelle et recommandations pour les équipes de vente.",
+          "Présentation du bilan de stage devant la Direction Retail France."
+        ],
+        "behindTheScenes": "Création d'un mini-guide imprimé 'Les 10 Commandements du Merchandising Saint-Germain' distribué aux nouveaux vendeurs.",
+        "challenge": "Maintenir un niveau d'excellence visuelle constant durant la période des soldes tout en gérant un fort volume de trafic.",
+        "solution": "Mise en place de 'Visits Flash' quotidiennes de 15 minutes à 14h pour réaligner chaque mannequin et portant."
+      }
+    ]
+  },
+  "strategie": {
+    "chapter": "CHAPITRE IV · VISION & MARCHÉ",
+    "title": "Analyse Stratégique & Recommandations",
+    "subtitle": "Décryptage des dynamiques concurrentielles du secteur du luxe et positionnement de la ligne Collection.",
+    "benchmarkTitle": "Matrice de Positionnement Concurrentiel",
+    "competitors": [
+      {
+        "brand": "Ralph Lauren (Collection & Purple)",
+        "positioning": "Lifestyle Américain Ultime & Elegance Preppy / Couture",
+        "strength": "Écosystème global (Hospitalité + Mode + Maison), fort récit émotionnel.",
+        "vs": "Positionnement unique fusionnant décontraction raffinée et couture italienne."
+      },
+      {
+        "brand": "Giorgio Armani",
+        "positioning": "Élégance Italienne Minimaliste & Tailoring Épuré",
+        "strength": "Notoriété tailleur mondiale et lignes hôtelières.",
+        "vs": "Ralph Lauren mise davantage sur l'art de vivre chaleureux et l'héritage familial."
+      },
+      {
+        "brand": "Burberry",
+        "positioning": "Héritage Britannique Outdoor & Trench Iconic",
+        "strength": "Ancrage fort sur la pièce à manche et le check iconique.",
+        "vs": "Ralph Lauren dispose d'une largeur d'offre lifestyle supérieure."
+      },
+      {
+        "brand": "LVMH (Dior / Celine)",
+        "positioning": "Haute Couture & Désirabilité Ultime",
+        "strength": "Puissance marketing mondiale et contrôle strict de la rareté.",
+        "vs": "Pression concurrentielle élevée nécessitant une théâtralisation maximale en Flagship."
+      }
+    ],
+    "problematic": {
+      "badge": "PROBLÉMATIQUE PERSONNELLE DE RECHERCHE",
+      "question": "“ Dans quelle mesure la scénographie visuelle et le clienteling augmenté peuvent-ils sublimer la désirabilité de la ligne Collection et maximiser la valeur vie client dans un flagship parisien ? ”",
+      "context": "Cette réflexion personnelle s'appuie sur les constats observés durant 6 mois au Flagship Saint-Germain : la nécessité de faire dialoguer le patrimoine architectural du magasin avec les exigences de personnalisation et de théâtralisation de la clientèle internationale contemporaine."
+    },
+    "recommendationsTitle": "Recommandations Stratégiques pour la Maison",
+    "recommendations": [
+      {
+        "num": "01",
+        "title": "Vitrines Interactives & Clienteling Phygital",
+        "desc": "Intégration d'écrans OLED transparents et de QR codes privés dans les vitrines de Saint-Germain permettant aux clients VIP de réserver un look de vitrine directement depuis leur smartphone, même en dehors des heures d'ouverture."
+      },
+      {
+        "num": "02",
+        "title": "Atelier de Personnalisation & Monogramming Live",
+        "desc": "Installation d'un espace de création sur-mesure permanent au 1er étage pour la broderie de monogrammes et le sur-mesure instantané sur les pièces Collection et cravates Purple Label."
+      },
+      {
+        "num": "03",
+        "title": "Programme 'Ralph's Private Dining & Shopping'",
+        "desc": "Création d'une offre exclusive combinant dîner gastronomique privé au Restaurant Ralph's suivi d'une session de personal styling nocturne réservée aux plus grands collectionneurs de la Maison."
+      }
+    ]
+  },
+  "rencontres": {
+    "chapter": "CHAPITRE V · TÉMOIGNAGES & REGARDS CROISÉS",
+    "title": "Rencontres & Paroles de Leaders",
+    "subtitle": "Regards croisés avec les mentors et figures clés de la Maison Ralph Lauren durant 6 mois d'immersion.",
+    "editorialQuote": {
+      "badge": "CITATION ÉDITORIALE HAUTE COUTURE",
+      "quote": "“ Style is about confidence and living with grace. Clothes are just the canvas upon which we express the art of living. ”",
+      "author": "Ralph Lauren",
+      "role": "Executive Chairman & Chief Creative Officer"
+    },
+    "interviewsTitle": "Interviews & Insights Métiers",
+    "interviews": [
+      {
+        "quote": "Le luxe chez Ralph Lauren ne s'achète pas seulement, il se vit à chaque détail. Quand un client franchit le seuil du 173 Saint-Germain, il n'entre pas dans un magasin, il est reçu dans la demeure personnelle de Ralph Lauren.",
+        "author": "Camille Mercier",
+        "role": "Directrice du Flagship Saint-Germain",
+        "keyInsight": "L'art de recevoir et l'hospitalité au cœur du retail de luxe.",
+        "portrait": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        "quote": "La vitrine est le premier chapitre de l'histoire que nous racontons à nos clients. Si l'épinglage d'une veste Purple Label manque d'un millimètre de tension, c'est toute la poésie du vêtement qui s'effondre.",
+        "author": "Marc-Antoine Dubois",
+        "role": "Regional Merchandising Director EMEA",
+        "keyInsight": "La rigueur absolute du détail visuel comme vecteur de désirabilité.",
+        "portrait": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        "quote": "Chaque VIP est unique. Notre rôle est de devancer ses désirs stylistiques en créant une relation d'intimité basée sur la confiance, le respect des codes et un accompagnement sur-mesure au quotidien.",
+        "author": "Sophie Laurent",
+        "role": "Senior Clienteling & VIP Relationship Specialist",
+        "keyInsight": "Le clienteling prédictif et la fidélisation des collectionneurs UHNWI.",
+        "portrait": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop"
+      }
+    ]
+  },
+  "voyage": {
+    "chapter": "CHAPITRE VI · PERSPECTIVES & CONCLUSION",
+    "title": "Retour de Voyage & Bilan Personnel",
+    "subtitle": "Synthèse des acquis, rétrospective sur les apprentissages et projection dans l'industrie du luxe.",
+    "assessment": {
+      "title": "Bilan Personnel & Métamorphose Professionnelle",
+      "paragraphs": [
+        "Ce stage de 6 mois au sein du Flagship Saint-Germain de Ralph Lauren a constitué un véritable tremplin professionnel et humain. Loin d'être un simple exercice académique, cette expérience m'a plongé(e) au cœur des exigences réelles d'une Maison d'exception.",
+        "J'y ai développé une double compétence rare : la maitrise artistique du Storytelling visuel et la compréhension analytique de la performance commercial retail. Travailler quotidiennement au contact de la Direction France et de clients internationaux fortunés m'a appris l'humilité, le sens du service irréprochable et la quête permanente de la perfection."
+      ]
+    },
+    "hardSkills": [
+      "Visual Merchandising 3D & Floor Planning",
+      "Gestion des Vitrines Haute Couture & Éclairage Scénique",
+      "Clienteling CRM & Gestion des Réductions VIP",
+      "Retail Analytics & Analyse des Taux de Conversion",
+      "Conformité aux Directives de Marque Internationales (NYC)"
+    ],
+    "softSkills": [
+      "Gestion du Stress & Sang-froid en Période de Rush (Fashion Week)",
+      "Posture Professionnelle Haute Couture & Discrétion",
+      "Communication Interculturelle (Clientèle Internationale UHNWI)",
+      "Résolution de Problèmes Logistiques Imprévus en Urgence",
+      "Sens de l'Esthétique & Souci Obsessionnel du Détail"
+    ],
+    "projection": {
+      "badge": "PROJECTION PROFESSIONNELLE FUTURE",
+      "title": "Poursuite d'Ambition dans le Luxe International",
+      "description": "Forte de cette immersion réussie chez Ralph Lauren, mon ambition à court terme est d'intégrer une maison de haute couture ou de luxe global en tant que Junior Regional Merchandising Manager ou Client Experience Strategy Coordinator à Paris ou à New York."
+    }
+  },
+  "organigram": {
+    "badge": "STRUCTURE ORGANISATIONNELLE",
+    "title": "Organigramme Ralph Lauren EMEA & Flagship",
+    "level1": {
+      "label": "DIRECTION MONDIALE (NYC)",
+      "name": "Ralph Lauren",
+      "role": "Executive Chairman & Chief Creative Officer"
+    },
+    "level2": {
+      "label": "DIRECTION RÉGIONALE EMEA (Genève / Paris)",
+      "name": "Direction Retail & Merchandising EMEA",
+      "role": "Supervision des Flagships & Boutiques Réseau"
+    },
+    "flagship": {
+      "label": "FLAGSHIP SAINT-GERMAIN (PARIS)",
+      "director": "Camille Mercier · Directrice du Flagship",
+      "departments": {
+        "visual": {
+          "label": "Pôle Visuel & Image",
+          "manager": "Directrice Merchandising France",
+          "badge": "POSTE DU STAGE"
+        },
+        "sales": {
+          "label": "Pôle Sales & Styling",
+          "manager": "Senior Retail Sales Manager",
+          "details": "Équipe de 18 Personal Shoppers & Stylists Haute Couture"
+        },
+        "clienteling": {
+          "label": "Pôle Clienteling & VIP",
+          "manager": "Senior Clienteling Specialist",
+          "details": "Conciergerie VIP & Private Salon Styling"
+        }
+      }
+    }
+  },
+  "printSummary": {
+    "badge": "SYNTHÈSE DE SOUTENANCE ACADÉMIQUE",
+    "title": "Document de Synthèse Imprimable",
+    "headerLogo": "RALPH LAUREN · PARIS",
+    "session": "SESSION 2025-2026",
+    "documentTitle": "Rapport de Stage : Visual Merchandising & Clienteling de Luxe",
+    "executiveSummaryTitle": "Résumé Exécutif",
+    "executiveSummaryText": "Ce stage de 6 mois au sein du flagship amiral Ralph Lauren du 173 Boulevard Saint-Germain a porté sur l'orchestration du Visual Merchandising et la coordination de l'expérience client VIP pour les lignes Collection et Purple Label.",
+    "kpis": [
+      {
+        "label": "TAUX CONVERSION VIP",
+        "value": "+14.8%"
+      },
+      {
+        "label": "VITRINES SCÉNOGRAPHIÉES",
+        "value": "08 Vitrines"
+      }
+    ],
+    "conclusionTitle": "Conclusion & Apports Clés",
+    "conclusionText": "L'expérience acquise démontre l'importance capitale d'allier rigorisme esthétique et stratégie commerciale analytics dans le luxe contemporain.",
+    "printButton": "IMPRIMER / EXPORTER EN PDF"
+  },
+  "videoIntro": {
+    "topBadge": "RALPH LAUREN CINÉMATIQUE · INTRO",
+    "playButton": "LANCER LE FILM ÉDITORIAL",
+    "quote": "“ Style is very personal. It has nothing to do with fashion. Fashion is over quickly. Style is forever. ”",
+    "author": "— Ralph Lauren",
+    "skipButton": "ACCÉDER AU RAPPORT"
+  },
+  "navigation": {
+    "title": "SOMMAIRE ÉDITORIAL",
+    "items": [
+      {
+        "id": "maison",
+        "num": "I",
+        "title": "LA MAISON RALPH LAUREN",
+        "subtitle": "Histoire, univers de marque & organigramme des services",
+        "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "poste",
+        "num": "II",
+        "title": "MON POSTE & RESPONSABILITÉS",
+        "subtitle": "Mission clef, positionnement & objectifs chiffrés (KPIs)",
+        "highlight": true,
+        "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "carnet",
+        "num": "III",
+        "title": "CARNET DE BORD",
+        "subtitle": "Journal semaine par semaine, coulisses & résolution de défis",
+        "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "strategie",
+        "num": "IV",
+        "title": "ANALYSE STRATÉGIQUE",
+        "subtitle": "Concurrents, tendances luxe & problématique personnelle",
+        "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "rencontres",
+        "num": "V",
+        "title": "RENCONTRES & REGARDS CROISÉS",
+        "subtitle": "Interviews, portraits & grands formats de citations",
+        "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop"
+      },
+      {
+        "id": "voyage",
+        "num": "VI",
+        "title": "RETOUR DE VOYAGE",
+        "subtitle": "Bilan personnel, matrice de compétences & projection",
+        "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop"
+      }
+    ]
+  }
+}

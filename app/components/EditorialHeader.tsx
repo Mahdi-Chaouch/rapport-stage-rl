@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Menu, Printer, Sparkles } from "lucide-react";
+import content from "@/data/content";
 
 interface EditorialHeaderProps {
   onOpenMenu: () => void;
@@ -18,6 +19,8 @@ export default function EditorialHeader({
 }: EditorialHeaderProps) {
   if (!visible) return null;
 
+  const { global } = content;
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -31,7 +34,7 @@ export default function EditorialHeader({
         className="group flex items-center space-x-3 text-white transition-opacity duration-300"
       >
         <span className="font-serif text-xl md:text-2xl tracking-[0.2em] font-semibold border-b border-white/20 pb-0.5 group-hover:border-white transition-colors">
-          RALPH LAUREN
+          {global.siteTitle}
         </span>
         <span className="hidden sm:inline-block text-[9px] font-sans uppercase tracking-[0.3em] text-neutral-400 pl-2 border-l border-white/20">
           PARIS · 173 ST-GERMAIN

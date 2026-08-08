@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Quote, MessageSquare, UserCheck, Sparkles, Award } from "lucide-react";
+import content from "@/data/content";
 
 interface Interview {
   quote: string;
@@ -11,31 +12,10 @@ interface Interview {
   portrait: string;
 }
 
-const interviews: Interview[] = [
-  {
-    quote: "Le luxe chez Ralph Lauren ne s'achète pas seulement, il se vit à chaque détail. Quand un client franchit le seuil du 173 Saint-Germain, il n'entre pas dans un magasin, il est reçu dans la demeure personnelle de Ralph Lauren.",
-    author: "Camille Mercier",
-    role: "Directrice du Flagship Saint-Germain",
-    keyInsight: "L'art de recevoir et l'hospitalité au cœur du retail de luxe.",
-    portrait: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    quote: "La vitrine est le premier chapitre de l'histoire que nous racontons à nos clients. Si l'épinglage d'une veste Purple Label manque d'un millimètre de tension, c'est toute la poésie du vêtement qui s'effondre.",
-    author: "Marc-Antoine Dubois",
-    role: "Regional Merchandising Director EMEA",
-    keyInsight: "La rigueur absolue du détail visuel comme vecteur de désirabilité.",
-    portrait: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    quote: "Chaque VIP est unique. Notre rôle est de devancer ses désirs stylistiques en créant une relation d'intimité basée sur la confiance, le respect des codes et un accompagnement sur-mesure au quotidien.",
-    author: "Sophie Laurent",
-    role: "Senior Clienteling & VIP Relationship Specialist",
-    keyInsight: "Le clienteling predictif et la fidélisation des collectionneurs UHNWI.",
-    portrait: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop",
-  },
-];
-
 export default function RencontresSection() {
+  const { rencontres } = content;
+  const interviews = rencontres.interviews as Interview[];
+
   return (
     <section id="rencontres" className="relative py-24 md:py-36 px-6 md:px-16 border-b border-white/10">
       <div className="max-w-7xl mx-auto">
@@ -43,14 +23,14 @@ export default function RencontresSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 pb-8 border-b border-white/10 gap-6">
           <div>
             <span className="text-xs font-sans tracking-[0.3em] uppercase text-neutral-400 font-semibold">
-              CHAPITRE V · TÉMOIGNAGES & REGARDS CROISÉS
+              {rencontres.chapter}
             </span>
             <h2 className="font-serif text-4xl md:text-6xl text-white mt-3 font-normal tracking-tight">
-              Rencontres &amp; Paroles de Leaders
+              {rencontres.title}
             </h2>
           </div>
           <p className="text-neutral-400 font-sans text-sm md:text-base max-w-md italic">
-            Regards croisés avec les mentors et figures clés de la Maison Ralph Lauren durant 6 mois d'immersion.
+            {rencontres.subtitle}
           </p>
         </div>
 
@@ -60,17 +40,17 @@ export default function RencontresSection() {
 
           <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
             <span className="inline-block text-[10px] font-mono tracking-[0.3em] uppercase text-neutral-400 px-4 py-1.5 rounded-full border border-white/10 bg-white/5">
-              CITATION ÉDITORIALE HAUTE COUTURE
+              {rencontres.editorialQuote.badge}
             </span>
 
             <blockquote className="font-serif text-2xl sm:text-4xl md:text-5xl text-white font-light italic leading-tight">
-              “ Style is about confidence and living with grace. Clothes are just the canvas upon which we express the art of living. ”
+              {rencontres.editorialQuote.quote}
             </blockquote>
 
             <div className="pt-6 border-t border-white/10 max-w-xs mx-auto">
-              <p className="font-serif text-xl text-white font-normal">Ralph Lauren</p>
+              <p className="font-serif text-xl text-white font-normal">{rencontres.editorialQuote.author}</p>
               <p className="text-[10px] font-sans tracking-widest text-neutral-400 uppercase mt-0.5">
-                Executive Chairman &amp; Chief Creative Officer
+                {rencontres.editorialQuote.role}
               </p>
             </div>
           </div>
@@ -81,7 +61,7 @@ export default function RencontresSection() {
           <div className="flex items-center space-x-3 mb-8">
             <UserCheck className="w-5 h-5 text-white" />
             <h3 className="font-serif text-2xl md:text-3xl text-white tracking-wide">
-              Interviews &amp; Insights Métiers
+              {rencontres.interviewsTitle}
             </h3>
           </div>
 

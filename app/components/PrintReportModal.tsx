@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Printer, Download, CheckCircle2, Award } from "lucide-react";
+import content from "@/data/content";
 
 interface PrintReportModalProps {
   isOpen: boolean;
@@ -9,6 +10,8 @@ interface PrintReportModalProps {
 }
 
 export default function PrintReportModal({ isOpen, onClose }: PrintReportModalProps) {
+  const { global, printSummary } = content;
+
   const handlePrint = () => {
     window.print();
   };
@@ -27,10 +30,10 @@ export default function PrintReportModal({ isOpen, onClose }: PrintReportModalPr
             <div className="flex justify-between items-center border-b border-white/10 pb-6 mb-8">
               <div>
                 <span className="text-[10px] font-mono tracking-[0.3em] text-neutral-400 uppercase">
-                  SYNTHÈSE DE SOUTENANCE ACADÉMIQUE
+                  {printSummary.badge}
                 </span>
                 <h3 className="font-serif text-2xl md:text-4xl text-white mt-1">
-                  Document de Synthèse Imprimable
+                  {printSummary.title}
                 </h3>
               </div>
               <button
@@ -45,45 +48,43 @@ export default function PrintReportModal({ isOpen, onClose }: PrintReportModalPr
             <div id="printable-area" className="space-y-8 font-sans text-neutral-200">
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
                 <div className="flex justify-between items-center text-xs text-neutral-400 font-mono">
-                  <span>RALPH LAUREN · PARIS</span>
-                  <span>SESSION 2025-2026</span>
+                  <span>{printSummary.headerLogo}</span>
+                  <span>{printSummary.session}</span>
                 </div>
                 <h4 className="font-serif text-2xl text-white">
-                  Rapport de Stage : Visual Merchandising &amp; Clienteling de Luxe
+                  {printSummary.documentTitle}
                 </h4>
                 <p className="text-xs text-neutral-300">
-                  Étudiant(e) : <strong className="text-white">Éléonore de Saint-Germain</strong> · Master Management du Luxe &amp; de la Mode
+                  Étudiant(e) : <strong className="text-white">{global.studentName}</strong> · {global.academicProgram}
                 </p>
                 <p className="text-xs text-neutral-300">
-                  Entreprise d'accueil : <strong className="text-white">Ralph Lauren Flagship Saint-Germain (Paris)</strong>
+                  Entreprise d'accueil : <strong className="text-white">{global.company}</strong>
                 </p>
               </div>
 
               {/* Executive Summary */}
               <div className="space-y-4 text-xs md:text-sm leading-relaxed">
                 <h5 className="font-serif text-lg text-white font-medium border-b border-white/10 pb-2">
-                  Résumé Exécutif
+                  {printSummary.executiveSummaryTitle}
                 </h5>
                 <p>
-                  Ce stage de 6 mois au sein du flagship amiral Ralph Lauren du 173 Boulevard Saint-Germain a porté sur l'orchestration du Visual Merchandising et la coordination de l'expérience client VIP pour les lignes Collection et Purple Label.
+                  {printSummary.executiveSummaryText}
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 font-mono text-xs my-4">
-                  <div className="p-3 rounded-xl bg-white/5 border border-white/5">
-                    <span className="text-neutral-400 text-[10px] block">TAUX CONVERSION VIP</span>
-                    <span className="text-white text-xl font-serif font-bold">+14.8%</span>
-                  </div>
-                  <div className="p-3 rounded-xl bg-white/5 border border-white/5">
-                    <span className="text-neutral-400 text-[10px] block">VITRINES SCÉNOGRAPHIÉES</span>
-                    <span className="text-white text-xl font-serif font-bold">08 Vitrines</span>
-                  </div>
+                  {printSummary.kpis.map((kpi, index) => (
+                    <div key={index} className="p-3 rounded-xl bg-white/5 border border-white/5">
+                      <span className="text-neutral-400 text-[10px] block">{kpi.label}</span>
+                      <span className="text-white text-xl font-serif font-bold">{kpi.value}</span>
+                    </div>
+                  ))}
                 </div>
 
                 <h5 className="font-serif text-lg text-white font-medium border-b border-white/10 pb-2 pt-4">
-                  Conclusion &amp; Apports Clés
+                  {printSummary.conclusionTitle}
                 </h5>
                 <p>
-                  L'expérience acquise démontre l'importance capitale d'allier rigorisme esthétique et stratégie commerciale analytics dans le luxe contemporain.
+                  {printSummary.conclusionText}
                 </p>
               </div>
             </div>
@@ -95,7 +96,7 @@ export default function PrintReportModal({ isOpen, onClose }: PrintReportModalPr
                 className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-white text-black font-sans text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition-all"
               >
                 <Printer className="w-4 h-4" />
-                <span>IMPRIMER / EXPORTER EN PDF</span>
+                <span>{printSummary.printButton}</span>
               </button>
             </div>
           </div>

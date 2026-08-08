@@ -15,6 +15,7 @@ import OrganigramModal from "./components/OrganigramModal";
 import PrintReportModal from "./components/PrintReportModal";
 import Footer from "./components/Footer";
 import { ArrowDown, Star, Compass, Award, Printer } from "lucide-react";
+import content from "@/data/content";
 
 export default function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
@@ -22,6 +23,8 @@ export default function Home() {
   const [isOrganigramOpen, setIsOrganigramOpen] = useState(false);
   const [isPrintOpen, setIsPrintOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("INTRO");
+
+  const { global } = content;
 
   // Scroll listener to update active section in header
   useEffect(() => {
@@ -100,7 +103,7 @@ export default function Home() {
                 >
                   <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                   <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-neutral-300">
-                    RAPPORT DE STAGE INTERACTIF · DIRECTION RETAIL
+                    {global.siteSubTitle}
                   </span>
                 </motion.div>
 
@@ -110,7 +113,7 @@ export default function Home() {
                   transition={{ duration: 1, delay: 0.4 }}
                   className="font-serif text-5xl sm:text-7xl md:text-9xl text-white font-light tracking-tight leading-[0.95] uppercase"
                 >
-                  RALPH LAUREN
+                  {global.siteTitle}
                 </motion.h1>
 
                 <motion.p
@@ -119,9 +122,9 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="font-serif text-xl sm:text-2xl md:text-3xl text-neutral-300 font-light italic max-w-3xl mx-auto"
                 >
-                  Visual Merchandising &amp; Client Experience Coordinator <br />
+                  {global.heroQuote} <br />
                   <span className="text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-400 font-normal">
-                    FLAGSHIP SAINT-GERMAIN · 173 BOULEVARD SAINT-GERMAIN, PARIS
+                    {global.heroLocation}
                   </span>
                 </motion.p>
 
@@ -137,7 +140,7 @@ export default function Home() {
                     className="group relative inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-white text-black font-sans text-xs tracking-[0.25em] uppercase font-bold hover:bg-neutral-200 transition-all duration-300 shadow-2xl hover:scale-105"
                   >
                     <Award className="w-4 h-4 text-black" />
-                    <span>DÉCOUVRIR LE POSTE (CHAPITRE II)</span>
+                    <span>{global.discoverRoleButton}</span>
                   </button>
 
                   <button
@@ -145,7 +148,7 @@ export default function Home() {
                     className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-black/60 border border-white/20 text-white font-sans text-xs tracking-[0.25em] uppercase font-semibold hover:border-white hover:bg-black transition-all duration-300 backdrop-blur-md"
                   >
                     <Compass className="w-4 h-4 text-white" />
-                    <span>EXPLORER LE SOMMAIRE</span>
+                    <span>{global.exploreSummaryButton}</span>
                   </button>
                 </motion.div>
               </div>
@@ -153,18 +156,18 @@ export default function Home() {
               {/* Bottom Metadata & Scroll Cue */}
               <div className="flex flex-col md:flex-row justify-between items-center text-xs font-sans text-neutral-400 gap-4 pt-8 border-t border-white/10">
                 <div className="flex items-center space-x-4">
-                  <span className="text-white font-medium">Éléonore de Saint-Germain</span>
+                  <span className="text-white font-medium">{global.studentName}</span>
                   <span>·</span>
-                  <span>Master Luxe &amp; Mode</span>
+                  <span>{global.academicProgram}</span>
                   <span>·</span>
-                  <span className="text-neutral-300">Tutrice : Camille Mercier</span>
+                  <span className="text-neutral-300">Tutrice : {global.companyTutor}</span>
                 </div>
 
                 <button
                   onClick={() => handleSelectSection("maison")}
                   className="flex items-center space-x-2 text-[10px] tracking-[0.3em] uppercase text-neutral-400 hover:text-white transition-colors"
                 >
-                  <span>DÉFILER L'ÉDITORIAL</span>
+                  <span>{global.scrollPrompt}</span>
                   <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
                 </button>
               </div>

@@ -1,12 +1,15 @@
 "use client";
 
 import { ArrowUp } from "lucide-react";
+import content from "@/data/content";
 
 interface FooterProps {
   onSelectSection: (id: string) => void;
 }
 
 export default function Footer({ onSelectSection }: FooterProps) {
+  const { global } = content;
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -18,10 +21,10 @@ export default function Footer({ onSelectSection }: FooterProps) {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-b border-white/10 pb-12">
           <div>
             <span className="font-serif text-3xl md:text-4xl text-white tracking-[0.2em]">
-              RALPH LAUREN
+              {global.siteTitle}
             </span>
             <p className="text-xs text-neutral-400 mt-2 font-sans">
-              RAPPORT DE STAGE INTERACTIF · DIRECTION RETAIL MERCHANDISING &amp; VIP CLIENTELING
+              {global.siteSubTitle}
             </p>
           </div>
 
@@ -76,30 +79,29 @@ export default function Footer({ onSelectSection }: FooterProps) {
           {/* Col 2: Student & Institution */}
           <div className="space-y-3">
             <h4 className="font-serif text-base text-white font-medium">Élève Rapporteur</h4>
-            <p className="text-white font-medium">Éléonore de Saint-Germain</p>
-            <p className="text-neutral-400">Master 2 Management du Luxe &amp; des Défilés Haute Couture</p>
+            <p className="text-white font-medium">{global.studentName}</p>
+            <p className="text-neutral-400">{global.academicProgram}</p>
             <p className="text-neutral-500 text-[11px] pt-2">Promotion 2025-2026</p>
           </div>
 
           {/* Col 3: Flagship Address */}
           <div className="space-y-3">
             <h4 className="font-serif text-base text-white font-medium">Flagship Amiral</h4>
-            <p className="text-white">173 Boulevard Saint-Germain</p>
-            <p className="text-neutral-400">75006 Paris, France</p>
+            <p className="text-white">{global.location}</p>
             <p className="text-neutral-500 text-[11px]">Hôtel Particulier XVIIe siècle</p>
           </div>
 
           {/* Col 4: Mentors */}
           <div className="space-y-3">
             <h4 className="font-serif text-base text-white font-medium">Encadrement</h4>
-            <p>Tutrice Entreprise : <span className="text-white">Camille Mercier (Directrice Flagship)</span></p>
-            <p>Tutrice Académique : <span className="text-white">Prof. Hélène Vance</span></p>
+            <p>Tutrice Entreprise : <span className="text-white">{global.companyTutor}</span></p>
+            <p>Tutrice Académique : <span className="text-white">{global.academicTutor}</span></p>
           </div>
         </div>
 
         {/* Legal & Academic Disclaimer */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-[10px] text-neutral-500 gap-4 font-mono">
-          <p>© 2026 RALPH LAUREN — Rapport de Stage Interactif par Éléonore de Saint-Germain.</p>
+          <p>© 2026 {global.siteTitle} — Rapport de Stage Interactif par {global.studentName}.</p>
           <p>Tous droits réservés · Usage académique et de soutenance professionnelle.</p>
         </div>
       </div>

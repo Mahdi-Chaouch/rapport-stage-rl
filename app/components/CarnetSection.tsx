@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Filter, AlertTriangle, CheckCircle, Eye, Sparkles } from "lucide-react";
+import content from "@/data/content";
 
 interface TimelineEntry {
   week: string;
-  category: "merch" | "clienteling" | "crise" | "management";
+  category: string;
   title: string;
   concreteTasks: string[];
   behindTheScenes: string;
@@ -14,64 +15,11 @@ interface TimelineEntry {
   solution: string;
 }
 
-const entries: TimelineEntry[] = [
-  {
-    week: "Semaines 01 - 04",
-    category: "merch",
-    title: "Immersion & Appropriation des Directives HQ New York",
-    concreteTasks: [
-      "Étude approfondie du Book Merchandising Saison automne-hiver transmis par Madison Avenue.",
-      "Inventaire visuel et audit de conformité des 3 étages du Flagship Saint-Germain.",
-      "Formation aux techniques d'épinglage couture et d'éclairage ciblé des mannequins Purple Label.",
-    ],
-    behindTheScenes: "Montage nocturne de 22h à 05h du matin pour la réorganisation complète du rez-de-chaussée avant l'ouverture VIP.",
-    challenge: "Incompatibilité entre l'architecture de l'Hôtel particulier (moulures d'époque) et les structures modulaires recommandées par le siège US.",
-    solution: "Conception de fixations invisibles sur mesure validées par l'architecte du patrimoine et la Direction Merchandising EMEA.",
-  },
-  {
-    week: "Semaines 05 - 10",
-    category: "clienteling",
-    title: "Orchestration des Ventes Privées VIP & Private Salon Styling",
-    concreteTasks: [
-      "Aménagement du Salon Privé Haute Couture au 2ème étage pour l'accueil des clients UHNWI.",
-      "Scénographie thématique autour de la ligne Ralph Lauren Collection avec pièces uniques de défilé.",
-      "Coordination directe avec les Personal Shoppers pour l'essayage sur mannequin personnalisé.",
-    ],
-    behindTheScenes: "Mise à disposition en moins de 2 heures d'un ensemble défilé rare directement rapatrié depuis les réserves de Milan.",
-    challenge: "Affluence record lors de la soirée VIP créant des ruptures visuelles rapides sur les portants phares.",
-    solution: "Instauration d'un protocole de réassort miroir en temps réel avec un runner dédié en réserve.",
-  },
-  {
-    week: "Semaines 11 - 16",
-    category: "crise",
-    title: "Gestion de Crise : Paris Fashion Week & Rush Logistique",
-    concreteTasks: [
-      "Transformation de la façade du Flagship pour le lancement mondial de la campagne thématique.",
-      "Installation des vitrines interactives et vitrages miroir haute réflexion.",
-      "Gestion des flux de célébrités et presse internationale en collaboration avec le service RP.",
-    ],
-    behindTheScenes: "Livraison bloquée en douane à Roissy de 4 silhouettes de vitrine la veille de la présentation presse.",
-    challenge: "Risque de vitrine vide pour le passage des journalistes de Vogue et Harper's Bazaar.",
-    solution: "Recomposition d'urgence avec les pièces du showroom parisien et stylisme alternatif approuvé en direct par FaceTime avec le VP Merchandising NYC.",
-  },
-  {
-    week: "Semaines 17 - 24",
-    category: "management",
-    title: "Bascule Saisonnière Printemps & Bilan des Directives Visuelles",
-    concreteTasks: [
-      "Supervision du démontage des vitrines d'hiver et installation des décors de Printemps.",
-      "Rédaction du rapport de synthèse visuelle et recommandations pour les équipes de vente.",
-      "Présentation du bilan de stage devant la Direction Retail France.",
-    ],
-    behindTheScenes: "Création d'un mini-guide imprimé 'Les 10 Commandements du Merchandising Saint-Germain' distribué aux nouveaux vendeurs.",
-    challenge: "Maintenir un niveau d'excellence visuelle constant durant la période des soldes tout en gérant un fort volume de trafic.",
-    solution: "Mise en place de 'Visits Flash' quotidiennes de 15 minutes à 14h pour réaligner chaque mannequin et portant.",
-  },
-];
-
 export default function CarnetSection() {
+  const { carnet } = content;
   const [filter, setFilter] = useState<string>("all");
 
+  const entries = carnet.entries as TimelineEntry[];
   const filteredEntries = filter === "all" ? entries : entries.filter((e) => e.category === filter);
 
   return (
@@ -81,55 +29,28 @@ export default function CarnetSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/10 gap-6">
           <div>
             <span className="text-xs font-sans tracking-[0.3em] uppercase text-neutral-400 font-semibold">
-              CHAPITRE III · CHRONIQUE DE TERRAIN
+              {carnet.chapter}
             </span>
             <h2 className="font-serif text-4xl md:text-6xl text-white mt-3 font-normal tracking-tight">
-              Carnet de Bord &amp; Journal de Mission
+              {carnet.title}
             </h2>
           </div>
 
           {/* Category Filters */}
           <div className="flex flex-wrap gap-2">
-            <button
-              onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-full text-xs font-sans tracking-widest uppercase transition-all ${
-                filter === "all"
-                  ? "bg-white text-black font-semibold"
-                  : "bg-white/5 border border-white/10 text-neutral-400 hover:text-white"
-              }`}
-            >
-              TOUTES (24 SEMAINES)
-            </button>
-            <button
-              onClick={() => setFilter("merch")}
-              className={`px-4 py-2 rounded-full text-xs font-sans tracking-widest uppercase transition-all ${
-                filter === "merch"
-                  ? "bg-white text-black font-semibold"
-                  : "bg-white/5 border border-white/10 text-neutral-400 hover:text-white"
-              }`}
-            >
-              VISUAL MERCHANDISING
-            </button>
-            <button
-              onClick={() => setFilter("clienteling")}
-              className={`px-4 py-2 rounded-full text-xs font-sans tracking-widest uppercase transition-all ${
-                filter === "clienteling"
-                  ? "bg-white text-black font-semibold"
-                  : "bg-white/5 border border-white/10 text-neutral-400 hover:text-white"
-              }`}
-            >
-              CLIENTELING VIP
-            </button>
-            <button
-              onClick={() => setFilter("crise")}
-              className={`px-4 py-2 rounded-full text-xs font-sans tracking-widest uppercase transition-all ${
-                filter === "crise"
-                  ? "bg-white text-black font-semibold"
-                  : "bg-white/5 border border-white/10 text-neutral-400 hover:text-white"
-              }`}
-            >
-              GESTION DE CRISE
-            </button>
+            {carnet.filters.map((f) => (
+              <button
+                key={f.key}
+                onClick={() => setFilter(f.key)}
+                className={`px-4 py-2 rounded-full text-xs font-sans tracking-widest uppercase transition-all ${
+                  filter === f.key
+                    ? "bg-white text-black font-semibold"
+                    : "bg-white/5 border border-white/10 text-neutral-400 hover:text-white"
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
           </div>
         </div>
 
