@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "RALPH LAUREN — Rapport de Stage Interactif | Direction Merchandising",
   description: "Rapport de stage d'exception pour Ralph Lauren Flagship Saint-Germain. Éditorial interactif de mode, analyse stratégique, carnet de bord et retour d'expérience.",
   keywords: ["Ralph Lauren", "Rapport de stage", "Luxury Fashion", "Visual Merchandising", "Fashion Editorial", "Next.js"],
-  authors: [{ name: "Éléonore de Saint-Germain" }],
+  authors: [{ name: "Constantin LESLEY-JEYAKANTHAN" }],
 };
 
 export const viewport = {
