@@ -162,7 +162,7 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
             {/* Bottom Status & Skip trigger */}
             <div className="flex justify-between items-end w-full pointer-events-auto">
               <div>
-                <p className="font-serif italic text-white/70 text-sm md:text-base max-w-sm">
+                <p className="font-serif italic text-white/70 text-xl md:text-2xl max-w-xl">
                   {videoIntro.quote}
                 </p>
                 <p className="text-[10px] tracking-widest text-neutral-400 mt-1 uppercase font-sans">
