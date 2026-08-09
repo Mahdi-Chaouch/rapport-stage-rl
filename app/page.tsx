@@ -119,7 +119,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.4 }}
-                  className="font-serif text-5xl sm:text-6xl md:text-8xl text-white font-light tracking-tight leading-[0.95] uppercase"
+                  className="text-[10px] font-sans tracking-[0.3em] uppercase text-white font-semibold">
                 >
                   Bienvenue<br />à Bord
                 </motion.h1>
