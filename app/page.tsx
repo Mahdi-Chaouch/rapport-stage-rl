@@ -19,12 +19,20 @@ import content from "@/data/content";
 
 export default function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOrganigramOpen, setIsOrganigramOpen] = useState(false);
   const [isPrintOpen, setIsPrintOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("INTRO");
 
   const { global } = content;
+
+  useEffect(() => {
+    if (videoEnded) {
+      const timer = setTimeout(() => setShowIntro(false), 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [videoEnded]);
 
   useEffect(() => {
     if (!videoEnded) return;
@@ -59,10 +67,20 @@ export default function Home() {
   return (
     <main className="relative min-h-screen bg-[#050505] text-[#F4F4F5] overflow-x-hidden">
 
-      <VideoIntro
-        videoEnded={videoEnded}
-        onVideoEnd={() => setVideoEnded(true)}
-      />
+      <AnimatePresence>
+        {showIntro && (
+          <motion.div
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="fixed inset-0 z-40"
+          >
+            <VideoIntro
+              videoEnded={videoEnded}
+              onVideoEnd={() => setVideoEnded(true)}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <EditorialHeader
         visible={videoEnded}
@@ -77,7 +95,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-30"
+            className="relative z-[45]"
           >
             <section
               id="hero"
