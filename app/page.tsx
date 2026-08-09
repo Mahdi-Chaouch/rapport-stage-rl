@@ -14,12 +14,11 @@ import VoyageSection from "./components/VoyageSection";
 import OrganigramModal from "./components/OrganigramModal";
 import PrintReportModal from "./components/PrintReportModal";
 import Footer from "./components/Footer";
-import { ArrowDown, Compass, Award } from "lucide-react";
-import content from "./data/content";
+import { ArrowDown, Compass } from "lucide-react";
+import content from "@/data/content";
 
 export default function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
-  const [showContent, setShowContent] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOrganigramOpen, setIsOrganigramOpen] = useState(false);
   const [isPrintOpen, setIsPrintOpen] = useState(false);
@@ -27,31 +26,19 @@ export default function Home() {
 
   const { global } = content;
 
-  // Déclenche l'affichage du contenu 500ms après la fin de la vidéo
-  useEffect(() => {
-    if (videoEnded) {
-      const timer = setTimeout(() => setShowContent(true), 500);
-      return () => clearTimeout(timer);
-    }
-  }, [videoEnded]);
-
-  // Scroll listener to update active section in header
   useEffect(() => {
     if (!videoEnded) return;
-
     const sections = [
-      { id: "hero", label: "00 · INTRODUCTION ÉDITORIALE" },
-      { id: "maison", label: "I · LA MAISON RALPH LAUREN" },
-      { id: "poste", label: "II · MON POSTE & RESPONSABILITÉS" },
-      { id: "carnet", label: "III · CARNET DE BORD" },
-      { id: "strategie", label: "IV · ANALYSE STRATÉGIQUE" },
+      { id: "hero",       label: "00 · INTRODUCTION ÉDITORIALE" },
+      { id: "maison",     label: "I · LA MAISON RALPH LAUREN" },
+      { id: "poste",      label: "II · MON POSTE & RESPONSABILITÉS" },
+      { id: "carnet",     label: "III · CARNET DE BORD" },
+      { id: "strategie",  label: "IV · ANALYSE STRATÉGIQUE" },
       { id: "rencontres", label: "V · RENCONTRES & INSIGHTS" },
-      { id: "voyage", label: "VI · RETOUR DE VOYAGE" },
+      { id: "voyage",     label: "VI · RETOUR DE VOYAGE" },
     ];
-
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 300;
-
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = document.getElementById(sections[i].id);
         if (element && element.offsetTop <= scrollPosition) {
@@ -60,27 +47,23 @@ export default function Home() {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [videoEnded]);
 
   const handleSelectSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <main className="relative min-h-screen bg-[#050505] text-[#F4F4F5] overflow-x-hidden">
-      {/* 1. Fullscreen Video Intro Mechanic */}
+
       <VideoIntro
         videoEnded={videoEnded}
         onVideoEnd={() => setVideoEnded(true)}
       />
 
-      {/* 2. Fixed Top Editorial Navigation Header */}
       <EditorialHeader
         visible={videoEnded}
         activeSection={activeSection}
@@ -88,22 +71,20 @@ export default function Home() {
         onOpenPrint={() => setIsPrintOpen(true)}
       />
 
-      {/* 3. Main Editorial Hero & Sections (Fades in ONLY when video ends) */}
       <AnimatePresence>
-        {showContent && (
+        {videoEnded && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-30"
           >
-            {/* HERO SECTION - INTRODUCTION ÉDITORIALE */}
             <section
               id="hero"
               className="relative min-h-screen flex flex-col justify-between px-6 md:px-16 pt-32 pb-16 border-b border-white/10"
             >
-              {/* Central Title Block */}
-              <div className="my-auto max-w-6xl mx-auto text-center space-y-8">
+              <div className="my-auto max-w-4xl mx-auto text-center space-y-10">
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -116,43 +97,40 @@ export default function Home() {
                   </span>
                 </motion.div>
 
-                {/* Titre de l'introduction éditoriale */}
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.4 }}
-                  className="font-serif text-5xl sm:text-7xl md:text-9xl text-white font-light tracking-tight leading-[0.95] uppercase"
+                  className="font-serif text-5xl sm:text-6xl md:text-8xl text-white font-light tracking-tight leading-[0.95] uppercase"
                 >
-                  {global.siteTitle}
+                  Bienvenue<br />à Bord
                 </motion.h1>
 
-                {/* Paragraphe de présentation de l'immersion */}
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="font-serif text-xl sm:text-2xl md:text-3xl text-neutral-300 font-light italic max-w-3xl mx-auto"
+                  className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-light italic max-w-2xl mx-auto leading-relaxed"
                 >
-                  {global.heroQuote} 
-                  <br />
-                  <span className="text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-400 font-normal mt-4 block">
+                  Ce portfolio retrace trois mois d&apos;immersion au cœur d&apos;une
+                  des plus grandes maisons de mode du monde — entre les coulisses
+                  du luxe, les clients d&apos;exception et les défis du quotidien.
+                  <span className="block mt-4 text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-500 font-normal">
                     {global.heroLocation}
                   </span>
                 </motion.p>
 
-                {/* Boutons d'action */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="flex flex-wrap items-center justify-center gap-4 pt-6"
+                  className="flex flex-wrap items-center justify-center gap-4 pt-4"
                 >
                   <button
-                    onClick={() => handleSelectSection("poste")}
-                    className="group relative inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-white text-black font-sans text-xs tracking-[0.25em] uppercase font-bold hover:bg-neutral-200 transition-all duration-300 shadow-2xl hover:scale-105"
+                    onClick={() => handleSelectSection("maison")}
+                    className="group inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-white text-black font-sans text-xs tracking-[0.25em] uppercase font-bold hover:bg-neutral-200 transition-all duration-300 shadow-2xl hover:scale-105"
                   >
-                    <Award className="w-4 h-4 text-black" />
-                    <span>{global.discoverRoleButton}</span>
+                    <span>Commencer le Voyage →</span>
                   </button>
 
                   <button
@@ -163,9 +141,9 @@ export default function Home() {
                     <span>{global.exploreSummaryButton}</span>
                   </button>
                 </motion.div>
+
               </div>
 
-              {/* Barre de métadonnées bas de page */}
               <div className="flex flex-col md:flex-row justify-between items-center text-xs font-sans text-neutral-400 gap-4 pt-8 border-t border-white/10">
                 <div className="flex items-center space-x-4">
                   <span className="text-white font-medium">{global.studentName}</span>
@@ -174,7 +152,6 @@ export default function Home() {
                   <span>·</span>
                   <span className="text-neutral-300">Tuteur de stage : {global.companyTutor}</span>
                 </div>
-
                 <button
                   onClick={() => handleSelectSection("maison")}
                   className="flex items-center space-x-2 text-[10px] tracking-[0.3em] uppercase text-neutral-400 hover:text-white transition-colors"
@@ -185,36 +162,32 @@ export default function Home() {
               </div>
             </section>
 
-            {/* SECTIONS DU RAPPORT */}
             <MaisonSection onOpenOrganigram={() => setIsOrganigramOpen(true)} />
             <PosteSection />
             <CarnetSection />
             <StrategieSection />
             <RencontresSection />
             <VoyageSection />
-
-            {/* FOOTER */}
             <Footer onSelectSection={handleSelectSection} />
+
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* MODALES */}
       <Navigation
         isOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}
         onSelectSection={handleSelectSection}
       />
-
       <OrganigramModal
         isOpen={isOrganigramOpen}
         onClose={() => setIsOrganigramOpen(false)}
       />
-
       <PrintReportModal
         isOpen={isPrintOpen}
         onClose={() => setIsPrintOpen(false)}
       />
+
     </main>
   );
 }
