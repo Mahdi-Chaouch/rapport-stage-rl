@@ -15,7 +15,7 @@ import OrganigramModal from "./components/OrganigramModal";
 import PrintReportModal from "./components/PrintReportModal";
 import Footer from "./components/Footer";
 import { ArrowDown, Compass, Award } from "lucide-react";
-import content from "@/data/content";
+import content from "./data/content";
 
 export default function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
