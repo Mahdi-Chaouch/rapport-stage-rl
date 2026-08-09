@@ -102,8 +102,8 @@ export default function Footer({ onSelectSection }: FooterProps) {
 
         {/* Legal */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-[10px] text-neutral-500 gap-4 font-mono">
-          <p>© 2026 {global.siteTitle} — Rapport de Stage Interactif par {global.studentName}.</p>
-          <p>Tous droits réservés · Usage académique et de soutenance professionnelle.</p>
+          <p>© 2026 {global.siteTitle} — Rapport de stage interactif par {global.studentName}.</p>
+          <p>Tous droits réservés · Usage académique et professionnelle.</p>
         </div>
 
       </div>
