@@ -166,7 +166,7 @@ export default function Home() {
                   <span>·</span>
                   <span>{global.academicProgram}</span>
                   <span>·</span>
-                  <span className="text-neutral-300">Tutrice : {global.companyTutor}</span>
+                  <span className="text-neutral-300">Tuteur de stage : {global.companyTutor}</span>
                 </div>
 
                 <button
