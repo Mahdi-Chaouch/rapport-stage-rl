@@ -78,18 +78,17 @@ export default function Footer({ onSelectSection }: FooterProps) {
 
           {/* Col 2: Student & Institution */}
           <div className="space-y-3">
-            <h4 className="font-serif text-base text-white font-medium">Élève Rapporteur</h4>
+            <h4 className="font-serif text-base text-white font-medium">Étudiant</h4>
             <p className="text-white font-medium">{global.studentName}</p>
             <p className="text-neutral-400">{global.academicProgram}</p>
-            <p className="text-neutral-500 text-[11px] pt-2">Promotion 2025-2026</p>
+            <p className="text-neutral-500 text-[11px] pt-2">Promotion 28LM1B</p>
           </div>
 
           {/* Col 3: Flagship Address */}
           <div className="space-y-3">
-            <h4 className="font-serif text-base text-white font-medium">Flagship Amiral</h4>
+            <h4 className="font-serif text-base text-white font-medium">Adresse de la boutique</h4>
             <p className="text-white">{global.location}</p>
-            <p className="text-neutral-500 text-[11px]">Hôtel Particulier XVIIe siècle</p>
-          </div>
+            <p className="text-neutral-500 text-[11px]">
 
           {/* Col 4: Mentors */}
           <div className="space-y-3">
