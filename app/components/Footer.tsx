@@ -95,7 +95,7 @@ export default function Footer({ onSelectSection }: FooterProps) {
           <div className="space-y-3">
             <h4 className="font-serif text-base text-white font-medium">Encadrement</h4>
             <p>Tuteur de stage : <span className="text-white">{global.companyTutor}</span></p>
-            <p>Tutrice Académique : <span className="text-white">{global.academicTutor}</span></p>
+<p>Tutrice académique : <span className="text-white">{global.academicTutor}</span></p>
           </div>
         </div>
 
