@@ -134,8 +134,8 @@ export default function Navigation({ isOpen, onClose, onSelectSection }: Navigat
               </p>
             </div>
             <div className="text-left md:text-right text-[11px]">
-              <p>Tutrice de stage : <span className="text-neutral-300">{global.companyTutor}</span></p>
-              <p>Promotrice académique : <span className="text-neutral-300">{global.academicTutor}</span></p>
+              <p>Tuteur de stage : <span className="text-neutral-300">{global.companyTutor}</span></p>
+              <p>Tutrice académique : <span className="text-neutral-300">{global.academicTutor}</span></p>
             </div>
           </div>
         </motion.div>
