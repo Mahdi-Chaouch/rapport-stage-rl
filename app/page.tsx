@@ -14,7 +14,7 @@ import VoyageSection from "./components/VoyageSection";
 import OrganigramModal from "./components/OrganigramModal";
 import PrintReportModal from "./components/PrintReportModal";
 import Footer from "./components/Footer";
-import { ArrowDown, Star, Compass, Award, Printer } from "lucide-react";
+import { ArrowDown, Compass, Award } from "lucide-react";
 import content from "@/data/content";
 
 export default function Home() {
@@ -121,9 +121,9 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.4 }}
-                  className="font-serif text-5xl sm:text-6xl md:text-8xl text-white font-light tracking-tight leading-[0.95] uppercase"
+                  className="font-serif text-5xl sm:text-7xl md:text-9xl text-white font-light tracking-tight leading-[0.95] uppercase"
                 >
-                  Bienvenue à Bord
+                  {global.siteTitle}
                 </motion.h1>
 
                 {/* Paragraphe de présentation de l'immersion */}
@@ -131,11 +131,9 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-300 font-light italic max-w-2xl mx-auto leading-relaxed"
+                  className="font-serif text-xl sm:text-2xl md:text-3xl text-neutral-300 font-light italic max-w-3xl mx-auto"
                 >
-                  Ce portfolio retrace trois mois d'immersion au cœur d'une des plus 
-                  grandes maisons de mode du monde — entre les coulisses du luxe, 
-                  les clients d'exception et les défis du quotidien.
+                  {global.heroQuote} 
                   <br />
                   <span className="text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-400 font-normal mt-4 block">
                     {global.heroLocation}
@@ -150,15 +148,16 @@ export default function Home() {
                   className="flex flex-wrap items-center justify-center gap-4 pt-6"
                 >
                   <button
-                    onClick={() => handleSelectSection("maison")}
-                    className="group relative inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-white text-black font-sans text-xs tracking-[0.25em] uppercase font-bold hover:bg-neutral-200"
+                    onClick={() => handleSelectSection("poste")}
+                    className="group relative inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-white text-black font-sans text-xs tracking-[0.25em] uppercase font-bold hover:bg-neutral-200 transition-all duration-300 shadow-2xl hover:scale-105"
                   >
-                    <span>Commencer le Voyage →</span>
+                    <Award className="w-4 h-4 text-black" />
+                    <span>{global.discoverRoleButton}</span>
                   </button>
 
                   <button
                     onClick={() => setIsMenuOpen(true)}
-                    className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-black/60 border border-white/20 text-white font-sans text-xs tracking-[0.25em] uppercase font-semibold hover:border-white/40"
+                    className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-black/60 border border-white/20 text-white font-sans text-xs tracking-[0.25em] uppercase font-semibold hover:border-white hover:bg-black transition-all duration-300 backdrop-blur-md"
                   >
                     <Compass className="w-4 h-4 text-white" />
                     <span>{global.exploreSummaryButton}</span>
