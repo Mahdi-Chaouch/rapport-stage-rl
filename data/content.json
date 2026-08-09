@@ -429,7 +429,7 @@
         "id": "poste",
         "num": "II",
         "title": "MON POSTE & RESPONSABILITÉS",
-        "subtitle": "Mission clef, positionnement & objectifs chiffrés (KPIs)",
+        "subtitle": "Mission clef, merchandising & accueil client",
         "highlight": true,
         "image": "https://images.unsplash.com/photo-1560090156-2bff0387aa6b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
@@ -437,7 +437,7 @@
         "id": "carnet",
         "num": "III",
         "title": "CARNET DE BORD",
-        "subtitle": "Journal semaine par semaine, coulisses & résolution de défis",
+        "subtitle": "Journal semaine par semaine, les coulisses du stage",
         "image": "https://i.pinimg.com/1200x/5d/cd/79/5dcd793bd31607d1d8b709a9d9c99c7e.jpg"
       },
       {
@@ -451,14 +451,14 @@
         "id": "rencontres",
         "num": "V",
         "title": "RENCONTRES & REGARDS CROISÉS",
-        "subtitle": "Interviews, portraits & grands formats de citations",
+        "subtitle": "Interviews, portraits de personnalités de la boutique",
         "image": "https://i.pinimg.com/1200x/f5/0a/ed/f50aed42c3719836c6aad8198c391b92.jpg"
       },
       {
         "id": "voyage",
         "num": "VI",
         "title": "RETOUR DE VOYAGE",
-        "subtitle": "Bilan personnel, matrice de compétences & projection",
+        "subtitle": "Bilan personnel & projection",
         "image": "https://i.pinimg.com/1200x/70/d9/11/70d911a9a3368512a7be6cf9b001fed0.jpg"
       }
     ]
