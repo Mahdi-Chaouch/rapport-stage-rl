@@ -37,13 +37,13 @@ export default function Home() {
   useEffect(() => {
     if (!videoEnded) return;
     const sections = [
-      { id: "hero",       label: "00 · INTRODUCTION ÉDITORIALE" },
-      { id: "maison",     label: "I · LA MAISON RALPH LAUREN" },
-      { id: "poste",      label: "II · MON POSTE & RESPONSABILITÉS" },
-      { id: "carnet",     label: "III · CARNET DE BORD" },
-      { id: "strategie",  label: "IV · ANALYSE STRATÉGIQUE" },
+      { id: "hero", label: "00 · INTRODUCTION ÉDITORIALE" },
+      { id: "maison", label: "I · LA MAISON RALPH LAUREN" },
+      { id: "poste", label: "II · MON POSTE & RESPONSABILITÉS" },
+      { id: "carnet", label: "III · CARNET DE BORD" },
+      { id: "strategie", label: "IV · ANALYSE STRATÉGIQUE" },
       { id: "rencontres", label: "V · RENCONTRES & INSIGHTS" },
-      { id: "voyage",     label: "VI · RETOUR DE VOYAGE" },
+      { id: "voyage", label: "VI · RETOUR DE VOYAGE" },
     ];
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 300;
@@ -110,7 +110,7 @@ export default function Home() {
                   className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-white/20 bg-black/50 backdrop-blur-md"
                 >
                   <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                  <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-neutral-300">
+                  <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-white font-semibold">
                     {global.siteSubTitle}
                   </span>
                 </motion.div>
@@ -119,7 +119,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.4 }}
-                  className="text-[10px] font-sans tracking-[0.3em] uppercase text-white font-semibold">
+                  className="font-serif text-5xl sm:text-6xl md:text-8xl text-white font-normal tracking-tight leading-[0.95] uppercase"
                 >
                   Bienvenue<br />à Bord
                 </motion.h1>
@@ -130,7 +130,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-normal italic max-w-2xl mx-auto leading-relaxed"
                 >
-                  Ce portfolio retrace trois mois d&apos;immersion au cœur de la boutique de la Madeleine,première boutique européenne de Ralph Lauren, pour un été qui n&apos;aura ressemblé à aucun autre.
+                  Ce portfolio retrace trois mois d&apos;immersion au c&oelig;ur de la boutique de la Madeleine &mdash; premi&egrave;re boutique europ&eacute;enne Ralph Lauren, pour un &eacute;t&eacute; qui n&apos;aura ressembl&eacute; &agrave; aucun autre.
                   <span className="block mt-4 text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-500 font-normal">
                     {global.heroLocation}
                   </span>
