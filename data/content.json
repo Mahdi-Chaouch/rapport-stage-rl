@@ -431,35 +431,35 @@
         "title": "MON POSTE & RESPONSABILITÉS",
         "subtitle": "Mission clef, positionnement & objectifs chiffrés (KPIs)",
         "highlight": true,
-        "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1560090156-2bff0387aa6b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "id": "carnet",
         "num": "III",
         "title": "CARNET DE BORD",
         "subtitle": "Journal semaine par semaine, coulisses & résolution de défis",
-        "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1000&auto=format&fit=crop"
+        "image": "https://i.pinimg.com/1200x/5d/cd/79/5dcd793bd31607d1d8b709a9d9c99c7e.jpg"
       },
       {
         "id": "strategie",
         "num": "IV",
         "title": "ANALYSE STRATÉGIQUE",
         "subtitle": "Concurrents, tendances luxe & problématique personnelle",
-        "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop"
+        "image": "https://i.pinimg.com/736x/3f/af/b6/3fafb6beec41fa822f2af8cbd1ffcc24.jpg"
       },
       {
         "id": "rencontres",
         "num": "V",
         "title": "RENCONTRES & REGARDS CROISÉS",
         "subtitle": "Interviews, portraits & grands formats de citations",
-        "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop"
+        "image": "https://i.pinimg.com/1200x/f5/0a/ed/f50aed42c3719836c6aad8198c391b92.jpg"
       },
       {
         "id": "voyage",
         "num": "VI",
         "title": "RETOUR DE VOYAGE",
         "subtitle": "Bilan personnel, matrice de compétences & projection",
-        "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop"
+        "image": "https://i.pinimg.com/1200x/70/d9/11/70d911a9a3368512a7be6cf9b001fed0.jpg"
       }
     ]
   }
