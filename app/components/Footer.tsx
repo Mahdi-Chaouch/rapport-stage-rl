@@ -88,7 +88,7 @@ export default function Footer({ onSelectSection }: FooterProps) {
           <div className="space-y-3">
             <h4 className="font-serif text-base text-white font-medium">Adresse de la boutique</h4>
             <p className="text-white">{global.location}</p>
-            <p className="text-neutral-500 text-[11px]">
+            <p className="text-neutral-500 text-[11px]">Boutique de la Madeleine, Paris</p>
 
           {/* Col 4: Mentors */}
           <div className="space-y-3">
