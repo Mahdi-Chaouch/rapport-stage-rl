@@ -27,10 +27,11 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
     if (!video) return;
 
     const handleEnded = () => {
-      // Pause video on exact last frame
-      video.pause();
-      onVideoEnd();
-    };
+  video.pause();
+  video.muted = true;
+  video.src = "";
+  onVideoEnd();
+};
 
     const handlePlay = () => {
       setHasStarted(true);
