@@ -93,65 +93,71 @@ export default function Home() {
               id="hero"
               className="relative min-h-screen flex flex-col justify-between px-6 md:px-16 pt-32 pb-16 border-b border-white/10"
             >
-              {/* Central Title Block */}
-              <div className="my-auto max-w-6xl mx-auto text-center space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-white/20 bg-black/50 backdrop-blur-md"
-                >
-                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                  <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-neutral-300">
-                    {global.siteSubTitle}
-                  </span>
-                </motion.div>
+             {/* Central Title Block */}
+<div className="my-auto max-w-6xl mx-auto text-center space-y-8">
 
-                <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                  className="font-serif text-5xl sm:text-7xl md:text-9xl text-white font-light tracking-tight leading-[0.95] uppercase"
-                >
-                  {global.siteTitle}
-                </motion.h1>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.2 }}
+    className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-white/20 bg-black/50 backdrop-blur-md"
+  >
+    <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+    <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-neutral-300">
+      {global.siteSubTitle}
+    </span>
+  </motion.div>
 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="font-serif text-xl sm:text-2xl md:text-3xl text-neutral-300 font-light italic max-w-3xl mx-auto"
-                >
-                  {global.heroQuote} <br />
-                  <span className="text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-400 font-normal">
-                    {global.heroLocation}
-                  </span>
-                </motion.p>
+  {/* Storytelling Title */}
+  <motion.h1
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, delay: 0.4 }}
+    className="font-serif text-5xl sm:text-6xl md:text-8xl text-white font-light tracking-tight leading-[0.95] uppercase"
+  >
+    Bienvenue à Bord
+  </motion.h1>
 
-                {/* Direct Action Triggers */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                  className="flex flex-wrap items-center justify-center gap-4 pt-6"
-                >
-                  <button
-                    onClick={() => handleSelectSection("poste")}
-                    className="group relative inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-white text-black font-sans text-xs tracking-[0.25em] uppercase font-bold hover:bg-neutral-200 transition-all duration-300 shadow-2xl hover:scale-105"
-                  >
-                    <Award className="w-4 h-4 text-black" />
-                    <span>{global.discoverRoleButton}</span>
-                  </button>
+  {/* Storytelling Paragraph */}
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.6 }}
+    className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-light italic max-w-2xl mx-auto leading-relaxed"
+  >
+    Ce portfolio retrace trois mois d'immersion au cœur d'une des plus 
+    grandes maisons de mode du monde — entre les coulisses du luxe, 
+    les clients d'exception et les défis du quotidien.
+    <br />
+    <span className="text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-500 font-normal mt-4 block">
+      {global.heroLocation}
+    </span>
+  </motion.p>
 
-                  <button
-                    onClick={() => setIsMenuOpen(true)}
-                    className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-black/60 border border-white/20 text-white font-sans text-xs tracking-[0.25em] uppercase font-semibold hover:border-white hover:bg-black transition-all duration-300 backdrop-blur-md"
-                  >
-                    <Compass className="w-4 h-4 text-white" />
-                    <span>{global.exploreSummaryButton}</span>
-                  </button>
-                </motion.div>
-              </div>
+  {/* CTA Button → Première Escale */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.8 }}
+    className="flex flex-wrap items-center justify-center gap-4 pt-6"
+  >
+    <button
+      onClick={() => handleSelectSection("maison")}
+      className="group relative inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-white text-black font-sans text-xs tracking-[0.25em] uppercase font-bold hover:bg-neutral-200 transition-all duration-300 shadow-2xl hover:scale-105"
+    >
+      <span>Commencer le Voyage →</span>
+    </button>
+
+    <button
+      onClick={() => setIsMenuOpen(true)}
+      className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-black/60 border border-white/20 text-white font-sans text-xs tracking-[0.25em] uppercase font-semibold hover:border-white hover:bg-black transition-all duration-300 backdrop-blur-md"
+    >
+      <Compass className="w-4 h-4 text-white" />
+      <span>{global.exploreSummaryButton}</span>
+    </button>
+  </motion.div>
+
+</div>
 
               {/* Bottom Metadata & Scroll Cue */}
               <div className="flex flex-col md:flex-row justify-between items-center text-xs font-sans text-neutral-400 gap-4 pt-8 border-t border-white/10">
