@@ -62,39 +62,49 @@ const timeline = [
 
 const collections = [
   {
-    name: "Polo Ralph Lauren",
     tag: "Le Classique Americain",
-    desc: "Né en 1972 autour du polo shirt iconique, Polo Ralph Lauren incarne l'élégance décontractée à l'américaine. Preppy, authentique, intemporel — c'est la ligne la plus accessible et la plus reconnue de la maison.",
+    logo: "/logo-polo.png",
+    logoText: null,
+    desc: "Ne en 1972 autour du polo shirt iconique, Polo Ralph Lauren incarne l'elegance decontractee a l'americaine. Preppy, authentique, intemporel — c'est la ligne la plus accessible et la plus reconnue de la maison.",
     img: "/polo.jpg",
     left: true,
+    purple: false,
   },
   {
-    name: "Purple Label",
     tag: "La Haute Couture Masculine",
-    desc: "Le summum du savoir-faire Ralph Lauren. Des costumes taillés sur mesure dans les meilleures étoffes italiennes et anglaises, pour une clientèle d'exception qui refuse de choisir entre style et prestige.",
+    logo: "/logo-purple.png",
+    logoText: null,
+    desc: "Le summum du savoir-faire Ralph Lauren. Des costumes tailles sur mesure dans les meilleures etoffes italiennes et anglaises, pour une clientele d'exception qui refuse de choisir entre style et prestige.",
     img: "/purple-label.jpg",
     left: false,
+    purple: true,
   },
   {
-    name: "Ralph Lauren Collection",
-    tag: "Le Prêt-à-Porter Féminin",
-    desc: "L'expression la plus pure de la féminité selon Ralph Lauren. Des silhouettes puissantes et gracieuses, des matières nobles, une esthétique Western chic qui traverse les saisons sans jamais vieillir.",
+    tag: "Le Pret-a-Porter Feminin",
+    logo: null,
+    logoText: "RALPH LAUREN COLLECTION",
+    desc: "L'expression la plus pure de la feminite selon Ralph Lauren. Des silhouettes puissantes et gracieuses, des matieres nobles, une esthetique Western chic qui traverse les saisons sans jamais vieillir.",
     img: "/rl-collection.jpg",
     left: true,
+    purple: false,
   },
   {
-    name: "Double RL — RRL",
     tag: "Le Workwear Vintage",
-    desc: "Inspirée du ranch Double RL que possède Ralph Lauren dans le Colorado, cette ligne célèbre l'Amérique ouvrière et authentique. Denim brut, cuir patiné, pièces militaires — une ode à l'heritage américain.",
+    logo: "/logo-double-rl.png",
+    logoText: null,
+    desc: "Inspiree du ranch Double RL que possede Ralph Lauren dans le Colorado, cette ligne celebre l'Amerique ouvriere et authentique. Denim brut, cuir patine, pieces militaires — une ode a l'heritage americain.",
     img: "/double-rl.jpg",
     left: false,
+    purple: false,
   },
   {
-    name: "RLX Ralph Lauren",
     tag: "Le Sport & Performance",
-    desc: "La réponse de Ralph Lauren au monde du sport et de l'outdoor. Des pièces techniques à l'esthétique forte, où performance et style fusionnent pour une garde-robe active sans compromis.",
+    logo: "/logo-rlx.png",
+    logoText: null,
+    desc: "La reponse de Ralph Lauren au monde du sport et de l'outdoor. Des pieces techniques a l'esthetique forte, ou performance et style fusionnent pour une garde-robe active sans compromis.",
     img: "/rlx.jpg",
     left: true,
+    purple: false,
   },
 ];
 
@@ -319,32 +329,53 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
         <div className="space-y-0">
           {collections.map((col, i) => (
             <motion.div
-              key={col.name}
+              key={i}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
-              className={`flex flex-col ${col.left ? "md:flex-row" : "md:flex-row-reverse"} min-h-[70vh]`}
+              className={`flex flex-col ${col.left ? "md:flex-row" : "md:flex-row-reverse"} min-h-[65vh]`}
             >
-              {/* Image */}
-              <div className="w-full md:w-1/2 overflow-hidden">
+              {/* Image — 60% */}
+              <div className="w-full md:w-3/5 overflow-hidden">
                 <img
                   src={col.img}
-                  alt={col.name}
+                  alt={col.logoText ?? "Collection"}
                   className="w-full h-full min-h-[50vh] object-cover object-center transition-transform duration-700 hover:scale-105"
                 />
               </div>
 
-              {/* Texte */}
-              <div className={`w-full md:w-1/2 flex flex-col justify-center px-10 md:px-16 py-16 ${i % 2 === 0 ? "bg-[#050505]" : "bg-[#0A0A0A]"}`}>
-                <span className="text-[10px] font-sans tracking-[0.35em] uppercase text-neutral-500 mb-4">
+              {/* Texte — 40% */}
+              <div
+                className={`w-full md:w-2/5 flex flex-col justify-center px-10 md:px-16 py-16 ${i % 2 === 0 ? "bg-[#050505]" : "bg-[#080808]"}`}
+              >
+                <span className="text-[10px] font-sans tracking-[0.35em] uppercase text-neutral-500 mb-8">
                   {col.tag}
                 </span>
-                <h3 className="font-serif text-3xl md:text-5xl text-white font-light leading-tight mb-6">
-                  {col.name}
-                </h3>
-                <div className="w-12 h-[1px] bg-white/20 mb-6" />
-                <p className="font-serif text-lg text-neutral-400 italic leading-relaxed font-light">
+
+                {/* Logo ou texte */}
+                {col.logo ? (
+                  <img
+                    src={col.logo}
+                    alt="logo collection"
+                    className="h-12 w-auto object-contain object-left mb-8"
+                    style={{ filter: col.purple ? "brightness(0) saturate(100%) invert(30%) sepia(60%) saturate(500%) hue-rotate(250deg)" : "invert(1)" }}
+                  />
+                ) : (
+                  <span className="font-serif text-2xl md:text-3xl text-white font-light tracking-widest mb-8">
+                    {col.logoText}
+                  </span>
+                )}
+
+                <div
+                  className="w-12 h-[1px] mb-8"
+                  style={{ backgroundColor: col.purple ? "#7B4FBE" : "rgba(255,255,255,0.2)" }}
+                />
+
+                <p
+                  className="font-serif text-lg md:text-xl leading-relaxed font-normal"
+                  style={{ color: col.purple ? "#B07FE0" : "rgba(242,237,228,0.75)" }}
+                >
                   {col.desc}
                 </p>
               </div>
