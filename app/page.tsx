@@ -17,8 +17,6 @@ import Footer from "./components/Footer";
 import { Compass } from "lucide-react";
 import content from "@/data/content";
 
-const HERO_TEXT = "Ce portfolio retrace trois mois d'immersion au coeur de la boutique de la Madeleine, premiere boutique europeenne Ralph Lauren, pour un ete qui n'aura ressemble a aucun autre.";
-
 export default function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
@@ -39,13 +37,13 @@ export default function Home() {
   useEffect(() => {
     if (!videoEnded) return;
     const sections = [
-      { id: "hero",       label: "00 - INTRODUCTION EDITORIALE" },
-      { id: "maison",     label: "I - LA MAISON RALPH LAUREN" },
-      { id: "poste",      label: "II - MON POSTE ET RESPONSABILITES" },
-      { id: "carnet",     label: "III - CARNET DE BORD" },
-      { id: "strategie",  label: "IV - ANALYSE STRATEGIQUE" },
-      { id: "rencontres", label: "V - RENCONTRES ET INSIGHTS" },
-      { id: "voyage",     label: "VI - RETOUR DE VOYAGE" },
+      { id: "hero", label: "00 - INTRODUCTION EDITORIALE" },
+      { id: "maison", label: "I - LA MAISON RALPH LAUREN" },
+      { id: "poste", label: "II - MON POSTE" },
+      { id: "carnet", label: "III - CARNET DE BORD" },
+      { id: "strategie", label: "IV - ANALYSE STRATEGIQUE" },
+      { id: "rencontres", label: "V - RENCONTRES" },
+      { id: "voyage", label: "VI - RETOUR DE VOYAGE" },
     ];
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 300;
@@ -123,7 +121,9 @@ export default function Home() {
                   transition={{ duration: 1, delay: 0.4 }}
                   className="font-serif text-5xl sm:text-6xl md:text-8xl text-white font-normal tracking-tight leading-[0.95] uppercase"
                 >
-                  Bienvenue<br />a Bord
+                  Bienvenue
+                  <br />
+                  a Bord
                 </motion.h1>
 
                 <motion.p
@@ -132,7 +132,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-normal italic max-w-2xl mx-auto leading-relaxed text-justify"
                 >
-                  {HERO_TEXT}
+                  {global.heroQuote}
                   <span className="block mt-4 text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-500 font-normal text-center">
                     {global.heroLocation}
                   </span>
@@ -170,17 +170,11 @@ export default function Home() {
                   <span>·</span>
                   <span className="text-neutral-300">Tuteur de stage : {global.companyTutor}</span>
                 </div>
-                
-                  href="https://isg-luxury.fr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/isg-logo.jpg"
-                    alt="ISG Luxury Program"
-                    className="h-16 w-auto opacity-30 hover:opacity-60 transition-opacity duration-300 invert"
-                  />
-                </a>
+                <img
+                  src="/isg-logo.jpg"
+                  alt="ISG Luxury Program"
+                  className="h-16 w-auto opacity-30 invert"
+                />
               </div>
             </section>
 
