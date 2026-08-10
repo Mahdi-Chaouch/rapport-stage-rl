@@ -174,7 +174,7 @@ export default function Home() {
   <img
     src="/isg-logo.jpg"
     alt="ISG Luxury Program"
-    className="h-16 w-auto opacity-30 invert"
+    className="h-16 w-auto opacity-30 hover:opacity-60 transition-opacity duration-300 invert"
   />
 </a>
               </div>
