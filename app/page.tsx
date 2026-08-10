@@ -162,7 +162,7 @@ export default function Home() {
 
                 <button
                     onClick={() => { setVideoEnded(false); setShowIntro(true); }}
-                    className="text-[10px] font-sans tracking-[0.25em] uppercase text-neutral-500 hover:text-white transition-colors duration-300 underline underline-offset-4"
+                    className="block mx-auto text-[10px] font-sans tracking-[0.25em] uppercase text-neutral-500 hover:text-white transition-colors duration-300 underline underline-offset-4"
                   >
                     Revoir l'introduction
                   </button>
