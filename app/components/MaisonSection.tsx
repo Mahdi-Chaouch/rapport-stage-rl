@@ -66,7 +66,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             viewport={{ once: true }}
             className="font-serif text-xl md:text-2xl text-white italic font-medium leading-relaxed md:text-right"
           >
-            Ralph Lifshitz naît en 1939 dans le Bronx, New York, fils d&apos;immigrants juifs biélorusses. Rien ne le prédestine à révolutionner la mode mondiale.
+            Ralph Lifshitz naît en 1939 dans le Bronx, New York, fils d&apos;immigrants juifs biélorusses. Rien ne le prédestine à révolutionner le monde de la mode.
           </motion.p>
 
           {/* Portrait centré */}
