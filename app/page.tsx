@@ -130,7 +130,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-normal italic max-w-2xl mx-auto leading-relaxed text-justify"
+                  className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-normal italic max-w-2xl mx-auto leading-relaxed"
                 >
                   {global.heroQuote}
                   <span className="block mt-4 text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-500 font-normal text-center">
