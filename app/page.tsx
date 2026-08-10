@@ -130,7 +130,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-normal italic max-w-2xl mx-auto leading-relaxed text-justify"
                 >
-                  Ce portfolio retrace trois mois d&apos;immersion au c&oelig;ur de la boutique de la Madeleine, premi&egrave;re boutique europ&eacute;enne Ralph Lauren, pour un &eacute;t&eacute; qui n&apos;aura ressembl&eacute; &agrave; aucun autre.
+                  Ce portfolio retrace trois mois d&#39;immersion au cœur de la boutique de la Madeleine, première boutique européenne Ralph Lauren, pour un été qui n&#39;aura ressemblé à aucun autre.
                   <span className="block mt-4 text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-500 font-normal text-center">
                     {global.heroLocation}
                   </span>
