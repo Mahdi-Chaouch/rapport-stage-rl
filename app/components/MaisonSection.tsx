@@ -138,7 +138,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
           <img
             src="/rl-3.jpg"
             alt="Ralph Lauren Campaign"
-            className="w-full h-[420px] object-cover object-center"
+            className="w-full h-[420px] object-cover object-top"
           />
         </motion.div>
 
