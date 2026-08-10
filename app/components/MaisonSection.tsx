@@ -62,45 +62,40 @@ const timeline = [
 
 const collections = [
   {
+    name: "Polo Ralph Lauren",
     tag: "Le Classique Americain",
-    logo: "/logo-polo.png",
-    logoText: null,
     desc: "Ne en 1972 autour du polo shirt iconique, Polo Ralph Lauren incarne l'elegance decontractee a l'americaine. Preppy, authentique, intemporel — c'est la ligne la plus accessible et la plus reconnue de la maison.",
     img: "/polo.jpg",
     left: true,
     purple: false,
   },
   {
+    name: "Purple Label",
     tag: "La Haute Couture Masculine",
-    logo: "/logo-purple.png",
-    logoText: null,
     desc: "Le summum du savoir-faire Ralph Lauren. Des costumes tailles sur mesure dans les meilleures etoffes italiennes et anglaises, pour une clientele d'exception qui refuse de choisir entre style et prestige.",
     img: "/purple-label.jpg",
     left: false,
     purple: true,
   },
   {
+    name: "Ralph Lauren Collection",
     tag: "Le Pret-a-Porter Feminin",
-    logo: null,
-    logoText: "RALPH LAUREN COLLECTION",
     desc: "L'expression la plus pure de la feminite selon Ralph Lauren. Des silhouettes puissantes et gracieuses, des matieres nobles, une esthetique Western chic qui traverse les saisons sans jamais vieillir.",
     img: "/rl-collection.jpg",
     left: true,
     purple: false,
   },
   {
+    name: "Double RL",
     tag: "Le Workwear Vintage",
-    logo: "/logo-double-rl.png",
-    logoText: null,
     desc: "Inspiree du ranch Double RL que possede Ralph Lauren dans le Colorado, cette ligne celebre l'Amerique ouvriere et authentique. Denim brut, cuir patine, pieces militaires — une ode a l'heritage americain.",
     img: "/double-rl.jpg",
     left: false,
     purple: false,
   },
   {
+    name: "RLX Ralph Lauren",
     tag: "Le Sport & Performance",
-    logo: "/logo-rlx.png",
-    logoText: null,
     desc: "La reponse de Ralph Lauren au monde du sport et de l'outdoor. Des pieces techniques a l'esthetique forte, ou performance et style fusionnent pour une garde-robe active sans compromis.",
     img: "/rlx.jpg",
     left: true,
@@ -334,38 +329,31 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
-              className={`flex flex-col ${col.left ? "md:flex-row" : "md:flex-row-reverse"} min-h-[65vh]`}
+              className={`flex flex-col ${col.left ? "md:flex-row" : "md:flex-row-reverse"} min-h-[55vh]`}
             >
-              {/* Image — 60% */}
-              <div className="w-full md:w-3/5 overflow-hidden">
+              {/* Image — 45% */}
+              <div className="w-full md:w-[45%] overflow-hidden">
                 <img
                   src={col.img}
-                  alt={col.logoText ?? "Collection"}
-                  className="w-full h-full min-h-[50vh] object-cover object-center transition-transform duration-700 hover:scale-105"
+                  alt={col.name}
+                  className="w-full h-full min-h-[45vh] object-cover object-center transition-transform duration-700 hover:scale-105"
                 />
               </div>
 
-              {/* Texte — 40% */}
+              {/* Texte — 55% */}
               <div
-                className={`w-full md:w-2/5 flex flex-col justify-center px-10 md:px-16 py-16 ${i % 2 === 0 ? "bg-[#050505]" : "bg-[#080808]"}`}
+                className={`w-full md:w-[55%] flex flex-col justify-center px-12 md:px-20 py-16 ${i % 2 === 0 ? "bg-[#050505]" : "bg-[#080808]"}`}
               >
-                <span className="text-[10px] font-sans tracking-[0.35em] uppercase text-neutral-500 mb-8">
+                <span className="text-[10px] font-sans tracking-[0.35em] uppercase text-neutral-500 mb-6">
                   {col.tag}
                 </span>
 
-                {/* Logo ou texte */}
-                {col.logo ? (
-                  <img
-                    src={col.logo}
-                    alt="logo collection"
-                    className="h-12 w-auto object-contain object-left mb-8"
-                    style={{ filter: col.purple ? "brightness(0) saturate(100%) invert(30%) sepia(60%) saturate(500%) hue-rotate(250deg)" : "invert(1)" }}
-                  />
-                ) : (
-                  <span className="font-serif text-2xl md:text-3xl text-white font-light tracking-widest mb-8">
-                    {col.logoText}
-                  </span>
-                )}
+                <h3
+                  className="font-serif text-4xl md:text-6xl font-light leading-tight mb-6"
+                  style={{ color: col.purple ? "#B07FE0" : "#ffffff" }}
+                >
+                  {col.name}
+                </h3>
 
                 <div
                   className="w-12 h-[1px] mb-8"
@@ -373,7 +361,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
                 />
 
                 <p
-                  className="font-serif text-lg md:text-xl leading-relaxed font-normal"
+                  className="font-serif text-xl md:text-2xl leading-relaxed font-normal"
                   style={{ color: col.purple ? "#B07FE0" : "rgba(242,237,228,0.75)" }}
                 >
                   {col.desc}
