@@ -7,19 +7,19 @@ const timeline = [
   {
     year: "1967",
     title: "La Cravate Fondatrice",
-    desc: "Avec 50 dollars en poche, Ralph Lifshitz lance sa première collection de cravates larges sous le nom Ralph Lauren. Une révolution discrète.",
+    desc: "Avec 50 dollars en poche, Ralph Lifshitz lance sa première collection de cravates larges sous le nom Ralph Lauren.",
     pink: false,
   },
   {
     year: "1972",
     title: "La Naissance du Polo",
-    desc: "Création du polo shirt iconique à logo polo player brodé — pièce qui deviendra l'un des vêtements les plus reconnaissables au monde.",
+    desc: "Création du polo shirt iconique à logo polo player brodé, pièce qui deviendra l'un des vêtements les plus reconnaissables au monde. Même Leonardo DiCaprio en porte un dans le Loup de Wall Street",
     pink: false,
   },
   {
     year: "1989",
     title: "Nina Hyde Center",
-    desc: "Ralph cofonde le Nina Hyde Center for Breast Cancer Research en compagnie de la légendaire éditrice du Washington Post Katharine Graham, honorant la mémoire de la journaliste de mode Nina Hyde.",
+    desc: "Ralph cofonde le Nina Hyde Center for Breast Cancer Research en compagnie de l'éditrice du Washington Post Katharine Graham, honorant la mémoire de la journaliste de mode Nina Hyde.",
     pink: false,
   },
   {
@@ -54,8 +54,8 @@ const timeline = [
   },
   {
     year: "2010",
-    title: "Paris, Saint-Germain",
-    desc: "Ralph ouvre un magasin phare et un restaurant à Paris, boulevard Saint-Germain. L'hôtel particulier du XVIIe siècle de 1 200m² abrite lustres en cristal, balcons en fer forgé et parquets à la Versailles.",
+    title: "Paris, Bd Saint-Germain",
+    desc: "Ralph ouvre son flagship et un restaurant à Paris, boulevard Saint-Germain. L'hôtel particulier du XVIIe siècle de 1 200m² abrite lustres en cristal, balcons en fer forgé et parquets à la Versailles.",
     pink: false,
   },
 ];
