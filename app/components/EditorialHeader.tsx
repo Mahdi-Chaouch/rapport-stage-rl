@@ -42,7 +42,7 @@ export default function EditorialHeader({
       </a>
 
       {/* Current Active Section Indicator */}
-      <div className="hidden lg:flex items-center space-x-3 px-4 py-1.5 rounded-full border border-white/10 backdrop-blur-md bg-black/30">
+      <div className="hidden lg:flex items-center space-x-3 px-4 py-1.5 rounded-full border border-white/10 backdrop-blur-md bg-black/30 absolute left-1/2 -translate-x-1/2">
         <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
         <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-neutral-300">
           {activeSection || "ÉDITORIAL INTERACTIF"}
