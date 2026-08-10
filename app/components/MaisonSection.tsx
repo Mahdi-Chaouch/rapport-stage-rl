@@ -103,12 +103,12 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
-            className="w-full md:w-3/5"
+            className="w-full md:w-3/5 overflow-hidden"
           >
             <img
               src="/rl-1.jpg"
               alt="Ralph Lauren Collection"
-              className="w-full h-[500px] object-cover"
+              className="w-full h-[500px] object-cover object-top"
             />
           </motion.div>
 
@@ -117,12 +117,12 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
-            className="w-full md:w-2/5 md:mt-32"
+            className="w-full md:w-2/5 md:mt-32 overflow-hidden"
           >
             <img
               src="/rl-2.jpg"
               alt="Ralph Lauren Collection"
-              className="w-full h-[380px] object-cover"
+              className="w-full h-[380px] object-cover object-top"
             />
           </motion.div>
         </div>
@@ -133,12 +133,12 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="w-full"
+          className="w-full overflow-hidden"
         >
           <img
             src="/rl-3.jpg"
             alt="Ralph Lauren Campaign"
-            className="w-full h-[420px] object-cover"
+            className="w-full h-[420px] object-cover object-center"
           />
         </motion.div>
 
@@ -149,12 +149,12 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
-            className="w-full md:w-2/5 md:mt-24"
+            className="w-full md:w-2/5 md:mt-24 overflow-hidden"
           >
             <img
               src="/rl-4.jpg"
               alt="Ralph Lauren Style"
-              className="w-full h-[380px] object-cover"
+              className="w-full h-[380px] object-cover object-top"
             />
           </motion.div>
 
@@ -163,12 +163,12 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
-            className="w-full md:w-3/5"
+            className="w-full md:w-3/5 overflow-hidden"
           >
             <img
               src="/rl-5.jpg"
               alt="Ralph Lauren Polo"
-              className="w-full h-[500px] object-cover"
+              className="w-full h-[500px] object-cover object-center"
             />
           </motion.div>
         </div>
