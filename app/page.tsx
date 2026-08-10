@@ -17,6 +17,8 @@ import Footer from "./components/Footer";
 import { Compass } from "lucide-react";
 import content from "@/data/content";
 
+const HERO_TEXT = "Ce portfolio retrace trois mois d'immersion au coeur de la boutique de la Madeleine, premiere boutique europeenne Ralph Lauren, pour un ete qui n'aura ressemble a aucun autre.";
+
 export default function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
@@ -37,13 +39,13 @@ export default function Home() {
   useEffect(() => {
     if (!videoEnded) return;
     const sections = [
-      { id: "hero",       label: "00 · INTRODUCTION ÉDITORIALE" },
-      { id: "maison",     label: "I · LA MAISON RALPH LAUREN" },
-      { id: "poste",      label: "II · MON POSTE & RESPONSABILITÉS" },
-      { id: "carnet",     label: "III · CARNET DE BORD" },
-      { id: "strategie",  label: "IV · ANALYSE STRATÉGIQUE" },
-      { id: "rencontres", label: "V · RENCONTRES & INSIGHTS" },
-      { id: "voyage",     label: "VI · RETOUR DE VOYAGE" },
+      { id: "hero",       label: "00 - INTRODUCTION EDITORIALE" },
+      { id: "maison",     label: "I - LA MAISON RALPH LAUREN" },
+      { id: "poste",      label: "II - MON POSTE ET RESPONSABILITES" },
+      { id: "carnet",     label: "III - CARNET DE BORD" },
+      { id: "strategie",  label: "IV - ANALYSE STRATEGIQUE" },
+      { id: "rencontres", label: "V - RENCONTRES ET INSIGHTS" },
+      { id: "voyage",     label: "VI - RETOUR DE VOYAGE" },
     ];
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 300;
@@ -121,7 +123,7 @@ export default function Home() {
                   transition={{ duration: 1, delay: 0.4 }}
                   className="font-serif text-5xl sm:text-6xl md:text-8xl text-white font-normal tracking-tight leading-[0.95] uppercase"
                 >
-                  Bienvenue<br />à Bord
+                  Bienvenue<br />a Bord
                 </motion.h1>
 
                 <motion.p
@@ -130,7 +132,7 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-normal italic max-w-2xl mx-auto leading-relaxed text-justify"
                 >
-                  Ce portfolio retrace trois mois d&#39;immersion au cœur de la boutique de la Madeleine, première boutique européenne Ralph Lauren, pour un été qui n&#39;aura ressemblé à aucun autre.
+                  {HERO_TEXT}
                   <span className="block mt-4 text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-500 font-normal text-center">
                     {global.heroLocation}
                   </span>
@@ -146,7 +148,7 @@ export default function Home() {
                     onClick={() => handleSelectSection("maison")}
                     className="group inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-white text-black font-sans text-xs tracking-[0.25em] uppercase font-bold hover:bg-neutral-200 transition-all duration-300 shadow-2xl hover:scale-105"
                   >
-                    <span>Commencer le Voyage →</span>
+                    <span>Commencer le Voyage</span>
                   </button>
 
                   <button
@@ -168,7 +170,6 @@ export default function Home() {
                   <span>·</span>
                   <span className="text-neutral-300">Tuteur de stage : {global.companyTutor}</span>
                 </div>
-
                 
                   href="https://isg-luxury.fr"
                   target="_blank"
