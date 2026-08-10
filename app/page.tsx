@@ -170,11 +170,13 @@ export default function Home() {
                   <span>·</span>
                   <span className="text-neutral-300">Tuteur de stage : {global.companyTutor}</span>
                 </div>
-                <img
-                  src="/isg-logo.jpg"
-                  alt="ISG Luxury Program"
-                  className="h-16 w-auto opacity-30 invert"
-                />
+                <a href="https://isg-luxury.fr" target="_blank" rel="noopener noreferrer">
+  <img
+    src="/isg-logo.jpg"
+    alt="ISG Luxury Program"
+    className="h-16 w-auto opacity-30 invert"
+  />
+</a>
               </div>
             </section>
 
