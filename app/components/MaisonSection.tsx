@@ -1,8 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRef } from "react";
+
+const timeline = [
+  {
+    year: "1967",
+    title: "La Cravate Fondatrice",
+    desc: "Avec 50 dollars en poche, Ralph Lifshitz lance sa première collection de cravates larges sous le nom Ralph Lauren. Une révolution discrète.",
+  },
+  {
+    year: "1972",
+    title: "La Naissance du Polo",
+    desc: "Création du polo shirt iconique à logo polo player brodé — pièce qui deviendra l'un des vêtements les plus reconnaissables au monde.",
+  },
+  {
+    year: "1978",
+    title: "L'Empire s'élargit",
+    desc: "Lancement des premières lignes femme et enfant. Ralph Lauren s'impose comme un univers de vie complet, au-delà de la mode masculine.",
+  },
+  {
+    year: "1986",
+    title: "Entrée en Bourse",
+    desc: "Introduction au NYSE. La maison devient un empire coté, tout en préservant l'intégrité créative de son fondateur à la tête du groupe.",
+  },
+  {
+    year: "1997",
+    title: "Central Park",
+    desc: "Défilé historique à Central Park pour les 30 ans de la maison. Un événement cinématographique qui redéfinit les codes du fashion show.",
+  },
+  {
+    year: "2000",
+    title: "Paris, La Madeleine",
+    desc: "Ouverture du flagship de la Madeleine — première boutique européenne de la maison. Paris entre dans l'univers Ralph Lauren.",
+  },
+  {
+    year: "2010",
+    title: "Purple Label",
+    desc: "Montée en gamme vers la haute couture masculine avec le Purple Label — la ligne la plus exclusive de la maison, taillée sur mesure.",
+  },
+  {
+    year: "2024",
+    title: "Un Nouveau Chapitre",
+    desc: "Ralph Lauren reprend personnellement la direction créative. À 84 ans, le fondateur réaffirme sa vision et l'héritage intemporel de la maison.",
+  },
+];
 
 export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: () => void }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   return (
     <section id="maison" className="relative border-b border-white/10 overflow-hidden bg-[#050505]">
 
@@ -96,7 +142,6 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
       {/* ── BLOC 3 : LAYOUT QUINCONCE ── */}
       <div className="px-6 md:px-24 pb-24 space-y-6">
 
-        {/* Ligne 1 : grande gauche + petite droite décalée */}
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -105,11 +150,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             viewport={{ once: true }}
             className="w-full md:w-3/5 overflow-hidden"
           >
-            <img
-              src="/rl-1.jpg"
-              alt="Ralph Lauren Collection"
-              className="w-full h-[500px] object-cover object-top"
-            />
+            <img src="/rl-1.jpg" alt="Ralph Lauren Collection" className="w-full h-[500px] object-cover object-top" />
           </motion.div>
 
           <motion.div
@@ -119,15 +160,10 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             viewport={{ once: true }}
             className="w-full md:w-2/5 md:mt-32 overflow-hidden"
           >
-            <img
-              src="/rl-2.jpg"
-              alt="Ralph Lauren Collection"
-              className="w-full h-[380px] object-cover object-top"
-            />
+            <img src="/rl-2.jpg" alt="Ralph Lauren Collection" className="w-full h-[380px] object-cover object-top" />
           </motion.div>
         </div>
 
-        {/* Ligne 2 : pleine largeur */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -135,14 +171,9 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
           viewport={{ once: true }}
           className="w-full overflow-hidden"
         >
-          <img
-            src="/rl-3.jpg"
-            alt="Ralph Lauren Campaign"
-            className="w-full h-[420px] object-cover object-top"
-          />
+          <img src="/rl-3.jpg" alt="Ralph Lauren Campaign" className="w-full h-[420px] object-cover object-top" />
         </motion.div>
 
-        {/* Ligne 3 : petite gauche + grande droite décalée */}
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -151,11 +182,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             viewport={{ once: true }}
             className="w-full md:w-2/5 md:mt-24 overflow-hidden"
           >
-            <img
-              src="/rl-4.jpg"
-              alt="Ralph Lauren Style"
-              className="w-full h-[380px] object-cover object-top"
-            />
+            <img src="/rl-4.jpg" alt="Ralph Lauren Style" className="w-full h-[380px] object-cover object-top" />
           </motion.div>
 
           <motion.div
@@ -165,17 +192,63 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             viewport={{ once: true }}
             className="w-full md:w-3/5 overflow-hidden"
           >
-            <img
-              src="/rl-5.jpg"
-              alt="Ralph Lauren Polo"
-              className="w-full h-[500px] object-cover object-center"
-            />
+            <img src="/rl-5.jpg" alt="Ralph Lauren Polo" className="w-full h-[500px] object-cover object-center" />
           </motion.div>
         </div>
 
       </div>
 
-      {/* ── BLOC 4 : VIDÉO + POLO PLAYER ── */}
+      {/* ── BLOC 4 : FRISE CHRONOLOGIQUE HORIZONTALE ── */}
+      <div className="pb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="px-6 md:px-24 mb-10"
+        >
+          <span className="text-[10px] font-sans tracking-[0.4em] uppercase text-neutral-500">
+            Chronologie · 1967 — 2024
+          </span>
+        </motion.div>
+
+        {/* Scroll horizontal */}
+        <div
+          ref={scrollRef}
+          className="overflow-x-auto pb-8 cursor-grab active:cursor-grabbing"
+          style={{ scrollbarWidth: "none" }}
+        >
+          <div className="flex min-w-max px-6 md:px-24">
+            {timeline.map((item, i) => (
+              <motion.div
+                key={item.year}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: i * 0.08 }}
+                viewport={{ once: true }}
+                className="flex flex-col w-64 mr-0 pr-12 border-l border-white/15 pl-6"
+              >
+                {/* Année en grand */}
+                <span className="font-serif text-6xl md:text-7xl text-white font-light leading-none mb-6 opacity-90">
+                  {item.year}
+                </span>
+
+                {/* Titre */}
+                <h4 className="font-serif text-lg text-white font-normal mb-3 leading-tight">
+                  {item.title}
+                </h4>
+
+                {/* Description */}
+                <p className="font-sans text-xs text-neutral-500 leading-relaxed font-light">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── BLOC 5 : VIDÉO + POLO PLAYER ── */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
