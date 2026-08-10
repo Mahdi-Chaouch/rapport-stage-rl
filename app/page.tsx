@@ -14,7 +14,7 @@ import VoyageSection from "./components/VoyageSection";
 import OrganigramModal from "./components/OrganigramModal";
 import PrintReportModal from "./components/PrintReportModal";
 import Footer from "./components/Footer";
-import { ArrowDown, Compass } from "lucide-react";
+import { Compass } from "lucide-react";
 import content from "@/data/content";
 
 export default function Home() {
@@ -168,13 +168,11 @@ export default function Home() {
                   <span>·</span>
                   <span className="text-neutral-300">Tuteur de stage : {global.companyTutor}</span>
                 </div>
-                <button
-                  onClick={() => handleSelectSection("maison")}
-                  className="flex items-center space-x-2 text-[10px] tracking-[0.3em] uppercase text-neutral-400 hover:text-white transition-colors"
-                >
-                  <span>{global.scrollPrompt}</span>
-                  <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
-                </button>
+                <img
+  src="/isg-logo.jpg"
+  alt="ISG Luxury Program"
+  className="h-10 w-auto opacity-30 hover:opacity-60 transition-opacity duration-300 invert"
+/>
               </div>
             </section>
 
