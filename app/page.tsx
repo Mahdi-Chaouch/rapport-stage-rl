@@ -160,6 +160,14 @@ export default function Home() {
                   </button>
                 </motion.div>
 
+                <button
+    onClick={() => { setVideoEnded(false); setShowIntro(true); }}
+    className="text-[10px] font-sans tracking-[0.25em] uppercase text-neutral-500 hover:text-white transition-colors duration-300 underline underline-offset-4"
+  >
+    Revoir l'introduction
+  </button>
+</motion.div>
+
               </div>
 
               <div className="flex flex-col md:flex-row justify-between items-center text-xs font-sans text-neutral-400 gap-4 pt-8 border-t border-white/10">
