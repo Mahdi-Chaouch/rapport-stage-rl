@@ -7,8 +7,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
     <section id="maison" className="relative border-b border-white/10 overflow-hidden bg-[#050505]">
 
       {/* ── BLOC 1 : EN-TÊTE + CITATION ── */}
-      <div className="px-6 md:px-24 pt-28 pb-0 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-
+      <div className="px-6 md:px-24 pt-28 pb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
         <div>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -19,7 +18,6 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
           >
             I · Histoire & Identité
           </motion.span>
-
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +27,6 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
           >
             La Maison<br />Ralph Lauren
           </motion.h2>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +38,6 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
           </motion.p>
         </div>
 
-        {/* Citation droite — plus grande */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -56,40 +52,51 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             — Ralph Lauren
           </p>
         </motion.div>
-
       </div>
 
-      {/* ── BLOC 2 : PORTRAIT + TEXTE EN COLONNES ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-        className="relative px-6 md:px-24 py-20"
-      >
-        {/* Portrait absolument centré dans le gap */}
-        <img
-          src="/ralph-portrait.png"
-          alt="Ralph Lauren"
-          className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[420px] w-auto object-contain grayscale z-10 pointer-events-none"
-        />
+      {/* ── BLOC 2 : TEXTE GAUCHE | PORTRAIT | TEXTE DROITE ── */}
+      <div className="px-6 md:px-24 pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
 
-        {/* Texte qui coule automatiquement de gauche à droite */}
-        <div
-          className="font-serif text-xl md:text-2xl text-white italic font-medium leading-relaxed"
-          style={{ columnCount: 2, columnGap: '220px' }}
-        >
-          <p>
-            Ralph Lifshitz naît en 1939 dans le Bronx, New York, fils d&apos;immigrants juifs
-            biélorusses. Rien ne le prédestine à révolutionner la mode mondiale.
-            Pourtant il se distingue avec un sens inné de l&apos;élégance, une obsession
-            pour le détail, et une vision : faire porter aux gens non pas des vêtements,
-            mais un rêve. En 1967, avec 50 dollars en poche et une collection de cravates
-            larges, Ralph Lauren pose la première pierre d&apos;un empire qui pèse
-            aujourd&apos;hui plus de 6 milliards de dollars.
-          </p>
+          {/* Texte gauche */}
+          <motion.p
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="font-serif text-xl md:text-2xl text-white italic font-medium leading-relaxed md:text-right"
+          >
+            Ralph Lifshitz naît en 1939 dans le Bronx, New York, fils d&apos;immigrants juifs biélorusses. Rien ne le prédestine à révolutionner la mode mondiale.
+          </motion.p>
+
+          {/* Portrait centré */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <img
+              src="/ralph-portrait.png"
+              alt="Ralph Lauren"
+              className="w-full max-w-xs object-contain grayscale"
+            />
+          </motion.div>
+
+          {/* Texte droite */}
+          <motion.p
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="font-serif text-xl md:text-2xl text-white italic font-medium leading-relaxed"
+          >
+            Pourtant il se distingue avec un sens inné de l&apos;élégance, une obsession pour le détail, et une vision : faire porter aux gens non pas des vêtements, mais un rêve. En 1967, avec 50 dollars en poche et une collection de cravates larges, Ralph Lauren pose la première pierre d&apos;un empire qui pèse aujourd&apos;hui plus de 6 milliards de dollars.
+          </motion.p>
+
         </div>
-      </motion.div>
+      </div>
 
       {/* ── BLOC 3 : VIDÉO + POLO PLAYER ── */}
       <motion.div
@@ -97,9 +104,8 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="px-6 md:px-24 pb-28 flex flex-col md:flex-row items-center gap-12"
+        className="px-6 md:px-24 pb-28 flex flex-col md:flex-row items-center gap-16"
       >
-        {/* Vidéo */}
         <div className="w-full md:w-1/2">
           <p className="text-[10px] font-sans tracking-[0.3em] uppercase text-neutral-600 mb-4">
             En images · Ralph Lauren
@@ -115,12 +121,11 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
           </div>
         </div>
 
-        {/* Polo Player */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center items-center">
           <img
             src="/polo-player.png"
             alt="Polo Player Ralph Lauren"
-            className="h-64 md:h-80 w-auto object-contain opacity-80"
+            className="h-72 md:h-96 w-auto object-contain opacity-75"
           />
         </div>
       </motion.div>
