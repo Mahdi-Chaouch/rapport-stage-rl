@@ -1,146 +1,116 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, MapPin, History, Sparkles, Layers, Users, ChevronRight } from "lucide-react";
-import content from "@/data/content";
 
-interface MaisonSectionProps {
-  onOpenOrganigram: () => void;
-}
-
-export default function MaisonSection({ onOpenOrganigram }: MaisonSectionProps) {
-  const { maison } = content;
-
+export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: () => void }) {
   return (
-    <section id="maison" className="relative py-24 md:py-36 px-6 md:px-16 border-b border-white/10">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/10 gap-6">
-          <div>
-            <span className="text-xs font-sans tracking-[0.3em] uppercase text-neutral-400 font-semibold">
-              {maison.chapter}
-            </span>
-            <h2 className="font-serif text-4xl md:text-6xl text-white mt-3 font-normal tracking-tight">
-              {maison.title}
-            </h2>
-          </div>
-          <p className="text-neutral-400 font-sans text-sm md:text-base max-w-md italic">
-            {maison.quote}
+    <section id="maison" className="relative border-b border-white/10 overflow-hidden bg-[#050505]">
+
+      {/* ── BLOC 1 : EN-TÊTE ── */}
+      <div className="px-6 md:px-24 pt-28 pb-0">
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="block text-[10px] font-sans tracking-[0.4em] uppercase text-neutral-500 mb-3"
+        >
+          I · Histoire & Identité
+        </motion.span>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="text-[11px] font-sans tracking-[0.35em] uppercase text-neutral-400 mb-6"
+        >
+          La Maison Ralph Lauren
+        </motion.p>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="pinyon text-7xl sm:text-8xl md:text-[10rem] text-white leading-none"
+        >
+          Du Bronx au monde.
+        </motion.h2>
+      </div>
+
+      {/* ── BLOC 2 : PORTRAIT + TEXTE ── */}
+      <div className="relative flex flex-col md:flex-row items-center px-6 md:px-24 py-20 gap-0">
+
+        {/* Texte gauche */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="w-full md:w-2/5 md:text-right md:pr-12 mb-10 md:mb-0"
+        >
+          <p className="font-serif text-lg md:text-xl text-neutral-300 leading-relaxed italic">
+            Ralph Lifshitz naît en 1939 dans le Bronx, New York, fils d&apos;immigrants juifs biélorusses. Rien ne le prédestine à révolutionner la mode mondiale.
+          </p>
+        </motion.div>
+
+        {/* Portrait centré */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="w-full md:w-1/5 flex justify-center"
+        >
+          <img
+            src="/ralph-portrait.png"
+            alt="Ralph Lauren"
+            className="h-80 md:h-[480px] w-auto object-contain"
+            style={{ filter: 'invert(1) grayscale(1)', mixBlendMode: 'screen' }}
+          />
+        </motion.div>
+
+        {/* Texte droite */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="w-full md:w-2/5 md:pl-12 mt-10 md:mt-0"
+        >
+          <p className="font-serif text-lg md:text-xl text-neutral-300 leading-relaxed italic">
+            Pourtant il se distingue avec un sens inné de l&apos;élégance, une obsession pour le détail, et une vision : faire porter aux gens non pas des vêtements, mais un rêve. En 1967, avec 50 dollars en poche et une collection de cravates larges, Ralph Lauren pose la première pierre d&apos;un empire qui pèse aujourd&apos;hui plus de 6 milliards de dollars.
+          </p>
+        </motion.div>
+
+      </div>
+
+      {/* ── BLOC 3 : CITATION ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="px-6 md:px-24 py-16 border-t border-white/5"
+      >
+        <blockquote className="font-serif text-3xl md:text-5xl text-white font-light italic text-center max-w-4xl mx-auto leading-tight">
+          &ldquo;A lot of hard work is hidden behind nice things.&rdquo;
+        </blockquote>
+        <p className="text-center text-[10px] font-sans tracking-[0.35em] uppercase text-neutral-500 mt-6">
+          — Ralph Lauren
+        </p>
+      </motion.div>
+
+      {/* ── BLOC 4 : VIDÉO (placeholder) ── */}
+      <div className="px-6 md:px-0 pb-28">
+        <div className="w-full aspect-video bg-neutral-900 flex items-center justify-center">
+          <p className="text-neutral-600 font-sans text-xs tracking-widest uppercase">
+            Vidéo Ralph Lauren — à intégrer
           </p>
         </div>
-
-        {/* Grid 2 Columns: Identity & History */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-          {/* Identity & Flagships */}
-          <div className="lg:col-span-7 space-y-8">
-            <div className="luxury-glass p-8 md:p-10 rounded-2xl relative overflow-hidden">
-              <div className="flex items-center space-x-3 mb-6">
-                <Building2 className="w-5 h-5 text-neutral-300" />
-                <h3 className="font-serif text-2xl text-white tracking-wide">
-                  {maison.presentation.title}
-                </h3>
-              </div>
-              <p className="text-neutral-300 font-sans leading-relaxed text-sm md:text-base mb-6">
-                Fondée en 1967 à New York par le styliste et entrepreneur visionnaire Ralph Lauren, la Maison incarna d'emblée une redéfinition du luxe mondial à travers le concept du <strong className="text-white">Lifestyle Global</strong>. Plus qu'une marque de prêt-à-porter, Ralph Lauren conçoit un univers cinématographique où chaque collection raconte une histoire.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-white/10 font-sans">
-                <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                  <div className="flex items-center space-x-2 text-xs text-neutral-400 uppercase tracking-widest mb-1">
-                    <MapPin className="w-3.5 h-3.5 text-white" />
-                    <span>{maison.presentation.flagship.label}</span>
-                  </div>
-                  <p className="text-white font-serif text-lg font-medium">{maison.presentation.flagship.address}</p>
-                  <p className="text-xs text-neutral-400 mt-1">{maison.presentation.flagship.details}</p>
-                </div>
-
-                <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                  <div className="flex items-center space-x-2 text-xs text-neutral-400 uppercase tracking-widest mb-1">
-                    <Building2 className="w-3.5 h-3.5 text-neutral-300" />
-                    <span>{maison.presentation.headquarters.label}</span>
-                  </div>
-                  <p className="text-white font-serif text-lg font-medium">{maison.presentation.headquarters.address}</p>
-                  <p className="text-xs text-neutral-400 mt-1">{maison.presentation.headquarters.details}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* History Timeline */}
-            <div className="luxury-glass p-8 md:p-10 rounded-2xl">
-              <div className="flex items-center space-x-3 mb-6">
-                <History className="w-5 h-5 text-neutral-300" />
-                <h3 className="font-serif text-2xl text-white tracking-wide">
-                  {maison.history.title}
-                </h3>
-              </div>
-              <div className="space-y-6 border-l border-white/10 pl-6 ml-2 font-sans">
-                {maison.history.timeline.map((item, index) => (
-                  <div key={index}>
-                    <span className="text-xs font-mono text-neutral-400 tracking-widest uppercase">{item.year}</span>
-                    <h4 className="font-serif text-lg text-white">{item.title}</h4>
-                    <p className="text-xs text-neutral-400 mt-1">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Brand Universe & Organigram Trigger */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="luxury-glass p-8 rounded-2xl">
-              <div className="flex items-center space-x-3 mb-6">
-                <Layers className="w-5 h-5 text-neutral-300" />
-                <h3 className="font-serif text-2xl text-white tracking-wide">
-                  {maison.universe.title}
-                </h3>
-              </div>
-              <div className="space-y-4">
-                {maison.universe.items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/20 transition-all duration-300 group"
-                  >
-                    <div className="flex justify-between items-center mb-1">
-                      <h4 className="font-serif text-base text-white group-hover:translate-x-1 transition-transform">
-                        {item.name}
-                      </h4>
-                      <span className="text-[9px] font-mono uppercase tracking-widest text-neutral-400 px-2 py-0.5 rounded bg-white/10">
-                        {item.tag}
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 font-sans leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Interactive Organigram Banner */}
-            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-neutral-900 to-black border border-white/20 text-white overflow-hidden group">
-              <div className="relative z-10">
-                <div className="flex items-center space-x-3 text-xs font-mono tracking-widest text-neutral-400 uppercase mb-3">
-                  <Users className="w-4 h-4 text-white" />
-                  <span>{maison.organigramBanner.badge}</span>
-                </div>
-                <h3 className="font-serif text-2xl text-white mb-2">
-                  {maison.organigramBanner.title}
-                </h3>
-                <p className="text-xs text-neutral-400 font-sans mb-6 max-w-sm">
-                  {maison.organigramBanner.description}
-                </p>
-                <button
-                  onClick={onOpenOrganigram}
-                  className="inline-flex items-center space-x-3 px-5 py-3 rounded-full bg-white text-black font-sans text-xs tracking-widest uppercase font-semibold hover:bg-neutral-200 transition-all duration-300"
-                >
-                  <span>{maison.organigramBanner.buttonText}</span>
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+
     </section>
   );
 }
