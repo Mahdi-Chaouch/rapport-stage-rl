@@ -37,13 +37,13 @@ export default function Home() {
   useEffect(() => {
     if (!videoEnded) return;
     const sections = [
-      { id: "hero", label: "00 · INTRODUCTION ÉDITORIALE" },
-      { id: "maison", label: "I · LA MAISON RALPH LAUREN" },
-      { id: "poste", label: "II · MON POSTE & RESPONSABILITÉS" },
-      { id: "carnet", label: "III · CARNET DE BORD" },
-      { id: "strategie", label: "IV · ANALYSE STRATÉGIQUE" },
+      { id: "hero",       label: "00 · INTRODUCTION ÉDITORIALE" },
+      { id: "maison",     label: "I · LA MAISON RALPH LAUREN" },
+      { id: "poste",      label: "II · MON POSTE & RESPONSABILITÉS" },
+      { id: "carnet",     label: "III · CARNET DE BORD" },
+      { id: "strategie",  label: "IV · ANALYSE STRATÉGIQUE" },
       { id: "rencontres", label: "V · RENCONTRES & INSIGHTS" },
-      { id: "voyage", label: "VI · RETOUR DE VOYAGE" },
+      { id: "voyage",     label: "VI · RETOUR DE VOYAGE" },
     ];
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 300;
@@ -128,10 +128,10 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-normal italic max-w-2xl mx-auto leading-relaxed"
+                  className="font-serif text-lg sm:text-xl md:text-2xl text-neutral-400 font-normal italic max-w-2xl mx-auto leading-relaxed text-justify"
                 >
                   Ce portfolio retrace trois mois d&apos;immersion au c&oelig;ur de la boutique de la Madeleine, premi&egrave;re boutique europ&eacute;enne Ralph Lauren, pour un &eacute;t&eacute; qui n&apos;aura ressembl&eacute; &agrave; aucun autre.
-                  <span className="block mt-4 text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-500 font-normal">
+                  <span className="block mt-4 text-sm font-sans not-italic uppercase tracking-[0.25em] text-neutral-500 font-normal text-center">
                     {global.heroLocation}
                   </span>
                 </motion.p>
@@ -168,13 +168,18 @@ export default function Home() {
                   <span>·</span>
                   <span className="text-neutral-300">Tuteur de stage : {global.companyTutor}</span>
                 </div>
-                <<a href="https://isg-luxury.fr" target="_blank" rel="noopener noreferrer">
-  <img
-    src="/isg-logo.jpg"
-    alt="ISG Luxury Program"
-    className="h-16 w-auto opacity-30 hover:opacity-60 transition-opacity duration-300 invert"
-  />
-</a>
+
+                
+                  href="https://isg-luxury.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/isg-logo.jpg"
+                    alt="ISG Luxury Program"
+                    className="h-16 w-auto opacity-30 hover:opacity-60 transition-opacity duration-300 invert"
+                  />
+                </a>
               </div>
             </section>
 
