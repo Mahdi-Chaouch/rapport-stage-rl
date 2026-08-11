@@ -7,13 +7,13 @@ const timeline = [
   {
     year: "1967",
     title: "La Cravate Fondatrice",
-    desc: "Avec 50 dollars en poche, Ralph Lifshitz lance sa premiere collection de cravates larges sous le nom Ralph Lauren. Une revolution discrete.",
+    desc: "Avec 50 dollars en poche, Ralph Lifshitz lance sa première collection de cravates larges sous le nom Ralph Lauren. Une révolution discrete.",
     pink: false,
   },
   {
     year: "1972",
     title: "La Naissance du Polo",
-    desc: "Creation du polo shirt iconique a logo polo player brode — piece qui deviendra l'un des vetements les plus reconnaissables au monde.",
+    desc: "Création du polo shirt iconique à logo polo player brode, pièce qui deviendra l'un des vêtements les plus reconnaissables au monde.",
     pink: false,
   },
   {
