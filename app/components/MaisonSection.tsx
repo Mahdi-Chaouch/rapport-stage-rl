@@ -412,7 +412,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
               viewport={{ once: true }}
               className="w-full md:w-3/5 overflow-hidden"
             >
-              <img src="/boutique-1.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[520px] object-cover object-center" />
+              <img src="/boutique-1.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[520px] object-cover object-bottom" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 60 }}
@@ -433,7 +433,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             viewport={{ once: true }}
             className="w-full overflow-hidden"
           >
-            <img src="/boutique-3.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[450px] object-cover object-center" />
+            <img src="/boutique-3.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[600px] object-cover object-center" />
           </motion.div>
 
           {/* Ligne 3 : petite gauche + grande droite */}
@@ -445,7 +445,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
               viewport={{ once: true }}
               className="w-full md:w-2/5 md:mt-24 overflow-hidden"
             >
-              <img src="/boutique-4.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[380px] object-cover object-center" />
+              <img src="/boutique-4.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[500px] object-cover object-center" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 60 }}
@@ -454,7 +454,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
               viewport={{ once: true }}
               className="w-full md:w-3/5 overflow-hidden"
             >
-              <img src="/boutique-5.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[520px] object-cover object-center" />
+              <img src="/boutique-5.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[650px] object-cover object-center" />
             </motion.div>
           </div>
 
