@@ -372,6 +372,126 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
         </div>
       </div>
 
+      {/* ── BLOC 6 : LA BOUTIQUE ── */}
+      <div className="border-t border-white/10 pt-20 pb-24">
+
+        {/* Titre + Texte */}
+        <div className="px-6 md:px-24 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row md:items-start md:justify-between gap-12"
+          >
+            <div className="md:w-2/5">
+              <span className="text-[10px] font-sans tracking-[0.4em] uppercase text-neutral-500 block mb-4">
+                2 Place de la Madeleine · Paris 8e
+              </span>
+              <h3 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white font-light tracking-tight leading-none">
+                La Boutique<br />de la Madeleine
+              </h3>
+            </div>
+            <div className="md:w-3/5">
+              <p className="font-serif text-lg md:text-xl text-neutral-400 leading-relaxed font-normal">
+                Inauguree en 2000 au 2 Place de la Madeleine, c'est la premiere boutique parisienne et europeenne de Ralph Lauren, une etape historique pour la maison americaine. Sur trois etages d'un immeuble haussmannien au coeur du 8e arrondissement, elle explore un univers immersif ou chaque detail raconte une histoire : parquets en chevrons, boiseries sombres, luminaires en laiton, tapis d'Orient. Le sous-sol est dedie au Polo et au sportswear, le rez-de-chaussee au formel masculin et l'etage a la femme. La premiere fois que j'y suis entre pour mon entretien, j'ai eu l'impression de quitter Paris pour entrer dans un autre monde, celui que Ralph Lauren a toujours reve de batir, americain, preppy, incontemporel. Ses murs ont accueilli Rami Malek, Kanye West, le Prince du Maroc et bien d'autres.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Photos quinconce */}
+        <div className="px-6 md:px-24 space-y-6">
+
+          {/* Ligne 1 : grande gauche + petite droite */}
+          <div className="flex flex-col md:flex-row gap-6 items-start">
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="w-full md:w-3/5 overflow-hidden"
+            >
+              <img src="/boutique-1.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[520px] object-cover object-center" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="w-full md:w-2/5 md:mt-32 overflow-hidden"
+            >
+              <img src="/boutique-2.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[380px] object-cover object-center" />
+            </motion.div>
+          </div>
+
+          {/* Ligne 2 : pleine largeur */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+            className="w-full overflow-hidden"
+          >
+            <img src="/boutique-3.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[450px] object-cover object-center" />
+          </motion.div>
+
+          {/* Ligne 3 : petite gauche + grande droite */}
+          <div className="flex flex-col md:flex-row gap-6 items-start">
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="w-full md:w-2/5 md:mt-24 overflow-hidden"
+            >
+              <img src="/boutique-4.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[380px] object-cover object-center" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="w-full md:w-3/5 overflow-hidden"
+            >
+              <img src="/boutique-5.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[520px] object-cover object-center" />
+            </motion.div>
+          </div>
+
+          {/* Ligne 4 : trois colonnes */}
+          <div className="flex flex-col md:flex-row gap-6 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="w-full md:w-1/3 overflow-hidden"
+            >
+              <img src="/boutique-6.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[340px] object-cover object-center" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="w-full md:w-1/3 md:mt-16 overflow-hidden"
+            >
+              <img src="/boutique-7.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[340px] object-cover object-center" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="w-full md:w-1/3 md:mt-32 overflow-hidden"
+            >
+              <img src="/boutique-8.jpg" alt="Boutique Ralph Lauren Madeleine" className="w-full h-[340px] object-cover object-center" />
+            </motion.div>
+          </div>
+
+        </div>
+      </div>
+
       {/* ── BLOC 6 : VIDÉO + POLO PLAYER ── */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
