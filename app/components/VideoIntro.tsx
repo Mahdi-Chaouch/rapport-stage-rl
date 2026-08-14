@@ -91,7 +91,8 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
         autoPlay
         muted={isMuted}
         playsInline
-        className={`w-full h-full object-cover transition-all duration-1000 ${
+        className={`w-full h-full object-cover transition-all duration-1000 ${...}`}
+style={{ imageRendering: "auto", willChange: "transform" }}
           videoEnded ? "scale-105 filter brightness-50 contrast-125 blur-[2px]" : "scale-100 brightness-90"
         }`}
       />
