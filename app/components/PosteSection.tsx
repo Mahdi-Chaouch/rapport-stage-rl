@@ -64,8 +64,8 @@ export default function PosteSection() {
               className="absolute inset-0 transition-opacity duration-700"
               style={{ opacity: hovered === i ? 1 : 0 }}
             >
-              <img src={mission.img} alt={mission.title} className="w-full h-full object-cover object-center" />
-              <div className="absolute inset-0 bg-black/70" />
+              <img src={mission.img} alt={mission.title} className="w-full h-full object-cover object-bottom"
+              <div className="absolute inset-0 bg-black/80" />
             </div>
 
             <div className="relative z-10 px-6 md:px-24 h-full flex flex-col justify-center">
