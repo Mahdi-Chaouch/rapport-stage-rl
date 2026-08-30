@@ -7,7 +7,7 @@ export default function PosteSection() {
         II · Mon Poste et Responsabilites
       </span>
       <h2 className="font-serif text-4xl md:text-7xl text-white font-light">
-        Conseiller de Vente Stagiaire
+        Conseiller de vente stagiaire
       </h2>
     </section>
   );
