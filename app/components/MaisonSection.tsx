@@ -43,7 +43,7 @@ const timeline = [
   {
     year: "2002",
     title: "Premiers defiles a Milan",
-    desc: "C'est au palazzo milanais de la marque que Ralph presente les defilés des collections Automne 2002 et Printemps 2003 de Purple Label.",
+    desc: "C'est au palazzo milanais de la marque que Ralph présente les defilés des collections Automne 2002 et Printemps 2003 de Purple Label.",
     pink: false,
   },
   {
