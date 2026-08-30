@@ -9,7 +9,7 @@ export default function PosteSection() {
   const missions = [
     { num: "01", title: "Accueil Client", img: "/mission-1.jpg", desc: "Premier visage de la maison Ralph Lauren, j'accueillais chaque client avec les codes d'excellence propres au luxe. Chaque entree en boutique est une opportunite de creer une experience memorable.", position: "object-center" },
     { num: "02", title: "Vente de A a Z", img: "/mission-2.jpg", desc: "De la decouverte des besoins jusqu'au closing, j'accompagnais le client dans tout son parcours d'achat. Conseil produit, argumentation — chaque vente etait une histoire unique.", position: "object-center" },
-    { num: "03", title: "Click & Collect", img: "/mission-3.jpg", desc: "Gestion et remise des commandes en ligne, suivi client, coordination avec l'equipe logistique. Rigueur et sens du service pour une experience irreprochable.", position: "object-bottom" },
+    { num: "03", title: "Click & Collect", img: "/mission-3.jpg", desc: "Gestion et remise des commandes en ligne, suivi client, coordination avec l'equipe logistique. Rigueur et sens du service pour une experience irreprochable.", position: "object-center" },
     { num: "04", title: "Rangement & Reassort", img: "/mission-4.jpg", desc: "Organisation de la surface de vente, reassort des rayons, gestion du back office. Comprendre les coulisses invisibles de l'excellence visible.", position: "object-center" },
   ];
 
