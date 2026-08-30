@@ -7,9 +7,9 @@ export default function PosteSection() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   const missions = [
-    { num: "01", title: "Accueil Client", img: "/mission-1.jpg", desc: "Premier visage de la maison Ralph Lauren, j'accueillais chaque client avec les codes d'excellence propres au luxe. Chaque entree en boutique est une opportunite de creer une experience memorable.", position: "object-bottom" },
+    { num: "01", title: "Accueil Client", img: "/mission-1.jpg", desc: "Premier visage de la maison Ralph Lauren, j'accueillais chaque client avec les codes d'excellence propres au luxe. Chaque entree en boutique est une opportunite de creer une experience memorable.", position: "object-top" },
     { num: "02", title: "Vente de A a Z", img: "/mission-2.jpg", desc: "De la decouverte des besoins jusqu'au closing, j'accompagnais le client dans tout son parcours d'achat. Conseil produit, argumentation — chaque vente etait une histoire unique.", position: "object-center" },
-    { num: "03", title: "Click & Collect", img: "/mission-3.jpg", desc: "Gestion et remise des commandes en ligne, suivi client, coordination avec l'equipe logistique. Rigueur et sens du service pour une experience irreprochable.", position: "object-bottom" },
+    { num: "03", title: "Click & Collect", img: "/mission-3.jpg", desc: "Gestion et remise des commandes en ligne, suivi client, coordination avec l'equipe logistique. Rigueur et sens du service pour une experience irreprochable.", position: "object-center" },
     { num: "04", title: "Rangement & Reassort", img: "/mission-4.jpg", desc: "Organisation de la surface de vente, reassort des rayons, gestion du back office. Comprendre les coulisses invisibles de l'excellence visible.", position: "object-center" },
   ];
 
@@ -32,7 +32,7 @@ export default function PosteSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1 }}
           viewport={{ once: true }}
-          className="font-serif text-4xl sm:text-5xl md:text-7xl text-white font-light tracking-tight leading-none mb-16"
+          className="font-serif text-5xl sm:text-6xl md:text-8xl text-white font-light tracking-tight leading-none mb-16"
         >
           Conseiller de Vente Stagiaire
         </motion.h2>
@@ -42,7 +42,7 @@ export default function PosteSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.4 }}
           viewport={{ once: true }}
-          className="pinyon text-3xl sm:text-4xl md:text-5xl text-neutral-400 leading-none font-light"
+          className="pinyon text-4xl sm:text-5xl md:text-6xl text-neutral-400 leading-none font-light"
         >
           Chaque matin, une nouvelle aventure.
         </motion.p>
@@ -56,7 +56,7 @@ export default function PosteSection() {
             onMouseLeave={() => setHovered(null)}
             className="relative border-t border-white/10 overflow-hidden cursor-pointer"
             style={{
-              height: hovered === i ? "400px" : "88px",
+              height: hovered === i ? "420px" : "92px",
               transition: "height 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
           >
@@ -74,11 +74,11 @@ export default function PosteSection() {
 
             <div className="relative z-10 px-6 md:px-24 h-full flex flex-col justify-center">
               <div className="flex items-baseline gap-8">
-                <span className="font-serif text-2xl md:text-4xl font-light text-white/20">
+                <span className="font-serif text-3xl md:text-5xl font-light text-white/20">
                   {mission.num}
                 </span>
                 <h3
-                  className="font-serif text-xl md:text-3xl font-light tracking-wide transition-colors duration-300"
+                  className="font-serif text-2xl md:text-4xl font-light tracking-wide transition-colors duration-300"
                   style={{ color: hovered === i ? "#ffffff" : "rgba(255,255,255,0.75)" }}
                 >
                   {mission.title}
@@ -93,7 +93,7 @@ export default function PosteSection() {
                 overflow: "hidden",
               }}>
                 <div className="w-8 h-[1px] bg-white/20 mt-6 mb-4" />
-                <p className="font-serif text-base md:text-lg text-white/80 leading-relaxed max-w-2xl font-light">
+                <p className="font-serif text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl font-light">
                   {mission.desc}
                 </p>
               </div>
