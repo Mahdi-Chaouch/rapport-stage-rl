@@ -7,10 +7,10 @@ export default function PosteSection() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   const missions = [
-    { num: "01", title: "Accueil Client", img: "/mission-1.jpg", desc: "Premier visage de la maison Ralph Lauren, j'accueillais chaque client avec les codes d'excellence propres au luxe. Chaque entree en boutique est une opportunite de creer une experience memorable." },
-    { num: "02", title: "Vente de A a Z", img: "/mission-2.jpg", desc: "De la decouverte des besoins jusqu'au closing, j'accompagnais le client dans tout son parcours d'achat. Conseil produit, argumentation — chaque vente etait une histoire unique." },
-    { num: "03", title: "Click & Collect", img: "/mission-3.jpg", desc: "Gestion et remise des commandes en ligne, suivi client, coordination avec l'equipe logistique. Rigueur et sens du service pour une experience irreprochable." },
-    { num: "04", title: "Rangement & Reassort", img: "/mission-4.jpg", desc: "Organisation de la surface de vente, reassort des rayons, gestion du back office. Comprendre les coulisses invisibles de l'excellence visible." },
+    { num: "01", title: "Accueil Client", img: "/mission-1.jpg", desc: "Premier visage de la maison Ralph Lauren, j'accueillais chaque client avec les codes d'excellence propres au luxe. Chaque entree en boutique est une opportunite de creer une experience memorable.", position: "object-bottom" },
+    { num: "02", title: "Vente de A a Z", img: "/mission-2.jpg", desc: "De la decouverte des besoins jusqu'au closing, j'accompagnais le client dans tout son parcours d'achat. Conseil produit, argumentation — chaque vente etait une histoire unique.", position: "object-center" },
+    { num: "03", title: "Click & Collect", img: "/mission-3.jpg", desc: "Gestion et remise des commandes en ligne, suivi client, coordination avec l'equipe logistique. Rigueur et sens du service pour une experience irreprochable.", position: "object-bottom" },
+    { num: "04", title: "Rangement & Reassort", img: "/mission-4.jpg", desc: "Organisation de la surface de vente, reassort des rayons, gestion du back office. Comprendre les coulisses invisibles de l'excellence visible.", position: "object-center" },
   ];
 
   return (
@@ -64,7 +64,11 @@ export default function PosteSection() {
               className="absolute inset-0 transition-opacity duration-700"
               style={{ opacity: hovered === i ? 1 : 0 }}
             >
-              <img src={mission.img} alt={mission.title} className="w-full h-full object-cover object-bottom"
+              <img
+                src={mission.img}
+                alt={mission.title}
+                className={`w-full h-full object-cover ${mission.position}`}
+              />
               <div className="absolute inset-0 bg-black/80" />
             </div>
 
@@ -73,8 +77,9 @@ export default function PosteSection() {
                 <span className="font-serif text-2xl md:text-4xl font-light text-white/20">
                   {mission.num}
                 </span>
-                <h3 className="font-serif text-xl md:text-3xl font-light tracking-wide text-white/80"
-                  style={{ color: hovered === i ? "#ffffff" : undefined }}
+                <h3
+                  className="font-serif text-xl md:text-3xl font-light tracking-wide transition-colors duration-300"
+                  style={{ color: hovered === i ? "#ffffff" : "rgba(255,255,255,0.75)" }}
                 >
                   {mission.title}
                 </h3>
@@ -88,7 +93,7 @@ export default function PosteSection() {
                 overflow: "hidden",
               }}>
                 <div className="w-8 h-[1px] bg-white/20 mt-6 mb-4" />
-                <p className="font-serif text-base md:text-lg text-white/70 leading-relaxed max-w-2xl font-light">
+                <p className="font-serif text-base md:text-lg text-white/80 leading-relaxed max-w-2xl font-light">
                   {mission.desc}
                 </p>
               </div>
