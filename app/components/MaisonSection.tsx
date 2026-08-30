@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import Flipbook from "./Flipbook";
 
 const timeline = [
   {
@@ -491,6 +492,25 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
 
         </div>
       </div>
+
+      {/* ── FLIPBOOK LOOKBOOK ── */}
+<div className="py-24 border-t border-white/10">
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="px-6 md:px-24 mb-12"
+  >
+    <span className="text-[10px] font-sans tracking-[0.4em] uppercase text-neutral-500 block mb-4">
+      Collection · Polo Ralph Lauren
+    </span>
+    <h3 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white font-light">
+      Le Lookbook
+    </h3>
+  </motion.div>
+  <Flipbook />
+</div>
 
       {/* ── BLOC 6 : VIDÉO + POLO PLAYER ── */}
       <motion.div
