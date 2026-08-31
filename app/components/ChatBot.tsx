@@ -49,9 +49,16 @@ export default function ChatBot() {
   const [introduced, setIntroduced] = useState(false);
 
   const handleOpen = () => {
-    setIsOpen(true);
-    setTimeout(() => setIntroduced(true), 500);
-  };
+  setIsOpen(true);
+  setTimeout(() => {
+    setIntroduced(true);
+    const msg = new SpeechSynthesisUtterance("Bonjour, je suis POLO, l'assistant de Constantin. Je reponds à sa place sur son expérience chez Ralph Lauren. Choisissez une question.");
+    msg.lang = "fr-FR";
+    msg.rate = 0.9;
+    msg.pitch = 1;
+    window.speechSynthesis.speak(msg);
+  }, 400);
+};
 
   const handleClose = () => {
     setIsOpen(false);
