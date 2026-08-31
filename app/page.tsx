@@ -85,11 +85,12 @@ export default function Home() {
       </AnimatePresence>
 
       <EditorialHeader
-        visible={videoEnded}
-        activeSection={activeSection}
-        onOpenMenu={() => setIsMenuOpen(true)}
-        onOpenPrint={() => setIsPrintOpen(true)}
-      />
+  visible={videoEnded}
+  activeSection={activeSection}
+  onOpenMenu={() => setIsMenuOpen(true)}
+  onOpenPrint={() => setIsPrintOpen(true)}
+  onOpenChat={() => {}}
+/>
 
       <AnimatePresence>
         {videoEnded && (
