@@ -97,9 +97,9 @@ style={{ maxHeight: "88vh" }}
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#C8A96E]/10 border border-[#C8A96E]/30 flex items-center justify-center">
-                    <span className="font-serif text-[#C8A96E] text-xs font-light">P</span>
-                  </div>
+                  <div className="w-8 h-8 flex items-center justify-center">
+  <img src="/polo-player.png" alt="POLO" className="w-6 h-6 object-contain invert" />
+</div>
                   <div>
                     <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-white">POLO</p>
                     <p className="font-sans text-[9px] tracking-[0.2em] uppercase text-neutral-500">Assistant de Constantin</p>
@@ -122,9 +122,9 @@ style={{ maxHeight: "88vh" }}
                       transition={{ duration: 0.5 }}
                       className="flex gap-3"
                     >
-                      <div className="w-7 h-7 rounded-full bg-[#C8A96E]/10 border border-[#C8A96E]/30 flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="font-serif text-[#C8A96E] text-[10px]">P</span>
-                      </div>
+                      <div className="w-8 h-8 flex items-center justify-center">
+  <img src="/polo-player.png" alt="POLO" className="w-6 h-6 object-contain invert" />
+</div>
                       <div className="bg-white/5 border border-white/10 px-4 py-3 max-w-[85%]">
                         <p className="font-serif text-sm text-white/80 leading-relaxed font-light">
                           Bonjour, je suis <span className="text-[#C8A96E]">POLO</span> — l'assistant de Constantin. Je reponds a sa place sur son experience chez Ralph Lauren. Choisissez une question ci-dessous.
