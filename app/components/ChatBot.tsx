@@ -160,7 +160,7 @@ style={{ maxHeight: "88vh" }}
                         className="flex gap-3"
                       >
                         <div className="w-7 h-7 rounded-full bg-[#C8A96E]/10 border border-[#C8A96E]/30 flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="font-serif text-[#C8A96E] text-[10px]">P</span>
+                          <img src="/polo-player.png" alt="POLO" className="w-5 h-5 object-contain brightness-0 invert" />
                         </div>
                         <div className="bg-white/5 border border-white/10 px-4 py-3 max-w-[85%]">
                           <p className="font-serif text-sm text-white/80 leading-relaxed font-light">
@@ -185,7 +185,7 @@ style={{ maxHeight: "88vh" }}
                     onClick={() => setActiveQ(i)}
                     className={`w-full text-left px-4 py-2.5 border transition-all duration-200 ${
                       activeQ === i
-                        ? "border-[#C8A96E]/50 bg-[#C8A96E]/5 text-[#C8A96E]"
+                        ? "border-blue-400/50 bg-blue-400/5 text-blue-400"
                         : "border-white/10 text-neutral-400 hover:border-white/30 hover:text-white"
                     }`}
                   >
