@@ -37,7 +37,7 @@ const entries = [
     period: "Semaines 8 — 12",
     title: "L'Autonomie",
     imgs: ["/carnet-5.jpg"],
-    imgPosition: "object-center",
+    imgPosition: "object-top",
     desc: "Je connais maintenant la boutique par coeur. Gestion autonome du stock, reassort des rayons, Click and Collect, accueil et vente clients. Je contribue pleinement a la vie de la boutique. Ce stage m'a transforme.",
   },
 ];
