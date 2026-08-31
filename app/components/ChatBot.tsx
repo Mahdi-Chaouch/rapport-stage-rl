@@ -7,7 +7,7 @@ import { X, MessageCircle } from "lucide-react";
 const QA = [
   {
     q: "Pourquoi avoir choisi Ralph Lauren pour ton stage ?",
-    a: "Ralph Lauren, c'est bien plus qu'une marque pour moi. C'est un univers, une vision, une facon d'apprehender le luxe qui m'a toujours fascine. Quand j'ai eu l'opportunite de postuler a la boutique de la Madeleine — la premiere boutique europeenne de la maison — ca a ete une evidence. Je voulais apprendre le luxe la ou il se vit vraiment, pas juste l'etudier dans un cours.",
+    a: "Ralph Lauren, c'est bien plus qu'une marque pour moi. C'est un univers, une vision, une facon d'appréhender le luxe qui m'a toujours fascine. Quand j'ai eu l'opportunite de postuler a la boutique de la Madeleine — la premiere boutique europeenne de la maison — ca a ete une evidence. Je voulais apprendre le luxe la ou il se vit vraiment, pas juste l'etudier dans un cours.",
   },
   {
     q: "C'est quoi le PSR GSR et pourquoi c'est important ?",
