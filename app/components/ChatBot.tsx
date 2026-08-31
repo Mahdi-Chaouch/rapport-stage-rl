@@ -19,7 +19,7 @@ const QA = [
   },
   {
     q: "C'est quoi une journee type a la boutique de la Madeleine ?",
-    a: "On arrive, on prepare le floor — reassort, facing, tout doit etre parfait avant l'ouverture. Ensuite c'est l'accueil client, la vente, le Click & Collect. Entre les clients on gere le stock, on range. Chaque journee est differente. C'est ca qui est addictif — on ne s'ennuie jamais dans une boutique Ralph Lauren.",
+    a: "La journée de Constantin commence généralement à 11 heures. Après avoir salué l’équipe, un brief est organisé par l’un des trois managers afin de faire le point sur les résultats de la veille et de fixer les objectifs de la journée. Une fois le brief terminé, chacun rejoint son poste sur le floor. Selon les besoins, Constantin peut commencer par le réassort, puis accueillir les clients, les orienter vers les différents univers de la boutique, Sportswear, Femme, Casual. Après sa pause, lorsque l’activité le permet, il peut également passer sur d’autres missions comme le PSR, le GSR ou donner un coup de main au stock. À partir de 17 heures, lorsque l’affluence augmente, la priorité est claire : retour sur le floor pour accompagner au maximum les vendeurs et les clients. Enfin, une dizaine de minutes avant la fermeture, place au réassort et au rangement du floor. Une fois la boutique remise en ordre, la journée de Constantin se termine.",
   },
   {
     q: "Est-ce qu'il y a eu des moments difficiles ?",
