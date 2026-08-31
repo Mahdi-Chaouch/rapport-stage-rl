@@ -52,14 +52,10 @@ export default function ChatBot() {
   setIsOpen(true);
   setTimeout(() => {
     setIntroduced(true);
-    const msg = new SpeechSynthesisUtterance("Bonjour, je suis POLO, l'assistant de Constantin. Je reponds à sa place sur son expérience chez Ralph Lauren. Choisissez une question.");
-    msg.lang = "fr-FR";
-    msg.rate = 0.9;
-    msg.pitch = 1;
-    window.speechSynthesis.speak(msg);
+    const audio = new Audio("/polo-intro.mp3");
+    audio.play();
   }, 400);
 };
-
   const handleClose = () => {
     setIsOpen(false);
     setActiveQ(null);
