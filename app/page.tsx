@@ -215,7 +215,7 @@ export default function Home() {
         isOpen={isPrintOpen}
         onClose={() => setIsPrintOpen(false)}
       />
-
+<ChatBot />
     </main>
   );
 }
