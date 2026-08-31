@@ -52,14 +52,7 @@ export default function EditorialHeader({
       {/* Action Triggers */}
       <div className="flex items-center space-x-4">
         {/* PDF / Defense Print trigger */}
-        <button
-          onClick={onOpenPrint}
-          className="hidden sm:flex items-center space-x-2 text-[10px] uppercase font-sans tracking-[0.25em] text-neutral-300 hover:text-white px-3.5 py-2 rounded-full border border-white/10 hover:border-white/40 backdrop-blur-md transition-all duration-300"
-          title="Consulter la version Synthèse pour Soutenance (PDF)"
-        >
-          <Printer className="w-3 h-3" />
-          <span>SYNTHÈSE</span>
-        </button>
+      
 
         {/* Minimalist Luxury Burger Menu */}
         <button
