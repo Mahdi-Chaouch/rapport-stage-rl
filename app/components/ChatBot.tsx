@@ -21,7 +21,7 @@ const QA = [
     audio: "/polo-q3.mp3",
   },
   {
-    q: "C'est quoi une journee type a la boutique de la Madeleine ?",
+    q: "C'est quoi une journee type à la boutique de la Madeleine ?",
     a: "La journée de Constantin commence généralement à 11 heures. Après avoir salué l'équipe, un brief est organisé par l'un des trois managers afin de faire le point sur les résultats de la veille et de fixer les objectifs de la journée. Une fois le brief terminé, chacun rejoint son poste sur le floor. Selon les besoins, Constantin peut commencer par le réassort, puis accueillir les clients, les orienter vers les différents univers de la boutique, Sportswear, Femme, Casual. Après sa pause, lorsque l'activité le permet, il peut également passer sur d'autres missions comme le PSR, le GSR ou donner un coup de main au stock. À partir de 17 heures, lorsque l'affluence augmente, la priorité est claire : retour sur le floor pour accompagner au maximum les vendeurs et les clients. Enfin, une dizaine de minutes avant la fermeture, place au réassort et au rangement du floor. Une fois la boutique remise en ordre, la journée de Constantin se termine.",
     audio: "/polo-q4.mp3",
   },
@@ -31,17 +31,17 @@ const QA = [
     audio: "/polo-q5.mp3",
   },
   {
-    q: "Comment tu te sentais le premier jour ?",
+    q: "Comment il se sentait le premier jour ?",
     a: "Le premier jour, Constantin était forcément un peu stressé, il était arrivé trente minutes en avance et heureusement pour lui, il a vu son tuteur de stage à l'extérieur donc a très vite pu compter sur lui pour commencer à bien ce stage, mais avant tout ça, il était très impatient. Il découvrait un nouvel environnement, une nouvelle équipe et le retail chez Ralph Lauren. Il avait envie de bien faire et de montrer rapidement ce dont il était capable. Avec le recul, ce premier jour a surtout marqué le début d'une vraie évolution au fil du stage.",
     audio: "/polo-q6.mp3",
   },
   {
-    q: "Tu referais ce stage si tu pouvais revenir en arriere ?",
+    q: "Referais t'il ce stage s'il pouvait revenir en arrière ?",
     a: "Sans aucune hésitation. Si c'était à refaire, il le referait mille fois. L'équipe a été formidable du début à la fin, et les moments partagés avec les clients ont rendu chaque journée mémorable et différente. Il a aussi particulièrement apprécié l'atmosphère de la boutique, à la fois dynamique, élégante et humaine. Il était heureux de pousser les portes de la boutique de la Madeleine chaque matin. Au final, ce stage lui a apporté bien plus qu'une expérience professionnelle : de vrais souvenirs et de belles rencontres.",
     audio: "/polo-q7.mp3",
   },
   {
-    q: "Ou tu te vois dans 5 ans ?",
+    q: "Où se voit il dans 5 ans ?",
     a: "Dans cinq ans, Constantin n'a pas encore de plan totalement défini, et c'est peut-être ce qui lui plaît. Il a une idée assez claire de la direction : évoluer dans le luxe, avec pourquoi pas l'objectif de devenir Brand Manager. Son stage lui a surtout confirmé qu'il apprécie énormément le retail et le contact avec les clients. Il sait qu'il lui reste encore beaucoup à découvrir et à apprendre. Mais une chose est certaine : dans cinq ans, il se voit probablement loin. Loin de Paris. Toujours avec cette envie de construire son parcours à l'international.",
     audio: "/polo-q8.mp3",
   },
@@ -52,7 +52,7 @@ const QA = [
   },
   {
     q: "Que se passe-t-il apres la fermeture de la boutique ?",
-    a: "Je ne suis pas autorise a divulguer cette information. Certaines choses restent confidentielles.",
+    a: "Je ne suis pas autorise à divulguer cette information. Certaines choses restent confidentielles.",
     audio: "/polo-q10.mp3",
     secret: true,
   },
