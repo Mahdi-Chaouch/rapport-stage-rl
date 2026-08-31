@@ -98,7 +98,7 @@ style={{ maxHeight: "88vh" }}
               <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 flex items-center justify-center">
-  <img src="/polo-player.png" alt="POLO" className="w-6 h-6 object-contain invert" />
+  <img src="/polo-player.png" alt="POLO" className="w-6 h-6 object-contain brightness-0 invert" />
 </div>
                   <div>
                     <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-white">POLO</p>
@@ -123,7 +123,7 @@ style={{ maxHeight: "88vh" }}
                       className="flex gap-3"
                     >
                       <div className="w-8 h-8 flex items-center justify-center">
-  <img src="/polo-player.png" alt="POLO" className="w-6 h-6 object-contain invert" />
+  <img src="/polo-player.png" alt="POLO" className="w-6 h-6 object-contain brightness-0 invert" />
 </div>
                       <div className="bg-white/5 border border-white/10 px-4 py-3 max-w-[85%]">
                         <p className="font-serif text-sm text-white/80 leading-relaxed font-light">
