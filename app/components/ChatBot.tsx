@@ -91,8 +91,8 @@ export default function ChatBot() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 60, scale: 0.95 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full md:w-[480px] bg-[#050505] border border-white/10 shadow-2xl flex flex-col"
-              style={{ maxHeight: "85vh" }}
+              className="w-full md:w-[620px] bg-[#050505] border border-white/10 shadow-2xl flex flex-col"
+style={{ maxHeight: "88vh" }}
             >
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
