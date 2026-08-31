@@ -63,15 +63,15 @@ export default function ChatBot() {
     <>
       {/* Bouton flottant */}
       <motion.button
-        onClick={handleOpen}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed bottom-8 right-8 z-[200] flex items-center gap-3 px-5 py-3 bg-[#050505] border border-white/20 hover:border-[#C8A96E] transition-all duration-300 shadow-2xl"
-      >
-        <MessageCircle className="w-4 h-4 text-[#C8A96E]" />
-        <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-white">POLO</span>
-        <span className="w-2 h-2 rounded-full bg-[#C8A96E] animate-pulse" />
-      </motion.button>
+  id="polo-trigger"
+  onClick={handleOpen}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="fixed bottom-8 right-8 z-[200] flex items-center gap-3 px-5 py-3 bg-[#050505] border border-white/20 hover:border-[#C8A96E] transition-all duration-300 shadow-2xl"
+  style={{ display: "none" }}
+>
+  <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-white">POLO</span>
+</motion.button>
 
       {/* Overlay chatbot */}
       <AnimatePresence>
