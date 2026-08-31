@@ -51,7 +51,16 @@ export default function EditorialHeader({
 
       {/* Action Triggers */}
       <div className="flex items-center space-x-4">
-        {/* PDF / Defense Print trigger */}
+  <button
+    onClick={() => {
+      const chatBtn = document.getElementById("polo-trigger");
+      if (chatBtn) chatBtn.click();
+    }}
+    className="hidden sm:flex items-center space-x-2 text-[10px] uppercase font-sans tracking-[0.25em] text-neutral-300 hover:text-white px-3.5 py-2 rounded-full border border-white/10 hover:border-white/40 backdrop-blur-md transition-all duration-300"
+  >
+    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+    <span>POLO</span>
+  </button>
       
 
         {/* Minimalist Luxury Burger Menu */}
