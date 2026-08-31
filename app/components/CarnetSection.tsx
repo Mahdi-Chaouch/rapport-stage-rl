@@ -88,8 +88,8 @@ export default function CarnetSection() {
         </motion.p>
       </div>
 
-      {/* NAVIGATION BULLES */}
-      <div className="px-6 md:px-24 pb-16 flex items-center gap-6 flex-wrap border-t border-white/10 pt-8">
+      {/* NAVIGATION BULLES — sans trait */}
+      <div className="px-6 md:px-24 pb-16 flex items-center gap-6 flex-wrap pt-8">
         {entries.map((e, i) => (
           <button
             key={i}
@@ -141,7 +141,7 @@ export default function CarnetSection() {
                 </h3>
               </motion.div>
 
-              {/* Image avec switch si plusieurs */}
+              {/* Image */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -162,16 +162,16 @@ export default function CarnetSection() {
                   />
                 </AnimatePresence>
 
-                {/* Bouton switch photo */}
+                {/* Bouton switch photo visible */}
                 {hasMultipleImgs && (
                   <button
                     onClick={() => setImgIndex((prev) => (prev + 1) % entry.imgs.length)}
-                    className="absolute bottom-4 right-4 flex flex-col items-center gap-1 group"
+                    className="absolute bottom-4 right-4 flex items-center gap-2 px-4 py-2 bg-black/60 backdrop-blur-sm border border-white/30 hover:border-white hover:bg-black/80 transition-all group"
                   >
-                    <span className="text-[9px] font-sans tracking-[0.2em] uppercase text-white/50 group-hover:text-white transition-colors">
+                    <span className="text-[10px] font-sans tracking-[0.2em] uppercase text-white">
                       {imgIndex + 1} / {entry.imgs.length}
                     </span>
-                    <ChevronDown className="w-4 h-4 text-white/50 group-hover:text-white transition-colors animate-bounce" />
+                    <ChevronDown className="w-4 h-4 text-white group-hover:translate-y-0.5 transition-transform" />
                   </button>
                 )}
               </motion.div>
@@ -194,23 +194,24 @@ export default function CarnetSection() {
                 {entry.desc}
               </motion.p>
 
+              {/* Precedent / Suivant plus visibles */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="flex gap-8 pt-8 border-t border-white/10"
+                className="flex gap-6 pt-8 border-t border-white/10"
               >
                 <button
                   onClick={() => handleSetActive(Math.max(0, active - 1))}
                   disabled={active === 0}
-                  className="text-[10px] font-sans tracking-[0.3em] uppercase text-neutral-500 hover:text-white transition-colors disabled:opacity-20"
+                  className="px-6 py-3 border border-white/20 text-white text-[10px] font-sans tracking-[0.3em] uppercase hover:border-white hover:bg-white hover:text-black transition-all disabled:opacity-20"
                 >
                   ← Precedent
                 </button>
                 <button
                   onClick={() => handleSetActive(Math.min(entries.length - 1, active + 1))}
                   disabled={active === entries.length - 1}
-                  className="text-[10px] font-sans tracking-[0.3em] uppercase text-neutral-500 hover:text-white transition-colors disabled:opacity-20"
+                  className="px-6 py-3 border border-white/20 text-white text-[10px] font-sans tracking-[0.3em] uppercase hover:border-white hover:bg-white hover:text-black transition-all disabled:opacity-20"
                 >
                   Suivant →
                 </button>
