@@ -9,7 +9,7 @@ const entries = [
     period: "Semaines 1 — 2",
     title: "L'Apprentissage",
     imgs: ["/carnet-1.jpg"],
-    imgPosition: "object-bottom",
+    imgPosition: "object-center",
     desc: "Premiers pas au sein de la boutique de la Madeleine. J'apprends le stock, les references produits, les differentes collections Polo, les codes de la maison. Chaque detail compte — des etiquettes aux cintres, de la disposition des rayons aux codes vestimentaires de l'equipe.",
   },
   {
