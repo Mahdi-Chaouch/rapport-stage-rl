@@ -59,7 +59,7 @@ export default function EditorialHeader({
     className="hidden sm:flex items-center space-x-3 text-[11px] uppercase font-sans tracking-[0.25em] text-neutral-300 hover:text-white px-4 py-2 rounded-full border border-white/20 hover:border-white bg-black/40 backdrop-blur-md transition-all duration-300"
   >
     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-    <span>POLO</span>
+    <span className="text-blue-400">POLO</span>
   </button>
       
 
