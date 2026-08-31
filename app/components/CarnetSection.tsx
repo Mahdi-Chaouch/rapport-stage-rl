@@ -38,6 +38,7 @@ const entries = [
     title: "L'Autonomie",
     imgs: ["/carnet-5.jpg"],
     imgPosition: "object-top",
+    imgHeight: "380px",
     desc: "Je connais maintenant la boutique par coeur. Gestion autonome du stock, reassort des rayons, Click and Collect, accueil et vente clients. Je contribue pleinement a la vie de la boutique. Ce stage m'a transforme.",
   },
 ];
@@ -147,7 +148,7 @@ export default function CarnetSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.3 }}
                 className="relative overflow-hidden"
-                style={{ height: "480px" }}
+                style={{ height: entry.imgHeight || "480px" }}
               >
                 <AnimatePresence mode="wait">
                   <motion.img
