@@ -23,7 +23,7 @@ const QA = [
   },
   {
     q: "Est-ce qu'il y a eu des moments difficiles ?",
-    a: "Oui, clairement. Les premieres semaines j'etais completement perdu — le stock, les references, les codes de la maison, tout etait nouveau. Il y a aussi eu des clients difficiles, des moments de rush intense pendant les soldes. Mais c'est ces moments-la qui m'ont le plus appris. La difficulte, c'est le meilleur des professeurs.",
+    a: "Oui, clairement. Le plus difficile pour Constantin a surtout été de trouver ses repères au début, notamment pendant les périodes de forte affluence. Il fallait rester efficace, accueillir plusieurs clients, comprendre rapidement leurs attentes et parfois gérer plusieurs demandes en même temps click and collecte, demande de taille sur un article, réassort. Mais avec le temps et l’expérience, il a appris à mieux gérer la pression et surtout à garder la même qualité de service, même dans les moments les plus intenses.",
   },
   {
     q: "Comment tu te sentais le premier jour ?",
