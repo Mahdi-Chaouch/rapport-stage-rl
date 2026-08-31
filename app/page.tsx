@@ -16,6 +16,7 @@ import PrintReportModal from "./components/PrintReportModal";
 import Footer from "./components/Footer";
 import { Compass } from "lucide-react";
 import content from "@/data/content";
+import ChatBot from "./components/ChatBot";
 
 export default function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
