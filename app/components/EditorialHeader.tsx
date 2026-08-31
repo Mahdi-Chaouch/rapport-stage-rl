@@ -1,20 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import { Printer } from "lucide-react";
 import content from "@/data/content";
 
 interface EditorialHeaderProps {
   onOpenMenu: () => void;
   onOpenPrint: () => void;
-  onOpenChat: () => void;
   activeSection: string;
   visible: boolean;
 }
 
 export default function EditorialHeader({
   onOpenMenu,
-  onOpenPrint,
-  onOpenChat,
   activeSection,
   visible,
 }: EditorialHeaderProps) {
@@ -48,18 +44,16 @@ export default function EditorialHeader({
       </div>
 
       <div className="flex items-center space-x-4">
-
-        {/* Bouton POLO — ouvre le chatbot */}
-<button
-  onClick={() => {
-    const chatBtn = document.getElementById("polo-trigger");
-    if (chatBtn) chatBtn.click();
-  }}
-  className="hidden sm:flex items-center space-x-2 text-[10px] uppercase font-sans tracking-[0.25em] text-neutral-300 hover:text-white px-3.5 py-2 rounded-full border border-white/10 hover:border-white/40 backdrop-blur-md transition-all duration-300"
->
-  <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96E] animate-pulse" />
-  <span>POLO</span>
-</button>
+        <button
+          onClick={() => {
+            const chatBtn = document.getElementById("polo-trigger");
+            if (chatBtn) chatBtn.click();
+          }}
+          className="hidden sm:flex items-center space-x-2 text-[10px] uppercase font-sans tracking-[0.25em] text-neutral-300 hover:text-white px-3.5 py-2 rounded-full border border-white/10 hover:border-white/40 backdrop-blur-md transition-all duration-300"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-[#C8A96E] animate-pulse" />
+          <span>POLO</span>
+        </button>
 
         <button
           onClick={onOpenMenu}
@@ -69,12 +63,4 @@ export default function EditorialHeader({
             MENU
           </span>
           <div className="flex flex-col space-y-1.5 w-4 justify-center items-end">
-            <span className="w-4 h-[1px] bg-white group-hover:w-3 transition-all duration-300" />
-            <span className="w-2.5 h-[1px] bg-white group-hover:w-4 transition-all duration-300" />
-          </div>
-        </button>
-
-      </div>
-    </motion.header>
-  );
-}
+            <span className="w-4 h-[1px] bg-white group-hover:w-3
