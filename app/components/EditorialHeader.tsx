@@ -37,7 +37,7 @@ export default function EditorialHeader({
           {global.siteTitle}
         </span>
         <span className="hidden sm:inline-block text-[9px] font-sans uppercase tracking-[0.3em] text-neutral-400 pl-2 border-l border-white/20">
-          PARIS · 3 place de la madeleine 
+          PARIS · 2 place de la madeleine 
         </span>
       </a>
 
