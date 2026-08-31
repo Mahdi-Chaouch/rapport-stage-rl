@@ -27,19 +27,19 @@ const QA = [
   },
   {
     q: "Comment tu te sentais le premier jour ?",
-    a: "Impressionne et un peu intimide, je vais pas mentir. En entrant dans la boutique pour la premiere fois, j'ai eu l'impression de quitter Paris pour entrer dans un autre monde. Les boiseries, les lustres, les tapis d'Orient... Et l'equipe qui te regarde avec le sourire. J'avais juste envie de ne pas decevoir.",
+    a: "Le premier jour, Constantin était forcément un peu stressé, il était arrivé trente minutes en avance et heureusement pour lui, il a vu son tuteur de stage à l'extérieur donc a très vite pu compter sur lui pour commencer à bien ce stage, mais avant tout ça, il était très impatient. Il découvrait un nouvel environnement, une nouvelle équipe et le retail chez Ralph Lauren. Il avait envie de bien faire et de montrer rapidement ce dont il était capable. Avec le recul, ce premier jour a surtout marqué le début d’une vraie évolution au fil du stage.",
   },
   {
     q: "Tu referais ce stage si tu pouvais revenir en arriere ?",
-    a: "Sans hesiter, la reponse est oui. Ce stage m'a donne bien plus que des competences professionnelles. Il m'a donne une vision, une exigence, une facon d'apprehender le travail et le service. Ralph Lauren m'a appris que l'excellence, ca ne s'improvise pas — ca se construit chaque jour.",
+    a: "Sans aucune hésitation. Si c’était à refaire, il le referait mille fois. L’équipe a été formidable du début à la fin, et les moments partagés avec les clients ont rendu chaque journée mémorable et différente. Il a aussi particulièrement apprécié l’atmosphère de la boutique, à la fois dynamique, élégante et humaine. Il était heureux de pousser les portes de la boutique de la Madeleine chaque matin. Au final, ce stage lui a apporté bien plus qu’une expérience professionnelle : de vrais souvenirs et de belles rencontres.",
   },
   {
     q: "Ou tu te vois dans 5 ans ?",
-    a: "Brand Manager dans une grande maison de luxe. Je veux etre celui qui construit l'identite d'une marque, qui pense la strategie, qui cree les experiences. Ce stage m'a confirme que c'est la que je veux aller. Ralph Lauren n'aura ete que le premier chapitre.",
+    a: "Dans cinq ans, Constantin n’a pas encore de plan totalement défini, et c’est peut-être ce qui lui plaît. Il a une idée assez claire de la direction : évoluer dans le luxe, avec pourquoi pas l’objectif de devenir Brand Manager. Son stage lui a surtout confirmé qu’il apprécie énormément le retail et le contact avec les clients. Il sait qu’il lui reste encore beaucoup à découvrir et à apprendre. Mais une chose est certaine : dans cinq ans, il se voit probablement loin. Loin de Paris. Toujours avec cette envie de construire son parcours à l’international.",
   },
   {
     q: "Un conseil pour un futur stagiaire chez Ralph Lauren ?",
-    a: "Sois curieux. Pose des questions. Observe tout — comment les vendeurs parlent aux clients, comment les produits sont presentes, comment l'equipe fonctionne. Et surtout : sois present a 100%. Chaque journee dans une maison comme Ralph Lauren est une lecon. Ne la rate pas.",
+    a: "Le premier conseil de Constantin serait de ne surtout pas avoir peur de poser des questions, soit curieux. Au début, tout va très vite et il y a énormément de choses à apprendre, mais tiens le coup et apprend tout ce que t'as à apprendre. Il te conseille aussi d’observer les vendeurs, d’être attentif aux clients et de toujours proposer son aide, même pour les petites tâches. Et surtout, de profiter de l’expérience : l’équipe, les clients, l’ambiance… parce qu’au final, ce sont ces moments-là qui rendent le stage vraiment mémorable. Fais le même si t'es pas prêt, c'est ce qui va t'emmener loin.",
   },
 ];
 
