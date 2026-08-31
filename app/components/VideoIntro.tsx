@@ -137,13 +137,14 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
               </div>
 
               <div className="flex items-center space-x-4">
-                <button
-                  onClick={toggleSound}
-                  className="p-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/40 text-neutral-300 hover:text-white transition-all"
-                  aria-label="Toggle Audio"
-                >
-                  {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-white" />}
-                </button>
+                <motion.button
+  onClick={toggleSound}
+  animate={{ scale: [1, 1.15, 1] }}
+  transition={{ duration: 1.5, repeat: 3, delay: 1 }}
+  className="p-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/40 text-neutral-300 hover:text-white transition-all"
+>
+  {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-white" />}
+</motion.button>
               </div>
             </div>
 
