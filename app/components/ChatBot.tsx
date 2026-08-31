@@ -11,7 +11,7 @@ const QA = [
   },
   {
     q: "C'est quoi le PSR GSR et pourquoi c'est important ?",
-    a: "Le PSR GSR, c'est le processus par lequel on identifie tous les produits qui sont hors collection — des pieces qui ne correspondent plus a la saison en cours — et qu'on renvoie a l'entrepot central. C'est une mission de precision : chaque article est scanne, controle, emballe. Ca m'a appris la rigueur et l'importance de la gestion de stock dans une maison de luxe.",
+    a: "Le PSR GSR, c'est le processus par lequel on identifie tous les produits qui sont hors collection, des pièces qui ne correspondent plus à la saison en cours, et qu'on renvoie à l'entrepôt central. C'était l'alternante qui s'en occupait, mais après son départ, Constantin s'est emparé de la mission et à l'aide de ses collègues, ils ont réussi à renvoyer le plus de pièces possibles et inimaginables.",
   },
   {
     q: "Quelle est la difference entre Polo Ralph Lauren et Purple Label ?",
