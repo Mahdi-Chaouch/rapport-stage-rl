@@ -25,7 +25,6 @@ export default function Home() {
   const [isOrganigramOpen, setIsOrganigramOpen] = useState(false);
   const [isPrintOpen, setIsPrintOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("INTRO");
-  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const { global } = content;
 
@@ -85,12 +84,11 @@ export default function Home() {
       </AnimatePresence>
 
       <EditorialHeader
-  visible={videoEnded}
-  activeSection={activeSection}
-  onOpenMenu={() => setIsMenuOpen(true)}
-  onOpenPrint={() => setIsPrintOpen(true)}
-  onOpenChat={() => {}}
-/>
+        visible={videoEnded}
+        activeSection={activeSection}
+        onOpenMenu={() => setIsMenuOpen(true)}
+        onOpenPrint={() => setIsPrintOpen(true)}
+      />
 
       <AnimatePresence>
         {videoEnded && (
