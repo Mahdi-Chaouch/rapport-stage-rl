@@ -191,7 +191,7 @@ export default function ChatBot() {
                           <img src="/polo-player.png" alt="POLO" className="w-5 h-5 object-contain brightness-0 invert" />
                         </div>
                         <div className={`border px-4 py-3 max-w-[85%] ${QA[activeQ].secret ? "border-blue-400/20 bg-blue-400/5" : "bg-white/5 border-white/10"}`}>
-                          <p className={`font-serif text-sm leading-relaxed font-light ${QA[activeQ].secret ? "text-blue-400 italic" : "text-white/80"}`}>
+                          <p className="font-serif text-sm leading-relaxed font-light text-blue-400">
                             {QA[activeQ].a}
                           </p>
                         </div>
