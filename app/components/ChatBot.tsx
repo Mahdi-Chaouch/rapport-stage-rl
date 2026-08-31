@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 
 const QA = [
   {
-    q: "Pourquoi avoir choisi Ralph Lauren pour ton stage ?",
+    q: "Pourquoi avoir choisi Ralph Lauren pour son stage ?",
     a: "Quand on a annoncé à Constantin que Ralph Lauren sera présent sur le campus pour rechercher ses futurs talents, il n'a pas hésité deux secondes et à vite inscrit son prénom sur la liste d'entretien. Pour lui, qui est fasciné par le rêve américain c'était une évidence. Ralph Lauren représente bien plus qu'une simple marque de vêtements : c'est un univers, une histoire et surtout une vision de l'Amérique qui l'a toujours attiré. Rejoindre la maison était donc pour lui l'occasion de découvrir cet univers de l'intérieur et de vivre une expérience qui correspondait pleinement à ses aspirations.",
     audio: "/polo-q1.mp3",
   },
@@ -26,7 +26,7 @@ const QA = [
     audio: "/polo-q4.mp3",
   },
   {
-    q: "Est-ce qu'il y a eu des moments difficiles ?",
+    q: "Est-ce qu'il a eu des moments difficiles ?",
     a: "Oui, clairement. Le plus difficile pour Constantin a surtout été de trouver ses repères au début, notamment pendant les périodes de forte affluence. Il fallait rester efficace, accueillir plusieurs clients, comprendre rapidement leurs attentes et parfois gérer plusieurs demandes en même temps click and collecte, demande de taille sur un article, réassort. Mais avec le temps et l'expérience, il a appris à mieux gérer la pression et surtout à garder la même qualité de service, même dans les moments les plus intenses.",
     audio: "/polo-q5.mp3",
   },
@@ -36,7 +36,7 @@ const QA = [
     audio: "/polo-q6.mp3",
   },
   {
-    q: "Referais t'il ce stage s'il pouvait revenir en arrière ?",
+    q: "Referait il ce stage s'il pouvait revenir en arrière ?",
     a: "Sans aucune hésitation. Si c'était à refaire, il le referait mille fois. L'équipe a été formidable du début à la fin, et les moments partagés avec les clients ont rendu chaque journée mémorable et différente. Il a aussi particulièrement apprécié l'atmosphère de la boutique, à la fois dynamique, élégante et humaine. Il était heureux de pousser les portes de la boutique de la Madeleine chaque matin. Au final, ce stage lui a apporté bien plus qu'une expérience professionnelle : de vrais souvenirs et de belles rencontres.",
     audio: "/polo-q7.mp3",
   },
