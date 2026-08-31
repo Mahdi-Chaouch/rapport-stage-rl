@@ -127,7 +127,7 @@ style={{ maxHeight: "88vh" }}
 </div>
                       <div className="bg-white/5 border border-white/10 px-4 py-3 max-w-[85%]">
                         <p className="font-serif text-sm text-white/80 leading-relaxed font-light">
-                          Bonjour, je suis <span className="text-[#C8A96E]">POLO</span> — l'assistant de Constantin. Je reponds a sa place sur son experience chez Ralph Lauren. Choisissez une question ci-dessous.
+                          Bonjour, je suis <span className="text-blue-400 font-normal">POLO</span> — l'assistant de Constantin. Je reponds a sa place sur son experience chez Ralph Lauren. Choisissez une question ci-dessous.
                         </p>
                       </div>
                     </motion.div>
