@@ -15,7 +15,7 @@ const QA = [
   },
   {
     q: "Quelle est la difference entre Polo Ralph Lauren et Purple Label ?",
-    a: "C'est la question que les clients posent le plus souvent ! Polo Ralph Lauren c'est l'ADN de la maison — le casual chic americain, accessible, iconique. Purple Label c'est le summum — des costumes tailles sur mesure dans les meilleures etoffes, pour une clientele d'exception. A la Madeleine on ne fait que du Polo, et on en est fiers.",
+    a: "Est-ce que vous avez du Purple Label ? Une des questions qui revenait au moins deux fois par semaine. C'est une question à laquelle il a dû répondre mille et une fois, mais concrètement quelle est la vraie différence ? Polo Ralph Lauren, c'est l'ADN de la maison, le casual chic américain, accessible, iconique. Purple Label, c'est le summum, des costumes tailles sur mesure dans les meilleures étoffes, pour une clientèle d'exception.",
   },
   {
     q: "C'est quoi une journee type a la boutique de la Madeleine ?",
