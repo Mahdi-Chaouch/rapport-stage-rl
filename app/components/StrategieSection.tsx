@@ -3,11 +3,24 @@
 import { motion } from "framer-motion";
 
 const brandData = [
-  { value: "$8.1B", label: "REVENUE 2024" },
-  { value: "1967", label: "FOUNDED" },
-  { value: "90+", label: "COUNTRIES" },
-  { value: "25K+", label: "EMPLOYEES" },
-  { value: "#1", label: "AMERICAN LUXURY BRAND" },
+  { value: "$7.6B", label: "CHIFFRE D'AFFAIRES 2024" },
+  { value: "1967", label: "ANNEE DE FONDATION" },
+  { value: "90+", label: "PAYS" },
+  { value: "25K+", label: "EMPLOYES" },
+  { value: "#1", label: "MARQUE DE LUXE AMERICAINE" },
+];
+
+const competitors = [
+  {
+    name: "Tommy Hilfiger",
+    revenue: "~$4.5B",
+    description: "Fonde en 1985, Tommy Hilfiger incarne le preppy americain accessible. Appartenant au groupe PVH, la marque est presente dans plus de 100 pays et cible une clientele jeune et urbaine avec un positionnement premium mais moins exclusif que Ralph Lauren.",
+  },
+  {
+    name: "Lacoste",
+    revenue: "~$2B",
+    description: "Nee en 1933 du tennisman Rene Lacoste, la marque au crocodile est un symbole du sport chic europeen. Avec un positionnement plus accessible, Lacoste joue sur son heritage sportif et son iconique polo pour seduire une clientele internationale.",
+  },
 ];
 
 export default function StrategieSection() {
@@ -58,7 +71,7 @@ export default function StrategieSection() {
       </div>
 
       {/* THE BRAND */}
-      <div className="px-6 md:px-24 pb-28 border-t border-white/10 pt-20">
+      <div className="px-6 md:px-24 pb-28 pt-20">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,51 +84,114 @@ export default function StrategieSection() {
             01 — THE BRAND
           </span>
           <h3 className="font-serif text-4xl md:text-6xl text-white font-light">
-            Where does Ralph Lauren stand?
+            Ou se positionne Ralph Lauren ?
           </h3>
         </motion.div>
 
-        {/* Chiffres */}
-        <div className="space-y-0">
-          {brandData.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.15 }}
-              viewport={{ once: true }}
-              className="flex items-baseline gap-8 py-10 border-b border-white/5 group"
-            >
-              <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-600 w-6">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span className="font-serif text-5xl md:text-7xl text-white font-light group-hover:text-blue-400 transition-colors duration-300">
-                {item.value}
-              </span>
-              <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-500">
-                {item.label}
-              </span>
-            </motion.div>
-          ))}
+        {/* Chiffres + Image */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-24">
+
+          {/* Chiffres */}
+          <div className="space-y-0">
+            {brandData.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: i * 0.15 }}
+                viewport={{ once: true }}
+                className="flex items-baseline gap-8 py-8 border-b border-white/5 group"
+              >
+                <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-600 w-6">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="font-serif text-4xl md:text-6xl text-white font-light group-hover:text-blue-400 transition-colors duration-300">
+                  {item.value}
+                </span>
+                <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-500">
+                  {item.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Image Ralph Lauren */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="sticky top-28"
+          >
+            <img
+              src="/rl-collection1.jpg"
+              alt="Ralph Lauren"
+              className="w-full h-[600px] object-cover object-top grayscale"
+            />
+          </motion.div>
+
         </div>
 
-        {/* Comparaison */}
+        {/* Presentation concurrents */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">
+            02 — THE COMPETITION
+          </span>
+          <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-16">
+            Les concurrents directs
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {competitors.map((c, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+                viewport={{ once: true }}
+                className="border border-white/10 p-8"
+              >
+                <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-600 block mb-4">
+                  CONCURRENT 0{i + 1}
+                </span>
+                <h4 className="font-serif text-3xl text-white font-light mb-2">
+                  {c.name}
+                </h4>
+                <p className="font-mono text-[10px] tracking-[0.2em] text-blue-400 mb-6">
+                  {c.revenue}
+                </p>
+                <div className="w-8 h-[1px] bg-white/20 mb-6" />
+                <p className="font-serif text-base text-neutral-400 leading-relaxed font-light">
+                  {c.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Comparaison barres */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-24"
+          className="mt-16"
         >
           <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-12">
-            BUT HOW DOES IT COMPARE?
+            LA COMPARAISON
           </span>
 
           <div className="space-y-8">
             {[
-              { name: "Ralph Lauren", value: 81, revenue: "$8.1B" },
-              { name: "Tommy Hilfiger", value: 45, revenue: "$4.5B" },
-              { name: "Lacoste", value: 22, revenue: "$2.2B" },
+              { name: "Ralph Lauren", value: 81, revenue: "$7.6B", isRL: true },
+              { name: "Tommy Hilfiger", value: 45, revenue: "~$4.5B", isRL: false },
+              { name: "Lacoste", value: 22, revenue: "~$2B", isRL: false },
             ].map((brand, i) => (
               <motion.div
                 key={i}
@@ -128,14 +204,14 @@ export default function StrategieSection() {
                 <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-400 w-40 flex-shrink-0">
                   {brand.name}
                 </span>
-                <div className="flex-1 h-[1px] bg-white/5 relative">
+                <div className="flex-1 h-[2px] bg-white/5 relative">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${brand.value}%` }}
                     transition={{ duration: 1.2, delay: i * 0.2, ease: [0.16, 1, 0.3, 1] }}
                     viewport={{ once: true }}
                     className="absolute top-0 left-0 h-full"
-                    style={{ backgroundColor: i === 0 ? "#ffffff" : "rgba(255,255,255,0.2)" }}
+                    style={{ backgroundColor: brand.isRL ? "#60a5fa" : "rgba(255,255,255,0.2)" }}
                   />
                 </div>
                 <span className="font-mono text-[10px] text-neutral-500 w-16 text-right flex-shrink-0">
