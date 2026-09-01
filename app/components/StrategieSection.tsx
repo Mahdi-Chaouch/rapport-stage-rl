@@ -119,7 +119,7 @@ export default function StrategieSection() {
             className="sticky top-28"
           >
             <img
-              src="/rl-collection.jpg"
+              src="/rl-collection1.jpg"
               alt="Ralph Lauren"
               className="w-full h-[600px] object-cover object-top grayscale"
             />
