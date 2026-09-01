@@ -250,7 +250,7 @@ export default function StrategieSection() {
               <svg viewBox="0 0 400 400" className="absolute inset-0 w-full h-full">
 
                 <motion.circle
-                  cx="185" cy="140" r="185"
+                  cx="185" cy="140" r="280"
                   fill="rgba(255,255,255,0.02)"
                   stroke="rgba(255,255,255,0.2)"
                   strokeWidth="0.8"
@@ -263,7 +263,7 @@ export default function StrategieSection() {
                 />
 
                 <motion.circle
-                  cx="185" cy="140" r="130"
+                  cx="185" cy="140" r="190"
                   fill="rgba(167,139,250,0.04)"
                   stroke="rgba(167,139,250,0.5)"
                   strokeWidth="1"
@@ -276,7 +276,7 @@ export default function StrategieSection() {
                 />
 
                 <motion.circle
-                  cx="185" cy="140" r="70"
+                  cx="185" cy="140" r="100"
                   fill="rgba(96,165,250,0.06)"
                   stroke="rgba(96,165,250,0.6)"
                   strokeWidth="1.5"
@@ -288,17 +288,17 @@ export default function StrategieSection() {
                 />
 
                 <motion.line
-                  x1="185" y1="140"
-                  x2="185" y2="0"
+                  x1="200" y1="200"
+                  x2="200" y2="0"
                   stroke="rgba(96,165,250,0.4)"
                   strokeWidth="0.8"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  style={{ transformOrigin: "185px 140px" }}
+                  style={{ transformOrigin: "200px 200px" }}
                 />
 
                 <motion.circle
-                  cx="185" cy="140" r="4"
+                  cx="200" cy="200" r="4"
                   fill="#60a5fa"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -307,7 +307,7 @@ export default function StrategieSection() {
                 />
 
                 <motion.circle
-                  cx="185" cy="140" r="8"
+                  cx="200" cy="200" r="8"
                   fill="none"
                   stroke="rgba(96,165,250,0.4)"
                   strokeWidth="1"
@@ -315,8 +315,8 @@ export default function StrategieSection() {
                   transition={{ duration: 2, repeat: Infinity }}
                 />
 
-                <motion.text x="195" y="137" fill="white" fontSize="7" fontFamily="monospace" letterSpacing="1" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>RALPH LAUREN</motion.text>
-                <motion.text x="195" y="148" fill="rgba(96,165,250,0.8)" fontSize="6" fontFamily="monospace" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>MADELEINE · PARIS 8E</motion.text>
+                <motion.text x="210" y="197" fill="white" fontSize="7" fontFamily="monospace" letterSpacing="1" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>RALPH LAUREN</motion.text>
+                <motion.text x="210" y="208" fill="rgba(96,165,250,0.8)" fontSize="6" fontFamily="monospace" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>MADELEINE · PARIS 8E</motion.text>
                 <motion.text x="260" y="110" fill="rgba(96,165,250,0.7)" fontSize="6" fontFamily="monospace" letterSpacing="1" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} viewport={{ once: true }}>Z1 · 0-10 MIN</motion.text>
                 <motion.text x="300" y="70" fill="rgba(167,139,250,0.7)" fontSize="6" fontFamily="monospace" letterSpacing="1" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.7 }} viewport={{ once: true }}>Z2 · 10-20 MIN</motion.text>
                 <motion.text x="330" y="30" fill="rgba(255,255,255,0.4)" fontSize="6" fontFamily="monospace" letterSpacing="1" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.9 }} viewport={{ once: true }}>Z3 · 20-30 MIN</motion.text>
