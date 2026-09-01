@@ -1,112 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart3, PieChart, Sparkles, HelpCircle, Lightbulb, Compass } from "lucide-react";
-import content from "@/data/content";
 
 export default function StrategieSection() {
-  const { strategie } = content;
-
   return (
-    <section id="strategie" className="relative py-24 md:py-36 px-6 md:px-16 border-b border-white/10 bg-[#070708]">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/10 gap-6">
-          <div>
-            <span className="text-xs font-sans tracking-[0.3em] uppercase text-neutral-400 font-semibold">
-              {strategie.chapter}
-            </span>
-            <h2 className="font-serif text-4xl md:text-6xl text-white mt-3 font-normal tracking-tight">
-              {strategie.title}
-            </h2>
-          </div>
-          <p className="text-neutral-400 font-sans text-sm md:text-base max-w-md italic">
-            {strategie.subtitle}
-          </p>
-        </div>
+    <section id="strategie" className="relative border-b border-white/10 bg-[#050505]">
 
-        {/* Competitive Matrix */}
-        <div className="mb-20">
-          <div className="flex items-center space-x-3 mb-8">
-            <PieChart className="w-5 h-5 text-white" />
-            <h3 className="font-serif text-2xl md:text-3xl text-white tracking-wide">
-              {strategie.benchmarkTitle}
-            </h3>
-          </div>
+      {/* INTRO */}
+      <div className="px-6 md:px-24 pt-28 pb-20">
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="block text-[10px] font-sans tracking-[0.4em] uppercase text-neutral-500 mb-4"
+        >
+          IV · Analyse Strategique
+        </motion.span>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {strategie.competitors.map((comp, index) => (
-              <div
-                key={index}
-                className="luxury-glass p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300"
-              >
-                <div className="flex justify-between items-center mb-3">
-                  <h4 className="font-serif text-xl text-white font-medium">
-                    {comp.brand}
-                  </h4>
-                  <span className="text-[9px] font-mono tracking-widest text-neutral-400 uppercase px-2.5 py-1 rounded bg-white/5 border border-white/10">
-                    BENCHMARK
-                  </span>
-                </div>
-                <p className="text-xs text-neutral-300 font-sans font-medium mb-3">
-                  {comp.positioning}
-                </p>
-                <div className="space-y-2 text-xs text-neutral-400 font-sans pt-3 border-t border-white/5">
-                  <p><strong className="text-white">Force :</strong> {comp.strength}</p>
-                  <p><strong className="text-white">Différenciateur RL :</strong> {comp.vs}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="block text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 mb-8"
+        >
+          RETAIL INTELLIGENCE
+        </motion.span>
 
-        {/* Personal Thesis Problem Statement Card */}
-        <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-r from-neutral-900 via-black to-neutral-950 border border-white/20 mb-20 relative overflow-hidden">
-          <div className="relative z-10 max-w-4xl space-y-6">
-            <div className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-neutral-400 uppercase px-3 py-1 rounded-full bg-white/10">
-              <HelpCircle className="w-4 h-4 text-white" />
-              <span>{strategie.problematic.badge}</span>
-            </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="font-serif text-6xl sm:text-8xl md:text-[10rem] text-white font-light tracking-tight leading-none mb-4"
+        >
+          RALPH<br />LAUREN
+        </motion.h2>
 
-            <h3 className="font-serif text-2xl md:text-4xl text-white leading-snug">
-              {strategie.problematic.question}
-            </h3>
-
-            <p className="text-sm text-neutral-400 font-sans leading-relaxed">
-              {strategie.problematic.context}
-            </p>
-          </div>
-        </div>
-
-        {/* Strategic Recommendations */}
-        <div>
-          <div className="flex items-center space-x-3 mb-8">
-            <Lightbulb className="w-5 h-5 text-white" />
-            <h3 className="font-serif text-2xl md:text-3xl text-white tracking-wide">
-              {strategie.recommendationsTitle}
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {strategie.recommendations.map((rec, index) => (
-              <div
-                key={index}
-                className="luxury-glass p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-500 group"
-              >
-                <span className="font-serif text-4xl text-neutral-500 group-hover:text-white transition-colors duration-300 block mb-4">
-                  {rec.num}
-                </span>
-                <h4 className="font-serif text-xl text-white mb-3">
-                  {rec.title}
-                </h4>
-                <p className="text-xs text-neutral-400 font-sans leading-relaxed">
-                  {rec.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-500"
+        >
+          MADELEINE — PARIS · ANALYSING THE BRAND, THE MARKET & THE CUSTOMER
+        </motion.p>
       </div>
+
     </section>
   );
 }
