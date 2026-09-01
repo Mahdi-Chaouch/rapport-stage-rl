@@ -226,7 +226,220 @@ export default function StrategieSection() {
             ))}
           </div>
         </motion.div>
+{/* CATCHMENT AREA */}
+<div className="mt-28">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="mb-16"
+  >
+    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">
+      03 — THE CATCHMENT AREA
+    </span>
+    <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-4">
+      D'ou viennent nos clients ?
+    </h3>
+    <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600">
+      MADELEINE · PARIS 8E · ZONE D'ATTRACTION COMMERCIALE
+    </p>
+  </motion.div>
 
+  {/* Radar */}
+  <div className="flex flex-col md:flex-row gap-16 items-center">
+
+    {/* SVG Radar */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1.2 }}
+      viewport={{ once: true }}
+      className="w-full md:w-1/2 flex justify-center"
+    >
+      <svg viewBox="0 0 400 400" className="w-full max-w-md">
+
+        {/* Zone 3 */}
+        <motion.circle
+          cx="200" cy="200" r="180"
+          fill="none"
+          stroke="rgba(96,165,250,0.15)"
+          strokeWidth="1"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          viewport={{ once: true }}
+          style={{ transformOrigin: "200px 200px" }}
+        />
+
+        {/* Zone 2 */}
+        <motion.circle
+          cx="200" cy="200" r="120"
+          fill="none"
+          stroke="rgba(96,165,250,0.25)"
+          strokeWidth="1"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          viewport={{ once: true }}
+          style={{ transformOrigin: "200px 200px" }}
+        />
+
+        {/* Zone 1 */}
+        <motion.circle
+          cx="200" cy="200" r="60"
+          fill="rgba(96,165,250,0.05)"
+          stroke="rgba(96,165,250,0.5)"
+          strokeWidth="1"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: true }}
+          style={{ transformOrigin: "200px 200px" }}
+        />
+
+        {/* Lignes radar */}
+        {[0, 45, 90, 135].map((angle, i) => (
+          <motion.line
+            key={i}
+            x1="200" y1="200"
+            x2={200 + 180 * Math.cos((angle * Math.PI) / 180)}
+            y2={200 + 180 * Math.sin((angle * Math.PI) / 180)}
+            stroke="rgba(96,165,250,0.08)"
+            strokeWidth="1"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 + i * 0.1 }}
+            viewport={{ once: true }}
+          />
+        ))}
+
+        {/* Point central — boutique */}
+        <motion.circle
+          cx="200" cy="200" r="6"
+          fill="#60a5fa"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+          style={{ transformOrigin: "200px 200px" }}
+        />
+
+        {/* Label boutique */}
+        <motion.text
+          x="215" y="196"
+          fill="rgba(255,255,255,0.6)"
+          fontSize="8"
+          fontFamily="monospace"
+          letterSpacing="2"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          RALPH LAUREN
+        </motion.text>
+        <motion.text
+          x="215" y="208"
+          fill="rgba(96,165,250,0.6)"
+          fontSize="7"
+          fontFamily="monospace"
+          letterSpacing="1"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          MADELEINE
+        </motion.text>
+
+        {/* Labels zones */}
+        <motion.text
+          x="205" y="148"
+          fill="rgba(96,165,250,0.7)"
+          fontSize="7"
+          fontFamily="monospace"
+          letterSpacing="1"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          ZONE 01 · 0-10 MIN
+        </motion.text>
+
+        <motion.text
+          x="205" y="88"
+          fill="rgba(96,165,250,0.5)"
+          fontSize="7"
+          fontFamily="monospace"
+          letterSpacing="1"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          viewport={{ once: true }}
+        >
+          ZONE 02 · 10-20 MIN
+        </motion.text>
+
+        <motion.text
+          x="205" y="28"
+          fill="rgba(96,165,250,0.3)"
+          fontSize="7"
+          fontFamily="monospace"
+          letterSpacing="1"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.9 }}
+          viewport={{ once: true }}
+        >
+          ZONE 03 · 20-30 MIN
+        </motion.text>
+
+        {/* Animation radar sweep */}
+        <motion.line
+          x1="200" y1="200"
+          x2="200" y2="20"
+          stroke="rgba(96,165,250,0.3)"
+          strokeWidth="1"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "200px 200px" }}
+        />
+
+      </svg>
+    </motion.div>
+
+    {/* Legende */}
+    <div className="w-full md:w-1/2 space-y-8">
+      {[
+        { zone: "ZONE 01", time: "0 — 10 MIN", label: "ZONE PRIMAIRE", desc: "Le coeur de chalandise. Clients locaux, employes du quartier, habitues de la boutique. Frequentation quotidienne elevee.", color: "rgba(96,165,250,0.8)" },
+        { zone: "ZONE 02", time: "10 — 20 MIN", label: "ZONE SECONDAIRE", desc: "Clients parisiens qui se deplacent specifiquement pour l'enseigne. Shopping experience recherchee et planifiee.", color: "rgba(96,165,250,0.5)" },
+        { zone: "ZONE 03", time: "20 — 30 MIN", label: "ZONE ETENDUE", desc: "Touristes internationaux, clients de passage, visiteurs de Paris. Represente une part significative du chiffre d'affaires.", color: "rgba(96,165,250,0.25)" },
+      ].map((z, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: i * 0.2 }}
+          viewport={{ once: true }}
+          className="flex gap-6 items-start"
+        >
+          <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: z.color }} />
+          <div>
+            <div className="flex items-baseline gap-3 mb-1">
+              <span className="font-mono text-[10px] tracking-[0.3em]" style={{ color: z.color }}>{z.zone}</span>
+              <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-600">{z.time}</span>
+            </div>
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-500 mb-2">{z.label}</p>
+            <p className="font-serif text-sm text-neutral-500 leading-relaxed font-light">{z.desc}</p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+  </div>
+</div>
       </div>
 
     </section>
