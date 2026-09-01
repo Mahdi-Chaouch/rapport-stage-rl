@@ -271,45 +271,44 @@ export default function StrategieSection() {
       >
         {/* Zone 3 — la plus grande */}
         <motion.circle
-          cx="195" cy="155" r="140"
-          fill="rgba(96,165,250,0.03)"
-          stroke="rgba(96,165,250,0.2)"
-          strokeWidth="0.5"
-          strokeDasharray="4 4"
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.8 }}
-          viewport={{ once: true }}
-          style={{ transformOrigin: "195px 155px" }}
-        />
+  cx="195" cy="155" r="160"
+  fill="rgba(255,255,255,0.02)"
+  stroke="rgba(255,255,255,0.2)"
+  strokeWidth="0.8"
+  strokeDasharray="4 4"
+  initial={{ opacity: 0, scale: 0 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1.2, delay: 0.8 }}
+  viewport={{ once: true }}
+  style={{ transformOrigin: "195px 155px" }}
+/>
 
         {/* Zone 2 */}
         <motion.circle
-          cx="195" cy="155" r="90"
-          fill="rgba(96,165,250,0.04)"
-          stroke="rgba(96,165,250,0.35)"
-          strokeWidth="0.5"
-          strokeDasharray="4 4"
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          viewport={{ once: true }}
-          style={{ transformOrigin: "195px 155px" }}
-        />
+  cx="195" cy="155" r="90"
+  fill="rgba(167,139,250,0.04)"
+  stroke="rgba(167,139,250,0.5)"
+  strokeWidth="1"
+  strokeDasharray="4 4"
+  initial={{ opacity: 0, scale: 0 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1, delay: 0.5 }}
+  viewport={{ once: true }}
+  style={{ transformOrigin: "195px 155px" }}
+/>
 
         {/* Zone 1 */}
         <motion.circle
-          cx="195" cy="155" r="45"
-          fill="rgba(96,165,250,0.06)"
-          stroke="rgba(96,165,250,0.6)"
-          strokeWidth="0.5"
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-          style={{ transformOrigin: "195px 155px" }}
-        />
-
+  cx="195" cy="155" r="45"
+  fill="rgba(96,165,250,0.06)"
+  stroke="rgba(96,165,250,0.6)"
+  strokeWidth="1.5"
+  initial={{ opacity: 0, scale: 0 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, delay: 0.3 }}
+  viewport={{ once: true }}
+  style={{ transformOrigin: "195px 155px" }}
+/>
         {/* Sweep radar */}
         <motion.line
           x1="195" y1="155"
@@ -417,9 +416,9 @@ export default function StrategieSection() {
     {/* Legende */}
     <div className="w-full md:w-1/2 space-y-8">
       {[
-        { zone: "ZONE 01", time: "0 — 10 MIN", label: "ZONE PRIMAIRE", desc: "Le coeur de chalandise. Clients locaux, employes du quartier, habitues de la boutique. Frequentation quotidienne elevee.", color: "rgba(96,165,250,0.8)" },
-        { zone: "ZONE 02", time: "10 — 20 MIN", label: "ZONE SECONDAIRE", desc: "Clients parisiens qui se deplacent specifiquement pour l'enseigne. Shopping experience recherchee et planifiee.", color: "rgba(96,165,250,0.5)" },
-        { zone: "ZONE 03", time: "20 — 30 MIN", label: "ZONE ETENDUE", desc: "Touristes internationaux, clients de passage, visiteurs de Paris. Represente une part significative du chiffre d'affaires.", color: "rgba(96,165,250,0.25)" },
+        { zone: "ZONE 01", time: "0 — 10 MIN", label: "ZONE PRIMAIRE", desc: "Le coeur de chalandise...", color: "rgba(96,165,250,0.8)" },
+{ zone: "ZONE 02", time: "10 — 20 MIN", label: "ZONE SECONDAIRE", desc: "Clients parisiens...", color: "rgba(167,139,250,0.8)" },
+{ zone: "ZONE 03", time: "20 — 30 MIN", label: "ZONE ETENDUE", desc: "Touristes internationaux...", color: "rgba(255,255,255,0.4)" },
       ].map((z, i) => (
         <motion.div
           key={i}
