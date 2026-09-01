@@ -246,118 +246,133 @@ export default function StrategieSection() {
     </p>
   </motion.div>
 
-  {/* Radar */}
   <div className="flex flex-col md:flex-row gap-16 items-center">
 
-    {/* SVG Radar */}
+    {/* Carte + Radar */}
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1.2 }}
       viewport={{ once: true }}
-      className="w-full md:w-1/2 flex justify-center"
+      className="w-full md:w-1/2 relative"
     >
-      <svg viewBox="0 0 400 400" className="w-full max-w-md">
+      {/* Carte Paris */}
+      <img
+        src="/paris-map.jpg"
+        alt="Paris"
+        className="w-full object-contain invert opacity-20"
+      />
 
-        {/* Zone 3 */}
+      {/* SVG overlay sur la carte */}
+      <svg
+        viewBox="0 0 400 400"
+        className="absolute inset-0 w-full h-full"
+        style={{ top: 0, left: 0 }}
+      >
+        {/* Zone 3 — la plus grande */}
         <motion.circle
-          cx="200" cy="200" r="180"
-          fill="none"
-          stroke="rgba(96,165,250,0.15)"
-          strokeWidth="1"
+          cx="195" cy="155" r="140"
+          fill="rgba(96,165,250,0.03)"
+          stroke="rgba(96,165,250,0.2)"
+          strokeWidth="0.5"
+          strokeDasharray="4 4"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
+          transition={{ duration: 1.2, delay: 0.8 }}
           viewport={{ once: true }}
-          style={{ transformOrigin: "200px 200px" }}
+          style={{ transformOrigin: "195px 155px" }}
         />
 
         {/* Zone 2 */}
         <motion.circle
-          cx="200" cy="200" r="120"
-          fill="none"
-          stroke="rgba(96,165,250,0.25)"
-          strokeWidth="1"
+          cx="195" cy="155" r="90"
+          fill="rgba(96,165,250,0.04)"
+          stroke="rgba(96,165,250,0.35)"
+          strokeWidth="0.5"
+          strokeDasharray="4 4"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 1, delay: 0.5 }}
           viewport={{ once: true }}
-          style={{ transformOrigin: "200px 200px" }}
+          style={{ transformOrigin: "195px 155px" }}
         />
 
         {/* Zone 1 */}
         <motion.circle
-          cx="200" cy="200" r="60"
-          fill="rgba(96,165,250,0.05)"
-          stroke="rgba(96,165,250,0.5)"
-          strokeWidth="1"
+          cx="195" cy="155" r="45"
+          fill="rgba(96,165,250,0.06)"
+          stroke="rgba(96,165,250,0.6)"
+          strokeWidth="0.5"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          style={{ transformOrigin: "200px 200px" }}
+          style={{ transformOrigin: "195px 155px" }}
         />
 
-        {/* Lignes radar */}
-        {[0, 45, 90, 135].map((angle, i) => (
-          <motion.line
-            key={i}
-            x1="200" y1="200"
-            x2={200 + 180 * Math.cos((angle * Math.PI) / 180)}
-            y2={200 + 180 * Math.sin((angle * Math.PI) / 180)}
-            stroke="rgba(96,165,250,0.08)"
-            strokeWidth="1"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 + i * 0.1 }}
-            viewport={{ once: true }}
-          />
-        ))}
+        {/* Sweep radar */}
+        <motion.line
+          x1="195" y1="155"
+          x2="195" y2="15"
+          stroke="rgba(96,165,250,0.4)"
+          strokeWidth="0.8"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "195px 155px" }}
+        />
 
-        {/* Point central — boutique */}
+        {/* Point central boutique */}
         <motion.circle
-          cx="200" cy="200" r="6"
+          cx="195" cy="155" r="4"
           fill="#60a5fa"
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          style={{ transformOrigin: "200px 200px" }}
+        />
+
+        {/* Pulse autour du point */}
+        <motion.circle
+          cx="195" cy="155" r="8"
+          fill="none"
+          stroke="rgba(96,165,250,0.4)"
+          strokeWidth="1"
+          animate={{ r: [8, 16, 8], opacity: [0.4, 0, 0.4] }}
+          transition={{ duration: 2, repeat: Infinity }}
         />
 
         {/* Label boutique */}
         <motion.text
-          x="215" y="196"
-          fill="rgba(255,255,255,0.6)"
-          fontSize="8"
-          fontFamily="monospace"
-          letterSpacing="2"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          RALPH LAUREN
-        </motion.text>
-        <motion.text
-          x="215" y="208"
-          fill="rgba(96,165,250,0.6)"
+          x="205" y="152"
+          fill="white"
           fontSize="7"
           fontFamily="monospace"
           letterSpacing="1"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          MADELEINE
+          RALPH LAUREN
+        </motion.text>
+        <motion.text
+          x="205" y="163"
+          fill="rgba(96,165,250,0.8)"
+          fontSize="6"
+          fontFamily="monospace"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          MADELEINE · PARIS 8E
         </motion.text>
 
         {/* Labels zones */}
         <motion.text
-          x="205" y="148"
+          x="245" y="118"
           fill="rgba(96,165,250,0.7)"
-          fontSize="7"
+          fontSize="6"
           fontFamily="monospace"
           letterSpacing="1"
           initial={{ opacity: 0 }}
@@ -365,13 +380,13 @@ export default function StrategieSection() {
           transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          ZONE 01 · 0-10 MIN
+          Z1 · 0-10 MIN
         </motion.text>
 
         <motion.text
-          x="205" y="88"
+          x="275" y="88"
           fill="rgba(96,165,250,0.5)"
-          fontSize="7"
+          fontSize="6"
           fontFamily="monospace"
           letterSpacing="1"
           initial={{ opacity: 0 }}
@@ -379,13 +394,13 @@ export default function StrategieSection() {
           transition={{ duration: 0.5, delay: 0.7 }}
           viewport={{ once: true }}
         >
-          ZONE 02 · 10-20 MIN
+          Z2 · 10-20 MIN
         </motion.text>
 
         <motion.text
-          x="205" y="28"
+          x="310" y="48"
           fill="rgba(96,165,250,0.3)"
-          fontSize="7"
+          fontSize="6"
           fontFamily="monospace"
           letterSpacing="1"
           initial={{ opacity: 0 }}
@@ -393,19 +408,8 @@ export default function StrategieSection() {
           transition={{ duration: 0.5, delay: 0.9 }}
           viewport={{ once: true }}
         >
-          ZONE 03 · 20-30 MIN
+          Z3 · 20-30 MIN
         </motion.text>
-
-        {/* Animation radar sweep */}
-        <motion.line
-          x1="200" y1="200"
-          x2="200" y2="20"
-          stroke="rgba(96,165,250,0.3)"
-          strokeWidth="1"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-          style={{ transformOrigin: "200px 200px" }}
-        />
 
       </svg>
     </motion.div>
