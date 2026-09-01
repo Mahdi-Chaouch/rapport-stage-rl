@@ -155,8 +155,13 @@ export default function StrategieSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: i * 0.2 }}
                 viewport={{ once: true }}
-                className="border border-white/10 p-8"
+                className="relative p-8 overflow-hidden"
               >
+                <img
+  src={i === 0 ? "/logo-tommy.png" : "/logo-lacoste.png"}
+  alt=""
+  className="absolute right-4 bottom-4 h-24 w-auto object-contain opacity-5 pointer-events-none"
+/>
                 <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-600 block mb-4">
                   CONCURRENT 0{i + 1}
                 </span>
