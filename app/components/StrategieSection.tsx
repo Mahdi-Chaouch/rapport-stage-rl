@@ -160,7 +160,7 @@ export default function StrategieSection() {
                 <img
   src={i === 0 ? "/logo-tommy.png" : "/logo-lacoste.png"}
   alt=""
-  className="absolute right-4 bottom-4 h-24 w-auto object-contain opacity-5 pointer-events-none"
+  className="absolute inset-0 w-full h-full object-contain opacity-5 pointer-events-none invert"
 />
                 <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-600 block mb-4">
                   CONCURRENT 0{i + 1}
