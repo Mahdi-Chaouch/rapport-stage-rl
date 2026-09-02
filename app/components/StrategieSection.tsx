@@ -25,8 +25,8 @@ const competitors = [
   },
 ];
 
-const CX = 383;
-const CY = 588;
+const CX = 342;
+const CY = 286;
 
 export default function StrategieSection() {
   return (
@@ -139,58 +139,152 @@ export default function StrategieSection() {
               <img src="/paris-map.jpg" alt="Paris" className="w-full object-contain invert opacity-20" />
 
               <svg viewBox="0 0 800 900" className="absolute inset-0 w-full h-full">
+  <defs>
+    <filter id="radar-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
 
-  {/* Zone 3 — blanc */}
-  <motion.circle cx={CX} cy={CY} r="280"
-    fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1"
-    initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 1.2, delay: 0.8 }} viewport={{ once: true }}
+    <radialGradient id="zone-one-fill">
+      <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.18" />
+      <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.015" />
+    </radialGradient>
+
+    <radialGradient id="zone-two-fill">
+      <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.12" />
+      <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.01" />
+    </radialGradient>
+
+    <radialGradient id="zone-three-fill">
+      <stop offset="0%" stopColor="#f5c56b" stopOpacity="0.09" />
+      <stop offset="100%" stopColor="#f5c56b" stopOpacity="0.005" />
+    </radialGradient>
+  </defs>
+
+  {/* Zone 3 — or */}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="300"
+    fill="url(#zone-three-fill)"
+    stroke="rgba(245,197,107,0.78)"
+    strokeWidth="1.2"
+    strokeDasharray="5 8"
+    filter="url(#radar-glow)"
+    initial={{ opacity: 0, scale: 0.35 }}
+    whileInView={{ opacity: 0.9, scale: 1 }}
+    transition={{ duration: 1.25, delay: 0.8 }}
+    viewport={{ once: true }}
     style={{ transformOrigin: `${CX}px ${CY}px` }}
   />
 
   {/* Zone 2 — violet */}
-  <motion.circle cx={CX} cy={CY} r="180"
-    fill="none" stroke="rgba(167,139,250,0.55)" strokeWidth="1"
-    initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 1, delay: 0.5 }} viewport={{ once: true }}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="205"
+    fill="url(#zone-two-fill)"
+    stroke="rgba(167,139,250,0.9)"
+    strokeWidth="1.4"
+    strokeDasharray="4 6"
+    filter="url(#radar-glow)"
+    initial={{ opacity: 0, scale: 0.35 }}
+    whileInView={{ opacity: 0.95, scale: 1 }}
+    transition={{ duration: 1.05, delay: 0.5 }}
+    viewport={{ once: true }}
     style={{ transformOrigin: `${CX}px ${CY}px` }}
   />
 
   {/* Zone 1 — bleu */}
-  <motion.circle cx={CX} cy={CY} r="90"
-    fill="rgba(96,165,250,0.06)" stroke="rgba(96,165,250,0.7)" strokeWidth="1.5"
-    initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.8, delay: 0.3 }} viewport={{ once: true }}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="112"
+    fill="url(#zone-one-fill)"
+    stroke="rgba(96,165,250,1)"
+    strokeWidth="1.8"
+    filter="url(#radar-glow)"
+    initial={{ opacity: 0, scale: 0.35 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.85, delay: 0.25 }}
+    viewport={{ once: true }}
     style={{ transformOrigin: `${CX}px ${CY}px` }}
   />
 
-  {/* Point central */}
-  <motion.circle cx={CX} cy={CY} r="5" fill="#60a5fa"
-    initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}
+  {/* Ligne de balayage radar */}
+  <motion.line
+    x1={CX}
+    y1={CY}
+    x2={CX}
+    y2={CY - 300}
+    stroke="rgba(96,165,250,0.55)"
+    strokeWidth="1"
+    filter="url(#radar-glow)"
+    animate={{ rotate: 360, opacity: [0.15, 0.65, 0.15] }}
+    transition={{ rotate: { duration: 5, repeat: Infinity, ease: "linear" }, opacity: { duration: 2.5, repeat: Infinity } }}
+    style={{ transformOrigin: `${CX}px ${CY}px` }}
   />
 
-  {/* Pulse */}
-  <motion.circle cx={CX} cy={CY} r="10" fill="none"
-    stroke="rgba(96,165,250,0.4)" strokeWidth="1"
-    animate={{ r: [10, 25, 10], opacity: [0.4, 0, 0.4] }}
-    transition={{ duration: 2, repeat: Infinity }}
+  {/* Anneau radar pulsé */}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="16"
+    fill="none"
+    stroke="rgba(96,165,250,0.7)"
+    strokeWidth="1"
+    animate={{ r: [16, 120, 16], opacity: [0.7, 0, 0.7] }}
+    transition={{ duration: 2.8, repeat: Infinity, ease: "easeOut" }}
   />
+
+  {/* Point boutique */}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="5"
+    fill="#ffffff"
+    filter="url(#radar-glow)"
+    initial={{ opacity: 0, scale: 0 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.45, delay: 0.2 }}
+    viewport={{ once: true }}
+    style={{ transformOrigin: `${CX}px ${CY}px` }}
+  />
+
+  <circle cx={CX} cy={CY} r="10" fill="none" stroke="#60a5fa" strokeWidth="1.5" />
 
   {/* Label boutique */}
-  <motion.text x={CX + 10} y={CY - 6} fill="white" fontSize="9"
-    fontFamily="monospace" letterSpacing="1"
-    initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
+  <motion.text
+    x={CX + 14}
+    y={CY - 8}
+    fill="white"
+    fontSize="9"
+    fontFamily="monospace"
+    letterSpacing="1"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.4 }}
+    viewport={{ once: true }}
+  >
     RALPH LAUREN
   </motion.text>
-  <motion.text x={CX + 10} y={CY + 8} fill="rgba(96,165,250,0.8)" fontSize="7"
-    fontFamily="monospace"
-    initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
-    MADELEINE · PARIS 8E
-  </motion.text>
 
+  <motion.text
+    x={CX + 14}
+    y={CY + 8}
+    fill="rgba(96,165,250,0.95)"
+    fontSize="7"
+    fontFamily="monospace"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.4 }}
+    viewport={{ once: true }}
+  >
+    2 PLACE DE LA MADELEINE · PARIS 8E
+  </motion.text>
 </svg>
             </motion.div>
 
@@ -198,7 +292,7 @@ export default function StrategieSection() {
               {[
                 { zone: "ZONE 01", time: "0 — 10 MIN", label: "ZONE PRIMAIRE", desc: "Le coeur de chalandise. Clients locaux, employes du quartier, habitues de la boutique. Frequentation quotidienne elevee.", color: "rgba(96,165,250,0.8)" },
                 { zone: "ZONE 02", time: "10 — 20 MIN", label: "ZONE SECONDAIRE", desc: "Clients parisiens qui se deplacent specifiquement pour l'enseigne. Shopping experience recherchee et planifiee.", color: "rgba(167,139,250,0.8)" },
-                { zone: "ZONE 03", time: "20 — 30 MIN", label: "ZONE ETENDUE", desc: "Touristes internationaux, clients de passage, visiteurs de Paris. Represente une part significative du chiffre d'affaires.", color: "rgba(255,255,255,0.4)" },
+                { zone: "ZONE 03", time: "20 — 30 MIN", label: "ZONE ETENDUE", desc: "Touristes internationaux, clients de passage, visiteurs de Paris. Represente une part significative du chiffre d'affaires.", color: "rgba(245,197,107,0.85)" },
               ].map((z, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: i * 0.2 }} viewport={{ once: true }}
                   className="flex gap-6 items-start">
