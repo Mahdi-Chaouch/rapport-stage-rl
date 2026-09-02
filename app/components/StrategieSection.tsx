@@ -280,35 +280,85 @@ export default function StrategieSection() {
 
   <circle cx={CX} cy={CY} r="10" fill="none" stroke="#60a5fa" strokeWidth="1.5" />
 
-  {/* Label boutique */}
-  <motion.text
-    x={CX + 14}
-    y={CY - 8}
-    fill="white"
-    fontSize="9"
-    fontFamily="monospace"
-    letterSpacing="1"
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.5, delay: 0.4 }}
-    viewport={{ once: true }}
-  >
-    RALPH LAUREN
-  </motion.text>
+  {/* Label boutique et zones */}
+<motion.text
+  x={CX + 16}
+  y={CY - 10}
+  fill="white"
+  fontSize="13"
+  fontWeight="600"
+  fontFamily="monospace"
+  letterSpacing="1.5"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.5, delay: 0.4 }}
+  viewport={{ once: true }}
+>
+  RALPH LAUREN
+</motion.text>
 
-  <motion.text
-    x={CX + 14}
-    y={CY + 8}
-    fill="rgba(96,165,250,0.95)"
-    fontSize="7"
-    fontFamily="monospace"
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.5, delay: 0.4 }}
-    viewport={{ once: true }}
-  >
-    2 PLACE DE LA MADELEINE · PARIS 8E
-  </motion.text>
+<motion.text
+  x={CX + 16}
+  y={CY + 10}
+  fill="#60a5fa"
+  fontSize="9"
+  fontFamily="monospace"
+  letterSpacing="1"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.5, delay: 0.5 }}
+  viewport={{ once: true }}
+>
+  2 PLACE DE LA MADELEINE · PARIS 8E
+</motion.text>
+
+<motion.text
+  x={CX + 72}
+  y={CY - 72}
+  fill="#60a5fa"
+  fontSize="11"
+  fontFamily="monospace"
+  fontWeight="600"
+  letterSpacing="1.5"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.5, delay: 0.7 }}
+  viewport={{ once: true }}
+>
+  ZONE 01 · PRIMAIRE
+</motion.text>
+
+<motion.text
+  x={CX + 125}
+  y={CY - 125}
+  fill="#a78bfa"
+  fontSize="11"
+  fontFamily="monospace"
+  fontWeight="600"
+  letterSpacing="1.5"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.5, delay: 0.9 }}
+  viewport={{ once: true }}
+>
+  ZONE 02 · SECONDAIRE
+</motion.text>
+
+<motion.text
+  x={CX - 250}
+  y={CY - 175}
+  fill="#f5c56b"
+  fontSize="11"
+  fontFamily="monospace"
+  fontWeight="600"
+  letterSpacing="1.5"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.5, delay: 1.1 }}
+  viewport={{ once: true }}
+>
+  ZONE 03 · ÉTENDUE
+</motion.text>
 </svg>
             </motion.div>
 
