@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 
 const brandData = [
   { value: "$7.6B", label: "CHIFFRE D'AFFAIRES 2024" },
@@ -385,189 +387,174 @@ export default function StrategieSection() {
 
           </div>
         </div>
-{/* PERSONAS */}
-<div className="mt-28">
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-    className="px-6 md:px-24 mb-20"
-  >
-    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">
-      04 — WHO WALKS THROUGH THE DOOR?
-    </span>
-    <h3 className="font-serif text-4xl md:text-6xl text-white font-light">
-      Nos clients
-    </h3>
-  </motion.div>
+function PersonaCard({ persona, index }: { persona: any; index: number }) {
+  const [scanning, setScanning] = useState(false);
+  const [progress, setProgress] = useState(80);
+  const [complete, setComplete] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
-  {[
-    {
-      zone: "01",
-      label: "THE LOCAL",
-      name: "Alexandre",
-      age: "42 ans",
-      job: "Notaire Associe · Paris 8e",
-      quote: "J'ai besoin de m'habiller bien sans y passer du temps.",
-      img: "/persona-1.jpg",
-      left: true,
-      color: "rgba(96,165,250,0.8)",
-      profil: "Client regulier du quartier. Vient seul en semaine ou le weekend avec sa femme. Connait la boutique, sait ce qu'il veut. CSP+, exigeant, efficace.",
-      motivation: "Contrainte vestimentaire professionnelle. Cherche des pieces qui fonctionnent aussi bien au bureau qu'en soiree. Qualite et coupe avant tout.",
-      comportement: "Direct, va droit au but. Achete costume, chemise, pull quarter-zip. Panier moyen eleve. Fidelise facilement si le conseiller comprend son style.",
-    },
-    {
-      zone: "02",
-      label: "THE TRAVELLER",
-      name: "Yuki",
-      age: "34 ans",
-      job: "Cadre Tech · Tokyo",
-      quote: "Je voulais voir la boutique historique et ramener quelque chose de Paris.",
-      img: "/persona-2.jpg",
-      left: false,
-      color: "rgba(167,139,250,0.8)",
-      profil: "Touriste asiatique en vacances a Paris. Fan de la marque depuis longtemps. Vient specifiquement voir le premier flagship europeen de Ralph Lauren.",
-      motivation: "Melange de plaisir et de souvenir. Achete pour elle et pour offrir. Attache a l'heritage de la boutique — la premiere d'Europe, ca compte.",
-      comportement: "Prend son temps, explore tous les etages. S'interesse aux pieces casualwear — pull, polo, chino. Sensible a l'histoire de la maison.",
-    },
-    {
-      zone: "03",
-      label: "THE EXPLORER",
-      name: "Lucas",
-      age: "26 ans",
-      job: "Graphiste Freelance · Paris 11e",
-      quote: "J'ai vu un polo sur Instagram et je voulais le voir en vrai.",
-      img: "/persona-3.jpg",
-      left: true,
-      color: "rgba(255,255,255,0.6)",
-      profil: "Primo-visiteur. Attire par une piece vue en ligne, entre dans la boutique pour la premiere fois. Decouvre l'univers Ralph Lauren sans a priori.",
-      motivation: "Curiosite et decouverte. Pas necessairement venu pour acheter — mais le cadre, l'accueil et les produits peuvent le convaincre sur place.",
-      comportement: "Observe, touche, essaie. Repart souvent avec une piece d'entree de gamme — polo, casquette, accessoire. Futur client fidele potentiel.",
-    },
-  ].map((persona, i) => (
-    <motion.div
-      key={i}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !scanning) {
+          setScanning(true);
+          let p = 80;
+          const interval = setInterval(() => {
+            p += 1;
+            setProgress(p);
+            if (p >= 100) {
+              clearInterval(interval);
+              setComplete(true);
+              setTimeout(() => setShowInfo(true), 500);
+            }
+          }, 30);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [scanning]);
+
+  return (
+    <div
+      ref={ref}
       className={`flex flex-col ${persona.left ? "md:flex-row" : "md:flex-row-reverse"} min-h-[85vh] relative overflow-hidden border-t border-white/5`}
     >
-      {/* Numero de zone en arriere-plan */}
+      {/* Numero arriere-plan */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-        <span
-          className="font-serif font-light select-none"
-          style={{
-            fontSize: "clamp(120px, 25vw, 280px)",
-            color: "rgba(255,255,255,0.02)",
-            lineHeight: 1,
-          }}
-        >
+        <span className="font-serif font-light select-none" style={{ fontSize: "clamp(120px, 25vw, 280px)", color: "rgba(255,255,255,0.02)", lineHeight: 1 }}>
           {persona.zone}
         </span>
       </div>
 
-      {/* Photo */}
-      <div className="w-full md:w-[45%] relative overflow-hidden z-10">
+      {/* Photo + Scanner */}
+      <div className="w-full md:w-[45%] relative overflow-hidden z-10" style={{ minHeight: "60vh" }}>
         <motion.img
           src={persona.img}
           alt={persona.name}
           className="w-full h-full object-cover object-top"
           style={{ minHeight: "60vh" }}
-          initial={{ scale: 1.05 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ scale: 1.05, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2 }}
           viewport={{ once: true }}
         />
-        {/* Scan line effect */}
-        <motion.div
-          className="absolute left-0 right-0 h-[2px] pointer-events-none"
-          style={{ background: `linear-gradient(to right, transparent, ${persona.color}, transparent)` }}
-          initial={{ top: "0%" }}
-          whileInView={{ top: "100%" }}
-          transition={{ duration: 1.5, delay: 0.3, ease: "linear" }}
-          viewport={{ once: true }}
-        />
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#050505]/30" />
+
+        {/* Ligne de scan */}
+        {scanning && (
+          <motion.div
+            className="absolute left-0 right-0 h-[2px] z-20 pointer-events-none"
+            style={{ background: `linear-gradient(to right, transparent, ${persona.color}, transparent)`, boxShadow: `0 0 12px ${persona.color}` }}
+            initial={{ top: "0%" }}
+            animate={{ top: "100%" }}
+            transition={{ duration: 2, ease: "linear" }}
+          />
+        )}
+
+        {/* Coins scanner */}
+        {scanning && (
+          <>
+            <motion.div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 z-20" style={{ borderColor: persona.color }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+            <motion.div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 z-20" style={{ borderColor: persona.color }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+            <motion.div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 z-20" style={{ borderColor: persona.color }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+            <motion.div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 z-20" style={{ borderColor: persona.color }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+          </>
+        )}
+
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#050505]/20" />
       </div>
 
-      {/* Contenu */}
+      {/* Contenu droite */}
       <div className="w-full md:w-[55%] flex flex-col justify-center px-10 md:px-16 py-16 relative z-10">
 
         {/* Zone label */}
         <motion.div
-          initial={{ opacity: 0, x: persona.left ? 30 : -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="flex items-center gap-4 mb-8"
         >
-          <span className="font-mono text-[10px] tracking-[0.4em] uppercase" style={{ color: persona.color }}>
-            ZONE {persona.zone}
-          </span>
+          <span className="font-mono text-[10px] tracking-[0.4em] uppercase" style={{ color: persona.color }}>ZONE {persona.zone}</span>
           <div className="h-[1px] w-8" style={{ backgroundColor: persona.color }} />
-          <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600">
-            {persona.label}
-          </span>
+          <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600">{persona.label}</span>
         </motion.div>
 
-        {/* Nom + age */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mb-2"
-        >
-          <h3 className="font-serif text-5xl md:text-7xl text-white font-light leading-none">
-            {persona.name}
-          </h3>
-          <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-500 mt-2">
-            {persona.age} · {persona.job}
-          </p>
+        {/* Nom */}
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }} className="mb-2">
+          <h3 className="font-serif text-5xl md:text-7xl text-white font-light leading-none">{persona.name}</h3>
+          <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-500 mt-2">{persona.age} · {persona.job}</p>
         </motion.div>
 
         {/* Citation */}
-        <motion.blockquote
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="font-serif italic text-lg md:text-xl mt-6 mb-10 leading-relaxed"
-          style={{ color: persona.color }}
-        >
+        <motion.blockquote initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} viewport={{ once: true }}
+          className="font-serif italic text-lg md:text-xl mt-6 mb-10 leading-relaxed" style={{ color: persona.color }}>
           &ldquo;{persona.quote}&rdquo;
         </motion.blockquote>
 
-        {/* Infos */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="space-y-6"
-        >
-          {[
-            { label: "PROFIL", text: persona.profil },
-            { label: "MOTIVATION", text: persona.motivation },
-            { label: "COMPORTEMENT", text: persona.comportement },
-          ].map((info, j) => (
-            <div key={j}>
-              <span className="font-mono text-[9px] tracking-[0.35em] uppercase mb-2 block" style={{ color: persona.color }}>
-                {info.label}
-              </span>
-              <p className="font-serif text-base text-neutral-400 leading-relaxed font-light">
-                {info.text}
-              </p>
-            </div>
-          ))}
-        </motion.div>
+        {/* Barre de progression JARVIS */}
+        <div className="mb-8 space-y-2">
+          <div className="flex justify-between items-center">
+            <span className="font-mono text-[9px] tracking-[0.3em] uppercase" style={{ color: persona.color }}>
+              {complete ? "SCAN COMPLETE" : "SCANNING PROFILE..."}
+            </span>
+            <span className="font-mono text-[9px]" style={{ color: persona.color }}>{progress}%</span>
+          </div>
+          <div className="w-full h-[2px] bg-white/5">
+            <motion.div
+              className="h-full"
+              style={{ backgroundColor: persona.color, width: `${progress}%`, transition: "width 0.03s linear" }}
+            />
+          </div>
+          {complete && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="font-mono text-[9px] tracking-[0.3em]"
+              style={{ color: persona.color }}
+            >
+              PROFILE COMPLETE ✓
+            </motion.p>
+          )}
+        </div>
+
+        {/* Infos — apparaissent apres scan */}
+        <AnimatePresence>
+          {showInfo && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-6"
+            >
+              {[
+                { label: "PROFIL", text: persona.profil },
+                { label: "MOTIVATION", text: persona.motivation },
+                { label: "COMPORTEMENT", text: persona.comportement },
+              ].map((info, j) => (
+                <motion.div
+                  key={j}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: j * 0.2 }}
+                >
+                  <span className="font-mono text-[9px] tracking-[0.35em] uppercase mb-2 block" style={{ color: persona.color }}>
+                    {info.label}
+                  </span>
+                  <p className="font-serif text-base text-neutral-400 leading-relaxed font-light">{info.text}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
-    </motion.div>
-  ))}
+    </div>
+  );
+}
 </div>
       </div>
     </section>
