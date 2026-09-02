@@ -164,55 +164,79 @@ export default function StrategieSection() {
     </radialGradient>
   </defs>
 
-  {/* Zone 3 — or */}
-  <motion.circle
-    cx={CX}
-    cy={CY}
-    r="300"
-    fill="url(#zone-three-fill)"
-    stroke="rgba(245,197,107,0.78)"
-    strokeWidth="1.2"
-    strokeDasharray="5 8"
-    filter="url(#radar-glow)"
-    initial={{ opacity: 0, scale: 0.35 }}
-    whileInView={{ opacity: 0.9, scale: 1 }}
-    transition={{ duration: 1.25, delay: 0.8 }}
-    viewport={{ once: true }}
-    style={{ transformOrigin: `${CX}px ${CY}px` }}
-  />
+  {/* Zone 3 — or : 20–30 min */}
+<motion.circle
+  cx={CX}
+  cy={CY}
+  r="260"
+  fill="rgba(245,197,107,0.09)"
+  stroke="#f5c56b"
+  strokeWidth="3"
+  strokeDasharray="10 8"
+  vectorEffect="non-scaling-stroke"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 0.9 }}
+  transition={{ duration: 0.9, delay: 0.8 }}
+  viewport={{ once: true }}
+/>
 
-  {/* Zone 2 — violet */}
-  <motion.circle
-    cx={CX}
-    cy={CY}
-    r="205"
-    fill="url(#zone-two-fill)"
-    stroke="rgba(167,139,250,0.9)"
-    strokeWidth="1.4"
-    strokeDasharray="4 6"
-    filter="url(#radar-glow)"
-    initial={{ opacity: 0, scale: 0.35 }}
-    whileInView={{ opacity: 0.95, scale: 1 }}
-    transition={{ duration: 1.05, delay: 0.5 }}
-    viewport={{ once: true }}
-    style={{ transformOrigin: `${CX}px ${CY}px` }}
-  />
+{/* Zone 2 — violet : 10–20 min */}
+<motion.circle
+  cx={CX}
+  cy={CY}
+  r="180"
+  fill="rgba(167,139,250,0.11)"
+  stroke="#a78bfa"
+  strokeWidth="3"
+  strokeDasharray="7 6"
+  vectorEffect="non-scaling-stroke"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 0.95 }}
+  transition={{ duration: 0.9, delay: 0.5 }}
+  viewport={{ once: true }}
+/>
 
-  {/* Zone 1 — bleu */}
-  <motion.circle
-    cx={CX}
-    cy={CY}
-    r="112"
-    fill="url(#zone-one-fill)"
-    stroke="rgba(96,165,250,1)"
-    strokeWidth="1.8"
-    filter="url(#radar-glow)"
-    initial={{ opacity: 0, scale: 0.35 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.85, delay: 0.25 }}
-    viewport={{ once: true }}
-    style={{ transformOrigin: `${CX}px ${CY}px` }}
-  />
+{/* Zone 1 — bleu : 0–10 min */}
+<motion.circle
+  cx={CX}
+  cy={CY}
+  r="100"
+  fill="rgba(96,165,250,0.16)"
+  stroke="#60a5fa"
+  strokeWidth="3"
+  vectorEffect="non-scaling-stroke"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.25 }}
+  viewport={{ once: true }}
+/>
+
+              {/* Balayage radar */}
+<motion.line
+  x1={CX}
+  y1={CY}
+  x2={CX}
+  y2={CY - 260}
+  stroke="#60a5fa"
+  strokeWidth="2"
+  strokeLinecap="round"
+  opacity="0.8"
+  animate={{ rotate: 360 }}
+  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+  style={{ transformOrigin: `${CX}px ${CY}px` }}
+/>
+
+{/* Onde radar */}
+<motion.circle
+  cx={CX}
+  cy={CY}
+  r="12"
+  fill="none"
+  stroke="#60a5fa"
+  strokeWidth="2"
+  animate={{ r: [12, 260], opacity: [0.8, 0] }}
+  transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
+/>
 
   {/* Ligne de balayage radar */}
   <motion.line
