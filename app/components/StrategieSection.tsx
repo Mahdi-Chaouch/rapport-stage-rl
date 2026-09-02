@@ -25,8 +25,8 @@ const competitors = [
   },
 ];
 
-const CX = 370;
-const CY = 480;
+const CX = 383;
+const CY = 588;
 
 export default function StrategieSection() {
   return (
@@ -140,71 +140,58 @@ export default function StrategieSection() {
 
               <svg viewBox="0 0 800 900" className="absolute inset-0 w-full h-full">
 
-                {/* Zone 3 — blanc */}
-                <motion.circle cx={CX} cy={CY} r="280"
-                  fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.8" strokeDasharray="4 4"
-                  initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1.2, delay: 0.8 }} viewport={{ once: true }}
-                  style={{ transformOrigin: `${CX}px ${CY}px` }}
-                />
+  {/* Zone 3 — blanc */}
+  <motion.circle cx={CX} cy={CY} r="280"
+    fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1"
+    initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1.2, delay: 0.8 }} viewport={{ once: true }}
+    style={{ transformOrigin: `${CX}px ${CY}px` }}
+  />
 
-                {/* Zone 2 — violet */}
-                <motion.circle cx={CX} cy={CY} r="190"
-                  fill="rgba(167,139,250,0.04)" stroke="rgba(167,139,250,0.5)" strokeWidth="1" strokeDasharray="4 4"
-                  initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.5 }} viewport={{ once: true }}
-                  style={{ transformOrigin: `${CX}px ${CY}px` }}
-                />
+  {/* Zone 2 — violet */}
+  <motion.circle cx={CX} cy={CY} r="180"
+    fill="none" stroke="rgba(167,139,250,0.55)" strokeWidth="1"
+    initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1, delay: 0.5 }} viewport={{ once: true }}
+    style={{ transformOrigin: `${CX}px ${CY}px` }}
+  />
 
-                {/* Zone 1 — bleu */}
-                <motion.circle cx={CX} cy={CY} r="100"
-                  fill="rgba(96,165,250,0.06)" stroke="rgba(96,165,250,0.6)" strokeWidth="1.5"
-                  initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.3 }} viewport={{ once: true }}
-                  style={{ transformOrigin: `${CX}px ${CY}px` }}
-                />
+  {/* Zone 1 — bleu */}
+  <motion.circle cx={CX} cy={CY} r="90"
+    fill="rgba(96,165,250,0.06)" stroke="rgba(96,165,250,0.7)" strokeWidth="1.5"
+    initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.8, delay: 0.3 }} viewport={{ once: true }}
+    style={{ transformOrigin: `${CX}px ${CY}px` }}
+  />
 
-                {/* Sweep */}
-                <motion.line x1={CX} y1={CY} x2={CX} y2={CY - 280}
-                  stroke="rgba(96,165,250,0.3)" strokeWidth="0.8"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  style={{ transformOrigin: `${CX}px ${CY}px` }}
-                />
+  {/* Point central */}
+  <motion.circle cx={CX} cy={CY} r="5" fill="#60a5fa"
+    initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}
+  />
 
-                {/* Point central */}
-                <motion.circle cx={CX} cy={CY} r="5" fill="#60a5fa"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }} />
+  {/* Pulse */}
+  <motion.circle cx={CX} cy={CY} r="10" fill="none"
+    stroke="rgba(96,165,250,0.4)" strokeWidth="1"
+    animate={{ r: [10, 25, 10], opacity: [0.4, 0, 0.4] }}
+    transition={{ duration: 2, repeat: Infinity }}
+  />
 
-                {/* Pulse */}
-                <motion.circle cx={CX} cy={CY} r="10" fill="none" stroke="rgba(96,165,250,0.4)" strokeWidth="1"
-                  animate={{ r: [10, 25, 10], opacity: [0.4, 0, 0.4] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
+  {/* Label boutique */}
+  <motion.text x={CX + 10} y={CY - 6} fill="white" fontSize="9"
+    fontFamily="monospace" letterSpacing="1"
+    initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
+    RALPH LAUREN
+  </motion.text>
+  <motion.text x={CX + 10} y={CY + 8} fill="rgba(96,165,250,0.8)" fontSize="7"
+    fontFamily="monospace"
+    initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
+    MADELEINE · PARIS 8E
+  </motion.text>
 
-                {/* Labels */}
-                <motion.text x={CX + 10} y={CY - 4} fill="white" fontSize="9" fontFamily="monospace" letterSpacing="1"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
-                  RALPH LAUREN
-                </motion.text>
-                <motion.text x={CX + 10} y={CY + 10} fill="rgba(96,165,250,0.8)" fontSize="7" fontFamily="monospace"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
-                  MADELEINE · PARIS 8E
-                </motion.text>
-                <motion.text x={CX + 105} y={CY - 50} fill="rgba(96,165,250,0.7)" fontSize="7" fontFamily="monospace" letterSpacing="1"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} viewport={{ once: true }}>
-                  Z1 · 0-10 MIN
-                </motion.text>
-                <motion.text x={CX + 195} y={CY - 120} fill="rgba(167,139,250,0.7)" fontSize="7" fontFamily="monospace" letterSpacing="1"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.7 }} viewport={{ once: true }}>
-                  Z2 · 10-20 MIN
-                </motion.text>
-                <motion.text x={CX + 285} y={CY - 200} fill="rgba(255,255,255,0.4)" fontSize="7" fontFamily="monospace" letterSpacing="1"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.9 }} viewport={{ once: true }}>
-                  Z3 · 20-30 MIN
-                </motion.text>
-
-              </svg>
+</svg>
             </motion.div>
 
             <div className="w-full md:w-1/2 space-y-8">
@@ -222,7 +209,7 @@ export default function StrategieSection() {
                       <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-600">{z.time}</span>
                     </div>
                     <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-500 mb-2">{z.label}</p>
-                    <p className="font-serif text-sm text-neutral-500 leading-relaxed font-light">{z.desc}</p>
+                    <p className="font-serif text-base md:text-lg text-neutral-400 leading-relaxed font-light">{z.desc}</p>
                   </div>
                 </motion.div>
               ))}
