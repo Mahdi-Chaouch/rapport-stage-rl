@@ -95,7 +95,7 @@ function PersonaCard({ persona }: { persona: typeof personas[0] }) {
               setComplete(true);
               setTimeout(() => setShowInfo(true), 800);
             }
-          }, 80);
+          }, 150);
         }
       },
       { threshold: 0.3 }
@@ -133,7 +133,7 @@ function PersonaCard({ persona }: { persona: typeof personas[0] }) {
             style={{ background: `linear-gradient(to right, transparent, ${persona.color}, transparent)`, boxShadow: `0 0 16px ${persona.color}` }}
             initial={{ top: "0%" }}
             animate={{ top: "100%" }}
-            transition={{ duration: 4, ease: "linear" }}
+            transition={{ duration: 6, ease: "linear" }}
           />
         )}
 
