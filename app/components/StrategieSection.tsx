@@ -259,7 +259,7 @@ export default function StrategieSection() {
           </div>
 
           <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.3 }} viewport={{ once: true }} className="sticky top-28">
-            <img src="/rl-collection.jpg" alt="Ralph Lauren" className="w-full h-[600px] object-cover object-top grayscale" />
+            <img src="/rl-collection1.jpg" alt="Ralph Lauren" className="w-full h-[600px] object-cover object-top grayscale" />
           </motion.div>
         </div>
 
