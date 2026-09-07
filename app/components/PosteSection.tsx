@@ -7,10 +7,10 @@ export default function PosteSection() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   const missions = [
-    { num: "01", title: "Accueil Client", img: "/mission-1.jpg", desc: "Premier visage de la maison Ralph Lauren, j'accueillais chaque client avec les codes d'excellence propres au luxe. Chaque entree en boutique est une opportunite de creer une experience memorable.", position: "object-center" },
-    { num: "02", title: "Vente de A a Z", img: "/mission-2.jpg", desc: "De la decouverte des besoins jusqu'au closing, j'accompagnais le client dans tout son parcours d'achat. Conseil produit, argumentation — chaque vente etait une histoire unique.", position: "object-center" },
-    { num: "03", title: "Click & Collect", img: "/mission-3.jpg", desc: "Gestion et remise des commandes en ligne, suivi client, coordination avec l'equipe logistique. Rigueur et sens du service pour une experience irreprochable.", position: "object-center" },
-    { num: "04", title: "Rangement & Reassort", img: "/mission-4.jpg", desc: "Organisation de la surface de vente, reassort des rayons, gestion du back office. Comprendre les coulisses invisibles de l'excellence visible.", position: "object-center" },
+    { num: "01", title: "Accueil Client", img: "/mission-1.jpg", desc: "En tant que premier contact avec la maison Ralph Lauren, j’accueillais chaque client en respectant les codes de la Maison. Chaque entrée en boutique était pour moi l’occasion de créer une expérience personnalisée et mémorable.", position: "object-center" },
+    { num: "02", title: "Vente de A a Z", img: "/mission-2.jpg", desc: "De la decouverte des besoins jusqu'au closing, j'accompagnais le client dans tout son parcours d'achat à l'aide d'un conseiller de vente qualifié. Conseil produit, argumentation, chaque vente était une histoire unique en fonction du client et de la pièce Ralph Lauren.", position: "object-center" },
+    { num: "03", title: "Click & Collect", img: "/mission-3.jpg", desc: "Je m’occupais également de la préparation et de la remise des commandes en ligne. Lorsqu’un client venait récupérer sa commande, il pouvait aussi essayer les produits directement en boutique. Il fallait donc l’accompagner comme n’importe quel client Ralph Lauren, avec attention et sens du service, tout en pouvant lui proposer des pièces complémentaires disponibles en magasin.", position: "object-center" },
+    { num: "04", title: "Rangement & Reassort", img: "/mission-4.jpg", desc: "Organisation de la surface de vente, réassort des rayons tout au long de la journée, aider les vendeurs sur le rangement de leurs pièces proposés après la vente, retaper les piles pour qu'elles restent aussi parfaite du début à la fin", position: "object-center" },
   ];
 
   return (
