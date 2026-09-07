@@ -321,10 +321,19 @@ export default function StrategieSection() {
                 <motion.circle cx={CX} cy={CY} r="5" fill="#60a5fa" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }} />
                 <motion.circle cx={CX} cy={CY} r="10" fill="none" stroke="rgba(96,165,250,0.4)" strokeWidth="1"
                   animate={{ r: [10, 25, 10], opacity: [0.4, 0, 0.4] }} transition={{ duration: 2, repeat: Infinity }} />
-                <motion.text x={CX + 10} y={CY - 6} fill="white" fontSize="9" fontFamily="monospace" letterSpacing="1"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>RALPH LAUREN</motion.text>
-                <motion.text x={CX + 10} y={CY + 8} fill="rgba(96,165,250,0.8)" fontSize="7" fontFamily="monospace"
-                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>MADELEINE · PARIS 8E</motion.text>
+                <motion.text x={CX + 18} y={CY - 12} fill="white" stroke="#050505" strokeWidth="3"
+  paintOrder="stroke" fontSize="20" fontWeight="700" fontFamily="monospace" letterSpacing="2"
+  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
+  RALPH LAUREN
+</motion.text>
+
+<motion.text x={CX + 18} y={CY + 12} fill="#60a5fa" stroke="#050505" strokeWidth="2"
+  paintOrder="stroke" fontSize="12" fontWeight="600" fontFamily="monospace" letterSpacing="1.2"
+  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.5, delay: 0.5 }} viewport={{ once: true }}>
+  MADELEINE · PARIS 8E
+</motion.text>
               </svg>
             </motion.div>
 
