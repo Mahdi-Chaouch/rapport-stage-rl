@@ -10,28 +10,28 @@ const entries = [
     title: "L'Apprentissage",
     imgs: ["/carnet-1.jpg"],
     imgPosition: "object-center",
-    desc: "Premiers pas au sein de la boutique de la Madeleine. J'apprends le stock, les references produits, les differentes collections Polo, les codes de la maison. Chaque detail compte — des etiquettes aux cintres, de la disposition des rayons aux codes vestimentaires de l'equipe.",
+    desc: "Comme un enfant mes premiers pas se sont faits petit à petit au sein de la boutique. J’ai découvert le fonctionnement du stock, les références produits, les différents floor, les différentes collections ainsi que les codes de la maison. J’ai rapidement compris que chaque détail compte : des étiquettes aux cintres, de la disposition des rayons aux codes vestimentaires de l’équipe.",
   },
   {
     period: "Semaines 2 — 4",
     title: "Le Feu des Soldes",
     imgs: ["/carnet-2.jpg"],
     imgPosition: "object-center",
-    desc: "Les soldes d'ete battent leur plein. Etiquetage des produits, mise en avant des pieces soldees, gestion du flux client intensifie. Une periode qui m'a appris a rester calme et efficace sous pression.",
+    desc: "Les soldes d’été battent leur plein durant le mois de juillet. Entre l’étiquetage des produits, la mise en avant des pièces soldées et une fréquentation plus importante pour ces dernières, le rythme en boutique s’intensifie. Cette période m’a appris à rester posé, organisé et efficace, même sous pression.",
   },
   {
     period: "Semaines 4 — 6",
     title: "Le Floor",
     imgs: ["/carnet-3.jpg"],
     imgPosition: "object-center",
-    desc: "Je prends mes marques sur le floor. Accueil client, presentation des collections, guidage dans les differents espaces. J'apprends a accompagner chaque parcours d'achat de A a Z.",
+    desc: "Je commence à prendre mes marques sur le floor. J’accueille les clients, je présente les collections et je les guide dans les différents espaces de la boutique. Petit à petit, j’apprends à accompagner chaque parcours d’achat de A à Y",
   },
   {
     period: "Semaines 6 — 8",
     title: "Le Merch",
     imgs: ["/carnet-4.jpg", "/carnet-4.1.jpg"],
     imgPosition: "object-center",
-    desc: "Arrivee de la nouvelle collection avec l'equipe Brand Image. Nous installons ensemble les nouvelles pieces — disposition, facing, harmonie des coloris. Le PSR GSR aussi : tous les produits hors collection sont identifies et renvoyes.",
+    desc: "Arrivée de la nouvelle collection avec l'équipe Brand Image. Nous installons ensemble les nouvelles pièces, disposition, facing, harmonie des coloris, des tenues. Le PSR GSR, une autre mission essentielle au sein de la boutique : tous les produits hors collection sont identifiés et renvoyés.",
   },
   {
     period: "Semaines 8 — 12",
@@ -39,7 +39,7 @@ const entries = [
     imgs: ["/carnet-5.jpg"],
     imgPosition: "object-center",
     imgHeight: "580px",
-    desc: "Je connais maintenant la boutique par coeur. Gestion autonome du stock, reassort des rayons, Click and Collect, accueil et vente clients. Je contribue pleinement a la vie de la boutique. Ce stage m'a transforme.",
+    desc: "Je connais maintenant la boutique par coeur. Gestion autonome du stock, réassort des rayons, Click and Collect, accueil et vente clients. Je contribue pleinement à la vie de la boutique.",
   },
 ];
 
