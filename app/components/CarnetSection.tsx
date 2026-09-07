@@ -83,7 +83,7 @@ export default function CarnetSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
           viewport={{ once: true }}
-          className="pinyon text-4xl sm:text-5xl md:text-8xl text-neutral-400 font-light"
+          className="pinyon text-3xl sm:text-4xl md:text-8xl text-neutral-400 font-light"
         >
           Trois mois au coeur de la Madeleine.
         </motion.p>
