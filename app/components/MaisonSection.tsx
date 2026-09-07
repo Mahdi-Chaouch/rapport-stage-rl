@@ -395,7 +395,11 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             </div>
             <div className="md:w-3/5">
               <p className="font-serif text-lg md:text-xl text-neutral-400 leading-relaxed font-normal">
-                Inauguree en 2000 au 2 Place de la Madeleine, c'est la premiere boutique parisienne et europeenne de Ralph Lauren, une etape historique pour la maison americaine. Sur trois etages d'un immeuble haussmannien au coeur du 8e arrondissement, elle explore un univers immersif ou chaque detail raconte une histoire : parquets en chevrons, boiseries sombres, luminaires en laiton, tapis d'Orient. Le sous-sol est dedie au Polo et au sportswear, le rez-de-chaussee au formel masculin et l'etage a la femme. La premiere fois que j'y suis entre pour mon entretien, j'ai eu l'impression de quitter Paris pour entrer dans un autre monde, celui que Ralph Lauren a toujours reve de batir, americain, preppy, incontemporel. Ses murs ont accueilli Rami Malek, Kanye West, le Prince du Maroc et bien d'autres.
+                Inaugurée en 2000 au 2 place de la Madeleine, cette boutique est la première adresse parisienne et européenne de Ralph Lauren : une étape cruciale pour la maison américaine. Installée sur trois étages dans un immeuble haussmannien, au cœur du 8e arrondissement juste en face de l'église de la Madeleine, elle plonge directement les clients dans l’univers Ralph Lauren.
+
+Entre les parquets en chevrons, les boiseries foncées, les luminaires en laiton et les tapis d’Orient, chaque détail participe à l’ambiance. Le sous-sol est consacré à Polo et au sportswear, le rez-de-chaussée au vestiaire masculin plus formel, et l’étage à la collection femme.
+
+La première fois que je suis entré dans la boutique, pour mon entretien, j’ai vraiment eu l’impression de sortir de Paris et d’entrer dans un autre monde : un univers américain, preppy et intemporel, exactement comme Ralph Lauren l’a imaginé. Au fil des années, la boutique a aussi accueilli des personnalités comme Rami Malek, Kanye West ou encore le prince du Maroc.
               </p>
             </div>
           </motion.div>
