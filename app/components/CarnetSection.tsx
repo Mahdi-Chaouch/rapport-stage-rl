@@ -85,7 +85,7 @@ export default function CarnetSection() {
           viewport={{ once: true }}
           className="pinyon text-3xl sm:text-4xl md:text-5xl text-neutral-400 font-light"
         >
-          Trois mois au coeur de la maison.
+          Trois mois au coeur de la Madeleine.
         </motion.p>
       </div>
 
