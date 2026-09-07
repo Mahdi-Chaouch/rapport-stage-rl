@@ -4,25 +4,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
 const brandData = [
-  { value: "$7.6B", label: "CHIFFRE D'AFFAIRES 2024" },
-  { value: "1967", label: "ANNEE DE FONDATION" },
-  { value: "90+", label: "PAYS" },
-  { value: "25K+", label: "EMPLOYES" },
-  { value: "#1", label: "MARQUE DE LUXE AMERICAINE" },
+  { value: "$8.1B", label: "CHIFFRE D'AFFAIRES 2026" },
+  { value: "1967", label: "ANNÉE DE FONDATION" },
+  { value: "280+", label: "PAYS" },
+  { value: "23K+", label: "EMPLOYÉS" },
+  { value: "#1", label: "MARQUE DE LUXE AMÉRICAINE LA PLUS ACHETÉE" },
 ];
 
 const competitors = [
   {
     name: "Tommy Hilfiger",
-    revenue: "~$4.5B",
+    revenue: "~4.8B",
     logo: "/logo-tommy.png",
-    description: "Fonde en 1985, Tommy Hilfiger incarne le preppy americain accessible. Appartenant au groupe PVH, la marque est presente dans plus de 100 pays et cible une clientele jeune et urbaine avec un positionnement premium mais moins exclusif que Ralph Lauren.",
+    description: "Fondé en 1985, Tommy Hilfiger incarne le preppy americain accessible. Appartenant au groupe PVH, la marque est présente dans plus de 100 pays et cible une clientèle jeune et urbaine avec un positionnement premium mais moins exclusif que Ralph Lauren.",
   },
   {
     name: "Lacoste",
-    revenue: "~$2B",
+    revenue: "~$3B",
     logo: "/logo-lacoste.png",
-    description: "Nee en 1933 du tennisman Rene Lacoste, la marque au crocodile est un symbole du sport chic europeen. Avec un positionnement plus accessible, Lacoste joue sur son heritage sportif et son iconique polo pour seduire une clientele internationale.",
+    description: "Née en 1933 du tennisman René Lacoste, la marque au crocodile est un symbole du sport chic européen. Avec un positionnement plus accessible, Lacoste joue sur son héritage sportif et son iconique polo pour séduire une clientèle internationale.",
   },
 ];
 
@@ -278,9 +278,9 @@ export default function StrategieSection() {
           <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-12">LA COMPARAISON</span>
           <div className="space-y-8">
             {[
-              { name: "Ralph Lauren", value: 81, revenue: "$7.6B", isRL: true },
-              { name: "Tommy Hilfiger", value: 45, revenue: "~$4.5B", isRL: false },
-              { name: "Lacoste", value: 22, revenue: "~$2B", isRL: false },
+              { name: "Ralph Lauren", value: 81, revenue: "$8.1B", isRL: true },
+              { name: "Tommy Hilfiger", value: 40, revenue: "$4.8B", isRL: false },
+              { name: "Lacoste", value: 25, revenue: "$3B", isRL: false },
             ].map((brand, i) => (
               <motion.div key={i} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: i * 0.15 }} viewport={{ once: true }}
                 className="flex items-center gap-8">
