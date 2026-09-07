@@ -118,7 +118,7 @@ export default function Flipbook() {
                           Ici, on ne fait pas tout. On fait le Polo.
                         </p>
                         <p className="font-serif text-sm md:text-base text-[#555] leading-relaxed text-center mt-6 font-light">
-                          Quand les clients nous demandent du Purple Label ou du Double RL, on leur répond avec fierté : nous, c&apos;est Polo Ralph Lauren.
+                          À la Madeleine, Polo Ralph Lauren est vraiment au cœur de la boutique : c’est la collection que nous proposons le plus et celle qui représente le mieux notre univers.
                         </p>
                         <p className="font-serif text-sm text-[#888] text-center mt-6 italic font-light">
                           Collection Homme Automne-Hiver 2026.
