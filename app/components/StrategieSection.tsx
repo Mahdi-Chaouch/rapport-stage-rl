@@ -223,7 +223,6 @@ export default function StrategieSection() {
         </motion.span>
         <motion.span initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} viewport={{ once: true }}
           className="block text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 mb-8">
-          RETAIL INTELLIGENCE
         </motion.span>
         <motion.h2 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, delay: 0.2 }} viewport={{ once: true }}
           className="font-serif text-5xl sm:text-6xl md:text-8xl text-white font-light tracking-tight leading-none mb-4">
@@ -231,7 +230,6 @@ export default function StrategieSection() {
         </motion.h2>
         <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} viewport={{ once: true }}
           className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-500">
-          MADELEINE — PARIS · ANALYSING THE BRAND, THE MARKET & THE CUSTOMER
         </motion.p>
       </div>
 
