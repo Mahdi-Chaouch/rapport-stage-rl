@@ -236,7 +236,7 @@ export default function StrategieSection() {
       <div className="px-6 md:px-24 pb-28 pt-20">
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-16">
-          <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">01 — THE BRAND</span>
+          <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">01 — LA MARQUE</span>
           <h3 className="font-serif text-4xl md:text-6xl text-white font-light">Ou se positionne Ralph Lauren ?</h3>
         </motion.div>
 
@@ -257,7 +257,7 @@ export default function StrategieSection() {
         </div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-16">
-          <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">02 — THE COMPETITION</span>
+          <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">02 — LA COMPÉTITION</span>
           <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-16">Les concurrents directs</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {competitors.map((c, i) => (
@@ -299,7 +299,7 @@ export default function StrategieSection() {
 
         <div className="mt-28">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-16">
-            <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">03 — THE CATCHMENT AREA</span>
+            <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">03 — LA ZONE DE CHALANDISE</span>
             <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-4">D'ou viennent nos clients ?</h3>
             <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600">MADELEINE · PARIS 8E · ZONE D'ATTRACTION COMMERCIALE</p>
           </motion.div>
@@ -330,9 +330,9 @@ export default function StrategieSection() {
 
             <div className="w-full md:w-1/2 space-y-8">
               {[
-                { zone: "ZONE 01", time: "0 — 10 MIN", label: "ZONE PRIMAIRE", desc: "Le coeur de chalandise. Clients locaux, employes du quartier, habitues de la boutique. Frequentation quotidienne elevee.", color: "rgba(96,165,250,0.8)" },
-                { zone: "ZONE 02", time: "10 — 20 MIN", label: "ZONE SECONDAIRE", desc: "Clients parisiens qui se deplacent specifiquement pour l'enseigne. Shopping experience recherchee et planifiee.", color: "rgba(167,139,250,0.8)" },
-                { zone: "ZONE 03", time: "20 — 30 MIN", label: "ZONE ETENDUE", desc: "Touristes internationaux, clients de passage, visiteurs de Paris. Represente une part significative du chiffre d'affaires.", color: "rgba(255,255,255,0.4)" },
+                { zone: "ZONE 01", time: "0 — 10 MIN", label: "ZONE PRIMAIRE", desc: "Le coeur de chalandise. Clients locaux, employés du quartier, habitués de la boutique. Fréquentation quotidienne élevée.", color: "rgba(96,165,250,0.8)" },
+                { zone: "ZONE 02", time: "10 — 20 MIN", label: "ZONE SECONDAIRE", desc: "Clients parisiens qui se deplacent spécifiquement pour l'enseigne, pour la collection Polo présente en boutique. Shopping expérience recherchée et planifiée.", color: "rgba(167,139,250,0.8)" },
+                { zone: "ZONE 03", time: "20 — 30 MIN", label: "ZONE TERTIAIRE", desc: "Touristes internationaux, clients de passage, visiteurs de Paris. Représente une part significative du chiffres d'affaires.", color: "rgba(255,255,255,0.4)" },
               ].map((z, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: i * 0.2 }} viewport={{ once: true }}
                   className="flex gap-6 items-start">
