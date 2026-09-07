@@ -8,13 +8,13 @@ const timeline = [
   {
     year: "1967",
     title: "La Cravate Fondatrice",
-    desc: "Avec 50 dollars en poche, Ralph Lifshitz lance sa première collection de cravates larges sous le nom Ralph Lauren. Une révolution discrete.",
+    desc: "Avec 50 dollars en poche, Ralph Lifshitz lance sa première collection de cravates larges sous le nom Ralph Lauren.",
     pink: false,
   },
   {
     year: "1972",
     title: "La Naissance du Polo",
-    desc: "Création du polo shirt iconique à logo polo player brode, pièce qui deviendra l'un des vêtements les plus reconnaissables au monde.",
+    desc: "Création du polo shirt iconique à logo polo player brodé, pièce qui deviendra l'un des vêtements les plus reconnaissables au monde.",
     pink: false,
   },
   {
@@ -26,7 +26,7 @@ const timeline = [
   {
     year: "1991",
     title: "Lancement du Polo Bear",
-    desc: "L'icone du style Polo fait ses debuts sous la forme d'un ourson en édition limitée, inspire d'une peluche offerte à Ralph par son personnel.",
+    desc: "L'icone du style Polo fait ses debuts sous la forme d'un ourson en édition limitée, inspiré d'une peluche offerte à Ralph par son personnel.",
     pink: false,
   },
   {
@@ -65,7 +65,7 @@ const collections = [
   {
     name: "Polo Ralph Lauren",
     tag: "Le Classique Americain",
-    desc: "Né en 1972 autour du polo shirt iconique, Polo Ralph Lauren incarne l'élégance decontractée à l'américaine. Preppy, authentique, intemporel — c'est la ligne la plus accessible et la plus reconnue de la maison.",
+    desc: "Née en 1972 autour de l’iconique polo, la collection Polo Ralph Lauren représente, selon moi, l’essence même du style américain et Ralph : une élégance décontractée, preppy et intemporelle. C’est la ligne la plus connue de la maison, mais aussi celle qui est la plus accessible tout en gardant une identité propre à la Maison.",
     img: "/polo.jpg",
     left: true,
     purple: false,
@@ -73,7 +73,7 @@ const collections = [
   {
     name: "Purple Label",
     tag: "La Haute Couture Masculine",
-    desc: "Le summum du savoir-faire Ralph Lauren. Des costumes tailles sur mesure dans les meilleures etoffes italiennes et anglaises, pour une clientele d'exception qui refuse de choisir entre style et prestige.",
+    desc: "Purple Label représente le savoir-faire le plus haut de gamme de Ralph Lauren. Cette collection se distingue par des costumes aux coupes très travaillées, réalisés dans des matières italiennes et anglaises d’exception. C’est une ligne pensée pour une clientèle qui recherche à la fois l’élégance, la qualité et une certaine idée du prestige.",
     img: "/purple-label.jpg",
     left: false,
     purple: true,
@@ -81,7 +81,7 @@ const collections = [
   {
     name: "Ralph Lauren Collection",
     tag: "Le Pret-a-Porter Feminin",
-    desc: "L'expression la plus pure de la feminite selon Ralph Lauren. Des silhouettes puissantes et gracieuses, des matieres nobles, une esthetique Western chic qui traverse les saisons sans jamais vieillir.",
+    desc: "La collection Ralph Lauren incarne une féminité élégante et affirmée. À travers des silhouettes à la fois fortes et fluides, des matières nobles et une inspiration Western chic, elle propose un style intemporel qui évolue avec les saisons sans jamais perdre son identité.",
     img: "/rl-collection.jpg",
     left: true,
     purple: false,
@@ -89,7 +89,7 @@ const collections = [
   {
     name: "Double RL",
     tag: "Le Workwear Vintage",
-    desc: "Inspiree du ranch Double RL que possede Ralph Lauren dans le Colorado, cette ligne celebre l'Amerique ouvriere et authentique. Denim brut, cuir patine, pieces militaires — une ode a l'heritage americain.",
+    desc: "Lancée en 1993, Double RL s’inspire du ranch de Ralph et Ricky Lauren, situé dans le Colorado. C’est une collection qui rend hommage à une Amérique plus authentique, entre workwear, vêtements militaires vintage et esprit Western. Avec ses denims bruts, ses cuirs patinés et ses pièces au style volontairement vieilli, Double RL propose un univers plus brut et nostalgique mais toujours très travaillé.",
     img: "/double-rl.jpg",
     left: false,
     purple: false,
@@ -97,7 +97,7 @@ const collections = [
   {
     name: "RLX Ralph Lauren",
     tag: "Le Sport & Performance",
-    desc: "La reponse de Ralph Lauren au monde du sport et de l'outdoor. Des pieces techniques a l'esthetique forte, ou performance et style fusionnent pour une garde-robe active sans compromis.",
+    desc: "RLX est la collection performance de Ralph Lauren, pensée pour le sport et les sportifs. Elle associe des matières techniques, avec des coupes confortables et toujours élégante. C’est une ligne plus fonctionnelle, mais qui garde une vraie identité Ralph Lauren : être à l’aise, sans mettre le style de côté.",
     img: "/rlx.jpg",
     left: true,
     purple: false,
