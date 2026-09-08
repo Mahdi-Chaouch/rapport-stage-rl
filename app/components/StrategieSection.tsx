@@ -308,6 +308,217 @@ export default function StrategieSection() {
               className="w-full md:w-1/2 relative">
               <img src="/paris-map.jpg" alt="Paris" className="w-full object-contain invert opacity-20" />
               <svg viewBox="0 0 800 900" className="absolute inset-0 w-full h-full">
+  <defs>
+    <filter id="radarGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  {/* ZONE 03 — rayon extérieur */}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="270"
+    fill="rgba(245,197,107,0.08)"
+    stroke="#f5c56b"
+    strokeWidth="3"
+    strokeDasharray="10 8"
+    filter="url(#radarGlow)"
+    initial={{ opacity: 0, scale: 0.3 }}
+    whileInView={{ opacity: 0.95, scale: 1 }}
+    transition={{ duration: 1.1, delay: 0.8 }}
+    viewport={{ once: true }}
+    style={{ transformOrigin: `${CX}px ${CY}px` }}
+  />
+
+  {/* ZONE 02 — rayon intermédiaire */}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="180"
+    fill="rgba(167,139,250,0.10)"
+    stroke="#a78bfa"
+    strokeWidth="3"
+    strokeDasharray="7 6"
+    filter="url(#radarGlow)"
+    initial={{ opacity: 0, scale: 0.3 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1, delay: 0.5 }}
+    viewport={{ once: true }}
+    style={{ transformOrigin: `${CX}px ${CY}px` }}
+  />
+
+  {/* ZONE 01 — rayon proche */}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="100"
+    fill="rgba(96,165,250,0.18)"
+    stroke="#60a5fa"
+    strokeWidth="3"
+    filter="url(#radarGlow)"
+    initial={{ opacity: 0, scale: 0.3 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.8, delay: 0.25 }}
+    viewport={{ once: true }}
+    style={{ transformOrigin: `${CX}px ${CY}px` }}
+  />
+
+  {/* Ligne qui tourne : effet radar */}
+  <motion.line
+    x1={CX}
+    y1={CY}
+    x2={CX}
+    y2={CY - 270}
+    stroke="#60a5fa"
+    strokeWidth="2"
+    strokeLinecap="round"
+    opacity="0.9"
+    filter="url(#radarGlow)"
+    animate={{ rotate: [0, 360] }}
+    transition={{ duration: 4.5, repeat: Infinity, ease: "linear" }}
+    style={{ transformOrigin: `${CX}px ${CY}px` }}
+  />
+
+  {/* Onde qui part de la boutique */}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="12"
+    fill="none"
+    stroke="#60a5fa"
+    strokeWidth="2"
+    filter="url(#radarGlow)"
+    animate={{ r: [12, 270], opacity: [0.9, 0] }}
+    transition={{ duration: 3.2, repeat: Infinity, ease: "easeOut" }}
+  />
+
+  {/* Point de la boutique */}
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="11"
+    fill="rgba(96,165,250,0.15)"
+    stroke="#60a5fa"
+    strokeWidth="2"
+    filter="url(#radarGlow)"
+    animate={{ opacity: [0.5, 1, 0.5] }}
+    transition={{ duration: 1.6, repeat: Infinity }}
+  />
+
+  <motion.circle
+    cx={CX}
+    cy={CY}
+    r="5"
+    fill="white"
+    filter="url(#radarGlow)"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.2 }}
+    viewport={{ once: true }}
+  />
+
+  {/* Texte boutique */}
+  <motion.text
+    x={CX + 18}
+    y={CY - 12}
+    fill="white"
+    stroke="#050505"
+    strokeWidth="3"
+    paintOrder="stroke"
+    fontSize="20"
+    fontWeight="700"
+    fontFamily="monospace"
+    letterSpacing="2"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.4 }}
+    viewport={{ once: true }}
+  >
+    RALPH LAUREN
+  </motion.text>
+
+  <motion.text
+    x={CX + 18}
+    y={CY + 12}
+    fill="#60a5fa"
+    stroke="#050505"
+    strokeWidth="2"
+    paintOrder="stroke"
+    fontSize="12"
+    fontWeight="600"
+    fontFamily="monospace"
+    letterSpacing="1.2"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.5 }}
+    viewport={{ once: true }}
+  >
+    MADELEINE · PARIS 8E
+  </motion.text>
+
+  {/* Noms des trois zones */}
+  <motion.text
+    x={CX + 72}
+    y={CY - 72}
+    fill="#60a5fa"
+    stroke="#050505"
+    strokeWidth="2"
+    paintOrder="stroke"
+    fontSize="13"
+    fontWeight="700"
+    fontFamily="monospace"
+    letterSpacing="1.5"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.7 }}
+    viewport={{ once: true }}
+  >
+    ZONE 01 · PRIMAIRE
+  </motion.text>
+
+  <motion.text
+    x={CX + 120}
+    y={CY - 125}
+    fill="#a78bfa"
+    stroke="#050505"
+    strokeWidth="2"
+    paintOrder="stroke"
+    fontSize="13"
+    fontWeight="700"
+    fontFamily="monospace"
+    letterSpacing="1.5"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.9 }}
+    viewport={{ once: true }}
+  >
+    ZONE 02 · SECONDAIRE
+  </motion.text>
+
+  <motion.text
+    x={CX - 250}
+    y={CY - 175}
+    fill="#f5c56b"
+    stroke="#050505"
+    strokeWidth="2"
+    paintOrder="stroke"
+    fontSize="13"
+    fontWeight="700"
+    fontFamily="monospace"
+    letterSpacing="1.5"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: 1.1 }}
+    viewport={{ once: true }}
+  >
+    ZONE 03 · TERTIAIRE
+  </motion.text>
+</svg>
                 <motion.circle cx={CX} cy={CY} r="320" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1"
                   initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, delay: 0.8 }} viewport={{ once: true }}
                   style={{ transformOrigin: `${CX}px ${CY}px` }} />
