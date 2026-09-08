@@ -301,7 +301,6 @@ export default function StrategieSection() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-16">
             <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">03 — LA ZONE DE CHALANDISE</span>
             <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-4">D'ou viennent nos clients ?</h3>
-            <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600">MADELEINE · PARIS 8E · ZONE D'ATTRACTION COMMERCIALE</p>
           </motion.div>
 
           <div className="flex flex-col md:flex-row gap-16 items-center">
