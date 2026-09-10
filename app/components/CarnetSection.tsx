@@ -10,7 +10,7 @@ const entries = [
     title: "L'Apprentissage",
     imgs: ["/carnet-1.jpg"],
     imgPosition: "object-center",
-    desc: "Comme un enfant mes premiers pas se sont faits petit à petit au sein de la boutique. J’ai découvert le fonctionnement du stock, les références produits, les différents floor, les différentes collections ainsi que les codes de la maison. J’ai rapidement compris que chaque détail compte : des étiquettes aux cintres, de la disposition des rayons aux codes vestimentaires de l’équipe.",
+    desc: "Comme un enfant mes premiers pas se sont faits petit-à-petit au sein de la boutique. J’ai découvert le fonctionnement du stock, les références produits, les différents floors, les différentes collections ainsi que les codes de la maison. J’ai rapidement compris que chaque détail compte : des étiquettes aux cintres, de la disposition des rayons aux codes vestimentaires et de présentations de l’équipe.",
   },
   {
     period: "Semaines 2 — 4",
@@ -31,7 +31,7 @@ const entries = [
     title: "Le Merch",
     imgs: ["/carnet-4.jpg", "/carnet-4.1.jpg"],
     imgPosition: "object-center",
-    desc: "Arrivée de la nouvelle collection avec l'équipe Brand Image. Nous installons ensemble les nouvelles pièces, disposition, facing, harmonie des coloris, des tenues. Le PSR GSR, une autre mission essentielle au sein de la boutique : tous les produits hors collection sont identifiés et renvoyés.",
+    desc: "Arrivée de la nouvelle collection avec l'équipe Brand Image. Nous installons ensemble les nouvelles pièces, disposition, facing, harmonie des coloris, des tenues, car le but c'est de raconter une histoire derrière ces pièces installées, pour que le vendeur et le client se projettent grâçe aux différents looks établis sur le floor. Le PSR GSR, une autre mission essentielle au sein de la boutique : tous les produits hors collection sont identifiés et renvoyés.",
   },
   {
     period: "Semaines 8 — 12",
