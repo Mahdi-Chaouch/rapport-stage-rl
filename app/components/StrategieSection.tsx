@@ -398,20 +398,20 @@ export default function StrategieSection() {
 
   {/* Periodicite */}
   <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-8">
-    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-12">LES PERIODES FORTES</span>
+    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-12">LES PÉRIODES FORTES</span>
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
       {[
-        { period: "Decembre", label: "Fetes de fin d'annee", color: "#60a5fa" },
+        { period: "Décembre", label: "Fêtes de fin d'année", color: "#60a5fa" },
         { period: "Janvier", label: "Soldes hiver", color: "#a78bfa" },
-        { period: "Juin — Juillet", label: "Soldes ete", color: "#a78bfa" },
-        { period: "Septembre", label: "Rentree", color: "#60a5fa" },
+        { period: "Juin — Juillet", label: "Soldes été", color: "#a78bfa" },
+        { period: "Septembre", label: "Rentrée", color: "#60a5fa" },
         { period: "Novembre", label: "Black Friday", color: "#f59e0b" },
       ].map((p, i) => (
         <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: i * 0.1 }} viewport={{ once: true }}
-          className="border border-white/10 p-6 hover:border-white/30 transition-colors duration-300">
+          className="border border-white/10 p-10 hover:border-white/30 transition-colors duration-300">
           <div className="w-2 h-2 rounded-full mb-4" style={{ backgroundColor: p.color }} />
-          <p className="font-serif text-lg text-white font-light mb-2">{p.period}</p>
-          <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-neutral-500">{p.label}</p>
+          <p className="font-serif text-2xl md:text-3xl text-white font-light mb-3">{p.period}</p>
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-neutral-500">{p.label}</p>
         </motion.div>
       ))}
     </div>
