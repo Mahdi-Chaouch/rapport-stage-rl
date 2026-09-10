@@ -168,7 +168,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             viewport={{ once: true }}
             className="font-serif text-xl md:text-2xl text-white italic font-medium leading-relaxed md:text-right"
           >
-            Ralph Lifshitz nait en 1939 dans le Bronx, New York, fils d'immigrants juifs bielorusses. Rien ne le predestine a revolutionner la mode mondiale.
+            Ralph Lifshitz nait en 1939 dans le Bronx, New York, fils d'immigrants juifs biélorusses. Rien ne le prédestine a révolutionner la mode mondiale.
           </motion.p>
 
           <motion.div
@@ -192,7 +192,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             viewport={{ once: true }}
             className="font-serif text-xl md:text-2xl text-white italic font-medium leading-relaxed"
           >
-            Pourtant il se distingue avec un sens inne de l'elegance, une obsession pour le detail, et une vision : faire porter aux gens non pas des vetements, mais un reve. En 1967, avec 50 dollars en poche, Ralph Lauren pose la premiere pierre d'un empire qui pese aujourd'hui plus de 6 milliards de dollars.
+            Pourtant il se distingue avec un sens inné de l'élégance, une obsession pour le détail, et une vision : faire porter aux gens non pas des vêtements mais un rêve. En 1967, avec 50 dollars en poche, Ralph Lauren pose la première pierre d'un empire qui pèse aujourd'hui plus de 6 milliards de dollars.
           </motion.p>
         </div>
       </div>
