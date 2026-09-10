@@ -395,11 +395,11 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
             </div>
             <div className="md:w-3/5">
               <p className="font-serif text-lg md:text-xl text-neutral-400 leading-relaxed font-normal">
-                Inaugurée en 2000 au 2 place de la Madeleine, cette boutique est la première adresse parisienne et européenne de Ralph Lauren : une étape cruciale pour la maison américaine. Installée sur trois étages dans un immeuble haussmannien, au cœur du 8e arrondissement juste en face de l'église de la Madeleine, elle plonge directement les clients dans l’univers Ralph Lauren.
+                Inaugurée en 1986 au 2 place de la Madeleine, cette boutique est la première adresse parisienne et européenne de Ralph Lauren. Installée sur trois étages dans un immeuble haussmannien classé monument historique, au cœur du 8e arrondissement, juste en face de l'église de la Madeleine, elle plonge directement les clients dans l’univers Ralph Lauren.
 
-Entre les parquets en chevrons, les boiseries foncées, les luminaires en laiton et les tapis d’Orient, chaque détail participe à l’ambiance. Le sous-sol est consacré à Polo et au sportswear, le rez-de-chaussée au vestiaire masculin plus formel, et l’étage à la collection femme.
+Entre les parquets en pointe de Hongrie, les boiseries, les luminaires en laiton, chaque détail participe à cet immersion. Le sous-sol est consacré à Polo et au sportswear, le rez-de-chaussée au vestiaire masculin plus formel, et l’étage à la collection femme.
 
-La première fois que je suis entré dans la boutique, pour mon entretien, j’ai vraiment eu l’impression de sortir de Paris et d’entrer dans un autre monde : un univers américain, preppy et intemporel, exactement comme Ralph Lauren l’a imaginé. Au fil des années, la boutique a aussi accueilli des personnalités comme Rami Malek, Kanye West ou encore le prince du Maroc.
+La première fois que je suis entré dans la boutique, pour mon entretien, j’ai vraiment eu l’impression de sortir de Paris et d’entrer dans un autre monde : un univers américain, preppy et intemporel, exactement comme Ralph Lauren l’a imaginé. Au fil des années, la boutique a aussi accueilli des personnalités comme Nicolas Sarkozy, Kanye West ou encore le Roi du Maroc.
               </p>
             </div>
           </motion.div>
