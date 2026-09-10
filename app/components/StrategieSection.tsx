@@ -372,15 +372,15 @@ export default function StrategieSection() {
 <div className="mt-28 border-t border-white/10 pt-20">
   <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-20">
     <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">05 — LES PERFORMANCES</span>
-    <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-4">Les indicateurs cles</h3>
-    <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600">BOUTIQUE DE LA MADELEINE · INDICATEURS DE SUIVI</p>
+    <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-4">Les indicateurs clés</h3>
+    <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600"></p>
   </motion.div>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-24">
     {[
-      { num: "01", kpi: "TAUX DE CONVERSION", desc: "Pourcentage de visiteurs qui passent a l'achat. Indicateur cle de l'efficacite commerciale de l'equipe sur le floor. Un bon taux de conversion reflete la qualite de l'accueil et du conseil.", icon: "%" },
-      { num: "02", kpi: "UPT", sub: "Units Per Transaction", desc: "Nombre moyen de pieces par ticket. Un UPT eleve signifie que le conseiller a su proposer des pieces complementaires et creer une experience d'achat complete.", icon: "×" },
-      { num: "03", kpi: "CHIFFRE D'AFFAIRES", desc: "Le resultat direct de la combinaison taux de conversion et UPT. Un bon taux plus un bon UPT genere mecaniquement un chiffre d'affaires eleve.", icon: "€" },
+      { num: "01", kpi: "TAUX DE CONVERSION", desc: "Pourcentage de visiteurs qui passent à l'achat. C'est un indicateur clé mesurant l'efficacité commerciale de l'équipe sur le floor. Un bon taux de conversion reflète la qualité de l'accueil et du conseil.", icon: "%" },
+      { num: "02", kpi: "UPT", sub: "Units Per Transaction", desc: "Nombre moyen de pièces par ticket. Un UPT élevé signifie que le conseiller a su proposer des pièces complémentaires et créer une expérience d'achat complète.", icon: "×" },
+      { num: "03", kpi: "CHIFFRE D'AFFAIRES", desc: "Le résultat direct de la combinaison taux de conversion et UPT. Un bon taux plus un bon UPT génère mécaniquement un chiffre d'affaires élevé.", icon: "€" },
     ].map((item, i) => (
       <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: i * 0.2 }} viewport={{ once: true }}
         className="border border-white/10 p-10 relative group hover:border-blue-400/30 transition-colors duration-300">
@@ -388,10 +388,10 @@ export default function StrategieSection() {
         <div className="font-serif text-6xl md:text-8xl text-white/10 font-light mb-4 group-hover:text-blue-400/20 transition-colors duration-300">
           {item.icon}
         </div>
-        <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-blue-400 mb-1">{item.kpi}</p>
+        <p className="font-mono text-xs tracking-[0.25em] uppercase text-blue-400 mb-1">{item.kpi}</p>
         {"sub" in item && <p className="font-mono text-[9px] text-neutral-600 mb-4">{item.sub}</p>}
         <div className="w-8 h-[1px] bg-white/20 my-4" />
-        <p className="font-serif text-sm text-neutral-500 leading-relaxed font-light">{item.desc}</p>
+        <p className="font-serif text-base md:text-lg text-neutral-400 leading-relaxed font-light">{item.desc}</p>
       </motion.div>
     ))}
   </div>
