@@ -24,7 +24,7 @@ const entries = [
     title: "Le Floor",
     imgs: ["/carnet-3.jpg"],
     imgPosition: "object-center",
-    desc: "Je commence à prendre mes marques sur le floor. J’accueille les clients, je présente les collections et je les guide dans les différents espaces de la boutique. Petit à petit, j’apprends à accompagner chaque parcours d’achat de A à Y",
+    desc: "Je commence à prendre mes marques sur le floor. J’accueille les clients, je présente les collections et je les guide dans les différents espaces de la boutique. Petit-à-petit, j’apprends à accompagner chaque parcours d’achat de A à X",
   },
   {
     period: "Semaines 6 — 8",
@@ -39,7 +39,7 @@ const entries = [
     imgs: ["/carnet-5.jpg"],
     imgPosition: "object-center",
     imgHeight: "580px",
-    desc: "Je connais maintenant la boutique par coeur. Gestion autonome du stock, réassort des rayons, Click and Collect, accueil et vente clients. Je contribue pleinement à la vie de la boutique.",
+    desc: "Je connais maintenant la boutique par coeur. Gestion autonome du stock, réassort des rayons, Click and Collect, accueil et vente clients. Je contribue pleinement et efficacement à la vie de la boutique.",
   },
 ];
 
