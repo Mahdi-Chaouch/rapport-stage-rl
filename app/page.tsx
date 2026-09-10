@@ -124,7 +124,7 @@ export default function Home() {
                 >
                   Bienvenue
                   <br />
-                  a Bord
+                  à Bord
                 </motion.h1>
 
                 <motion.p
