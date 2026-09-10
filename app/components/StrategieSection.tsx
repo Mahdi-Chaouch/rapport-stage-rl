@@ -61,7 +61,7 @@ const personas = [
     name: "Lucas",
     age: "26 ans",
     job: "Graphiste Freelance · Paris 11e",
-    quote: "J'ai vu un polo sur Instagram et je voulais le voir en vrai et l'essayer.",
+    quote: "J'ai vu un polo sur Instagram et je voulais le voir et l'essayer.",
     img: "/persona-3.jpg",
     left: true,
     color: "rgba(255,255,255,0.9)",
