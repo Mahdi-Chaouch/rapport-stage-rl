@@ -37,7 +37,7 @@ const personas = [
     img: "/persona-1.jpg",
     left: true,
     color: "#60a5fa",
-    profil: "Client régulier du quartier. Vient seul en semaine ou le week-end avec sa femme. Connait la boutique, sait ce qu'il veut. CSP+, exigeant, efficace.",
+    profil: "Client régulier du quartier, sait ce  qu'il aime et vient passer un bon moment. Seul en semaine ou avec sa femme le week-end. Connait la boutique, sait ce qu'il veut. CSP+, exigeant, efficace.",
     motivation: "Contrainte vestimentaire professionnelle. Cherche des pièces qui fonctionnent aussi bien au bureau qu'en soirée. Qualité et coupe avant tout.",
     comportement: "Direct, va droit au but. Achète costume, chemise, pull, quarter-zip. Panier moyen élevé. Fidélisation simple si le conseiller comprend son style.",
   },
@@ -47,11 +47,11 @@ const personas = [
     name: "Yuki",
     age: "34 ans",
     job: "Cadre Tech · Tokyo",
-    quote: "Je voulais voir la boutique historique et ramener quelque chose de Paris.",
+    quote: "Je passais à côté et je voulais découvir la boutique.",
     img: "/persona-2.jpg",
     left: false,
     color: "#a78bfa",
-    profil: "Touriste asiatique en vacances à Paris. Fan de la marque depuis longtemps, elle vient visiter la boutique en guise de continuité de sa visite touristique.",
+    profil: "Touriste asiatique en vacances à Paris, elle ne vient pas dans la capitale pour nous, mais elle ne se refuse pas de visiter la boutique en guise de continuité de sa visite touristique.",
     motivation: "Mélange de plaisir et de souvenir. Achète pour elle et surtout pour offrir.",
     comportement: "Prend son temps, explore tous les étages, s'intéresse aux pièces casual : pull, polo, chino.",
   },
@@ -340,7 +340,7 @@ export default function StrategieSection() {
               {[
                 { zone: "ZONE 01", time: "0 — 10 MIN", label: "ZONE PRIMAIRE", desc: "Le coeur de chalandise. Clients locaux, employés du quartier, habitués de la boutique. Fréquentation quotidienne élevée.", color: "rgba(96,165,250,0.8)" },
                 { zone: "ZONE 02", time: "10 — 20 MIN", label: "ZONE SECONDAIRE", desc: "Clients parisiens qui se deplacent spécifiquement pour l'enseigne, pour la collection Polo présente en boutique. Shopping expérience recherchée et planifiée.", color: "rgba(167,139,250,0.8)" },
-                { zone: "ZONE 03", time: "20 — 30 MIN", label: "ZONE TERTIAIRE", desc: "Touristes internationaux, clients de passage, visiteurs de Paris. Représente une part significative du chiffres d'affaires.", color: "rgba(255,255,255,0.4)" },
+                { zone: "ZONE 03", time: "20 — 30 MIN", label: "ZONE TERTIAIRE", desc: "Touristes internationaux, clients de passage, provinciaux. Représente une part significative du chiffres d'affaires.", color: "rgba(255,255,255,0.4)" },
               ].map((z, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: i * 0.2 }} viewport={{ once: true }}
                   className="flex gap-6 items-start">
