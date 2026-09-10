@@ -368,7 +368,116 @@ export default function StrategieSection() {
             <PersonaCard key={i} persona={persona} />
           ))}
         </div>
+{/* LES PERFORMANCES */}
+<div className="mt-28 border-t border-white/10 pt-20">
+  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-20">
+    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">05 — LES PERFORMANCES</span>
+    <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-4">Les indicateurs cles</h3>
+    <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600">BOUTIQUE DE LA MADELEINE · INDICATEURS DE SUIVI</p>
+  </motion.div>
 
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-24">
+    {[
+      { num: "01", kpi: "TAUX DE CONVERSION", desc: "Pourcentage de visiteurs qui passent a l'achat. Indicateur cle de l'efficacite commerciale de l'equipe sur le floor. Un bon taux de conversion reflete la qualite de l'accueil et du conseil.", icon: "%" },
+      { num: "02", kpi: "UPT", sub: "Units Per Transaction", desc: "Nombre moyen de pieces par ticket. Un UPT eleve signifie que le conseiller a su proposer des pieces complementaires et creer une experience d'achat complete.", icon: "×" },
+      { num: "03", kpi: "CHIFFRE D'AFFAIRES", desc: "Le resultat direct de la combinaison taux de conversion et UPT. Un bon taux plus un bon UPT genere mecaniquement un chiffre d'affaires eleve.", icon: "€" },
+    ].map((item, i) => (
+      <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: i * 0.2 }} viewport={{ once: true }}
+        className="border border-white/10 p-10 relative group hover:border-blue-400/30 transition-colors duration-300">
+        <span className="font-mono text-[9px] tracking-[0.3em] text-neutral-600 block mb-6">{item.num}</span>
+        <div className="font-serif text-6xl md:text-8xl text-white/10 font-light mb-4 group-hover:text-blue-400/20 transition-colors duration-300">
+          {item.icon}
+        </div>
+        <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-blue-400 mb-1">{item.kpi}</p>
+        {"sub" in item && <p className="font-mono text-[9px] text-neutral-600 mb-4">{item.sub}</p>}
+        <div className="w-8 h-[1px] bg-white/20 my-4" />
+        <p className="font-serif text-sm text-neutral-500 leading-relaxed font-light">{item.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+
+  {/* Periodicite */}
+  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-8">
+    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-12">LES PERIODES FORTES</span>
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+      {[
+        { period: "Decembre", label: "Fetes de fin d'annee", color: "#60a5fa" },
+        { period: "Janvier", label: "Soldes hiver", color: "#a78bfa" },
+        { period: "Juin — Juillet", label: "Soldes ete", color: "#a78bfa" },
+        { period: "Septembre", label: "Rentree", color: "#60a5fa" },
+        { period: "Novembre", label: "Black Friday", color: "#f59e0b" },
+      ].map((p, i) => (
+        <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: i * 0.1 }} viewport={{ once: true }}
+          className="border border-white/10 p-6 hover:border-white/30 transition-colors duration-300">
+          <div className="w-2 h-2 rounded-full mb-4" style={{ backgroundColor: p.color }} />
+          <p className="font-serif text-lg text-white font-light mb-2">{p.period}</p>
+          <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-neutral-500">{p.label}</p>
+        </motion.div>
+      ))}
+    </div>
+  </motion.div>
+</div>
+
+{/* LE CLIENTELING */}
+<div className="mt-28 border-t border-white/10 pt-20">
+  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-20">
+    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">06 — LE CLIENTELING</span>
+    <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-4">Vendre avec intelligence</h3>
+    <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600">FIDELISATION · RELATION CLIENT · PERFORMANCE DURABLE</p>
+  </motion.div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+    <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+      <p className="font-serif text-2xl md:text-3xl text-white font-light leading-relaxed mb-8">
+        Une facon de vendre intelligemment, en creant un lien de confiance durable entre le client et le conseiller.
+      </p>
+      <p className="font-serif text-lg text-neutral-400 leading-relaxed font-light mb-8">
+        Il coute beaucoup moins cher de travailler avec des clients fidelises qu'avec de nouveaux clients. Chaque euro investi en marketing — publicite, reseaux sociaux, collaborations — vise a generer du trafic. Le clienteling transforme ce trafic en relation durable.
+      </p>
+      <blockquote className="font-serif italic text-xl text-blue-400 leading-relaxed border-l-2 border-blue-400 pl-6">
+        &ldquo;Un client fidele rapporte plus qu'un nouveau client, et coute moins cher a conserver.&rdquo;
+      </blockquote>
+    </motion.div>
+
+    <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}
+      className="space-y-4">
+      {[
+        { label: "Client fidelise", desc: "Relation existante, confiance etablie, achat recurrent", value: 85, color: "#60a5fa" },
+        { label: "Nouveau client", desc: "Acquisition couteuse, marketing, publicite, collab", value: 35, color: "rgba(255,255,255,0.2)" },
+      ].map((item, i) => (
+        <div key={i} className="p-6 border border-white/10">
+          <div className="flex justify-between items-center mb-3">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase" style={{ color: item.color }}>{item.label}</p>
+            <span className="font-mono text-[10px]" style={{ color: item.color }}>{item.value}%</span>
+          </div>
+          <div className="w-full h-[2px] bg-white/5 mb-3">
+            <motion.div initial={{ width: 0 }} whileInView={{ width: `${item.value}%` }}
+              transition={{ duration: 1.2, delay: i * 0.2, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}
+              className="h-full" style={{ backgroundColor: item.color }} />
+          </div>
+          <p className="font-serif text-sm text-neutral-500 font-light">{item.desc}</p>
+        </div>
+      ))}
+
+      <div className="p-6 border border-white/10 mt-8">
+        <p className="font-mono text-[9px] tracking-[0.3em] uppercase text-neutral-600 mb-4">EN PRATIQUE CHEZ RALPH LAUREN</p>
+        <div className="space-y-3">
+          {[
+            "Memoriser les preferences et la taille du client",
+            "Prevenir lors de l'arrivee de nouvelles collections",
+            "Proposer des pieces complementaires a ses achats precedents",
+            "Creer une relation personnalisee et exclusive",
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <span className="text-blue-400 font-mono text-[9px] mt-1">→</span>
+              <p className="font-serif text-sm text-neutral-400 font-light">{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</div>
       </div>
     </section>
   );
