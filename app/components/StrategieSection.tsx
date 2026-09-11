@@ -435,7 +435,7 @@ export default function StrategieSection() {
         Il coûte beaucoup moins cher de travailler avec des clients fidèles qu'avec de nouveaux clients. Chaque euro investi en marketing, publicité, réseaux sociaux, collaborations, vise à generer du trafic. Le clienteling transforme ce trafic en relation durable.
       </p>
       <blockquote className="font-serif italic text-xl text-blue-400 leading-relaxed border-l-2 border-blue-400 pl-6">
-        &ldquo;Un client fidèle rapporte plus qu'un nouveau client, et coute moins cher à conserver.&rdquo;
+        &ldquo;Un client fidèle rapporte plus qu'un nouveau client, et coûte moins cher à conserver.&rdquo;
       </blockquote>
     </motion.div>
 
@@ -443,7 +443,7 @@ export default function StrategieSection() {
       className="space-y-4">
       {[
         { label: "Client fidèle", desc: "Relation existante, confiance établie, achat récurrent", value: 85, color: "#60a5fa" },
-        { label: "Nouveau client", desc: "Acquisition couteuse, marketing, publicite, collab", value: 35, color: "rgba(255,255,255,0.2)" },
+        { label: "Nouveau client", desc: "Acquisition couteuse, marketing, publicité, collab", value: 35, color: "rgba(255,255,255,0.2)" },
       ].map((item, i) => (
         <div key={i} className="p-6 border border-white/10">
           <div className="flex justify-between items-center mb-3">
