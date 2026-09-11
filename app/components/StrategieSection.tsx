@@ -379,8 +379,8 @@ export default function StrategieSection() {
   <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-24">
     {[
       { num: "01", kpi: "TAUX DE CONVERSION", desc: "Pourcentage de visiteurs qui passent à l'achat. C'est un indicateur clé mesurant l'efficacité commerciale de l'équipe sur le floor. Un bon taux de conversion reflète la qualité de l'accueil et du conseil.", icon: "%" },
-      { num: "02", kpi: "UPT", sub: "Units Per Transaction", desc: "Nombre moyen de pièces par ticket. Un UPT élevé signifie que le conseiller a su proposer des pièces complémentaires et créer une expérience d'achat complète.", icon: "×" },
-      { num: "03", kpi: "CHIFFRE D'AFFAIRES", desc: "Le résultat direct de la combinaison taux de conversion et UPT. Un bon taux plus un bon UPT génère mécaniquement un chiffre d'affaires élevé.", icon: "€" },
+      { num: "02", kpi: "UPT", sub: "Units Per Transaction", desc: "Nombre moyen de pièces par ticket. Un UPT élevé signifie que le conseiller à su proposer des pièces complémentaires et créer une expérience d'achat complète.", icon: "×" },
+      { num: "03", kpi: "CHIFFRE D'AFFAIRES", desc: "Le résultat dû au taux de conversion et le UPT. Un bon taux plus un bon UPT génère automatiquement un chiffre d'affaires élevé.", icon: "€" },
     ].map((item, i) => (
       <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: i * 0.2 }} viewport={{ once: true }}
         className="border border-white/10 p-10 relative group hover:border-blue-400/30 transition-colors duration-300">
@@ -429,10 +429,10 @@ export default function StrategieSection() {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
     <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
       <p className="font-serif text-2xl md:text-3xl text-white font-light leading-relaxed mb-8">
-        Une facon de vendre intelligemment, en créant un lien de confiance durable entre le client et le conseiller.
+        Le clienteling est une façon de vendre intelligemment, en créant un lien de confiance durable entre le client et le conseiller.
       </p>
       <p className="font-serif text-lg text-neutral-400 leading-relaxed font-light mb-8">
-        Il coute beaucoup moins cher de travailler avec des clients fidelises qu'avec de nouveaux clients. Chaque euro investi en marketing — publicite, reseaux sociaux, collaborations — vise a generer du trafic. Le clienteling transforme ce trafic en relation durable.
+        Il coûte beaucoup moins cher de travailler avec des clients fidèles qu'avec de nouveaux clients. Chaque euro investi en marketing, publicité, réseaux sociaux, collaborations, vise à generer du trafic. Le clienteling transforme ce trafic en relation durable.
       </p>
       <blockquote className="font-serif italic text-xl text-blue-400 leading-relaxed border-l-2 border-blue-400 pl-6">
         &ldquo;Un client fidèle rapporte plus qu'un nouveau client, et coute moins cher à conserver.&rdquo;
@@ -442,7 +442,7 @@ export default function StrategieSection() {
     <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}
       className="space-y-4">
       {[
-        { label: "Client fidélise", desc: "Relation existante, confiance établie, achat récurrent", value: 85, color: "#60a5fa" },
+        { label: "Client fidèle", desc: "Relation existante, confiance établie, achat récurrent", value: 85, color: "#60a5fa" },
         { label: "Nouveau client", desc: "Acquisition couteuse, marketing, publicite, collab", value: 35, color: "rgba(255,255,255,0.2)" },
       ].map((item, i) => (
         <div key={i} className="p-6 border border-white/10">
