@@ -49,7 +49,7 @@ export default function VoyageSection() {
       </div>
 
       {/* TEXTE BILAN */}
-      <div className="px-6 md:px-24 pb-24 border-t border-white/10 pt-20">
+      <div className="px-6 md:px-24 pb-24 pt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
           <motion.div
@@ -110,7 +110,7 @@ export default function VoyageSection() {
       </div>
 
       {/* PROJECTION PRO */}
-      <div className="px-6 md:px-24 pb-24 border-t border-white/10 pt-20">
+      <div className="px-6 md:px-24 pb-24 pt-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,17 +137,17 @@ export default function VoyageSection() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
-        className="flex flex-col items-center justify-center py-32 border-t border-white/10"
+        className="flex flex-col items-center justify-center py-48 md:py-56 border-t border-white/10"
       >
         <img
           src="/polo-player.png"
           alt="Ralph Lauren"
-          className="h-24 w-auto object-contain opacity-20 invert mb-8"
+          className="h-40 md:h-48 w-auto object-contain opacity-35 invert mb-10"
         />
-        <p className="font-mono text-[10px] tracking-[0.5em] uppercase text-neutral-600">
+        <p className="font-mono text-xs md:text-sm tracking-[0.5em] uppercase text-neutral-500">
           PARIS · MADELEINE · 2026
         </p>
-        <p className="font-serif text-sm text-neutral-700 mt-2 italic">
+        <p className="font-serif text-lg md:text-xl text-neutral-500 mt-4 italic">
           Constantin LESLEY JEYAKANTHAN · ISG Luxury Program
         </p>
       </motion.div>
