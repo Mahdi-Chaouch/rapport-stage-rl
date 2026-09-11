@@ -6,8 +6,8 @@ const competences = [
   { label: "Accueil & conseil client", level: 90 },
   { label: "Techniques de vente", level: 85 },
   { label: "Merchandising visuel", level: 80 },
-  { label: "Gestion du stock & reassort", level: 85 },
-  { label: "Click & Collect", level: 90 },
+  { label: "Gestion du stock & reassort", level: 90 },
+  { label: "Click & Collect", level: 99 },
   { label: "Connaissance produit Polo RL", level: 95 },
   { label: "Travail en equipe", level: 90 },
   { label: "Gestion du stress & rush", level: 80 },
@@ -18,7 +18,7 @@ export default function VoyageSection() {
     <section id="voyage" className="relative border-b border-white/10 bg-[#050505]">
 
       {/* HEADER */}
-      <div className="px-6 md:px-24 pt-28 pb-20">
+      <div className="px-6 md:px-24 pt-28 pb-8">
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,12 +44,12 @@ export default function VoyageSection() {
           viewport={{ once: true }}
           className="pinyon text-4xl sm:text-5xl md:text-7xl text-neutral-400 font-light"
         >
-          On ne revient jamais vraiment inchange.
+          On ne revient jamais vraiment inchangé.
         </motion.p>
       </div>
 
       {/* TEXTE BILAN */}
-      <div className="px-6 md:px-24 pb-24 pt-20">
+      <div className="px-6 md:px-24 pb-24 pt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
           <motion.div
@@ -62,10 +62,10 @@ export default function VoyageSection() {
               CE QUE CE STAGE M'A APPRIS
             </span>
             <p className="font-serif text-xl md:text-2xl text-white font-light leading-relaxed">
-              Trois mois. Douze semaines. Quatre-vingt-quatre jours a pousser les portes de la Madeleine avec la meme impatience que le premier jour. Ce stage m'a appris que le luxe ne se resume pas a un produit ou a un prix — c'est une exigence permanente, une attention portee a chaque detail, a chaque client, a chaque interaction.
+              Trois mois. Douze semaines. Quatre-vingt-quatre jours à pousser les portes de la boutique de Madeleine avec la même impatience que le premier jour. Ce stage m'a appris que le luxe ne se résume pas à un produit ou à un prix, c'est une expérience exclusive, une attention portée à chaque détail, à chaque client, à chaque rencontre.
             </p>
             <p className="font-serif text-xl md:text-2xl text-neutral-400 font-light leading-relaxed mt-6">
-              J'arrive avec des connaissances theoriques, je repars avec quelque chose de plus precieux : une posture professionnelle, une vision du commerce et du service qui ne ressemble a aucun cours. Ralph Lauren m'a appris que l'excellence n'est pas un effort ponctuel. C'est une habitude.
+              J'arrivais avec des connaissances théoriques, je repars avec quelque chose de plus concret : une posture professionnelle, une vision du commerce observée d'un autre point de vue et un rythme de vie qu'aucun cours ne peut nous préparer. Ralph Lauren m'a appris que l'excellence n'est pas un effort ponctuel, c'est une habitude.
             </p>
           </motion.div>
 
@@ -77,7 +77,7 @@ export default function VoyageSection() {
             viewport={{ once: true }}
           >
             <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-8">
-              COMPETENCES ACQUISES
+              COMPÉTENCES ACQUISES
             </span>
             <div className="space-y-5">
               {competences.map((c, i) => (
@@ -126,7 +126,7 @@ export default function VoyageSection() {
             <span className="text-neutral-500">A l'international.</span>
           </h3>
           <p className="font-serif text-lg md:text-xl text-neutral-400 font-light leading-relaxed">
-            Ce stage m'a confirme que je veux evoluer dans l'univers du luxe — pas seulement le vendre, mais le construire. Devenir Brand Manager, c'est etre celui qui pense la strategie, qui construit l'identite d'une marque, qui cree les experiences que les clients viennent chercher. Ralph Lauren n'aura ete que le premier chapitre d'un voyage qui ne fait que commencer.
+            Ce stage a confirmé mon envie d'évoluer dans l'univers du luxe, pas seulement le vendre, mais le construire. Devenir Brand Manager, c'est être celui qui pense la stratégie, qui construit l'identité d'une marque, qui crée les expériences que les clients viennent chercher. Ralph Lauren n'aura été que le premier chapitre d'un voyage qui ne fait que commencer.
           </p>
         </motion.div>
       </div>
