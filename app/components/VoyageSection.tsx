@@ -6,10 +6,10 @@ const competences = [
   { label: "Accueil & conseil client", level: 90 },
   { label: "Techniques de vente", level: 85 },
   { label: "Merchandising visuel", level: 80 },
-  { label: "Gestion du stock & reassort", level: 90 },
+  { label: "Gestion du stock & réassort", level: 90 },
   { label: "Click & Collect", level: 99 },
   { label: "Connaissance produit Polo RL", level: 95 },
-  { label: "Travail en equipe", level: 90 },
+  { label: "Travail en équipe", level: 90 },
   { label: "Gestion du stress & rush", level: 80 },
 ];
 
