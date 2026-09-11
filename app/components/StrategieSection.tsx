@@ -423,26 +423,26 @@ export default function StrategieSection() {
   <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-20">
     <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">06 — LE CLIENTELING</span>
     <h3 className="font-serif text-4xl md:text-6xl text-white font-light mb-4">Vendre avec intelligence</h3>
-    <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600">FIDELISATION · RELATION CLIENT · PERFORMANCE DURABLE</p>
+    <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-600"></p>
   </motion.div>
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
     <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
       <p className="font-serif text-2xl md:text-3xl text-white font-light leading-relaxed mb-8">
-        Une facon de vendre intelligemment, en creant un lien de confiance durable entre le client et le conseiller.
+        Une facon de vendre intelligemment, en créant un lien de confiance durable entre le client et le conseiller.
       </p>
       <p className="font-serif text-lg text-neutral-400 leading-relaxed font-light mb-8">
         Il coute beaucoup moins cher de travailler avec des clients fidelises qu'avec de nouveaux clients. Chaque euro investi en marketing — publicite, reseaux sociaux, collaborations — vise a generer du trafic. Le clienteling transforme ce trafic en relation durable.
       </p>
       <blockquote className="font-serif italic text-xl text-blue-400 leading-relaxed border-l-2 border-blue-400 pl-6">
-        &ldquo;Un client fidele rapporte plus qu'un nouveau client, et coute moins cher a conserver.&rdquo;
+        &ldquo;Un client fidèle rapporte plus qu'un nouveau client, et coute moins cher à conserver.&rdquo;
       </blockquote>
     </motion.div>
 
     <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}
       className="space-y-4">
       {[
-        { label: "Client fidelise", desc: "Relation existante, confiance etablie, achat recurrent", value: 85, color: "#60a5fa" },
+        { label: "Client fidélise", desc: "Relation existante, confiance établie, achat récurrent", value: 85, color: "#60a5fa" },
         { label: "Nouveau client", desc: "Acquisition couteuse, marketing, publicite, collab", value: 35, color: "rgba(255,255,255,0.2)" },
       ].map((item, i) => (
         <div key={i} className="p-6 border border-white/10">
@@ -463,10 +463,10 @@ export default function StrategieSection() {
         <p className="font-mono text-[9px] tracking-[0.3em] uppercase text-neutral-600 mb-4">EN PRATIQUE CHEZ RALPH LAUREN</p>
         <div className="space-y-3">
           {[
-            "Memoriser les preferences et la taille du client",
-            "Prevenir lors de l'arrivee de nouvelles collections",
-            "Proposer des pieces complementaires a ses achats precedents",
-            "Creer une relation personnalisee et exclusive",
+            "Mémoriser les préférences et la taille du client",
+            "Prévenir lors de l'arrivée de nouvelles collections",
+            "Proposer des pièces complémentaires à ses achats précédents",
+            "Créer une relation personnalisée et exclusive",
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <span className="text-blue-400 font-mono text-[9px] mt-1">→</span>
