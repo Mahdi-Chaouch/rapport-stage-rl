@@ -90,7 +90,7 @@ export default function CarnetSection() {
       </div>
 
       {/* NAVIGATION BULLES — sans trait */}
-      <div className="px-6 md:px-24 pb-16 flex items-center gap-6 flex-wrap pt-8">
+      <div className="px-6 md:px-24 pb-8 flex items-center gap-6 flex-wrap pt-4">
         {entries.map((e, i) => (
           <button
             key={i}
