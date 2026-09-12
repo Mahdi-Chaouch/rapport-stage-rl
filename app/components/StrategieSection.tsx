@@ -233,7 +233,7 @@ export default function StrategieSection() {
         </motion.p>
       </div>
 
-      <div className="px-6 md:px-24 pb-28 pt-20">
+      <div className="px-6 md:px-24 pb-28 pt-8">
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mb-16">
           <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">01 — LA MARQUE</span>
