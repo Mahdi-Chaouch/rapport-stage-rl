@@ -64,8 +64,8 @@ const timeline = [
 const collections = [
   {
     name: "Polo Ralph Lauren",
-    tag: "Le Classique Americain",
-    desc: "Née en 1972 autour de l’iconique polo, la collection Polo Ralph Lauren représente, selon moi, l’essence même du style américain et Ralph : une élégance décontractée, preppy et intemporelle. C’est la ligne la plus connue de la maison, mais aussi celle qui est la plus accessible tout en gardant une identité propre à la Maison.",
+    tag: "Le Classique Américain",
+    desc: "Née en 1972 autour de l’iconique polo, la collection Polo Ralph Lauren représente, selon moi l’essence même du style américain et de Ralph Lauren : une élégance décontractée, preppy et intemporelle. C’est la ligne la plus connue de la maison, mais aussi celle qui est la plus accessible tout en gardant une identité propre à la Maison.",
     img: "/polo.jpg",
     left: true,
     purple: false,
@@ -80,7 +80,7 @@ const collections = [
   },
   {
     name: "Ralph Lauren Collection",
-    tag: "Le Pret-a-Porter Feminin",
+    tag: "Le Prêt-à-Porter Féminin",
     desc: "La collection Ralph Lauren incarne une féminité élégante et affirmée. À travers des silhouettes à la fois fortes et fluides, des matières nobles et une inspiration Western chic, elle propose un style intemporel qui évolue avec les saisons sans jamais perdre son identité.",
     img: "/rl-collection.jpg",
     left: true,
@@ -394,7 +394,7 @@ export default function MaisonSection({ onOpenOrganigram }: { onOpenOrganigram: 
               </h3>
             </div>
             <div className="md:w-3/5">
-              <p className="font-serif text-lg md:text-xl text-neutral-400 leading-relaxed font-normal">
+              <p className="font-serif text-lg md:text-xl text-neutral-400 leading-relaxed text-justify">
                 Inaugurée en 1986 au 2 place de la Madeleine, cette boutique est la première adresse parisienne et européenne de Ralph Lauren. Installée sur trois étages dans un immeuble haussmannien classé monument historique, au cœur du 8e arrondissement, juste en face de l'église de la Madeleine, elle plonge directement les clients dans l’univers Ralph Lauren.
 
 Entre les parquets en pointe de Hongrie, les boiseries, les luminaires en laiton, chaque détail participe à cet immersion. Le sous-sol est consacré à Polo et au sportswear, le rez-de-chaussée au vestiaire masculin plus formel, et l’étage à la collection femme.
