@@ -7,13 +7,13 @@ import Flipbook from "./Flipbook";
 const timeline = [
   {
     year: "1967",
-    title: "La Cravate Fondatrice",
+    title: "La cravate fondatrice",
     desc: "Avec 50 dollars en poche, Ralph Lifshitz lance sa première collection de cravates larges sous le nom Ralph Lauren.",
     pink: false,
   },
   {
     year: "1972",
-    title: "La Naissance du Polo",
+    title: "La naissance du Polo",
     desc: "Création du polo shirt iconique à logo polo player brodé, pièce qui deviendra l'un des vêtements les plus reconnaissables au monde.",
     pink: false,
   },
@@ -26,13 +26,13 @@ const timeline = [
   {
     year: "1991",
     title: "Lancement du Polo Bear",
-    desc: "L'icone du style Polo fait ses debuts sous la forme d'un ourson en édition limitée, inspiré d'une peluche offerte à Ralph par son personnel.",
+    desc: "L'icône du style Polo fait ses débuts sous la forme d'un ourson en édition limitée, inspiré d'une peluche offerte à Ralph par son personnel.",
     pink: false,
   },
   {
     year: "1997",
-    title: "Ralph Going Public",
-    desc: "Après avoir franchi 1 milliard de dollars de ventes, Polo Ralph Lauren devient une société publique côtée à la bourse de New York.",
+    title: "Ralph going public",
+    desc: "Après avoir franchi 1 milliard de dollars de ventes, Polo Ralph Lauren devient une société publique cotée à la bourse de New York.",
     pink: false,
   },
   {
@@ -43,20 +43,20 @@ const timeline = [
   },
   {
     year: "2002",
-    title: "Premiers defiles a Milan",
-    desc: "C'est au palazzo milanais de la marque que Ralph présente les defilés des collections Automne 2002 et Printemps 2003 de Purple Label.",
+    title: "Premiers défilés à Milan",
+    desc: "C'est au palazzo milanais que Ralph présente les défilés des collections Automne 2002 et Printemps 2003 de Purple Label.",
     pink: false,
   },
   {
     year: "2008",
-    title: "Habilleur Olympique",
-    desc: "Polo Ralph Lauren devient habilleur officiel de l'équipe olympique américaine pour les Jeux de Pekin.",
+    title: "Habilleur olympique",
+    desc: "Polo Ralph Lauren devient habilleur officiel de l'équipe olympique américaine pour les Jeux de Pékin.",
     pink: false,
   },
   {
     year: "2010",
     title: "Paris, Bd Saint-Germain",
-    desc: "Ralph ouvre un magasin phare et un restaurant à Paris, boulevard Saint-Germain, dans un hotel particulier du XVIIe siècle de 1 200m2.",
+    desc: "Ralph ouvre son Fmagship et un restaurant à Paris, boulevard Saint-Germain, dans un hôtel particulier du XVIIe siècle de 1 200m2.",
     pink: false,
   },
 ];
