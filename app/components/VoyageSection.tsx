@@ -20,23 +20,27 @@ const galleryPhotos = [
   { src: "/gallery-3.jpg", alt: "Galerie 3", layout: "md:col-start-7 md:col-span-3 md:row-start-1" },
   { src: "/gallery-4.jpg", alt: "Galerie 4", layout: "md:col-start-10 md:col-span-3 md:row-start-1" },
   { src: "/gallery-5.jpg", alt: "Galerie 5", layout: "md:col-start-1 md:col-span-3 md:row-start-2" },
-  { src: "/gallery-6.jpg", alt: "Galerie 6", layout: "md:col-start-10 md:col-span-3 md:row-start-2" },
+  { src: "/gallery-6.jpg", alt: "Une rencontre importante", layout: "md:col-start-10 md:col-span-3 md:row-start-2" },
   { src: "/gallery-7.jpg", alt: "Galerie 7", layout: "md:col-start-1 md:col-span-3 md:row-start-3" },
   { src: "/gallery-8.jpg", alt: "Galerie 8", layout: "md:col-start-10 md:col-span-3 md:row-start-3" },
   { src: "/gallery-9.jpg", alt: "Galerie 9", layout: "md:col-start-4 md:col-span-6 md:row-start-4" },
 ];
+
 const tributeImages = [
   { src: "/dedicace-1.jpg", alt: "Souvenir 1" },
   { src: "/dedicace-2.jpg", alt: "Souvenir 2" },
   { src: "/dedicace-3.jpg", alt: "Souvenir 3" },
   { src: "/dedicace-4.jpg", alt: "Souvenir 4" },
 ];
+
 export default function VoyageSection() {
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     alt: string;
   } | null>(null);
-const [showTribute, setShowTribute] = useState(false);
+
+  const [showTribute, setShowTribute] = useState(false);
+
   return (
     <section id="voyage" className="relative border-b border-white/10 bg-[#050505]">
       {/* HEADER */}
@@ -192,18 +196,12 @@ const [showTribute, setShowTribute] = useState(false);
           <motion.button
             type="button"
             onClick={(event) => {
-  event.stopPropagation();
-
-  if (photo.src === "/gallery-6.jpg") {
-    setShowTribute(true);
-    return;
-  }
-
-  setSelectedImage({
-    src: photo.src,
-    alt: photo.alt,
-  });
-}}
+              event.stopPropagation();
+              setSelectedImage({
+                src: "/gallery-main.jpg",
+                alt: "The art of doing it anyway",
+              });
+            }}
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1 }}
@@ -239,6 +237,12 @@ const [showTribute, setShowTribute] = useState(false);
               type="button"
               onClick={(event) => {
                 event.stopPropagation();
+
+                if (photo.src === "/gallery-6.jpg") {
+                  setShowTribute(true);
+                  return;
+                }
+
                 setSelectedImage({
                   src: photo.src,
                   alt: photo.alt,
@@ -259,7 +263,7 @@ const [showTribute, setShowTribute] = useState(false);
               <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/25" />
 
               <span className="absolute bottom-3 left-3 font-mono text-[8px] tracking-[0.2em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                OUVRIR +
+                {photo.src === "/gallery-6.jpg" ? "DÉCOUVRIR +" : "OUVRIR +"}
               </span>
             </motion.button>
           ))}
@@ -295,121 +299,123 @@ const [showTribute, setShowTribute] = useState(false);
           </motion.div>
         )}
       </AnimatePresence>
-{/* DÉDICACE — accessible depuis gallery-6.jpg */}
-<AnimatePresence>
-  {showTribute && (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[110] overflow-y-auto bg-[#050505] px-6 py-16 md:px-24 md:py-24"
-    >
-      <button
-        type="button"
-        onClick={() => setShowTribute(false)}
-        className="fixed bottom-8 left-1/2 z-[120] -translate-x-1/2 font-mono text-[10px] tracking-[0.3em] text-white/70 transition-colors hover:text-white"
-      >
-        RETOUR AU RAPPORT ×
-      </button>
 
-      <div className="mx-auto max-w-6xl pb-24">
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-5 font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400"
-        >
-          UNE RENCONTRE IMPORTANTE
-        </motion.p>
-
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-serif text-5xl font-light leading-none text-white md:text-8xl"
-        >
-          Plus qu'une
-          <br />
-          <span className="text-neutral-500">collègue.</span>
-        </motion.h3>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-10 max-w-2xl font-serif text-xl font-light leading-relaxed text-neutral-300 md:text-2xl"
-        >
-          Ce stage m'a appris beaucoup de choses, mais il m'a aussi offert de
-          très belles rencontres. Parmi elles, il y en a une qui a rendu chaque
-          journée plus légère, plus drôle et plus mémorable.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
-        >
-          Merci pour les fous rires, les conseils, les moments de stress
-          partagés et tous ces petits souvenirs qui ont fait de cette
-          expérience quelque chose de bien plus personnel qu'un simple stage.
-          Tu as vraiment compté dans cette aventure.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.35 }}
-          className="relative mt-16 overflow-hidden"
-        >
-          <img
-            src="/gallery-6.jpg"
-            alt="Une rencontre importante"
-            className="h-[65vh] w-full object-cover object-center md:h-[80vh]"
-          />
-
-          <div
-            className="absolute inset-x-0 bottom-0 p-8 md:p-12"
-            style={{
-              background: "linear-gradient(transparent, rgba(5,5,5,0.95))",
-            }}
+      {/* DÉDICACE — GALLERY 6 */}
+      <AnimatePresence>
+        {showTribute && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[110] overflow-y-auto bg-[#050505] px-6 py-16 md:px-24 md:py-24"
           >
-            <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/70">
-              Madeleine · Été 2026
-            </p>
-          </div>
-        </motion.div>
-
-        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {tributeImages.map((image, index) => (
-            <motion.div
-              key={image.src}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 + index * 0.1 }}
-              className="overflow-hidden"
+            <button
+              type="button"
+              onClick={() => setShowTribute(false)}
+              className="fixed bottom-8 left-1/2 z-[120] -translate-x-1/2 font-mono text-[10px] tracking-[0.3em] text-white/70 transition-colors hover:text-white"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="h-56 w-full object-cover object-center transition-transform duration-700 hover:scale-105 md:h-72"
-              />
-            </motion.div>
-          ))}
-        </div>
+              RETOUR AU RAPPORT ×
+            </button>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-16 text-center font-serif text-2xl italic text-neutral-400 md:text-3xl"
-        >
-          À toi, à nos souvenirs et à cette aventure.
-        </motion.p>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
+            <div className="mx-auto max-w-6xl pb-24">
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mb-5 font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400"
+              >
+                UNE RENCONTRE IMPORTANTE
+              </motion.p>
+
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="font-serif text-5xl font-light leading-none text-white md:text-8xl"
+              >
+                Plus qu'une
+                <br />
+                <span className="text-neutral-500">collègue.</span>
+              </motion.h3>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-10 max-w-2xl font-serif text-xl font-light leading-relaxed text-neutral-300 md:text-2xl"
+              >
+                Ce stage m'a appris beaucoup de choses, mais il m'a aussi offert
+                de très belles rencontres. Parmi elles, il y en a une qui a
+                rendu chaque journée plus légère, plus drôle et plus mémorable.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
+              >
+                Merci pour les fous rires, les conseils, les moments de stress
+                partagés et tous ces petits souvenirs qui ont fait de cette
+                expérience quelque chose de bien plus personnel qu'un simple
+                stage. Tu as vraiment compté dans cette aventure.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.35 }}
+                className="relative mt-16 overflow-hidden"
+              >
+                <img
+                  src="/gallery-6.jpg"
+                  alt="Une rencontre importante"
+                  className="h-[65vh] w-full object-cover object-center md:h-[80vh]"
+                />
+
+                <div
+                  className="absolute inset-x-0 bottom-0 p-8 md:p-12"
+                  style={{
+                    background: "linear-gradient(transparent, rgba(5,5,5,0.95))",
+                  }}
+                >
+                  <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/70">
+                    Madeleine · Été 2026
+                  </p>
+                </div>
+              </motion.div>
+
+              <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+                {tributeImages.map((image, index) => (
+                  <motion.div
+                    key={image.src}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.45 + index * 0.1 }}
+                    className="overflow-hidden"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="h-56 w-full object-cover object-center transition-transform duration-700 hover:scale-105 md:h-72"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+                className="mt-16 text-center font-serif text-2xl italic text-neutral-400 md:text-3xl"
+              >
+                À toi, à nos souvenirs et à cette aventure.
+              </motion.p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* CLOSING VISUEL — LOGO RL */}
       <motion.div
         initial={{ opacity: 0 }}
