@@ -133,7 +133,7 @@ export default function RencontresSection() {
 
               <div className="mt-12 flex items-center justify-between border-t border-white/10 pt-6">
                 <span className="font-serif text-lg italic text-neutral-500">
-                  Ouvrir son regard sur le métier.
+                  En mode Savage.
                 </span>
 
                 <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white transition-transform duration-300 group-hover:translate-x-2">
