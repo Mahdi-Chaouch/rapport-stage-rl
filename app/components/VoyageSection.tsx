@@ -40,6 +40,9 @@ export default function VoyageSection() {
   } | null>(null);
 
   const [showTribute, setShowTribute] = useState(false);
+  const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
+const [tributePassword, setTributePassword] = useState("");
+const [passwordError, setPasswordError] = useState(false);
 
   return (
     <section id="voyage" className="relative border-b border-white/10 bg-[#050505]">
@@ -238,10 +241,91 @@ export default function VoyageSection() {
               onClick={(event) => {
                 event.stopPropagation();
 
+                {/* ACCÈS PRIVÉ À LA DÉDICACE */}
+<AnimatePresence>
+  {showPasswordPrompt && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[110] flex items-center justify-center bg-black/95 px-6"
+    >
+      <motion.form
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.5 }}
+        onSubmit={(event) => {
+          event.preventDefault();
+
+          if (tributePassword === "1710") {
+            setShowPasswordPrompt(false);
+            setShowTribute(true);
+          } else {
+            setPasswordError(true);
+          }
+        }}
+        className="w-full max-w-md text-center"
+      >
+        <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400">
+          ACCÈS PRIVÉ
+        </p>
+
+        <h3 className="mt-6 font-serif text-4xl font-light text-white md:text-5xl">
+          Une page
+          <br />
+          <span className="text-neutral-500">à débloquer.</span>
+        </h3>
+
+        <p className="mt-6 font-serif text-lg font-light leading-relaxed text-neutral-500">
+          Entre le code pour découvrir cette dédicace.
+        </p>
+
+        <input
+          type="password"
+          inputMode="numeric"
+          maxLength={4}
+          autoFocus
+          value={tributePassword}
+          onChange={(event) => {
+            setTributePassword(event.target.value);
+            setPasswordError(false);
+          }}
+          className="mt-10 w-full border-b border-white/30 bg-transparent px-4 py-4 text-center font-mono text-3xl tracking-[0.5em] text-white outline-none transition-colors focus:border-blue-400"
+          placeholder="••••"
+        />
+
+        {passwordError && (
+          <p className="mt-4 font-mono text-[10px] tracking-[0.2em] uppercase text-red-400">
+            Code incorrect
+          </p>
+        )}
+
+        <button
+          type="submit"
+          className="mt-10 font-mono text-[10px] tracking-[0.3em] text-white transition-colors hover:text-blue-400"
+        >
+          OUVRIR LA DÉDICACE →
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setShowPasswordPrompt(false)}
+          className="mt-8 block w-full font-mono text-[9px] tracking-[0.25em] text-neutral-600 transition-colors hover:text-white"
+        >
+          RETOUR ×
+        </button>
+      </motion.form>
+    </motion.div>
+  )}
+</AnimatePresence>
+
                 if (photo.src === "/gallery-8.jpg") {
-                  setShowTribute(true);
-                  return;
-                }
+  setTributePassword("");
+  setPasswordError(false);
+  setShowPasswordPrompt(true);
+  return;
+}
 
                 setSelectedImage({
                   src: photo.src,
