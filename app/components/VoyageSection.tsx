@@ -113,6 +113,7 @@ export default function VoyageSection() {
                     <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-400">
                       {c.label}
                     </span>
+
                     <span className="font-mono text-[10px] text-blue-400">
                       {c.level}%
                     </span>
@@ -185,12 +186,13 @@ export default function VoyageSection() {
           {/* PHOTO PRINCIPALE AU CENTRE */}
           <motion.button
             type="button"
-            onClick={() =>
+            onClick={(event) => {
+              event.stopPropagation();
               setSelectedImage({
                 src: "/gallery-main.jpg",
                 alt: "The art of doing it anyway",
-              })
-            }
+              });
+            }}
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1 }}
@@ -224,7 +226,13 @@ export default function VoyageSection() {
             <motion.button
               key={photo.src}
               type="button"
-              onClick={() => setSelectedImage(photo)}
+              onClick={(event) => {
+                event.stopPropagation();
+                setSelectedImage({
+                  src: photo.src,
+                  alt: photo.alt,
+                });
+              }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.07 }}
@@ -254,15 +262,14 @@ export default function VoyageSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-6 md:p-16"
           >
             <button
               type="button"
               onClick={() => setSelectedImage(null)}
-              className="absolute right-6 top-6 font-mono text-[10px] tracking-[0.25em] text-white/70 transition-colors hover:text-white"
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] tracking-[0.3em] text-white/70 transition-colors hover:text-white"
             >
-              FERMER ×
+              FERMER LA PHOTO ×
             </button>
 
             <motion.img
@@ -272,7 +279,6 @@ export default function VoyageSection() {
               transition={{ duration: 0.35 }}
               src={selectedImage.src}
               alt={selectedImage.alt}
-              onClick={(event) => event.stopPropagation()}
               className="max-h-[85vh] max-w-full object-contain"
             />
           </motion.div>
