@@ -333,7 +333,7 @@ export default function VoyageSection() {
               </h3>
 
               <p className="mt-6 font-serif text-lg font-light leading-relaxed text-neutral-500">
-                Entre le code pour découvrir cette dédicace.
+                Entrer le code.
               </p>
 
               <input
@@ -360,7 +360,7 @@ export default function VoyageSection() {
                 type="submit"
                 className="mt-10 font-mono text-[10px] tracking-[0.3em] text-white transition-colors hover:text-blue-400"
               >
-                OUVRIR LA DÉDICACE →
+                OUVRIR LA PAGE →
               </button>
 
               <button
