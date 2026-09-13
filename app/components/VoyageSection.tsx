@@ -130,7 +130,58 @@ export default function VoyageSection() {
           </p>
         </motion.div>
       </div>
+{/* GALERIE PHOTO */}
+<div className="border-t border-white/10 pt-20 pb-24 px-6 md:px-24">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="mb-16"
+  >
+    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">
+      EN IMAGES
+    </span>
+    <h3 className="font-serif text-4xl md:text-6xl text-white font-light">
+      Trois mois en coulisses
+    </h3>
+  </motion.div>
 
+  {/* Photo principale */}
+  <motion.div
+    initial={{ opacity: 0, scale: 0.98 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1.2 }}
+    viewport={{ once: true }}
+    className="w-full mb-4 overflow-hidden"
+  >
+    <img
+      src="/gallery-main.jpg"
+      alt="The art of doing it anyway"
+      className="w-full h-[60vh] object-cover object-center"
+    />
+  </motion.div>
+
+  {/* Grille 9 photos */}
+  <div className="grid grid-cols-3 gap-4">
+    {[1,2,3,4,5,6,7,8,9].map((n, i) => (
+      <motion.div
+        key={n}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: i * 0.08 }}
+        viewport={{ once: true }}
+        className="overflow-hidden"
+      >
+        <img
+          src={`/gallery-${n}.jpg`}
+          alt={`Galerie ${n}`}
+          className="w-full h-[28vh] object-cover object-center hover:scale-105 transition-transform duration-700"
+        />
+      </motion.div>
+    ))}
+  </div>
+</div>
       {/* CLOSING VISUEL — LOGO RL */}
       <motion.div
         initial={{ opacity: 0 }}
