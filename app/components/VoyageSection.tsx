@@ -20,7 +20,7 @@ const galleryPhotos = [
   { src: "/gallery-3.jpg", alt: "Galerie 3", layout: "md:col-start-7 md:col-span-3 md:row-start-1" },
   { src: "/gallery-4.jpg", alt: "Galerie 4", layout: "md:col-start-10 md:col-span-3 md:row-start-1" },
   { src: "/gallery-5.jpg", alt: "Galerie 5", layout: "md:col-start-1 md:col-span-3 md:row-start-2" },
-  { src: "/gallery-8.jpg", alt: "Une rencontre importante", layout: "md:col-start-10 md:col-span-3 md:row-start-2" },
+  { src: "/gallery-6.jpg", alt: "Une rencontre importante", layout: "md:col-start-10 md:col-span-3 md:row-start-2" },
   { src: "/gallery-7.jpg", alt: "Galerie 7", layout: "md:col-start-1 md:col-span-3 md:row-start-3" },
   { src: "/gallery-8.jpg", alt: "Galerie 8", layout: "md:col-start-10 md:col-span-3 md:row-start-3" },
   { src: "/gallery-9.jpg", alt: "Galerie 9", layout: "md:col-start-4 md:col-span-6 md:row-start-4" },
