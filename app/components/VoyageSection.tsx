@@ -324,7 +324,7 @@ export default function VoyageSection() {
                 transition={{ duration: 0.6 }}
                 className="mb-5 font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400"
               >
-                UNE RENCONTRE IMPORTANTE
+                Adé
               </motion.p>
 
               <motion.h3
@@ -333,9 +333,9 @@ export default function VoyageSection() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="font-serif text-5xl font-light leading-none text-white md:text-8xl"
               >
-                Plus qu'une
+                Twix
                 <br />
-                <span className="text-neutral-500">collègue.</span>
+                <span className="text-neutral-500">.</span>
               </motion.h3>
 
               <motion.p
@@ -344,9 +344,12 @@ export default function VoyageSection() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="mt-10 max-w-2xl font-serif text-xl font-light leading-relaxed text-neutral-300 md:text-2xl"
               >
-                Ce stage m'a appris beaucoup de choses, mais il m'a aussi offert
-                de très belles rencontres. Parmi elles, il y en a une qui a
-                rendu chaque journée plus légère, plus drôle et plus mémorable.
+                On nous appelait twix, tic et tac ou encore Dolce & Gabbana, aller savoir qui était Gabbana... 
+                On était souvent à deux sur des missions qui nécessitait pas d'être à deux mais on se soutenait emotionellement je pense, 
+                À ces moments exceptionnels passés ensemble à repasser derrière les vendeurs pour les aider, voire faire plus que ce qu'on doit faire #ahmed, 
+                À ces pauses gourmandes et ces repas gourmands qu'on a faits durant ces trois mois, je n'oublierai jamais l'ajout d'un Big Mac en complément de ton menu Big Mac et d'un menu enfant, 
+                On nous appelait twix, tic et tac ou encore Dolce Gabbana, 
+                Mais moi je t'appelle Adé. 
               </motion.p>
 
               <motion.p
@@ -355,10 +358,7 @@ export default function VoyageSection() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
               >
-                Merci pour les fous rires, les conseils, les moments de stress
-                partagés et tous ces petits souvenirs qui ont fait de cette
-                expérience quelque chose de bien plus personnel qu'un simple
-                stage. Tu as vraiment compté dans cette aventure.
+        
               </motion.p>
 
               <motion.div
@@ -409,7 +409,7 @@ export default function VoyageSection() {
                 transition={{ duration: 0.8, delay: 0.9 }}
                 className="mt-16 text-center font-serif text-2xl italic text-neutral-400 md:text-3xl"
               >
-                À toi, à nos souvenirs et à cette aventure.
+                Merci pour tous ces bons moments et je finirais la liste de film promis.
               </motion.p>
             </div>
           </motion.div>
