@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+
 const competences = [
   { label: "Accueil & conseil client", level: 90 },
   { label: "Techniques de vente", level: 85 },
@@ -14,10 +14,26 @@ const competences = [
   { label: "Gestion du stress & rush", level: 80 },
 ];
 
+const galleryPhotos = [
+  { src: "/gallery-1.jpg", alt: "Galerie 1", layout: "md:col-start-1 md:col-span-3 md:row-start-1" },
+  { src: "/gallery-2.jpg", alt: "Galerie 2", layout: "md:col-start-4 md:col-span-3 md:row-start-1" },
+  { src: "/gallery-3.jpg", alt: "Galerie 3", layout: "md:col-start-7 md:col-span-3 md:row-start-1" },
+  { src: "/gallery-4.jpg", alt: "Galerie 4", layout: "md:col-start-10 md:col-span-3 md:row-start-1" },
+  { src: "/gallery-5.jpg", alt: "Galerie 5", layout: "md:col-start-1 md:col-span-3 md:row-start-2" },
+  { src: "/gallery-6.jpg", alt: "Galerie 6", layout: "md:col-start-10 md:col-span-3 md:row-start-2" },
+  { src: "/gallery-7.jpg", alt: "Galerie 7", layout: "md:col-start-1 md:col-span-3 md:row-start-3" },
+  { src: "/gallery-8.jpg", alt: "Galerie 8", layout: "md:col-start-10 md:col-span-3 md:row-start-3" },
+  { src: "/gallery-9.jpg", alt: "Galerie 9", layout: "md:col-start-4 md:col-span-6 md:row-start-4" },
+];
+
 export default function VoyageSection() {
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
+
   return (
     <section id="voyage" className="relative border-b border-white/10 bg-[#050505]">
-
       {/* HEADER */}
       <div className="px-6 md:px-24 pt-28 pb-8">
         <motion.span
@@ -29,6 +45,7 @@ export default function VoyageSection() {
         >
           VI · Retour de Voyage
         </motion.span>
+
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,6 +55,7 @@ export default function VoyageSection() {
         >
           Bilan
         </motion.h2>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +70,6 @@ export default function VoyageSection() {
       {/* TEXTE BILAN */}
       <div className="px-6 md:px-24 pb-24 pt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -62,9 +79,11 @@ export default function VoyageSection() {
             <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-8">
               CE QUE CE STAGE M'A APPRIS
             </span>
+
             <p className="font-serif text-xl md:text-2xl text-white font-light leading-relaxed">
               Trois mois. Douze semaines. Quatre-vingt-quatre jours à pousser les portes de la boutique de Madeleine avec la même impatience que le premier jour. Ce stage m'a appris que le luxe ne se résume pas à un produit ou à un prix, c'est une expérience exclusive, une attention portée à chaque détail, à chaque client, à chaque rencontre.
             </p>
+
             <p className="font-serif text-xl md:text-2xl text-neutral-400 font-light leading-relaxed mt-6">
               J'arrivais avec des connaissances théoriques, je repars avec quelque chose de plus concret : une posture professionnelle, une vision du commerce observée d'un autre point de vue et un rythme de vie qu'aucun cours ne peut nous préparer. Ralph Lauren m'a appris que l'excellence n'est pas un effort ponctuel, c'est une habitude.
             </p>
@@ -80,6 +99,7 @@ export default function VoyageSection() {
             <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-8">
               COMPÉTENCES ACQUISES
             </span>
+
             <div className="space-y-5">
               {competences.map((c, i) => (
                 <motion.div
@@ -90,14 +110,23 @@ export default function VoyageSection() {
                   viewport={{ once: true }}
                 >
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-400">{c.label}</span>
-                    <span className="font-mono text-[10px] text-blue-400">{c.level}%</span>
+                    <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-400">
+                      {c.label}
+                    </span>
+                    <span className="font-mono text-[10px] text-blue-400">
+                      {c.level}%
+                    </span>
                   </div>
+
                   <div className="w-full h-[1px] bg-white/5">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${c.level}%` }}
-                      transition={{ duration: 1.2, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                      transition={{
+                        duration: 1.2,
+                        delay: i * 0.1,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
                       viewport={{ once: true }}
                       className="h-full bg-blue-400"
                     />
@@ -106,7 +135,6 @@ export default function VoyageSection() {
               ))}
             </div>
           </motion.div>
-
         </div>
       </div>
 
@@ -122,116 +150,135 @@ export default function VoyageSection() {
           <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-8">
             PROJECTION PROFESSIONNELLE
           </span>
+
           <h3 className="font-serif text-4xl md:text-6xl text-white font-light leading-tight mb-8">
-            Brand Manager.<br />
-            <span className="text-neutral-500">A l'international.</span>
+            Brand Manager.
+            <br />
+            <span className="text-neutral-500">À l'international.</span>
           </h3>
+
           <p className="font-serif text-lg md:text-xl text-neutral-400 font-light leading-relaxed">
-            Ce stage à confirmé mon envie d'évoluer dans l'univers du luxe, pas seulement le vendre, mais le construire. Devenir Brand Manager, c'est être celui qui pense la stratégie, qui construit l'identité d'une marque, qui crée les expériences que les clients viennent chercher. Ralph Lauren n'aura été que le premier chapitre d'un voyage qui ne fait que commencer.
+            Ce stage a confirmé mon envie d'évoluer dans l'univers du luxe, pas seulement le vendre, mais le construire. Devenir Brand Manager, c'est être celui qui pense la stratégie, qui construit l'identité d'une marque, qui crée les expériences que les clients viennent chercher. Ralph Lauren n'aura été que le premier chapitre d'un voyage qui ne fait que commencer.
           </p>
         </motion.div>
       </div>
-function Gallery() {
-  const [selected, setSelected] = useState<string | null>(null);
 
-  const small = [1,2,3,4,5,6,7,8,9].map(n => `/gallery-${n}.jpg`);
-
-  return (
-    <>
-      {/* Layout grille */}
-      <div className="grid grid-cols-4 gap-2 items-center">
-
-        {/* Colonne gauche — 2 petites */}
-        <div className="flex flex-col gap-2">
-          {small.slice(0,2).map((src, i) => (
-            <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: i * 0.1 }} viewport={{ once: true }}
-              className="overflow-hidden cursor-pointer group" onClick={() => setSelected(src)}>
-              <img src={src} alt="" className="w-full h-[22vh] object-cover object-top group-hover:scale-105 group-hover:brightness-110 transition-all duration-500 filter brightness-75" />
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Colonne centre-gauche — 2 petites */}
-        <div className="flex flex-col gap-2">
-          {small.slice(2,4).map((src, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: i * 0.1 }} viewport={{ once: true }}
-              className="overflow-hidden cursor-pointer group" onClick={() => setSelected(src)}>
-              <img src={src} alt="" className="w-full h-[22vh] object-cover object-top group-hover:scale-105 group-hover:brightness-110 transition-all duration-500 filter brightness-75" />
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Photo PRINCIPALE — 2 colonnes */}
+      {/* GALERIE PHOTO */}
+      <div className="border-t border-white/10 pt-20 pb-24 px-6 md:px-24">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="col-span-2 overflow-hidden cursor-pointer relative group"
-          onClick={() => setSelected("/gallery-main.jpg")}
+          className="mb-16"
         >
-          <img
-            src="/gallery-main.jpg"
-            alt="The art of doing it anyway"
-            className="w-full h-[55vh] object-cover object-top group-hover:scale-102 transition-transform duration-700"
-          />
-          <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            style={{ background: "linear-gradient(transparent, rgba(5,5,5,0.85))" }}>
-            <p className="font-mono text-[9px] tracking-[0.25em] uppercase text-neutral-300 text-center">
-              The art of doing it anyway
-            </p>
-          </div>
+          <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">
+            EN IMAGES
+          </span>
+
+          <h3 className="font-serif text-4xl md:text-6xl text-white font-light">
+            Trois mois en coulisses
+          </h3>
         </motion.div>
 
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-12 md:grid-rows-[190px_280px_280px_190px]">
+          {/* PHOTO PRINCIPALE AU CENTRE */}
+          <motion.button
+            type="button"
+            onClick={() =>
+              setSelectedImage({
+                src: "/gallery-main.jpg",
+                alt: "The art of doing it anyway",
+              })
+            }
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1 }}
+            viewport={{ once: true }}
+            className="group relative col-span-2 overflow-hidden md:col-start-4 md:col-span-6 md:row-start-2 md:row-span-2"
+          >
+            <img
+              src="/gallery-main.jpg"
+              alt="The art of doing it anyway"
+              className="h-[62vh] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105 md:h-full"
+            />
+
+            <div
+              className="absolute inset-x-0 bottom-0 p-6"
+              style={{
+                background: "linear-gradient(transparent, rgba(5,5,5,0.9))",
+              }}
+            >
+              <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/80">
+                The art of doing it anyway
+              </p>
+            </div>
+
+            <span className="absolute right-4 top-4 font-mono text-[9px] tracking-[0.2em] text-white/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              AGRANDIR +
+            </span>
+          </motion.button>
+
+          {/* PHOTOS AUTOUR */}
+          {galleryPhotos.map((photo, index) => (
+            <motion.button
+              key={photo.src}
+              type="button"
+              onClick={() => setSelectedImage(photo)}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.07 }}
+              viewport={{ once: true }}
+              className={`group relative overflow-hidden ${photo.layout}`}
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="h-44 w-full object-cover object-center transition-transform duration-700 group-hover:scale-110 md:h-full"
+              />
+
+              <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/25" />
+
+              <span className="absolute bottom-3 left-3 font-mono text-[8px] tracking-[0.2em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                OUVRIR +
+              </span>
+            </motion.button>
+          ))}
+        </div>
       </div>
 
-      {/* Ligne du bas — 5 petites */}
-      <div className="grid grid-cols-5 gap-2 mt-2">
-        {small.slice(4,9).map((src, i) => (
-          <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: i * 0.08 }} viewport={{ once: true }}
-            className="overflow-hidden cursor-pointer group" onClick={() => setSelected(src)}>
-            <img src={src} alt="" className="w-full h-[20vh] object-cover object-top group-hover:scale-105 group-hover:brightness-110 transition-all duration-500 filter brightness-75" />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Lightbox */}
+      {/* PHOTO AGRANDIE */}
       <AnimatePresence>
-        {selected && (
+        {selectedImage && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[500] flex items-center justify-center p-8"
-            style={{ backgroundColor: "rgba(0,0,0,0.92)", backdropFilter: "blur(12px)" }}
-            onClick={() => setSelected(null)}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-6 md:p-16"
           >
-            <motion.img
-              src={selected}
-              alt=""
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="max-h-[90vh] max-w-[90vw] object-contain shadow-2xl"
-              onClick={e => e.stopPropagation()}
-            />
             <button
-              onClick={() => setSelected(null)}
-              className="absolute top-6 right-6 font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-400 hover:text-white transition-colors"
+              type="button"
+              onClick={() => setSelectedImage(null)}
+              className="absolute right-6 top-6 font-mono text-[10px] tracking-[0.25em] text-white/70 transition-colors hover:text-white"
             >
-              Fermer ✕
+              FERMER ×
             </button>
+
+            <motion.img
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.35 }}
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              onClick={(event) => event.stopPropagation()}
+              className="max-h-[85vh] max-w-full object-contain"
+            />
           </motion.div>
         )}
       </AnimatePresence>
-    </>
-  );
-}
+
       {/* CLOSING VISUEL — LOGO RL */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -245,14 +292,15 @@ function Gallery() {
           alt="Ralph Lauren"
           className="h-40 md:h-48 w-auto object-contain opacity-35 invert mb-10"
         />
+
         <p className="font-mono text-xs md:text-sm tracking-[0.5em] uppercase text-neutral-500">
           PARIS · MADELEINE · 2026
         </p>
+
         <p className="font-serif text-lg md:text-xl text-neutral-500 mt-4 italic">
           Constantin LESLEY JEYAKANTHAN · ISG Luxury Program
         </p>
       </motion.div>
-
     </section>
   );
 }
