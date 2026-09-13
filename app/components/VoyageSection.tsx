@@ -300,121 +300,134 @@ export default function VoyageSection() {
         )}
       </AnimatePresence>
 
-      {/* DÉDICACE — GALLERY 6 */}
-      <AnimatePresence>
-        {showTribute && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[110] overflow-y-auto bg-[#050505] px-6 py-16 md:px-24 md:py-24"
+      {/* DÉDICACE — GALLERY 8 */}
+<AnimatePresence>
+  {showTribute && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[110] overflow-y-auto bg-[#050505] px-6 py-16 md:px-24 md:py-24"
+    >
+      <button
+        type="button"
+        onClick={() => setShowTribute(false)}
+        className="fixed bottom-8 left-1/2 z-[120] -translate-x-1/2 font-mono text-[10px] tracking-[0.3em] text-white/70 transition-colors hover:text-white"
+      >
+        RETOUR AU RAPPORT ×
+      </button>
+
+      <div className="mx-auto max-w-6xl pb-24">
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-5 font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400"
+        >
+          UNE RENCONTRE IMPORTANTE
+        </motion.p>
+
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-serif text-5xl font-light leading-none text-white md:text-8xl"
+        >
+          Plus qu'une
+          <br />
+          <span className="text-neutral-500">collègue.</span>
+        </motion.h3>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-10 max-w-2xl font-serif text-xl font-light leading-relaxed text-neutral-300 md:text-2xl"
+        >
+          On nous appelait Twix, Tic et Tac, ou encore Dolce & Gabbana… allez savoir qui était Gabbana.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
+        >
+          On se retrouvait souvent à deux sur des missions qui, objectivement, ne nécessitaient pas forcément d’être deux. Mais je pense qu’on se soutenait émotionnellement.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
+        >
+          À ces moments exceptionnels passés ensemble à repasser derrière les vendeurs pour les aider, voire à faire plus que ce qu’on devait faire. #Ahmed
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
+        >
+          À ces pauses gourmandes et à tous les repas que l’on a partagés pendant ces trois mois. Je n’oublierai jamais l’ajout d’un Big Mac en complément de ton menu Big Mac et de ton menu enfant.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="relative mt-16 overflow-hidden"
+        >
+          <img
+            src="/gallery-8.jpg"
+            alt="Une rencontre importante"
+            className="h-[65vh] w-full object-cover object-center md:h-[80vh]"
+          />
+
+          <div
+            className="absolute inset-x-0 bottom-0 p-8 md:p-12"
+            style={{
+              background: "linear-gradient(transparent, rgba(5,5,5,0.95))",
+            }}
           >
-            <button
-              type="button"
-              onClick={() => setShowTribute(false)}
-              className="fixed bottom-8 left-1/2 z-[120] -translate-x-1/2 font-mono text-[10px] tracking-[0.3em] text-white/70 transition-colors hover:text-white"
+            <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/70">
+              Madeleine · Été 2026
+            </p>
+          </div>
+        </motion.div>
+
+        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+          {tributeImages.map((image, index) => (
+            <motion.div
+              key={image.src}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+              className="overflow-hidden"
             >
-              RETOUR AU RAPPORT ×
-            </button>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-56 w-full object-cover object-center transition-transform duration-700 hover:scale-105 md:h-72"
+              />
+            </motion.div>
+          ))}
+        </div>
 
-            <div className="mx-auto max-w-6xl pb-24">
-              <motion.p
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="mb-5 font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400"
-              >
-                Adé
-              </motion.p>
-
-              <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="font-serif text-5xl font-light leading-none text-white md:text-8xl"
-              >
-                Twix
-                <br />
-                <span className="text-neutral-500">.</span>
-              </motion.h3>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="mt-10 max-w-2xl font-serif text-xl font-light leading-relaxed text-neutral-300 md:text-2xl"
-              >
-                On nous appelait twix, tic et tac ou encore Dolce & Gabbana, aller savoir qui était Gabbana... 
-                On était souvent à deux sur des missions qui nécessitait pas d'être à deux mais on se soutenait emotionellement je pense, 
-                À ces moments exceptionnels passés ensemble à repasser derrière les vendeurs pour les aider, voire faire plus que ce qu'on doit faire #ahmed, 
-                À ces pauses gourmandes et ces repas gourmands qu'on a faits durant ces trois mois, je n'oublierai jamais l'ajout d'un Big Mac en complément de ton menu Big Mac et d'un menu enfant, 
-                On nous appelait twix, tic et tac ou encore Dolce Gabbana, 
-                Mais moi je t'appelle Adé. 
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
-              >
-        
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.97 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.35 }}
-                className="relative mt-16 overflow-hidden"
-              >
-                <img
-                  src="/gallery-8.jpg"
-                  alt="Une rencontre importante"
-                  className="h-[65vh] w-full object-cover object-center md:h-[80vh]"
-                />
-
-                <div
-                  className="absolute inset-x-0 bottom-0 p-8 md:p-12"
-                  style={{
-                    background: "linear-gradient(transparent, rgba(5,5,5,0.95))",
-                  }}
-                >
-                  <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/70">
-                    Madeleine · Été 2026
-                  </p>
-                </div>
-              </motion.div>
-
-              <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
-                {tributeImages.map((image, index) => (
-                  <motion.div
-                    key={image.src}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.45 + index * 0.1 }}
-                    className="overflow-hidden"
-                  >
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="h-56 w-full object-cover object-center transition-transform duration-700 hover:scale-105 md:h-72"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-                className="mt-16 text-center font-serif text-2xl italic text-neutral-400 md:text-3xl"
-              >
-                Merci pour tous ces bons moments et je finirais la liste de film promis.
-              </motion.p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="mt-16 text-center font-serif text-3xl font-light italic text-white md:text-5xl"
+        >
+          Mais moi, je t’appelle Adé.
+        </motion.p>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
       {/* CLOSING VISUEL — LOGO RL */}
       <motion.div
