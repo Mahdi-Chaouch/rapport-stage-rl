@@ -20,9 +20,9 @@ const galleryPhotos = [
   { src: "/gallery-3.jpg", alt: "Galerie 3", layout: "md:col-start-7 md:col-span-3 md:row-start-1" },
   { src: "/gallery-4.jpg", alt: "Galerie 4", layout: "md:col-start-10 md:col-span-3 md:row-start-1" },
   { src: "/gallery-5.jpg", alt: "Galerie 5", layout: "md:col-start-1 md:col-span-3 md:row-start-2" },
-  { src: "/gallery-6.jpg", alt: "Une rencontre importante", layout: "md:col-start-10 md:col-span-3 md:row-start-2" },
+  { src: "/gallery-6.jpg", alt: "Galerie 6", layout: "md:col-start-10 md:col-span-3 md:row-start-2" },
   { src: "/gallery-7.jpg", alt: "Galerie 7", layout: "md:col-start-1 md:col-span-3 md:row-start-3" },
-  { src: "/gallery-8.jpg", alt: "Galerie 8", layout: "md:col-start-10 md:col-span-3 md:row-start-3" },
+  { src: "/gallery-8.jpg", alt: "Une rencontre importante", layout: "md:col-start-10 md:col-span-3 md:row-start-3" },
   { src: "/gallery-9.jpg", alt: "Galerie 9", layout: "md:col-start-4 md:col-span-6 md:row-start-4" },
 ];
 
@@ -41,8 +41,8 @@ export default function VoyageSection() {
 
   const [showTribute, setShowTribute] = useState(false);
   const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
-const [tributePassword, setTributePassword] = useState("");
-const [passwordError, setPasswordError] = useState(false);
+  const [tributePassword, setTributePassword] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
 
   return (
     <section id="voyage" className="relative border-b border-white/10 bg-[#050505]">
@@ -101,7 +101,6 @@ const [passwordError, setPasswordError] = useState(false);
             </p>
           </motion.div>
 
-          {/* COMPETENCES */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -125,7 +124,6 @@ const [passwordError, setPasswordError] = useState(false);
                     <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-400">
                       {c.label}
                     </span>
-
                     <span className="font-mono text-[10px] text-blue-400">
                       {c.level}%
                     </span>
@@ -195,16 +193,15 @@ const [passwordError, setPasswordError] = useState(false);
         </motion.div>
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-12 md:grid-rows-[190px_280px_280px_190px]">
-          {/* PHOTO PRINCIPALE AU CENTRE */}
+          {/* PHOTO PRINCIPALE */}
           <motion.button
             type="button"
-            onClick={(event) => {
-              event.stopPropagation();
+            onClick={() =>
               setSelectedImage({
                 src: "/gallery-main.jpg",
                 alt: "The art of doing it anyway",
-              });
-            }}
+              })
+            }
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1 }}
@@ -227,10 +224,6 @@ const [passwordError, setPasswordError] = useState(false);
                 The art of doing it anyway
               </p>
             </div>
-
-            <span className="absolute right-4 top-4 font-mono text-[9px] tracking-[0.2em] text-white/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              AGRANDIR +
-            </span>
           </motion.button>
 
           {/* PHOTOS AUTOUR */}
@@ -238,94 +231,13 @@ const [passwordError, setPasswordError] = useState(false);
             <motion.button
               key={photo.src}
               type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-
-                {/* ACCÈS PRIVÉ À LA DÉDICACE */}
-<AnimatePresence>
-  {showPasswordPrompt && (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[110] flex items-center justify-center bg-black/95 px-6"
-    >
-      <motion.form
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.5 }}
-        onSubmit={(event) => {
-          event.preventDefault();
-
-          if (tributePassword === "1710") {
-            setShowPasswordPrompt(false);
-            setShowTribute(true);
-          } else {
-            setPasswordError(true);
-          }
-        }}
-        className="w-full max-w-md text-center"
-      >
-        <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400">
-          ACCÈS PRIVÉ
-        </p>
-
-        <h3 className="mt-6 font-serif text-4xl font-light text-white md:text-5xl">
-          Une page
-          <br />
-          <span className="text-neutral-500">à débloquer.</span>
-        </h3>
-
-        <p className="mt-6 font-serif text-lg font-light leading-relaxed text-neutral-500">
-          Entre le code pour découvrir cette dédicace.
-        </p>
-
-        <input
-          type="password"
-          inputMode="numeric"
-          maxLength={4}
-          autoFocus
-          value={tributePassword}
-          onChange={(event) => {
-            setTributePassword(event.target.value);
-            setPasswordError(false);
-          }}
-          className="mt-10 w-full border-b border-white/30 bg-transparent px-4 py-4 text-center font-mono text-3xl tracking-[0.5em] text-white outline-none transition-colors focus:border-blue-400"
-          placeholder="••••"
-        />
-
-        {passwordError && (
-          <p className="mt-4 font-mono text-[10px] tracking-[0.2em] uppercase text-red-400">
-            Code incorrect
-          </p>
-        )}
-
-        <button
-          type="submit"
-          className="mt-10 font-mono text-[10px] tracking-[0.3em] text-white transition-colors hover:text-blue-400"
-        >
-          OUVRIR LA DÉDICACE →
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setShowPasswordPrompt(false)}
-          className="mt-8 block w-full font-mono text-[9px] tracking-[0.25em] text-neutral-600 transition-colors hover:text-white"
-        >
-          RETOUR ×
-        </button>
-      </motion.form>
-    </motion.div>
-  )}
-</AnimatePresence>
-
+              onClick={() => {
                 if (photo.src === "/gallery-8.jpg") {
-  setTributePassword("");
-  setPasswordError(false);
-  setShowPasswordPrompt(true);
-  return;
-}
+                  setTributePassword("");
+                  setPasswordError(false);
+                  setShowPasswordPrompt(true);
+                  return;
+                }
 
                 setSelectedImage({
                   src: photo.src,
@@ -384,137 +296,208 @@ const [passwordError, setPasswordError] = useState(false);
         )}
       </AnimatePresence>
 
-      {/* DÉDICACE — GALLERY 8 */}
-<AnimatePresence>
-  {showTribute && (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[110] overflow-y-auto bg-[#050505] px-6 py-16 md:px-24 md:py-24"
-    >
-      <button
-        type="button"
-        onClick={() => setShowTribute(false)}
-        className="fixed bottom-8 left-1/2 z-[120] -translate-x-1/2 font-mono text-[10px] tracking-[0.3em] text-white/70 transition-colors hover:text-white"
-      >
-        RETOUR AU RAPPORT ×
-      </button>
-
-      <div className="mx-auto max-w-6xl pb-24">
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-5 font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400"
-        >
-        </motion.p>
-
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-serif text-5xl font-light leading-none text-white md:text-8xl"
-        >
-          Twix
-          <br />
-          <span className="text-neutral-500">.</span>
-        </motion.h3>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-10 max-w-2xl font-serif text-xl font-light leading-relaxed text-neutral-300 md:text-2xl"
-        >
-          On nous appelait Twix, Tic et Tac, ou encore Dolce & Gabbana… allez savoir qui était Gabbana.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
-        >
-          On se retrouvait souvent à deux sur des missions qui, honnêtement, ne nécessitaient pas forcément d’être deux. Mais je pense qu’on se soutenait émotionnellement.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
-        >
-          À ces moments exceptionnels passés ensemble à repasser derrière les vendeurs pour les aider, voire à faire plus que ce qu’on devait faire. #Ahmed
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
-        >
-          À ces pauses gourmandes et à tous les repas que l’on a partagés pendant ces trois mois. Je n’oublierai jamais quand t'as ajouté un Big Mac en complément de ton menu Big Mac et de ton menu enfant, aberrant.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="relative mt-16 overflow-hidden"
-        >
-          <img
-            src="/gallery-8.jpg"
-            alt="Une rencontre importante"
-            className="h-[65vh] w-full object-cover object-center md:h-[80vh]"
-          />
-
-          <div
-            className="absolute inset-x-0 bottom-0 p-8 md:p-12"
-            style={{
-              background: "linear-gradient(transparent, rgba(5,5,5,0.95))",
-            }}
+      {/* MOT DE PASSE */}
+      <AnimatePresence>
+        {showPasswordPrompt && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[110] flex items-center justify-center bg-black/95 px-6"
           >
-            <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/70">
-              Madeleine · Été 2026
-            </p>
-          </div>
-        </motion.div>
-
-        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {tributeImages.map((image, index) => (
-            <motion.div
-              key={image.src}
+            <motion.form
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-              className="overflow-hidden"
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="h-56 w-full object-cover object-center transition-transform duration-700 hover:scale-105 md:h-72"
-              />
-            </motion.div>
-          ))}
-        </div>
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5 }}
+              onSubmit={(event) => {
+                event.preventDefault();
 
-<motion.p
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 1.1 }}
-  className="mt-16 text-center font-serif text-3xl font-light italic text-neutral-400 md:text-5xl"
->
-  On nous appelait Twix, Tic et Tac, ou encore Dolce & Gabbana.
-  <br />
-  <span className="text-white">
-    Mais moi, je t’appelle Adé.
-  </span>
-</motion.p>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
+                if (tributePassword === "1710") {
+                  setShowPasswordPrompt(false);
+                  setShowTribute(true);
+                } else {
+                  setPasswordError(true);
+                }
+              }}
+              className="w-full max-w-md text-center"
+            >
+              <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400">
+                ACCÈS PRIVÉ
+              </p>
+
+              <h3 className="mt-6 font-serif text-4xl font-light text-white md:text-5xl">
+                Une page
+                <br />
+                <span className="text-neutral-500">à débloquer.</span>
+              </h3>
+
+              <p className="mt-6 font-serif text-lg font-light leading-relaxed text-neutral-500">
+                Entre le code pour découvrir cette dédicace.
+              </p>
+
+              <input
+                type="password"
+                inputMode="numeric"
+                maxLength={4}
+                autoFocus
+                value={tributePassword}
+                onChange={(event) => {
+                  setTributePassword(event.target.value);
+                  setPasswordError(false);
+                }}
+                className="mt-10 w-full border-b border-white/30 bg-transparent px-4 py-4 text-center font-mono text-3xl tracking-[0.5em] text-white outline-none transition-colors focus:border-blue-400"
+                placeholder="••••"
+              />
+
+              {passwordError && (
+                <p className="mt-4 font-mono text-[10px] tracking-[0.2em] uppercase text-red-400">
+                  Code incorrect
+                </p>
+              )}
+
+              <button
+                type="submit"
+                className="mt-10 font-mono text-[10px] tracking-[0.3em] text-white transition-colors hover:text-blue-400"
+              >
+                OUVRIR LA DÉDICACE →
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setShowPasswordPrompt(false)}
+                className="mt-8 block w-full font-mono text-[9px] tracking-[0.25em] text-neutral-600 transition-colors hover:text-white"
+              >
+                RETOUR ×
+              </button>
+            </motion.form>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* DÉDICACE — GALLERY 8 */}
+      <AnimatePresence>
+        {showTribute && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[110] overflow-y-auto bg-[#050505] px-6 py-16 md:px-24 md:py-24"
+          >
+            <button
+              type="button"
+              onClick={() => setShowTribute(false)}
+              className="fixed bottom-8 left-1/2 z-[120] -translate-x-1/2 font-mono text-[10px] tracking-[0.3em] text-white/70 transition-colors hover:text-white"
+            >
+              RETOUR AU RAPPORT ×
+            </button>
+
+            <div className="mx-auto max-w-6xl pb-24">
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="font-serif text-5xl font-light leading-none text-white md:text-8xl"
+              >
+                Twix
+                <br />
+                <span className="text-neutral-500">.</span>
+              </motion.h3>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-10 max-w-2xl font-serif text-xl font-light leading-relaxed text-neutral-300 md:text-2xl"
+              >
+                On nous appelait Twix, Tic et Tac, ou encore Dolce & Gabbana… allez savoir qui était Gabbana.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
+              >
+                On se retrouvait souvent à deux sur des missions qui, honnêtement, ne nécessitaient pas forcément d’être deux. Mais je pense qu’on se soutenait émotionnellement.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
+              >
+                À ces moments exceptionnels passés ensemble à repasser derrière les vendeurs pour les aider, voire à faire plus que ce qu’on devait faire. #Ahmed
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
+              >
+                À ces pauses gourmandes et à tous les repas que l’on a partagés pendant ces trois mois. Je n’oublierai jamais quand t'as ajouté un Big Mac en complément de ton menu Big Mac et de ton menu enfant, aberrant.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className="relative mt-16 overflow-hidden"
+              >
+                <img
+                  src="/gallery-8.jpg"
+                  alt="Une rencontre importante"
+                  className="h-[65vh] w-full object-cover object-center md:h-[80vh]"
+                />
+
+                <div
+                  className="absolute inset-x-0 bottom-0 p-8 md:p-12"
+                  style={{
+                    background: "linear-gradient(transparent, rgba(5,5,5,0.95))",
+                  }}
+                >
+                  <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/70">
+                    Madeleine · Été 2026
+                  </p>
+                </div>
+              </motion.div>
+
+              <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+                {tributeImages.map((image, index) => (
+                  <motion.div
+                    key={image.src}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                    className="overflow-hidden"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="h-56 w-full object-cover object-center transition-transform duration-700 hover:scale-105 md:h-72"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.1 }}
+                className="mt-16 text-center font-serif text-3xl font-light italic text-neutral-400 md:text-5xl"
+              >
+                On nous appelait Twix, Tic et Tac, ou encore Dolce & Gabbana.
+                <br />
+                <span className="text-white">
+                  Mais moi, je t’appelle Adé.
+                </span>
+              </motion.p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* CLOSING VISUEL — LOGO RL */}
       <motion.div
