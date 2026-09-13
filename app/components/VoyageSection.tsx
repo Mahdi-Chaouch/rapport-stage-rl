@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 const competences = [
   { label: "Accueil & conseil client", level: 90 },
   { label: "Techniques de vente", level: 85 },
@@ -130,136 +131,107 @@ export default function VoyageSection() {
           </p>
         </motion.div>
       </div>
-{/* GALERIE PHOTO */}
-<div className="border-t border-white/10 pt-20 pb-24 px-6 md:px-24">
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-    className="mb-16"
-  >
-    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">
-      EN IMAGES
-    </span>
-    <h3 className="font-serif text-4xl md:text-6xl text-white font-light">
-      Trois mois en coulisses
-    </h3>
-  </motion.div>
+function Gallery() {
+  const [selected, setSelected] = useState<string | null>(null);
 
-  {/* Ligne 1 — 3 photos */}
-  <div className="grid grid-cols-3 gap-3 mb-3">
-    {[1, 2, 3].map((n, i) => (
-      <motion.div
-        key={n}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: i * 0.1 }}
-        viewport={{ once: true }}
-        className="overflow-hidden"
-      >
-        <img
-          src={`/gallery-${n}.jpg`}
-          alt={`Galerie ${n}`}
-          className="w-full h-[45vh] object-cover object-top hover:scale-105 transition-transform duration-700"
-        />
-      </motion.div>
-    ))}
-  </div>
+  const small = [1,2,3,4,5,6,7,8,9].map(n => `/gallery-${n}.jpg`);
 
-  {/* Ligne 2 — 1 photo + photo MAIN grande + 1 photo */}
-  <div className="grid grid-cols-3 gap-3 mb-3">
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
-      className="overflow-hidden"
-    >
-      <img
-        src="/gallery-4.jpg"
-        alt="Galerie 4"
-        className="w-full h-[65vh] object-cover object-top hover:scale-105 transition-transform duration-700"
-      />
-    </motion.div>
+  return (
+    <>
+      {/* Layout grille */}
+      <div className="grid grid-cols-4 gap-2 items-center">
 
-    {/* Photo principale au centre */}
-    <motion.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.2, delay: 0.2 }}
-      viewport={{ once: true }}
-      className="overflow-hidden relative"
-    >
-      <img
-        src="/gallery-main.jpg"
-        alt="The art of doing it anyway"
-        className="w-full h-[65vh] object-cover object-top"
-      />
-      {/* Label discret */}
-      <div className="absolute bottom-0 left-0 right-0 p-4"
-        style={{ background: "linear-gradient(transparent, rgba(5,5,5,0.8))" }}>
-        <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-neutral-400 text-center">
-          The art of doing it anyway
-        </p>
+        {/* Colonne gauche — 2 petites */}
+        <div className="flex flex-col gap-2">
+          {small.slice(0,2).map((src, i) => (
+            <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: i * 0.1 }} viewport={{ once: true }}
+              className="overflow-hidden cursor-pointer group" onClick={() => setSelected(src)}>
+              <img src={src} alt="" className="w-full h-[22vh] object-cover object-top group-hover:scale-105 group-hover:brightness-110 transition-all duration-500 filter brightness-75" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Colonne centre-gauche — 2 petites */}
+        <div className="flex flex-col gap-2">
+          {small.slice(2,4).map((src, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: i * 0.1 }} viewport={{ once: true }}
+              className="overflow-hidden cursor-pointer group" onClick={() => setSelected(src)}>
+              <img src={src} alt="" className="w-full h-[22vh] object-cover object-top group-hover:scale-105 group-hover:brightness-110 transition-all duration-500 filter brightness-75" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Photo PRINCIPALE — 2 colonnes */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2 }}
+          viewport={{ once: true }}
+          className="col-span-2 overflow-hidden cursor-pointer relative group"
+          onClick={() => setSelected("/gallery-main.jpg")}
+        >
+          <img
+            src="/gallery-main.jpg"
+            alt="The art of doing it anyway"
+            className="w-full h-[55vh] object-cover object-top group-hover:scale-102 transition-transform duration-700"
+          />
+          <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{ background: "linear-gradient(transparent, rgba(5,5,5,0.85))" }}>
+            <p className="font-mono text-[9px] tracking-[0.25em] uppercase text-neutral-300 text-center">
+              The art of doing it anyway
+            </p>
+          </div>
+        </motion.div>
+
       </div>
-    </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
-      className="overflow-hidden"
-    >
-      <img
-        src="/gallery-5.jpg"
-        alt="Galerie 5"
-        className="w-full h-[65vh] object-cover object-top hover:scale-105 transition-transform duration-700"
-      />
-    </motion.div>
-  </div>
+      {/* Ligne du bas — 5 petites */}
+      <div className="grid grid-cols-5 gap-2 mt-2">
+        {small.slice(4,9).map((src, i) => (
+          <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: i * 0.08 }} viewport={{ once: true }}
+            className="overflow-hidden cursor-pointer group" onClick={() => setSelected(src)}>
+            <img src={src} alt="" className="w-full h-[20vh] object-cover object-top group-hover:scale-105 group-hover:brightness-110 transition-all duration-500 filter brightness-75" />
+          </motion.div>
+        ))}
+      </div>
 
-  {/* Ligne 3 — 3 photos */}
-  <div className="grid grid-cols-3 gap-3 mb-3">
-    {[6, 7, 8].map((n, i) => (
-      <motion.div
-        key={n}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: i * 0.1 }}
-        viewport={{ once: true }}
-        className="overflow-hidden"
-      >
-        <img
-          src={`/gallery-${n}.jpg`}
-          alt={`Galerie ${n}`}
-          className="w-full h-[45vh] object-cover object-top hover:scale-105 transition-transform duration-700"
-        />
-      </motion.div>
-    ))}
-  </div>
-
-  {/* Ligne 4 — photo 9 centrée */}
-  <div className="grid grid-cols-3 gap-3">
-    <div />
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
-      className="overflow-hidden"
-    >
-      <img
-        src="/gallery-9.jpg"
-        alt="Galerie 9"
-        className="w-full h-[45vh] object-cover object-top hover:scale-105 transition-transform duration-700"
-      />
-    </motion.div>
-    <div />
-  </div>
-
-</div>
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[500] flex items-center justify-center p-8"
+            style={{ backgroundColor: "rgba(0,0,0,0.92)", backdropFilter: "blur(12px)" }}
+            onClick={() => setSelected(null)}
+          >
+            <motion.img
+              src={selected}
+              alt=""
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="max-h-[90vh] max-w-[90vw] object-contain shadow-2xl"
+              onClick={e => e.stopPropagation()}
+            />
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-6 right-6 font-mono text-[10px] tracking-[0.3em] uppercase text-neutral-400 hover:text-white transition-colors"
+            >
+              Fermer ✕
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
       {/* CLOSING VISUEL — LOGO RL */}
       <motion.div
         initial={{ opacity: 0 }}
