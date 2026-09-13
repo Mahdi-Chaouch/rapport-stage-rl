@@ -324,7 +324,6 @@ export default function VoyageSection() {
           transition={{ duration: 0.6 }}
           className="mb-5 font-mono text-[10px] tracking-[0.4em] uppercase text-blue-400"
         >
-          UNE RENCONTRE IMPORTANTE
         </motion.p>
 
         <motion.h3
@@ -333,9 +332,9 @@ export default function VoyageSection() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="font-serif text-5xl font-light leading-none text-white md:text-8xl"
         >
-          Plus qu'une
+          Twix
           <br />
-          <span className="text-neutral-500">collègue.</span>
+          <span className="text-neutral-500">.</span>
         </motion.h3>
 
         <motion.p
@@ -353,7 +352,7 @@ export default function VoyageSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
         >
-          On se retrouvait souvent à deux sur des missions qui, objectivement, ne nécessitaient pas forcément d’être deux. Mais je pense qu’on se soutenait émotionnellement.
+          On se retrouvait souvent à deux sur des missions qui, honnêtement, ne nécessitaient pas forcément d’être deux. Mais je pense qu’on se soutenait émotionnellement.
         </motion.p>
 
         <motion.p
@@ -371,7 +370,7 @@ export default function VoyageSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-6 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
         >
-          À ces pauses gourmandes et à tous les repas que l’on a partagés pendant ces trois mois. Je n’oublierai jamais l’ajout d’un Big Mac en complément de ton menu Big Mac et de ton menu enfant.
+          À ces pauses gourmandes et à tous les repas que l’on a partagés pendant ces trois mois. Je n’oublierai jamais quand t'as ajouté un Big Mac en complément de ton menu Big Mac et de ton menu enfant, aberrant.
         </motion.p>
 
         <motion.div
@@ -416,14 +415,18 @@ export default function VoyageSection() {
           ))}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
-          className="mt-16 text-center font-serif text-3xl font-light italic text-white md:text-5xl"
-        >
-          Mais moi, je t’appelle Adé.
-        </motion.p>
+<motion.p
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 1.1 }}
+  className="mt-16 text-center font-serif text-3xl font-light italic text-neutral-400 md:text-5xl"
+>
+  On nous appelait Twix, Tic et Tac, ou encore Dolce & Gabbana.
+  <br />
+  <span className="text-white">
+    Mais moi, je t’appelle Adé.
+  </span>
+</motion.p>
       </div>
     </motion.div>
   )}
