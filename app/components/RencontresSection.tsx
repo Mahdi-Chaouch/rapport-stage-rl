@@ -72,8 +72,8 @@ export default function RencontresSection() {
         </h2>
 
         <p className="mt-8 max-w-xl font-serif text-lg font-light leading-relaxed text-neutral-400 md:text-xl">
-          Derrière une boutique, il y a surtout une équipe, des parcours et des
-          rencontres qui donnent un sens différent à chaque journée.
+          Derrière un stage, il y a une équipe, une équipe qu'on voit tous les jours, une équipe avec qui on apprend, une équipe avec qui on rigole, une équipe qui ne ressemble à aucune autre équipe. Mais qui est cette équipe ? 
+        
         </p>
       </motion.div>
 
