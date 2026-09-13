@@ -126,7 +126,7 @@ export default function VoyageSection() {
             <span className="text-neutral-500">A l'international.</span>
           </h3>
           <p className="font-serif text-lg md:text-xl text-neutral-400 font-light leading-relaxed">
-            Ce stage a confirmé mon envie d'évoluer dans l'univers du luxe, pas seulement le vendre, mais le construire. Devenir Brand Manager, c'est être celui qui pense la stratégie, qui construit l'identité d'une marque, qui crée les expériences que les clients viennent chercher. Ralph Lauren n'aura été que le premier chapitre d'un voyage qui ne fait que commencer.
+            Ce stage à confirmé mon envie d'évoluer dans l'univers du luxe, pas seulement le vendre, mais le construire. Devenir Brand Manager, c'est être celui qui pense la stratégie, qui construit l'identité d'une marque, qui crée les expériences que les clients viennent chercher. Ralph Lauren n'aura été que le premier chapitre d'un voyage qui ne fait que commencer.
           </p>
         </motion.div>
       </div>
