@@ -71,7 +71,7 @@ export default function RencontresSection() {
           <span className="text-neutral-500">de la Madeleine.</span>
         </h2>
 
-        <p className="mt-8 max-w-xl font-serif text-lg font-light leading-relaxed text-neutral-400 md:text-xl">
+        <p className="mt-8 max-w-xl text-justify font-serif text-lg font-light leading-relaxed text-neutral-400 md:text-xl">
           Derrière un stage, il y a une équipe, une équipe qu'on voit tous les jours, une équipe avec qui on apprend, une équipe avec qui on rigole, une équipe qui ne ressemble à aucune autre équipe. Mais qui est cette équipe ? 
         
         </p>
