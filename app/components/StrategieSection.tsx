@@ -308,32 +308,127 @@ export default function StrategieSection() {
               className="w-full md:w-1/2 relative">
               <img src="/paris-map.jpg" alt="Paris" className="w-full object-contain invert opacity-20" />
               <svg viewBox="0 0 800 900" className="absolute inset-0 w-full h-full">
-                <motion.circle cx={CX} cy={CY} r="320" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1"
-                  initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, delay: 0.8 }} viewport={{ once: true }}
-                  style={{ transformOrigin: `${CX}px ${CY}px` }} />
-                <motion.circle cx={CX} cy={CY} r="210" fill="none" stroke="rgba(167,139,250,0.55)" strokeWidth="1"
-                  initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.5 }} viewport={{ once: true }}
-                  style={{ transformOrigin: `${CX}px ${CY}px` }} />
-                <motion.circle cx={CX} cy={CY} r="110" fill="rgba(96,165,250,0.06)" stroke="rgba(96,165,250,0.7)" strokeWidth="1.5"
-                  initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }} viewport={{ once: true }}
-                  style={{ transformOrigin: `${CX}px ${CY}px` }} />
-                <motion.circle cx={CX} cy={CY} r="5" fill="#60a5fa" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }} />
-                <motion.circle cx={CX} cy={CY} r="10" fill="none" stroke="rgba(96,165,250,0.4)" strokeWidth="1"
-                  animate={{ r: [10, 25, 10], opacity: [0.4, 0, 0.4] }} transition={{ duration: 2, repeat: Infinity }} />
-                <motion.text x={CX + 18} y={CY - 12} fill="white" stroke="#050505" strokeWidth="3"
-  paintOrder="stroke" fontSize="20" fontWeight="700" fontFamily="monospace" letterSpacing="2"
-  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-  transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
-  RALPH LAUREN
-</motion.text>
+  {/* ZONE 03 — tertiaire */}
+  <circle
+    cx={CX}
+    cy={CY}
+    r="270"
+    fill="rgba(245,197,107,0.06)"
+    stroke="#f5c56b"
+    strokeWidth="3"
+    strokeDasharray="10 8"
+  />
 
-<motion.text x={CX + 18} y={CY + 12} fill="#60a5fa" stroke="#050505" strokeWidth="2"
-  paintOrder="stroke" fontSize="12" fontWeight="600" fontFamily="monospace" letterSpacing="1.2"
-  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-  transition={{ duration: 0.5, delay: 0.5 }} viewport={{ once: true }}>
-  MADELEINE · PARIS 8E
-</motion.text>
-              </svg>
+  {/* ZONE 02 — secondaire */}
+  <circle
+    cx={CX}
+    cy={CY}
+    r="180"
+    fill="rgba(167,139,250,0.08)"
+    stroke="#a78bfa"
+    strokeWidth="3"
+    strokeDasharray="7 6"
+  />
+
+  {/* ZONE 01 — primaire */}
+  <circle
+    cx={CX}
+    cy={CY}
+    r="100"
+    fill="rgba(96,165,250,0.15)"
+    stroke="#60a5fa"
+    strokeWidth="3"
+  />
+
+  {/* Point Ralph Lauren Madeleine */}
+  <circle
+    cx={CX}
+    cy={CY}
+    r="11"
+    fill="rgba(96,165,250,0.15)"
+    stroke="#60a5fa"
+    strokeWidth="2"
+  />
+
+  <circle cx={CX} cy={CY} r="5" fill="white" />
+
+  {/* Nom de la boutique */}
+  <text
+    x={CX + 18}
+    y={CY - 12}
+    fill="white"
+    stroke="#050505"
+    strokeWidth="3"
+    paintOrder="stroke"
+    fontSize="20"
+    fontWeight="700"
+    fontFamily="monospace"
+    letterSpacing="2"
+  >
+    RALPH LAUREN
+  </text>
+
+  <text
+    x={CX + 18}
+    y={CY + 12}
+    fill="#60a5fa"
+    stroke="#050505"
+    strokeWidth="2"
+    paintOrder="stroke"
+    fontSize="12"
+    fontWeight="600"
+    fontFamily="monospace"
+    letterSpacing="1.2"
+  >
+    MADELEINE · PARIS 8E
+  </text>
+
+  {/* Noms des zones */}
+  <text
+    x={CX + 72}
+    y={CY - 72}
+    fill="#60a5fa"
+    stroke="#050505"
+    strokeWidth="2"
+    paintOrder="stroke"
+    fontSize="13"
+    fontWeight="700"
+    fontFamily="monospace"
+    letterSpacing="1.5"
+  >
+    ZONE 01 · PRIMAIRE
+  </text>
+
+  <text
+    x={CX + 120}
+    y={CY - 125}
+    fill="#a78bfa"
+    stroke="#050505"
+    strokeWidth="2"
+    paintOrder="stroke"
+    fontSize="13"
+    fontWeight="700"
+    fontFamily="monospace"
+    letterSpacing="1.5"
+  >
+    ZONE 02 · SECONDAIRE
+  </text>
+
+  <text
+    x={CX - 250}
+    y={CY - 175}
+    fill="#f5c56b"
+    stroke="#050505"
+    strokeWidth="2"
+    paintOrder="stroke"
+    fontSize="13"
+    fontWeight="700"
+    fontFamily="monospace"
+    letterSpacing="1.5"
+  >
+    ZONE 03 · TERTIAIRE
+  </text>
+</svg>
             </motion.div>
 
             <div className="w-full md:w-1/2 space-y-8">
