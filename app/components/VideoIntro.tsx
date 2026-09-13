@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Volume2, VolumeX, Play, SkipForward } from "lucide-react";
 import content from "@/data/content";
 
@@ -10,15 +10,16 @@ interface VideoIntroProps {
   videoEnded: boolean;
 }
 
-export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) {
+export default function VideoIntro({
+  onVideoEnd,
+  videoEnded,
+}: VideoIntroProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [hasStarted, setHasStarted] = useState(false);
 
   const { videoIntro } = content;
 
-  // Custom Ralph Lauren luxury video & background image from user
   const videoSource = "/intro-video.mp4";
   const fallbackPoster = "/hero-bg.jpg";
 
@@ -27,31 +28,25 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
     if (!video) return;
 
     const handleEnded = () => {
-  video.pause();
-  video.muted = true;
-  video.src = "";
-  onVideoEnd();
-};
+      video.pause();
+      video.muted = true;
+      video.src = "";
+      onVideoEnd();
+    };
 
     const handlePlay = () => {
-      setHasStarted(true);
       setIsPlaying(true);
     };
 
     video.addEventListener("ended", handleEnded);
     video.addEventListener("play", handlePlay);
 
-    // Attempt autoplay
     const playPromise = video.play();
+
     if (playPromise !== undefined) {
       playPromise
-        .then(() => {
-          setIsPlaying(true);
-        })
-        .catch(() => {
-          // Autoplay blocked by browser policy, wait for user click or trigger onVideoEnd after timeout
-          setIsPlaying(false);
-        });
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false));
     }
 
     return () => {
@@ -60,10 +55,22 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
     };
   }, [onVideoEnd]);
 
-  const toggleSound = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
+  const toggleSound = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const nextMuted = !video.muted;
+
+    video.muted = nextMuted;
+    setIsMuted(nextMuted);
+
+    if (!nextMuted) {
+      try {
+        await video.play();
+        setIsPlaying(true);
+      } catch {
+        setIsPlaying(false);
+      }
     }
   };
 
@@ -78,12 +85,13 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
     if (videoRef.current) {
       videoRef.current.pause();
     }
+
     onVideoEnd();
   };
 
   return (
-    <div className="fixed inset-0 w-screen h-screen z-40 overflow-hidden pointer-events-auto select-none bg-black">
-      {/* Video element */}
+    <div className="fixed inset-0 z-40 h-screen w-screen select-none overflow-hidden bg-black">
+      {/* VIDEO */}
       <video
         ref={videoRef}
         src={videoSource}
@@ -91,12 +99,14 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
         autoPlay
         muted={isMuted}
         playsInline
-        className={`w-full h-full object-cover transition-all duration-1000 ${
-          videoEnded ? "scale-105 filter brightness-50 contrast-125 blur-[2px]" : "scale-100 brightness-90"
+        className={`h-full w-full object-cover transition-all duration-1000 ${
+          videoEnded
+            ? "scale-105 blur-[2px] brightness-50 contrast-125"
+            : "scale-100 brightness-90"
         }`}
       />
 
-      {/* Static Background Image Layer (fades in smoothly when video finishes) */}
+      {/* IMAGE DE FIN */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ${
           videoEnded ? "opacity-70" : "opacity-0"
@@ -105,19 +115,17 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
         <img
           src={fallbackPoster}
           alt="Ralph Lauren Hero Background"
-          className="w-full h-full object-cover filter brightness-50 contrast-125 blur-[1px]"
+          className="h-full w-full object-cover brightness-50 contrast-125 blur-[1px]"
         />
       </div>
 
-      {/* Freeze overlay when video ended */}
       {videoEnded && (
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-black/50 pointer-events-none transition-opacity duration-1000" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-black/50" />
       )}
 
-      {/* Vignette effect */}
-      <div className="absolute inset-0 bg-luxury-vignette opacity-70 pointer-events-none" />
+      {/* VIGNETTE */}
+      <div className="pointer-events-none absolute inset-0 bg-luxury-vignette opacity-70" />
 
-      {/* Intro Overlay Controls (Visible only while video is playing) */}
       <AnimatePresence>
         {!videoEnded && (
           <motion.div
@@ -125,59 +133,116 @@ export default function VideoIntro({ onVideoEnd, videoEnded }: VideoIntroProps) 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute inset-0 z-50 flex flex-col justify-between p-6 md:p-12 pointer-events-none"
+            className="pointer-events-none absolute inset-0 z-50 flex flex-col justify-between p-6 md:p-12"
           >
-            {/* Top Bar Indicator */}
-            <div className="flex justify-between items-center w-full pointer-events-auto">
+            {/* BARRE DU HAUT */}
+            <div className="pointer-events-auto flex w-full items-center justify-between">
               <div className="flex items-center space-x-3">
-                <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-                <span className="text-[10px] tracking-[0.3em] uppercase font-mono text-neutral-300">
+                <span className="h-2 w-2 animate-ping rounded-full bg-white" />
+
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-300">
                   {videoIntro.topBadge}
                 </span>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <motion.button
-  onClick={toggleSound}
-  animate={{ scale: [1, 1.15, 1] }}
-  transition={{ duration: 1.5, repeat: 3, delay: 1 }}
-  className="p-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/40 text-neutral-300 hover:text-white transition-all"
->
-  {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-white" />}
-</motion.button>
-              </div>
+              {/* BOUTON SON DISCRET UNE FOIS L'INTRO LANCÉE */}
+              <motion.button
+                type="button"
+                onClick={toggleSound}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-2.5 font-mono text-[9px] uppercase tracking-[0.2em] text-white backdrop-blur-md transition-all hover:border-white/50"
+              >
+                {isMuted ? (
+                  <>
+                    <VolumeX className="h-4 w-4" />
+                    <span className="hidden sm:inline">Son coupé</span>
+                  </>
+                ) : (
+                  <>
+                    <Volume2 className="h-4 w-4 text-blue-400" />
+                    <span className="hidden sm:inline">Son activé</span>
+                  </>
+                )}
+              </motion.button>
             </div>
 
-            {/* Center Autoplay Fallback trigger if browser blocked audio/play */}
-            {!isPlaying && (
-              <div className="self-center my-auto pointer-events-auto text-center">
-                <button
-                  onClick={handleManualPlay}
-                  className="group relative inline-flex items-center space-x-4 px-8 py-4 rounded-full bg-white text-black font-serif tracking-widest text-sm uppercase transition-all duration-500 hover:scale-105 hover:bg-neutral-200"
+            {/* BOUTON PRINCIPAL POUR ACTIVER LE SON */}
+            <AnimatePresence>
+              {isMuted && isPlaying && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    scale: [1, 1.025, 1],
+                  }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{
+                    opacity: { duration: 0.6, delay: 0.8 },
+                    y: { duration: 0.6, delay: 0.8 },
+                    scale: {
+                      duration: 2.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    },
+                  }}
+                  className="pointer-events-auto absolute inset-x-0 bottom-32 flex justify-center md:bottom-36"
                 >
-                  <Play className="w-4 h-4 fill-black" />
+                  <button
+                    type="button"
+                    onClick={toggleSound}
+                    className="group flex flex-col items-center gap-3 rounded-full border border-white/40 bg-black/60 px-8 py-5 text-white shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-white hover:bg-black/80 md:px-10"
+                  >
+                    <span className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em]">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-black transition-transform duration-300 group-hover:rotate-12">
+                        <Volume2 className="h-4 w-4" />
+                      </span>
+                      Activer le son
+                    </span>
+
+                    <span className="font-serif text-sm italic text-white/65">
+                      Pour vivre l’introduction comme prévu.
+                    </span>
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* SI LE LANCEMENT AUTOMATIQUE EST BLOQUÉ */}
+            {!isPlaying && (
+              <div className="pointer-events-auto my-auto self-center text-center">
+                <button
+                  type="button"
+                  onClick={handleManualPlay}
+                  className="group inline-flex items-center space-x-4 rounded-full bg-white px-8 py-4 font-serif text-sm uppercase tracking-widest text-black transition-all duration-500 hover:scale-105 hover:bg-neutral-200"
+                >
+                  <Play className="h-4 w-4 fill-black" />
                   <span>{videoIntro.playButton}</span>
                 </button>
               </div>
             )}
 
-            {/* Bottom Status & Skip trigger */}
-            <div className="flex justify-between items-end w-full pointer-events-auto">
+            {/* BAS DE L'INTRO */}
+            <div className="pointer-events-auto flex w-full items-end justify-between">
               <div>
-                <p className="font-serif italic text-white/70 text-xl md:text-2xl max-w-xl">
+                <p className="max-w-xl font-serif text-xl italic text-white/70 md:text-2xl">
                   {videoIntro.quote}
                 </p>
-                <p className="text-[10px] tracking-widest text-neutral-400 mt-1 uppercase font-sans">
+
+                <p className="mt-1 font-sans text-[10px] uppercase tracking-widest text-neutral-400">
                   {videoIntro.author}
                 </p>
               </div>
 
               <button
+                type="button"
                 onClick={handleSkip}
-                className="group flex items-center space-x-2 text-xs tracking-[0.25em] text-neutral-400 hover:text-white transition-colors duration-300 uppercase py-2 px-4 rounded-full border border-white/10 hover:border-white/30 backdrop-blur-md"
+                className="group flex items-center space-x-2 rounded-full border border-white/10 px-4 py-2 font-mono text-xs uppercase tracking-[0.25em] text-neutral-400 backdrop-blur-md transition-colors duration-300 hover:border-white/30 hover:text-white"
               >
                 <span>{videoIntro.skipButton}</span>
-                <SkipForward className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+
+                <SkipForward className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
           </motion.div>
