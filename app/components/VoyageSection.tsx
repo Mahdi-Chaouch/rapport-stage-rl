@@ -20,7 +20,7 @@ const galleryPhotos = [
   { src: "/gallery-3.jpg", alt: "Galerie 3", layout: "md:col-start-7 md:col-span-3 md:row-start-1" },
   { src: "/gallery-4.jpg", alt: "Galerie 4", layout: "md:col-start-10 md:col-span-3 md:row-start-1" },
   { src: "/gallery-5.jpg", alt: "Galerie 5", layout: "md:col-start-1 md:col-span-3 md:row-start-2" },
-  { src: "/gallery-6.jpg", alt: "Une rencontre importante", layout: "md:col-start-10 md:col-span-3 md:row-start-2" },
+  { src: "/gallery-8.jpg", alt: "Une rencontre importante", layout: "md:col-start-10 md:col-span-3 md:row-start-2" },
   { src: "/gallery-7.jpg", alt: "Galerie 7", layout: "md:col-start-1 md:col-span-3 md:row-start-3" },
   { src: "/gallery-8.jpg", alt: "Galerie 8", layout: "md:col-start-10 md:col-span-3 md:row-start-3" },
   { src: "/gallery-9.jpg", alt: "Galerie 9", layout: "md:col-start-4 md:col-span-6 md:row-start-4" },
@@ -238,7 +238,7 @@ export default function VoyageSection() {
               onClick={(event) => {
                 event.stopPropagation();
 
-                if (photo.src === "/gallery-6.jpg") {
+                if (photo.src === "/gallery-8.jpg") {
                   setShowTribute(true);
                   return;
                 }
@@ -263,7 +263,7 @@ export default function VoyageSection() {
               <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/25" />
 
               <span className="absolute bottom-3 left-3 font-mono text-[8px] tracking-[0.2em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                {photo.src === "/gallery-6.jpg" ? "DÉCOUVRIR +" : "OUVRIR +"}
+                {photo.src === "/gallery-8.jpg" ? "DÉCOUVRIR +" : "OUVRIR +"}
               </span>
             </motion.button>
           ))}
@@ -368,7 +368,7 @@ export default function VoyageSection() {
                 className="relative mt-16 overflow-hidden"
               >
                 <img
-                  src="/gallery-6.jpg"
+                  src="/gallery-8.jpg"
                   alt="Une rencontre importante"
                   className="h-[65vh] w-full object-cover object-center md:h-[80vh]"
                 />
