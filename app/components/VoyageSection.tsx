@@ -147,40 +147,118 @@ export default function VoyageSection() {
     </h3>
   </motion.div>
 
-  {/* Photo principale */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.98 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 1.2 }}
-    viewport={{ once: true }}
-    className="w-full mb-4 overflow-hidden"
-  >
-    <img
-      src="/gallery-main.jpg"
-      alt="The art of doing it anyway"
-      className="w-full h-[60vh] object-cover object-center"
-    />
-  </motion.div>
-
-  {/* Grille 9 photos */}
-  <div className="grid grid-cols-3 gap-4">
-    {[1,2,3,4,5,6,7,8,9].map((n, i) => (
+  {/* Ligne 1 — 3 photos */}
+  <div className="grid grid-cols-3 gap-3 mb-3">
+    {[1, 2, 3].map((n, i) => (
       <motion.div
         key={n}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: i * 0.08 }}
+        transition={{ duration: 0.7, delay: i * 0.1 }}
         viewport={{ once: true }}
         className="overflow-hidden"
       >
         <img
           src={`/gallery-${n}.jpg`}
           alt={`Galerie ${n}`}
-          className="w-full h-[28vh] object-cover object-center hover:scale-105 transition-transform duration-700"
+          className="w-full h-[45vh] object-cover object-top hover:scale-105 transition-transform duration-700"
         />
       </motion.div>
     ))}
   </div>
+
+  {/* Ligne 2 — 1 photo + photo MAIN grande + 1 photo */}
+  <div className="grid grid-cols-3 gap-3 mb-3">
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="overflow-hidden"
+    >
+      <img
+        src="/gallery-4.jpg"
+        alt="Galerie 4"
+        className="w-full h-[65vh] object-cover object-top hover:scale-105 transition-transform duration-700"
+      />
+    </motion.div>
+
+    {/* Photo principale au centre */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.96 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1.2, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="overflow-hidden relative"
+    >
+      <img
+        src="/gallery-main.jpg"
+        alt="The art of doing it anyway"
+        className="w-full h-[65vh] object-cover object-top"
+      />
+      {/* Label discret */}
+      <div className="absolute bottom-0 left-0 right-0 p-4"
+        style={{ background: "linear-gradient(transparent, rgba(5,5,5,0.8))" }}>
+        <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-neutral-400 text-center">
+          The art of doing it anyway
+        </p>
+      </div>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="overflow-hidden"
+    >
+      <img
+        src="/gallery-5.jpg"
+        alt="Galerie 5"
+        className="w-full h-[65vh] object-cover object-top hover:scale-105 transition-transform duration-700"
+      />
+    </motion.div>
+  </div>
+
+  {/* Ligne 3 — 3 photos */}
+  <div className="grid grid-cols-3 gap-3 mb-3">
+    {[6, 7, 8].map((n, i) => (
+      <motion.div
+        key={n}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: i * 0.1 }}
+        viewport={{ once: true }}
+        className="overflow-hidden"
+      >
+        <img
+          src={`/gallery-${n}.jpg`}
+          alt={`Galerie ${n}`}
+          className="w-full h-[45vh] object-cover object-top hover:scale-105 transition-transform duration-700"
+        />
+      </motion.div>
+    ))}
+  </div>
+
+  {/* Ligne 4 — photo 9 centrée */}
+  <div className="grid grid-cols-3 gap-3">
+    <div />
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="overflow-hidden"
+    >
+      <img
+        src="/gallery-9.jpg"
+        alt="Galerie 9"
+        className="w-full h-[45vh] object-cover object-top hover:scale-105 transition-transform duration-700"
+      />
+    </motion.div>
+    <div />
+  </div>
+
 </div>
       {/* CLOSING VISUEL — LOGO RL */}
       <motion.div
