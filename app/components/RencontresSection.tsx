@@ -49,7 +49,7 @@ const interviews = [
     firstName: "Céline",
     lastName: "Cheung",
     age: "24 ans",
-    role: "Vendeuse · Ralph Lauren Madeleine",
+    role: "Vendeuse junior · Ralph Lauren Madeleine",
     image: "/celine.jpg",
     number: "DOSSIER 02",
     intro: "Un regard sur l’apprentissage, la confiance en soi et l’attention portée à chaque client.",
@@ -143,6 +143,7 @@ export default function RencontresSection() {
                     <span className="text-[10px] uppercase tracking-[0.35em] text-white/55">
                       {interview.number}
                     </span>
+
                     <span className="rounded-full border border-[#4c9ce9]/50 px-3 py-1 text-[9px] uppercase tracking-[0.25em] text-[#67b3ff]">
                       Entretien
                     </span>
@@ -155,7 +156,9 @@ export default function RencontresSection() {
                   <h3 className="font-serif text-5xl font-light leading-[0.9] text-white md:text-6xl">
                     {interview.firstName}
                     <br />
-                    <span className="text-neutral-400">{interview.lastName}.</span>
+                    <span className="text-neutral-400">
+                      {interview.lastName}.
+                    </span>
                   </h3>
 
                   <p className="mt-6 text-[10px] uppercase tracking-[0.28em] text-neutral-400">
@@ -166,6 +169,7 @@ export default function RencontresSection() {
                     <span className="font-serif text-base italic text-neutral-400">
                       Ouvrir son regard sur le métier.
                     </span>
+
                     <span className="text-[10px] uppercase tracking-[0.28em] text-white transition group-hover:text-[#67b3ff]">
                       Consulter le dossier →
                     </span>
@@ -185,18 +189,10 @@ export default function RencontresSection() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] overflow-y-auto bg-[#050505]"
           >
-            <div className="sticky top-0 z-20 flex items-center justify-between border-b border-white/10 bg-[#050505]/95 px-6 py-5 backdrop-blur-md md:px-16">
+            <div className="sticky top-0 z-20 border-b border-white/10 bg-[#050505]/95 px-6 py-5 backdrop-blur-md md:px-16">
               <span className="text-[10px] uppercase tracking-[0.4em] text-neutral-500">
                 {selectedInterview.number} · Entretien
               </span>
-
-              <button
-                type="button"
-                onClick={() => setSelectedInterview(null)}
-                className="rounded-full border border-white/20 px-5 py-2 text-[10px] uppercase tracking-[0.28em] text-white transition hover:border-[#4c9ce9] hover:text-[#67b3ff]"
-              >
-                Fermer ×
-              </button>
             </div>
 
             <div className="mx-auto max-w-6xl px-6 py-16 md:px-16 md:py-24">
@@ -207,6 +203,7 @@ export default function RencontresSection() {
                     alt={`${selectedInterview.firstName} ${selectedInterview.lastName}`}
                     className="h-full w-full object-cover grayscale"
                   />
+
                   <span className="absolute bottom-5 left-5 text-[9px] uppercase tracking-[0.35em] text-white/50">
                     Ralph Lauren Madeleine
                   </span>
@@ -261,10 +258,18 @@ export default function RencontresSection() {
                 ))}
               </div>
 
-              <div className="mt-28 border-t border-white/10 pt-8 text-center">
+              <div className="mt-28 border-t border-white/10 pt-10 text-center">
                 <p className="text-[10px] uppercase tracking-[0.4em] text-neutral-600">
                   Ralph Lauren · Madeleine · Paris
                 </p>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedInterview(null)}
+                  className="mt-10 inline-flex items-center gap-3 border-b border-white/30 pb-2 text-[10px] uppercase tracking-[0.32em] text-neutral-300 transition hover:border-[#67b3ff] hover:text-[#67b3ff]"
+                >
+                  ← Retour aux dossiers
+                </button>
               </div>
             </div>
           </motion.div>
