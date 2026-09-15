@@ -3,246 +3,257 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const interview = {
-  name: "Léo Szymanski-Foucault",
-  age: "24 ans",
-  role: "Vendeur senior",
-  photo: "/leo.jpg",
-  questions: [
-    {
-      number: "01",
-      question:
-        "Quelles sont les particularités d’un vendeur senior par rapport à un vendeur junior ?",
-      answer:
-        "Un vendeur senior doit avant tout faire plus que de la vente. Il doit déjà connaître les différents process du magasin, ainsi que les spécificités légales qui encadrent une vente. Il doit aussi avoir et savoir créer un portefeuille client, sans pour autant négliger les autres tâches nécessaires au bon fonctionnement de la boutique.",
-    },
-    {
-      number: "02",
-      question:
-        "Parmi les différents univers de la maison, dans lequel êtes-vous le plus à l’aise ?",
-      answer:
-        "Je dirais que je suis plus à l’aise dans l’univers du casual chic : les pulls câble, les quarter zips, le cachemire, les chinos ou encore les pantalons de costume décontractés. J’aime particulièrement la versatilité des looks que l’on peut créer.",
-    },
-    {
-      number: "03",
-      question:
-        "Comment l’équipe s’organise-t-elle au cours d’une journée normale ?",
-      answer:
-        "Le matin, on se réunit pour un brief sur les chiffres réalisés la veille, l’objectif du jour et les différentes informations concernant la marque ou la boutique : une nouvelle collection, l’arrivée de nouveaux produits ou encore les priorités de la journée.",
-    },
-    {
-      number: "04",
-      question: "Comment proposez-vous des pièces complémentaires ?",
-      answer:
-        "Il faut l’amener de manière naturelle et spontanée, tout en restant cohérent avec les pièces déjà essayées. Si un client essaie une chemise, on peut lui proposer une cravate ou une veste. De la même manière, s’il essaie un pantalon, on peut lui proposer une ceinture, par exemple.",
-    },
-    {
-      number: "05",
-      question:
-        "Qu’est-ce qui vous semble le plus important dans l’expérience client Ralph Lauren ?",
-      answer:
-        "Le plus important, c’est la connexion et le lien que l’on peut créer avec le client. Il ne s’agit pas simplement d’avoir un rapport vendeur-client, mais une relation plus humaine, fondée sur l’émotion et la compréhension. Le but n’est pas seulement de faire une vente, mais de créer un moment privilégié grâce au conseil, à l’écoute et aux produits.",
-    },
-  ],
-};
+const interviews = [
+  {
+    id: "leo",
+    firstName: "Léo",
+    lastName: "Szymanski-Foucault",
+    age: "24 ans",
+    role: "Vendeur senior · Ralph Lauren Madeleine",
+    image: "/leo.jpg",
+    number: "DOSSIER 01",
+    intro: "Un regard sur le métier, le client et l’importance du lien créé en boutique.",
+    questions: [
+      {
+        question:
+          "Quelles sont les particularités d’un vendeur senior comparé à un vendeur junior ?",
+        answer:
+          "Un vendeur senior doit faire plus que de la vente. Il connaît les différents process de la boutique, ainsi que les spécificités légales qui encadrent une vente. Il doit aussi savoir créer et développer un portefeuille client, sans pour autant négliger les autres tâches nécessaires au bon fonctionnement de la boutique.",
+      },
+      {
+        question:
+          "Parmi les différents univers de la maison, dans lequel êtes-vous le plus à l’aise ?",
+        answer:
+          "Je suis particulièrement à l’aise dans l’univers du casual chic : les pulls câble, les quarter zips, le cachemire, les chinos ou encore les pantalons de costume décontractés. J’aime la versatilité des looks que l’on peut créer autour de ces pièces.",
+      },
+      {
+        question: "Comment l’équipe s’organise-t-elle pendant une journée normale ?",
+        answer:
+          "Le matin, nous nous réunissons pour un brief sur les chiffres réalisés la veille, l’objectif du jour et les informations importantes concernant la marque ou la boutique : nouvelles collections, arrivages ou nouveautés produits.",
+      },
+      {
+        question: "Comment proposez-vous des pièces complémentaires ?",
+        answer:
+          "Il faut l’amener de manière naturelle, spontanée et toujours cohérente avec les pièces déjà essayées. Si un client essaie une chemise, on peut lui proposer une cravate ou une veste. S’il essaie un pantalon, une ceinture peut naturellement compléter la silhouette.",
+      },
+      {
+        question:
+          "Qu’est-ce qui vous semble le plus important dans l’expérience client Ralph Lauren ?",
+        answer:
+          "Le plus important, c’est la connexion et le lien que l’on crée avec le client. L’idée n’est pas simplement d’avoir un rapport vendeur-client, mais une relation plus humaine, faite d’écoute, de compréhension et d’émotion. Le but n’est pas uniquement de conclure une vente, mais de créer un moment privilégié.",
+      },
+    ],
+  },
+  {
+    id: "celine",
+    firstName: "Céline",
+    lastName: "Cheung",
+    age: "24 ans",
+    role: "Vendeuse · Ralph Lauren Madeleine",
+    image: "/celine.jpg",
+    number: "DOSSIER 02",
+    intro: "Un regard sur l’apprentissage, la confiance en soi et l’attention portée à chaque client.",
+    questions: [
+      {
+        question: "Est-ce que votre manière de vendre a évolué depuis vos débuts ?",
+        answer:
+          "Oui, ma manière de vendre a beaucoup évolué. Au début, j’ai ressenti un certain syndrome de l’imposteur : je ne connaissais pas encore assez les produits, leur histoire ou les valeurs de la maison, ce qui pouvait me faire manquer de confiance. Avec l’onboarding, les formations, les ressources internes et les échanges avec les équipes, j’ai progressivement développé mes connaissances et mon assurance. Aujourd’hui, je suis plus proactive, plus à l’aise pour aller vers le client, poser des questions et proposer des solutions en m’appuyant aussi sur mon propre regard.",
+      },
+      {
+        question:
+          "Qu’est-ce qui fait qu’un client garde un bon souvenir de son passage en boutique ?",
+        answer:
+          "L’accueil est essentiel, car il représente la première impression donnée au client. Il faut ensuite savoir s’adapter à sa personnalité et à ses attentes. Même sans achat, l’important est qu’il reparte après avoir passé un bon moment, en se sentant écouté, respecté et bien accompagné. C’est ce qui permet de créer une relation de confiance et une expérience durable.",
+      },
+      {
+        question:
+          "Comment apprenez-vous à bien connaître les nouvelles collections et les produits ?",
+        answer:
+          "La diversité des méthodes d’apprentissage est essentielle. Les briefs du matin, les mini-workshops, les présentations de collections ou les vidéos de défilés permettent de mieux comprendre l’univers de la maison. Lorsqu’une collection arrive, nous pouvons aussi faire nos propres recherches sur les matières, les textures, les couleurs ou les prix. Je complète cela avec les formations, les échanges avec mes collègues, l’observation des produits et les retours des clients.",
+      },
+      {
+        question: "Quelles sont les qualités qu’un vendeur doit mettre en avant ?",
+        answer:
+          "La proactivité est essentielle : elle permet de ne pas seulement attendre une demande, mais d’aller vers le client, d’anticiper ses besoins et de créer des opportunités. Elle doit cependant être accompagnée d’écoute et d’adaptation, pour trouver le juste équilibre entre être présent et laisser son espace au client. La curiosité, l’empathie et la confiance en soi sont également indispensables pour créer une relation de confiance et donner envie au client de revenir.",
+      },
+    ],
+  },
+];
 
 export default function RencontresSection() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [selectedInterview, setSelectedInterview] = useState<
+    (typeof interviews)[number] | null
+  >(null);
 
   return (
     <section
       id="rencontres"
-      className="relative border-b border-white/10 bg-[#050505] px-6 py-28 md:px-24"
+      className="relative overflow-hidden border-b border-white/10 bg-[#050505] px-6 py-28 md:px-24 md:py-36"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-16"
-      >
-        <span className="mb-4 block font-sans text-[10px] uppercase tracking-[0.4em] text-neutral-500">
-          V · Rencontres & Regards croisés
+      <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+      <div className="mx-auto max-w-7xl">
+        <span className="block text-[10px] uppercase tracking-[0.42em] text-neutral-500">
+          V · Rencontres
         </span>
 
-        <h2 className="font-serif text-5xl font-light text-white md:text-8xl">
-          Les voix
-          <br />
-          <span className="text-neutral-500">de la Madeleine.</span>
-        </h2>
+        <div className="mt-8 max-w-5xl">
+          <h2 className="font-serif text-5xl font-light leading-[0.9] text-white md:text-8xl">
+            Les voix
+            <br />
+            <span className="text-neutral-500">de la Madeleine.</span>
+          </h2>
 
-        <p className="mt-8 max-w-xl text-justify font-serif text-lg font-light leading-relaxed text-neutral-400 md:text-xl">
-          Derrière un stage, il y a une équipe, une équipe qu'on voit tous les jours, une équipe avec qui on apprend, une équipe avec qui on rigole, une équipe qui ne ressemble à aucune autre équipe. Mais qui est cette équipe ? 
-        
-        </p>
-      </motion.div>
+          <p className="mt-10 max-w-2xl font-serif text-lg font-light leading-relaxed text-neutral-400 md:text-xl">
+            Derrière un stage, il y a une équipe. Une équipe avec qui l’on
+            apprend, avec qui l’on rigole, et qui rend chaque journée
+            différente. Ces dossiers donnent la parole à ceux qui font vivre la
+            boutique au quotidien.
+          </p>
+        </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-        viewport={{ once: true }}
-        className="max-w-5xl"
-      >
-        <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.4em] text-neutral-600">
-          DOSSIERS DE L’ÉQUIPE
-        </p>
+        <div className="mt-24">
+          <p className="mb-8 text-[10px] uppercase tracking-[0.4em] text-neutral-600">
+            Dossiers de l’équipe
+          </p>
 
-        <button
-          type="button"
-          onClick={() => setIsOpen(true)}
-          className="group relative w-full overflow-hidden border border-white/15 bg-white/[0.02] text-left transition-all duration-500 hover:border-blue-400/70 hover:bg-blue-400/[0.04]"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-[260px_1fr]">
-            <div className="relative h-[320px] overflow-hidden md:h-full">
-              <img
-                src={interview.photo}
-                alt={interview.name}
-                className="h-full w-full object-cover object-center grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-
-              <span className="absolute bottom-5 left-5 font-mono text-[9px] uppercase tracking-[0.25em] text-white/70">
-                Dossier 01
-              </span>
-            </div>
-
-            <div className="flex min-h-[320px] flex-col justify-between p-8 md:p-12">
-              <div>
-                <div className="mb-10 flex items-center justify-between">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-blue-400">
-                    Entretien enregistré
-                  </span>
-
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-600">
-                    {interview.age}
-                  </span>
+          <div className="grid gap-6 lg:grid-cols-2">
+            {interviews.map((interview, index) => (
+              <motion.button
+                key={interview.id}
+                type="button"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7, delay: index * 0.12 }}
+                onClick={() => setSelectedInterview(interview)}
+                className="group relative min-h-[520px] overflow-hidden border border-white/15 bg-[#080808] text-left transition-colors hover:border-[#4c9ce9]/70"
+              >
+                <div className="absolute inset-0">
+                  <img
+                    src={interview.image}
+                    alt={`${interview.firstName} ${interview.lastName}`}
+                    className="h-full w-full object-cover object-center grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/10" />
                 </div>
 
-                <h3 className="font-serif text-4xl font-light text-white md:text-6xl">
-                  Léo
-                  <br />
-                  <span className="text-neutral-500">Szymanski-Foucault.</span>
-                </h3>
+                <div className="relative flex min-h-[520px] flex-col justify-end p-7 md:p-10">
+                  <div className="mb-auto flex items-start justify-between">
+                    <span className="text-[10px] uppercase tracking-[0.35em] text-white/55">
+                      {interview.number}
+                    </span>
+                    <span className="rounded-full border border-[#4c9ce9]/50 px-3 py-1 text-[9px] uppercase tracking-[0.25em] text-[#67b3ff]">
+                      Entretien
+                    </span>
+                  </div>
 
-                <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400">
-                  {interview.role} · Ralph Lauren Madeleine
-                </p>
-              </div>
+                  <p className="mb-4 text-[10px] uppercase tracking-[0.35em] text-[#67b3ff]">
+                    Entretien enregistré
+                  </p>
 
-              <div className="mt-12 flex items-center justify-between border-t border-white/10 pt-6">
-                <span className="font-serif text-lg italic text-neutral-500">
-                  En mode Savage.
-                </span>
+                  <h3 className="font-serif text-5xl font-light leading-[0.9] text-white md:text-6xl">
+                    {interview.firstName}
+                    <br />
+                    <span className="text-neutral-400">{interview.lastName}.</span>
+                  </h3>
 
-                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white transition-transform duration-300 group-hover:translate-x-2">
-                  Consulter le dossier →
-                </span>
-              </div>
-            </div>
+                  <p className="mt-6 text-[10px] uppercase tracking-[0.28em] text-neutral-400">
+                    {interview.age} · {interview.role}
+                  </p>
+
+                  <div className="mt-10 flex items-center justify-between border-t border-white/15 pt-5">
+                    <span className="font-serif text-base italic text-neutral-400">
+                      Ouvrir son regard sur le métier.
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[0.28em] text-white transition group-hover:text-[#67b3ff]">
+                      Consulter le dossier →
+                    </span>
+                  </div>
+                </div>
+              </motion.button>
+            ))}
           </div>
-        </button>
-      </motion.div>
+        </div>
+      </div>
 
       <AnimatePresence>
-        {isOpen && (
+        {selectedInterview && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[110] overflow-y-auto bg-[#050505] px-6 py-16 md:px-24 md:py-24"
+            className="fixed inset-0 z-[100] overflow-y-auto bg-[#050505]"
           >
-            <button
-              type="button"
-              onClick={() => setIsOpen(false)}
-              className="fixed bottom-8 left-1/2 z-[120] -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-white/70 transition-colors hover:text-white"
-            >
-              Fermer le dossier ×
-            </button>
+            <div className="sticky top-0 z-20 flex items-center justify-between border-b border-white/10 bg-[#050505]/95 px-6 py-5 backdrop-blur-md md:px-16">
+              <span className="text-[10px] uppercase tracking-[0.4em] text-neutral-500">
+                {selectedInterview.number} · Entretien
+              </span>
 
-            <div className="mx-auto max-w-6xl pb-24">
-              <motion.span
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="font-mono text-[10px] uppercase tracking-[0.4em] text-blue-400"
+              <button
+                type="button"
+                onClick={() => setSelectedInterview(null)}
+                className="rounded-full border border-white/20 px-5 py-2 text-[10px] uppercase tracking-[0.28em] text-white transition hover:border-[#4c9ce9] hover:text-[#67b3ff]"
               >
-                DOSSIER 01 · ENTRETIEN
-              </motion.span>
+                Fermer ×
+              </button>
+            </div>
 
-              <div className="mt-8 grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.2fr] md:items-end">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1 }}
-                >
-                  <h2 className="font-serif text-5xl font-light leading-none text-white md:text-8xl">
-                    Léo
+            <div className="mx-auto max-w-6xl px-6 py-16 md:px-16 md:py-24">
+              <div className="grid gap-12 border-b border-white/10 pb-16 md:grid-cols-[0.85fr_1.15fr] md:items-end">
+                <div className="relative aspect-[4/5] overflow-hidden border border-white/10">
+                  <img
+                    src={selectedInterview.image}
+                    alt={`${selectedInterview.firstName} ${selectedInterview.lastName}`}
+                    className="h-full w-full object-cover grayscale"
+                  />
+                  <span className="absolute bottom-5 left-5 text-[9px] uppercase tracking-[0.35em] text-white/50">
+                    Ralph Lauren Madeleine
+                  </span>
+                </div>
+
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.4em] text-[#67b3ff]">
+                    Regard croisé
+                  </p>
+
+                  <h2 className="mt-8 font-serif text-6xl font-light leading-[0.88] text-white md:text-8xl">
+                    {selectedInterview.firstName}
                     <br />
-                    <span className="text-neutral-500">Szymanski-Foucault.</span>
+                    <span className="text-neutral-500">
+                      {selectedInterview.lastName}.
+                    </span>
                   </h2>
 
-                  <p className="mt-7 font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400">
-                    {interview.role} · {interview.age}
+                  <p className="mt-8 text-[10px] uppercase tracking-[0.32em] text-neutral-400">
+                    {selectedInterview.age} · {selectedInterview.role}
                   </p>
 
-                  <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-600">
-                    Ralph Lauren · Madeleine · Paris 8e
+                  <p className="mt-10 max-w-xl font-serif text-2xl font-light leading-relaxed text-neutral-300 md:text-3xl">
+                    {selectedInterview.intro}
                   </p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.97 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                  className="overflow-hidden"
-                >
-                  <img
-                    src={interview.photo}
-                    alt={interview.name}
-                    className="h-[50vh] w-full object-cover object-center grayscale md:h-[65vh]"
-                  />
-                </motion.div>
+                </div>
               </div>
 
-              <div className="mt-24 space-y-20">
-                {interview.questions.map((item, index) => (
+              <div className="mt-20 space-y-20">
+                {selectedInterview.questions.map((item, index) => (
                   <motion.article
-                    key={item.number}
-                    initial={{ opacity: 0, y: 30 }}
+                    key={item.question}
+                    initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 + index * 0.08 }}
-                    className={`grid grid-cols-1 gap-8 border-t border-white/10 pt-10 md:grid-cols-12 ${
-                      index % 2 === 0 ? "" : "md:text-right"
-                    }`}
+                    transition={{ duration: 0.6, delay: index * 0.08 }}
+                    className="grid gap-7 md:grid-cols-[140px_1fr]"
                   >
-                    <div
-                      className={`md:col-span-5 ${
-                        index % 2 === 0 ? "" : "md:col-start-8"
-                      }`}
-                    >
-                      <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-blue-400">
-                        {item.number} · QUESTION
-                      </span>
+                    <span className="text-[10px] tracking-[0.35em] text-[#67b3ff]">
+                      0{index + 1}
+                    </span>
 
-                      <h3 className="mt-5 font-serif text-3xl font-light leading-tight text-white md:text-5xl">
+                    <div className="border-l border-white/10 pl-6 md:pl-10">
+                      <h3 className="max-w-3xl font-serif text-3xl font-light leading-tight text-white md:text-4xl">
                         {item.question}
                       </h3>
-                    </div>
 
-                    <div
-                      className={`md:col-span-5 ${
-                        index % 2 === 0
-                          ? "md:col-start-8"
-                          : "md:col-start-1 md:row-start-1"
-                      }`}
-                    >
-                      <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-600">
-                        RÉPONSE DE LÉO
-                      </span>
-
-                      <p className="mt-5 font-serif text-lg font-light leading-relaxed text-neutral-400 md:text-xl">
+                      <p className="mt-8 max-w-3xl text-justify font-serif text-lg font-light leading-relaxed text-neutral-400 md:text-xl">
                         {item.answer}
                       </p>
                     </div>
@@ -250,18 +261,11 @@ export default function RencontresSection() {
                 ))}
               </div>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.8 }}
-                className="mt-24 border-t border-white/10 pt-12 text-center"
-              >
-                <p className="font-serif text-3xl font-light italic text-neutral-400 md:text-5xl">
-                  Un métier de conseil,
-                  <br />
-                  mais surtout de relation humaine.
+              <div className="mt-28 border-t border-white/10 pt-8 text-center">
+                <p className="text-[10px] uppercase tracking-[0.4em] text-neutral-600">
+                  Ralph Lauren · Madeleine · Paris
                 </p>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         )}
