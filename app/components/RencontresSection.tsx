@@ -195,7 +195,14 @@ export default function RencontresSection() {
               </span>
             </div>
 
-            <div className="mx-auto max-w-6xl px-6 py-16 md:px-16 md:py-24">
+            <div className="relative mx-auto max-w-6xl px-6 py-16 md:px-16 md:py-24">
+  <button
+    type="button"
+    onClick={() => setSelectedInterview(null)}
+    className="absolute right-6 top-6 border-b border-white/30 pb-2 text-[10px] uppercase tracking-[0.28em] text-neutral-400 transition hover:border-[#67b3ff] hover:text-[#67b3ff] md:right-16 md:top-12"
+  >
+    ← Retour aux dossiers
+  </button>
               <div className="grid gap-12 border-b border-white/10 pb-16 md:grid-cols-[0.85fr_1.15fr] md:items-end">
                 <div className="relative aspect-[4/5] overflow-hidden border border-white/10">
                   <img
