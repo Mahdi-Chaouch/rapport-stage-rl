@@ -12,7 +12,9 @@ const interviews = [
     role: "Vendeur senior · Ralph Lauren Madeleine",
     image: "/leo.jpg",
     number: "DOSSIER 01",
-    intro: "Un regard sur le métier, le client et l’importance du lien créé en boutique.",
+    cardLine: "Explorer sa vision du lien client.",
+    intro:
+      "Un regard sur le métier, le client et l’importance du lien créé en boutique.",
     questions: [
       {
         question:
@@ -51,8 +53,11 @@ const interviews = [
     age: "24 ans",
     role: "Vendeuse junior · Ralph Lauren Madeleine",
     image: "/celine.jpg",
+    imagePosition: "object-[center_30%]",
     number: "DOSSIER 02",
-    intro: "Un regard sur l’apprentissage, la confiance en soi et l’attention portée à chaque client.",
+    cardLine: "Découvrir son cheminement vers la confiance.",
+    intro:
+      "Un regard sur l’apprentissage, la confiance en soi et l’attention portée à chaque client.",
     questions: [
       {
         question: "Est-ce que votre manière de vendre a évolué depuis vos débuts ?",
@@ -75,6 +80,42 @@ const interviews = [
         question: "Quelles sont les qualités qu’un vendeur doit mettre en avant ?",
         answer:
           "La proactivité est essentielle : elle permet de ne pas seulement attendre une demande, mais d’aller vers le client, d’anticiper ses besoins et de créer des opportunités. Elle doit cependant être accompagnée d’écoute et d’adaptation, pour trouver le juste équilibre entre être présent et laisser son espace au client. La curiosité, l’empathie et la confiance en soi sont également indispensables pour créer une relation de confiance et donner envie au client de revenir.",
+      },
+    ],
+  },
+  {
+    id: "gregoire",
+    firstName: "Grégoire",
+    lastName: "Plagnol",
+    age: "24 ans",
+    role: "Vendeur junior · Ralph Lauren Madeleine",
+    image: "/gregoire.jpg",
+    number: "DOSSIER 03",
+    cardLine: "Observer sa manière de rassurer le client.",
+    intro:
+      "Un regard sur l’écoute, l’entraide et la manière d’accompagner chaque hésitation.",
+    questions: [
+      {
+        question: "Comment gérez-vous un client qui hésite ?",
+        answer:
+          "Lorsqu’un client hésite, j’essaie de lui donner davantage d’informations sur le produit et de lui montrer comment il pourrait le porter. Je peux lui proposer différentes associations ou plusieurs tenues afin de l’aider à se projeter. Je prends en compte son style, ses besoins et les indications qu’il me donne. S’il reste indécis, je préfère ne pas forcer la vente : il vaut mieux lui laisser le temps de réfléchir que provoquer un achat qu’il pourrait regretter.",
+      },
+      {
+        question:
+          "Qu’est-ce qui peut influencer vos performances sur une journée ?",
+        answer:
+          "Le flux de clients influence naturellement les occasions de vente, mais la qualité des échanges compte tout autant. Une bonne conversation permet de mieux comprendre les attentes et de proposer des produits adaptés. L’ambiance au sein de l’équipe joue aussi un rôle essentiel : une équipe dynamique, disponible et solidaire permet de rester motivé et d’offrir une meilleure expérience aux clients.",
+      },
+      {
+        question:
+          "Comment vous entraidez-vous lorsqu’un collègue est occupé avec un client ?",
+        answer:
+          "L’entraide se fait spontanément : replier ou ranger des articles, effectuer le réassort, chercher une taille ou récupérer un produit demandé. Cela permet au vendeur de rester concentré sur son client et d’éviter une attente trop longue. L’objectif reste collectif : assurer un floor fluide et un service de qualité pour chacun.",
+      },
+      {
+        question: "Qu’est-ce qui peut donner envie à un client de revenir ?",
+        answer:
+          "Le client peut revenir grâce à la qualité de l’échange avec son conseiller. Le feeling, l’écoute et l’ambiance générale peuvent lui laisser un souvenir positif. Une pièce peut aussi lui rester en tête, même sans achat immédiat. Il revient autant pour les produits que pour retrouver un accueil, des conseils personnalisés et une expérience dans laquelle il s’est senti à l’aise.",
       },
     ],
   },
@@ -127,7 +168,11 @@ export default function RencontresSection() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.7, delay: index * 0.12 }}
                 onClick={() => setSelectedInterview(interview)}
-                className="group relative min-h-[520px] overflow-hidden border border-white/15 bg-[#080808] text-left transition-colors hover:border-[#4c9ce9]/70"
+                className={`group relative min-h-[520px] w-full overflow-hidden border border-white/15 bg-[#080808] text-left transition-colors hover:border-[#4c9ce9]/70 ${
+                  index === 2
+                    ? "lg:col-span-2 lg:mx-auto lg:w-[calc(50%-0.75rem)]"
+                    : ""
+                }`}
               >
                 <div className="absolute inset-0">
                   <img
@@ -167,7 +212,7 @@ export default function RencontresSection() {
 
                   <div className="mt-10 flex items-center justify-between border-t border-white/15 pt-5">
                     <span className="font-serif text-base italic text-neutral-400">
-                      Ouvrir son regard sur le métier.
+                      {interview.cardLine}
                     </span>
 
                     <span className="text-[10px] uppercase tracking-[0.28em] text-white transition group-hover:text-[#67b3ff]">
@@ -189,21 +234,16 @@ export default function RencontresSection() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] overflow-y-auto bg-[#050505]"
           >
-            <div className="sticky top-0 z-20 border-b border-white/10 bg-[#050505]/95 px-6 py-5 backdrop-blur-md md:px-16">
-              <span className="text-[10px] uppercase tracking-[0.4em] text-neutral-500">
-                {selectedInterview.number} · Entretien
-              </span>
-            </div>
-
             <div className="relative mx-auto max-w-6xl px-6 py-16 md:px-16 md:py-24">
-  <button
-    type="button"
-    onClick={() => setSelectedInterview(null)}
-    className="absolute right-6 top-6 border-b border-white/30 pb-2 text-[10px] uppercase tracking-[0.28em] text-neutral-400 transition hover:border-[#67b3ff] hover:text-[#67b3ff] md:right-16 md:top-12"
-  >
-    ← Retour aux dossiers
-  </button>
-              <div className="grid gap-12 border-b border-white/10 pb-16 md:grid-cols-[0.85fr_1.15fr] md:items-end">
+              <button
+                type="button"
+                onClick={() => setSelectedInterview(null)}
+                className="absolute right-6 top-8 border-b border-white/30 pb-2 text-[10px] uppercase tracking-[0.28em] text-neutral-400 transition hover:border-[#67b3ff] hover:text-[#67b3ff] md:right-16 md:top-14"
+              >
+                ← Retour aux dossiers
+              </button>
+
+              <div className="grid gap-12 border-b border-white/10 pb-16 pt-16 md:grid-cols-[0.85fr_1.15fr] md:items-end md:pt-10">
                 <div className="relative aspect-[4/5] overflow-hidden border border-white/10">
                   <img
                     src={selectedInterview.image}
