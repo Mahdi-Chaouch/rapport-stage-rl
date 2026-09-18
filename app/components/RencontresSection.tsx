@@ -11,6 +11,7 @@ const interviews = [
     age: "24 ans",
     role: "Vendeur senior · Ralph Lauren Madeleine",
     image: "/leo.jpg",
+    imagePosition: "object-center",
     number: "DOSSIER 01",
     cardLine: "Explorer sa vision du lien client.",
     intro:
@@ -90,6 +91,7 @@ const interviews = [
     age: "24 ans",
     role: "Vendeur junior · Ralph Lauren Madeleine",
     image: "/gregoire.jpg",
+    imagePosition: "object-center",
     number: "DOSSIER 03",
     cardLine: "Observer sa manière de rassurer le client.",
     intro:
@@ -178,7 +180,7 @@ export default function RencontresSection() {
                   <img
                     src={interview.image}
                     alt={`${interview.firstName} ${interview.lastName}`}
-                    className="h-full w-full object-cover object-center grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                    className={`h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0 ${interview.imagePosition}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/10" />
                 </div>
@@ -248,7 +250,7 @@ export default function RencontresSection() {
                   <img
                     src={selectedInterview.image}
                     alt={`${selectedInterview.firstName} ${selectedInterview.lastName}`}
-                    className="h-full w-full object-cover grayscale"
+                    className={`h-full w-full object-cover grayscale ${selectedInterview.imagePosition}`}
                   />
 
                   <span className="absolute bottom-5 left-5 text-[9px] uppercase tracking-[0.35em] text-white/50">
