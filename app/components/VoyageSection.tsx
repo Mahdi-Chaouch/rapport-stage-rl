@@ -184,11 +184,11 @@ export default function VoyageSection() {
           className="mb-16"
         >
           <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-neutral-600 block mb-3">
-            EN IMAGES
+            
           </span>
 
           <h3 className="font-serif text-4xl md:text-6xl text-white font-light">
-            Trois mois en coulisses
+            Trois mois en images
           </h3>
         </motion.div>
 
