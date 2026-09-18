@@ -54,7 +54,7 @@ const interviews = [
     age: "24 ans",
     role: "Vendeuse junior · Ralph Lauren Madeleine",
     image: "/celine.jpg",
-    imagePosition: "object-[center_45%]",
+    imagePosition: "object-[center_65%]",
     number: "DOSSIER 02",
     cardLine: "Découvrir son cheminement vers la confiance.",
     intro:
