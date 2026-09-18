@@ -13,7 +13,7 @@ const interviews = [
     image: "/leo.jpg",
     imagePosition: "object-center",
     number: "DOSSIER 01",
-    cardLine: "Explorer sa vision du lien client.",
+    cardLine: "Explorer le lien avec le client.",
     intro:
       "Un regard sur le métier, le client et l’importance du lien créé en boutique.",
     questions: [
@@ -54,9 +54,9 @@ const interviews = [
     age: "24 ans",
     role: "Vendeuse junior · Ralph Lauren Madeleine",
     image: "/celine.jpg",
-    imagePosition: "object-[center_65%]",
+    imagePosition: "object-[center_75%]",
     number: "DOSSIER 02",
-    cardLine: "Découvrir son cheminement vers la confiance.",
+    cardLine: "Découvrir sa voie vers la confiance.",
     intro:
       "Un regard sur l’apprentissage, la confiance en soi et l’attention portée à chaque client.",
     questions: [
